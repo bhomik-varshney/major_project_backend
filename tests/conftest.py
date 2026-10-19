@@ -6,12 +6,18 @@ from app.core.config import Settings
 from app.main import create_app
 
 
+@pytest.fixture(autouse=True)
+def no_live_provider_credentials(monkeypatch):
+    for name in ("GROQ_API_KEY", "GROQ_API_KEY_1", "GROQ_API_KEY_2", "GROQ_API_KEY_3"):
+        monkeypatch.setenv(name, "")
+
+
 @pytest.fixture
 def application(tmp_path: Path):
     return create_app(Settings(app_env="test", data_dir=tmp_path,
         database_url=f"sqlite:///{tmp_path / 'test.db'}", session_secret="test-only-" * 8,
         max_document_bytes=1024, max_documents_per_user=3,
-        document_storage_path=tmp_path / "documents", groq_api_key=""))
+        document_storage_path=tmp_path / "documents", groq_api_key="", groq_api_key_1="", groq_api_key_2="", groq_api_key_3=""))
 
 
 @pytest.fixture

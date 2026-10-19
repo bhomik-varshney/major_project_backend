@@ -2,7 +2,7 @@ from datetime import datetime, timezone
 from uuid import uuid4
 
 from sqlalchemy import JSON, DateTime, ForeignKey, Integer, LargeBinary, String, UniqueConstraint
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
 
 def new_id() -> str:
@@ -84,6 +84,7 @@ class DocumentExtraction(Base):
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
     completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     verified_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    agent_run: Mapped['ResumeAgentRun | None'] = relationship(uselist=False, cascade='all, delete-orphan', passive_deletes=True)
 
 
 class VerificationRecord(Base):
@@ -101,3 +102,20 @@ class VerificationRecord(Base):
     applied_fields: Mapped[list] = mapped_column(JSON, default=list)
     source_evidence: Mapped[dict] = mapped_column(JSON, default=dict)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+
+
+class ResumeAgentRun(Base):
+    __tablename__ = 'resume_agent_runs'
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=new_id)
+    user_id: Mapped[str] = mapped_column(ForeignKey('users.id'), index=True)
+    extraction_id: Mapped[str] = mapped_column(ForeignKey('document_extractions.id', ondelete='CASCADE'), unique=True, index=True)
+    agent_name: Mapped[str] = mapped_column(String(80), default='Resume Intelligence Agent')
+    agent_version: Mapped[str] = mapped_column(String(20), default='1.0')
+    engine: Mapped[str] = mapped_column(String(30), default='pending')
+    status: Mapped[str] = mapped_column(String(30), default='queued')
+    task: Mapped[str] = mapped_column(String(40), default='document_preparation')
+    tasks: Mapped[list] = mapped_column(JSON, default=list)
+    warnings: Mapped[list] = mapped_column(JSON, default=list)
+    error_code: Mapped[str | None] = mapped_column(String(80), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)

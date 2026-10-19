@@ -126,6 +126,8 @@ def verify_extraction(db, document, extraction, payload, user_id):
                 for key in ("method", "edited", "edited_by_user", "source_section", "confidence")}
                 for index, name in enumerate(proposed.get("skills", []))} if "skills" in selected else {}},
         applied_fields=selected, source_evidence={path: {**proof, "verified": True, "review_status": "confirmed"} for path, proof in extraction.evidence.items() if path.split(".")[0] in selected}))
+    if extraction.agent_run:
+        extraction.agent_run.status = "confirmed"
     add_activity(db, user_id, "extraction_verified", "Reviewed document information saved to your profile.")
     db.commit()
     db.expire_all()

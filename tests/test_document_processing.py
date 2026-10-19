@@ -258,13 +258,13 @@ def test_groq_requires_per_run_consent_and_missing_key_fallback(client):
 
 def test_invalid_ai_json_falls_back_in_pipeline(client):
     doc = upload(client)
-    with patch("app.services.document_processing.groq_extraction.enhance", side_effect=EnhancementUnavailable("groq_invalid_output", "Invalid AI JSON; local extraction retained.")):
+    with patch("app.services.document_processing.resume_intelligence.enhance", side_effect=EnhancementUnavailable("groq_invalid_output", "Invalid AI JSON; local extraction retained.")):
         result = finish(client, doc, use_groq=True, allow_external_processing=True)
     assert result["status"] == "awaiting_review"
     assert result["method"] == "deterministic_limited"
 
 
-@pytest.mark.parametrize("mode,code,attempts", [("invalid", "groq_invalid_output", 1), ("timeout", "groq_timeout", 2), ("rate", "groq_rate_limit", 3), ("server", "groq_unavailable", 1)])
+@pytest.mark.parametrize("mode,code,attempts", [("invalid", "groq_invalid_output", 1), ("timeout", "groq_timeout", 1), ("rate", "groq_rate_limit", 1), ("server", "groq_unavailable", 1)])
 def test_groq_errors_are_bounded_and_redacted(mode, code, attempts):
     calls = []
     def handler(request):
@@ -274,7 +274,7 @@ def test_groq_errors_are_bounded_and_redacted(mode, code, attempts):
             json={"choices": [{"message": {"content": "not JSON secret"}}]})
     settings = Settings(groq_api_key="synthetic-test-secret")
     factory = lambda **kw: httpx.Client(transport=httpx.MockTransport(handler), **kw)
-    with patch("app.services.groq_extraction.time.sleep"), pytest.raises(EnhancementUnavailable) as exc:
+    with pytest.raises(EnhancementUnavailable) as exc:
         enhance([], settings, client_factory=factory)
     assert exc.value.code == code
     assert "secret" not in exc.value.message
@@ -340,7 +340,7 @@ def test_verification_commit_failure_rolls_back_profile_receipt_and_status(clien
 def test_enhanced_values_exceeding_combined_limits_retain_local_draft(client):
     doc = upload(client)
     enhanced = CandidateDraft(skills=[f"Extra skill {i}" for i in range(100)]).model_dump()
-    with patch("app.services.document_processing.groq_extraction.enhance", return_value=(enhanced, {}, 0)):
+    with patch("app.services.document_processing.resume_intelligence.enhance", return_value=(enhanced, {}, 0)):
         result = finish(client, doc, use_groq=True, allow_external_processing=True)
     assert result["status"] == "awaiting_review"
     assert result["method"] == "deterministic_limited"

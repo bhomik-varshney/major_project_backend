@@ -1,4 +1,8 @@
-"""Future provider boundaries. No AI, retrieval, or application execution yet.
+"""Unimplemented future service sketches, not executable agents.
+
+Resume intelligence is implemented in app.orchestration.resume. The implemented
+seeded-job provider interface is app.providers.jobs.JobProvider. These sketches
+are reserved for later asynchronous career workflows.
 
 Implementations must return validated evidence-bearing data, preserve owner and
 input revisions, and expose provider failures rather than inventing results.

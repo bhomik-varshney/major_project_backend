@@ -23,7 +23,8 @@ def make_engine(url: str):
 
 
 def initialize_database(engine):
-    # Initial schema only. Add versioned migrations before evolving deployed data.
+    # Additive table creation only. Existing columns and facts are never rewritten.
+    # Use versioned migrations for future changes to existing tables.
     Base.metadata.create_all(engine)
 
 

@@ -17,7 +17,7 @@ router = APIRouter(prefix="/documents", tags=["Documents"])
 def policy(request: Request, user: User = Depends(current_user)):
     return {"formats": ["pdf", "docx", "txt"], "max_bytes": request.app.state.settings.max_document_bytes,
         "max_documents": request.app.state.settings.max_documents_per_user, "extraction_available": True,
-        "groq_configured": bool(request.app.state.settings.groq_api_key.get_secret_value()),
+        "groq_configured": bool(request.app.state.settings.groq_keys),
         "groq_model": request.app.state.settings.groq_model, "ocr_available": False}
 
 

@@ -1,4 +1,4 @@
-"""Idempotent additive milestone migration: create extraction/review tables.
+"""Idempotent additive milestone migration: create any missing workspace/agent-run tables.
 
 Existing tables, columns, IDs, files, and profile facts are not changed.
 Run with: python -m app.db.migrate

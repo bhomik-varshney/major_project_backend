@@ -50,6 +50,6 @@ class SummaryResponse(BaseModel):
     application_status_summary: dict[str, int] | None = None
     recent_activity: list[ActivityResponse]
     feature_states: dict[str, str] = {
-        "extraction": "available", "jobs": "planned", "matching": "planned",
-        "applications": "planned", "orchestration": "planned",
+        "extraction": "available", "jobs": "seeded_demo", "matching": "planned",
+        "applications": "planned", "orchestration": "resume_only",
     }

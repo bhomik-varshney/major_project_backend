@@ -10,13 +10,14 @@ from sqlalchemy.exc import SQLAlchemyError
 from starlette.exceptions import HTTPException
 from starlette.middleware.sessions import SessionMiddleware
 
-from app.api import dashboard, documents, extraction, health, profiles
+from app.api import dashboard, documents, extraction, health, profiles, jobs
 from app.core.config import Settings, get_settings
 from app.core.errors import AppError, error_response
 from app.core.logging import configure_logging
 from app.core.security import require_local_client, session_secret
 from app.db.connection import initialize_database, make_engine, session_factory
 from app.services.document_processing import DocumentProcessor
+from app.providers.jobs import SeededJobProvider
 
 logger = logging.getLogger("careeros")
 
@@ -39,6 +40,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         engine.dispose()
 
     application = FastAPI(title="CareerOS API", version=settings.version, lifespan=lifespan)
+    application.state.job_provider = SeededJobProvider()
     application.state.settings = settings
     application.state.engine = engine
     application.state.session_factory = session_factory(engine)
@@ -95,7 +97,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
 
     application.include_router(health.router, prefix="/api/v1")
     private = APIRouter(prefix="/api/v1", dependencies=[Depends(require_local_client)])
-    for router in (profiles.router, documents.router, extraction.router, dashboard.router):
+    for router in (profiles.router, documents.router, extraction.router, dashboard.router, jobs.router):
         private.include_router(router)
     application.include_router(private)
     return application

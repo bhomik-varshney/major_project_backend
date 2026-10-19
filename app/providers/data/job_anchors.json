@@ -1,0 +1,347 @@
+[
+  {
+    "id": "demo-software-intern",
+    "title": "Software Engineer Intern",
+    "company": "Demo Cedar Labs",
+    "location": "Bengaluru",
+    "remote": false,
+    "employment_type": "internship",
+    "description": "Build small product features, review code with a mentor, and write meaningful tests.",
+    "required_skills": [
+      "Python",
+      "Git"
+    ],
+    "preferred_skills": [
+      "SQL",
+      "Data structures"
+    ],
+    "experience_level": "student",
+    "salary": {
+      "minimum": 12000,
+      "maximum": 20000,
+      "currency": "INR",
+      "period": "month"
+    },
+    "source": "seeded_mock",
+    "application_url": "https://example.invalid/jobs/demo-software-intern",
+    "posted_date": "2026-10-01",
+    "closing_date": "2026-11-30",
+    "metadata": {
+      "dataset_version": "2026-10-demo-v1",
+      "country": "India",
+      "category": "engineering",
+      "is_demo": true
+    }
+  },
+  {
+    "id": "demo-backend-intern",
+    "title": "Backend Developer Intern",
+    "company": "Demo River Systems",
+    "location": "Noida",
+    "remote": false,
+    "employment_type": "internship",
+    "description": "Develop REST APIs, validate requests, and maintain database queries with the backend team.",
+    "required_skills": [
+      "Python",
+      "SQL",
+      "FastAPI"
+    ],
+    "preferred_skills": [
+      "Docker",
+      "PostgreSQL"
+    ],
+    "experience_level": "student",
+    "salary": {
+      "minimum": 13000,
+      "maximum": 21000,
+      "currency": "INR",
+      "period": "month"
+    },
+    "source": "seeded_mock",
+    "application_url": "https://example.invalid/jobs/demo-backend-intern",
+    "posted_date": "2026-10-01",
+    "closing_date": "2026-11-30",
+    "metadata": {
+      "dataset_version": "2026-10-demo-v1",
+      "country": "India",
+      "category": "backend",
+      "is_demo": true
+    }
+  },
+  {
+    "id": "demo-frontend-intern",
+    "title": "Frontend Developer Intern",
+    "company": "Demo Lantern Studio",
+    "location": "Remote",
+    "remote": true,
+    "employment_type": "internship",
+    "description": "Build accessible interfaces and responsive components, with design and engineering mentorship.",
+    "required_skills": [
+      "React",
+      "TypeScript",
+      "CSS"
+    ],
+    "preferred_skills": [
+      "Accessibility",
+      "Playwright"
+    ],
+    "experience_level": "student",
+    "salary": {
+      "minimum": 14000,
+      "maximum": 22000,
+      "currency": "INR",
+      "period": "month"
+    },
+    "source": "seeded_mock",
+    "application_url": "https://example.invalid/jobs/demo-frontend-intern",
+    "posted_date": "2026-10-01",
+    "closing_date": "2026-11-30",
+    "metadata": {
+      "dataset_version": "2026-10-demo-v1",
+      "country": "India",
+      "category": "frontend",
+      "is_demo": true
+    }
+  },
+  {
+    "id": "demo-data-intern",
+    "title": "Data Analyst Intern",
+    "company": "Demo Meadow Analytics",
+    "location": "Pune",
+    "remote": false,
+    "employment_type": "internship",
+    "description": "Clean sample datasets, prepare reports, and explain trends to a product team.",
+    "required_skills": [
+      "SQL",
+      "Python",
+      "Excel"
+    ],
+    "preferred_skills": [
+      "Power BI",
+      "Statistics"
+    ],
+    "experience_level": "student",
+    "salary": {
+      "minimum": 15000,
+      "maximum": 23000,
+      "currency": "INR",
+      "period": "month"
+    },
+    "source": "seeded_mock",
+    "application_url": "https://example.invalid/jobs/demo-data-intern",
+    "posted_date": "2026-10-01",
+    "closing_date": "2026-11-30",
+    "metadata": {
+      "dataset_version": "2026-10-demo-v1",
+      "country": "India",
+      "category": "data",
+      "is_demo": true
+    }
+  },
+  {
+    "id": "demo-ml-intern",
+    "title": "Machine Learning Intern",
+    "company": "Demo Orbit Research",
+    "location": "Remote",
+    "remote": true,
+    "employment_type": "internship",
+    "description": "Evaluate baseline models and document reproducible experiments on approved datasets.",
+    "required_skills": [
+      "Python",
+      "Pandas",
+      "Machine learning"
+    ],
+    "preferred_skills": [
+      "PyTorch",
+      "scikit-learn"
+    ],
+    "experience_level": "student",
+    "salary": {
+      "minimum": 16000,
+      "maximum": 24000,
+      "currency": "INR",
+      "period": "month"
+    },
+    "source": "seeded_mock",
+    "application_url": "https://example.invalid/jobs/demo-ml-intern",
+    "posted_date": "2026-10-01",
+    "closing_date": "2026-11-30",
+    "metadata": {
+      "dataset_version": "2026-10-demo-v1",
+      "country": "India",
+      "category": "machine_learning",
+      "is_demo": true
+    }
+  },
+  {
+    "id": "demo-fullstack-intern",
+    "title": "Full-Stack Developer Intern",
+    "company": "Demo Harbor Digital",
+    "location": "Hyderabad",
+    "remote": false,
+    "employment_type": "internship",
+    "description": "Build web features across the interface and API, with tests and documented review.",
+    "required_skills": [
+      "JavaScript",
+      "React",
+      "Node.js"
+    ],
+    "preferred_skills": [
+      "SQL",
+      "Git"
+    ],
+    "experience_level": "student",
+    "salary": {
+      "minimum": 17000,
+      "maximum": 25000,
+      "currency": "INR",
+      "period": "month"
+    },
+    "source": "seeded_mock",
+    "application_url": "https://example.invalid/jobs/demo-fullstack-intern",
+    "posted_date": "2026-10-01",
+    "closing_date": "2026-11-30",
+    "metadata": {
+      "dataset_version": "2026-10-demo-v1",
+      "country": "India",
+      "category": "full_stack",
+      "is_demo": true
+    }
+  },
+  {
+    "id": "demo-qa-intern",
+    "title": "QA/Automation Intern",
+    "company": "Demo Spruce Quality",
+    "location": "Chennai",
+    "remote": false,
+    "employment_type": "internship",
+    "description": "Write test cases, automate browser checks, and report reproducible defects.",
+    "required_skills": [
+      "Python",
+      "Testing",
+      "Git"
+    ],
+    "preferred_skills": [
+      "Playwright",
+      "Selenium"
+    ],
+    "experience_level": "student",
+    "salary": {
+      "minimum": 18000,
+      "maximum": 26000,
+      "currency": "INR",
+      "period": "month"
+    },
+    "source": "seeded_mock",
+    "application_url": "https://example.invalid/jobs/demo-qa-intern",
+    "posted_date": "2026-10-01",
+    "closing_date": "2026-11-30",
+    "metadata": {
+      "dataset_version": "2026-10-demo-v1",
+      "country": "India",
+      "category": "quality",
+      "is_demo": true
+    }
+  },
+  {
+    "id": "demo-devops-intern",
+    "title": "Cloud/DevOps Intern",
+    "company": "Demo Summit Cloud",
+    "location": "Remote",
+    "remote": true,
+    "employment_type": "internship",
+    "description": "Maintain development pipelines, improve container builds, and document service health checks.",
+    "required_skills": [
+      "Linux",
+      "Git",
+      "Docker"
+    ],
+    "preferred_skills": [
+      "AWS",
+      "CI/CD",
+      "Python"
+    ],
+    "experience_level": "student",
+    "salary": {
+      "minimum": 19000,
+      "maximum": 27000,
+      "currency": "INR",
+      "period": "month"
+    },
+    "source": "seeded_mock",
+    "application_url": "https://example.invalid/jobs/demo-devops-intern",
+    "posted_date": "2026-10-01",
+    "closing_date": "2026-11-30",
+    "metadata": {
+      "dataset_version": "2026-10-demo-v1",
+      "country": "India",
+      "category": "devops",
+      "is_demo": true
+    }
+  },
+  {
+    "id": "demo-java-intern",
+    "title": "Backend Developer Intern \u2014 Java",
+    "company": "Demo Maple Services",
+    "location": "Delhi",
+    "remote": false,
+    "employment_type": "internship",
+    "description": "Implement tested API endpoints and learn database transactions with a team mentor.",
+    "required_skills": [
+      "Java",
+      "SQL",
+      "Git"
+    ],
+    "preferred_skills": [
+      "Spring Boot",
+      "JUnit"
+    ],
+    "experience_level": "entry_level",
+    "salary": {
+      "minimum": 20000,
+      "maximum": 28000,
+      "currency": "INR",
+      "period": "month"
+    },
+    "source": "seeded_mock",
+    "application_url": "https://example.invalid/jobs/demo-java-intern",
+    "posted_date": "2026-10-01",
+    "closing_date": "2026-11-30",
+    "metadata": {
+      "dataset_version": "2026-10-demo-v1",
+      "country": "India",
+      "category": "backend",
+      "is_demo": true
+    }
+  },
+  {
+    "id": "demo-web-intern",
+    "title": "Frontend Developer Intern \u2014 Web",
+    "company": "Demo Willow Apps",
+    "location": "Remote",
+    "remote": true,
+    "employment_type": "internship",
+    "description": "Implement responsive pages and learn browser compatibility and accessibility testing.",
+    "required_skills": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "preferred_skills": [
+      "React",
+      "Accessibility"
+    ],
+    "experience_level": "student",
+    "salary": null,
+    "source": "seeded_mock",
+    "application_url": "https://example.invalid/jobs/demo-web-intern",
+    "posted_date": "2026-10-01",
+    "closing_date": null,
+    "metadata": {
+      "dataset_version": "2026-10-demo-v1",
+      "country": "India",
+      "category": "frontend",
+      "is_demo": true
+    }
+  }
+]

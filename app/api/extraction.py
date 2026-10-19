@@ -6,7 +6,7 @@ from sqlalchemy.orm import Session
 from app.api.dependencies import current_user, get_db
 from app.api.documents import owned_document
 from app.core.errors import AppError
-from app.db.models import DocumentExtraction, User, VerificationRecord, now
+from app.db.models import DocumentExtraction, User, VerificationRecord, ResumeAgentRun, now
 from app.repositories.profiles import find_profile
 from app.schemas.extraction import CorrectionInput, DraftUpdate, ExtractedDataResponse, ExtractionStatus, ExtractionVerification, ProcessInput
 from app.schemas.profile import ProfileResponse
@@ -33,6 +33,7 @@ def process(document_id: str, payload: ProcessInput, request: Request, user: Use
         profile_id=profile.id if profile else None, active_document=document_id,
         run_version=(latest.run_version + 1) if latest else 1,
         allow_external_processing=payload.use_groq and payload.allow_external_processing)
+    extraction.agent_run=ResumeAgentRun(user_id=user.id)
     db.add(extraction)
     try:
         db.commit()
@@ -51,6 +52,9 @@ def process(document_id: str, payload: ProcessInput, request: Request, user: Use
     try:
         processor.submit(extraction.id, payload.use_groq)
     except AppError:
+        if extraction.agent_run:
+            extraction.agent_run.status, extraction.agent_run.error_code = "failed", "processing_unavailable"
+            extraction.agent_run.completed_at = now()
         extraction.status, extraction.stage, extraction.active_document = "failed", "failed", None
         extraction.error_code, extraction.error_message = "processing_unavailable", "The worker is unavailable. Retry after restarting."
         db.commit()
@@ -113,6 +117,8 @@ def correct(document_id: str, payload: CorrectionInput, user: User = Depends(cur
         status=target, active_document=None, revision=extraction.revision + 1, updated_at=now()).execution_options(synchronize_session=False))
     if result.rowcount != 1:
         raise AppError(409, "extraction_conflict", "Processing changed. Reload before continuing.")
+    db.execute(update(ResumeAgentRun).where(ResumeAgentRun.extraction_id == extraction.id).values(
+        status="needs_review" if target == "needs_correction" else target, completed_at=now()))
     add_activity(db, user.id, "extraction_" + target, "Document review " + target.replace("_", " ") + ". No profile changes were made.")
     db.commit()
     db.expire_all()

@@ -22,8 +22,24 @@ class Settings(BaseSettings):
     max_extraction_pages: int = Field(default=50, ge=1, le=100)
     max_extraction_chars: int = Field(default=60000, ge=1000, le=100000)
     groq_api_key: SecretStr = Field(default=SecretStr(""), repr=False)
+    groq_api_key_1: SecretStr = Field(default=SecretStr(""), repr=False)
+    groq_api_key_2: SecretStr = Field(default=SecretStr(""), repr=False)
+    groq_api_key_3: SecretStr = Field(default=SecretStr(""), repr=False)
     groq_model: str = "openai/gpt-oss-120b"
+    groq_max_output_tokens: int = Field(default=2500, ge=512, le=8000)
     groq_timeout_seconds: float = Field(default=30, gt=0, le=30)
+    groq_key_cooldown_seconds: float = Field(default=5, ge=0, le=120)
+    crew_timeout_seconds: float = Field(default=75, ge=1, le=120)
+
+    @property
+    def groq_keys(self) -> tuple[SecretStr, ...]:
+        candidates = (self.groq_api_key_1 if self.groq_api_key_1.get_secret_value() else self.groq_api_key,
+            self.groq_api_key_2, self.groq_api_key_3)
+        unique = []
+        for secret in candidates:
+            if secret.get_secret_value() and secret.get_secret_value() not in [key.get_secret_value() for key in unique]:
+                unique.append(secret)
+        return tuple(unique)
 
     @property
     def origins(self) -> list[str]:

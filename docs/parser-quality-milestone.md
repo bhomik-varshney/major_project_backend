@@ -1,5 +1,7 @@
 # Parser quality, evidence, and multi-skill editing
 
+The subsequent [CrewAI and seeded-jobs milestone](crewai-jobs-milestone.md) supersedes this report’s orchestration/job implementation status. Parser/evidence behavior below remains applicable.
+
 19 October 2026. Local increment extending the existing application. No deployment, Git commit, or push. Original landing/dashboard styling, routes, private upload storage, processing/review workflow, confirmation, rejection, cancellation, retry, and profile revision checks are retained.
 
 ## Parser improvements

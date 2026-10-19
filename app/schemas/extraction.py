@@ -4,6 +4,7 @@ from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field, create_model
 
 from app.schemas.profile import Education, Experience, ProfileInput, Project, Schema
+from app.schemas.agent_run import AgentRunResponse
 
 ProfileField = Literal["name", "email", "phone", "location", "career_objective", "education", "skills", "experience", "projects", "preferred_roles", "preferred_locations", "experience_level", "certifications", "achievements", "links"]
 
@@ -107,6 +108,7 @@ class ExtractionStatus(BaseModel):
     updated_at: datetime
     completed_at: datetime | None
     verified_at: datetime | None
+    agent_run: AgentRunResponse | None = None
 
 
 class ExtractedDataResponse(ExtractionStatus):
