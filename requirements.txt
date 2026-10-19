@@ -1,0 +1,10 @@
+fastapi==0.115.0
+uvicorn==0.32.0
+pydantic==2.12.5
+pydantic-settings==2.14.2
+SQLAlchemy==2.0.48
+python-multipart==0.0.22
+python-dotenv==1.2.2
+itsdangerous==2.2.0
+pypdf==6.12.0
+psycopg[binary]==3.3.3

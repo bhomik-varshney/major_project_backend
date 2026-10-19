@@ -1,0 +1,51 @@
+from datetime import datetime
+from typing import Literal
+
+from pydantic import BaseModel, ConfigDict
+
+
+class DocumentResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: str
+    filename: str
+    content_type: str
+    size_bytes: int
+    upload_status: Literal["stored"]
+    extraction_status: Literal["not_started"]
+    created_at: datetime
+
+
+class ActivityResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: str
+    kind: str
+    message: str
+    created_at: datetime
+
+
+class HealthResponse(BaseModel):
+    status: Literal["ok", "degraded"]
+    version: str
+    database: Literal["connected", "unavailable"]
+    access_mode: Literal["local_browser_session"] = "local_browser_session"
+
+
+class SummaryResponse(BaseModel):
+    data_mode: Literal["live_local"] = "live_local"
+    profile_exists: bool
+    candidate_name: str | None
+    profile_completion: int
+    profile_revision: int | None
+    verification_state: Literal["missing", "unverified", "verified"]
+    uploaded_document_count: int
+    profile_skill_count: int
+    extracted_skill_count: int = 0
+    recommended_job_count: int | None = None
+    skill_gap_count: int | None = None
+    pending_approval_count: int | None = None
+    application_status_summary: dict[str, int] | None = None
+    recent_activity: list[ActivityResponse]
+    feature_states: dict[str, str] = {
+        "extraction": "planned", "jobs": "planned", "matching": "planned",
+        "applications": "planned", "orchestration": "planned",
+    }
