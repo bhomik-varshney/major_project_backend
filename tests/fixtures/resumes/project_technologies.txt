@@ -1,0 +1,10 @@
+Nisha Example
+SELECTED PROJECTS
+Campus Map / https://github.com/example/campus-map
+Technologies: JavaScript, React
+Role: Frontend contributor
+- Built a campus directory.
+Library Service | Python, PostgreSQL | Jan 2025-Mar 2025
+Technologies: Python, PostgreSQL
+https://example.com/library
+- Built library APIs.

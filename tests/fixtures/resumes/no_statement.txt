@@ -1,0 +1,6 @@
+Nisha Example
+Email: nisha@example.com
+Skills:
+Python, SQL
+Education:
+B.Tech | Example University

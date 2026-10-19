@@ -1,0 +1,17 @@
+Nisha Example
+Professional Summary:
+Student building accessible software.
+Seeking practical engineering experience.
+Projects:
+Project Name: Accessible Notes
+Technologies: React, TypeScript
+- Built a note editor.
+Tracks notes and categories.
+• Added keyboard navigation.
+Project Name: Course Catalog
+Technologies: Python, SQLite
+- Built a course search API.
+Courses:
+Introduction to Algorithms
+Skills:
+Git, SQL

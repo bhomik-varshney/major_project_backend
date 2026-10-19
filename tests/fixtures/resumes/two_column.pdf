@@ -1,0 +1,74 @@
+%PDF-1.3
+%‚„œ”
+1 0 obj
+<<
+/Producer (pypdf)
+>>
+endobj
+2 0 obj
+<<
+/Type /Pages
+/Count 1
+/Kids [ 4 0 R ]
+>>
+endobj
+3 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+4 0 obj
+<<
+/Type /Page
+/Resources <<
+/Font <<
+/F1 <<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+>>
+>>
+/MediaBox [ 0.0 0.0 612 792 ]
+/Parent 2 0 R
+/Contents 5 0 R
+>>
+endobj
+5 0 obj
+<<
+/Length 324
+>>
+stream
+BT /F1 11 Tf 40 740 Td
+(Nisha Example) Tj 0 -18 Td
+(Skills:) Tj 0 -18 Td
+(Python, SQL) Tj 0 -18 Td
+(Education:) Tj 0 -18 Td
+(B.Tech | Example University | 2023-2027) Tj 0 -18 Td
+ET
+BT /F1 11 Tf 330 740 Td
+(Projects:) Tj 0 -18 Td
+(Notes App) Tj 0 -18 Td
+(Technologies: React) Tj 0 -18 Td
+(Built a note editor.) Tj 0 -18 Td
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000015 00000 n 
+0000000054 00000 n 
+0000000113 00000 n 
+0000000162 00000 n 
+0000000343 00000 n 
+trailer
+<<
+/Size 6
+/Root 3 0 R
+/Info 1 0 R
+>>
+startxref
+718
+%%EOF

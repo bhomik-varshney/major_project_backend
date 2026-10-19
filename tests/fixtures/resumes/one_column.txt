@@ -1,0 +1,11 @@
+Nisha Example
+Email: nisha@example.com
+Location: Aligarh, India
+Summary:
+Computer engineering student building useful services.
+Skills:
+Python, SQL
+Education:
+B.Tech Computer Engineering | Example University | 2023-2027
+Projects:
+Student Portal | Built an academic portal using Python

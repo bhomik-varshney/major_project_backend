@@ -1,0 +1,6 @@
+Nisha Example
+01. CAREER OBJECTIVE:
+To develop useful student services.
+Seeking an internship in backend development.
+2) TECHNICAL SKILLS:
+Python; FastAPI

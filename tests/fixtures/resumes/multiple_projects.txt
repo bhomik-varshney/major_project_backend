@@ -1,0 +1,9 @@
+Nisha Example
+Academic Projects:
+Study Planner | React, FastAPI | 2025
+Technologies: React, FastAPI
+- Built a planner for students.
+- Deployed an API.
+Budget Tracker: Tracks spending for students.
+Technologies: Python, SQLite
+- Added monthly charts.

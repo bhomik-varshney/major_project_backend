@@ -10,12 +10,13 @@ from sqlalchemy.exc import SQLAlchemyError
 from starlette.exceptions import HTTPException
 from starlette.middleware.sessions import SessionMiddleware
 
-from app.api import dashboard, documents, health, profiles
+from app.api import dashboard, documents, extraction, health, profiles
 from app.core.config import Settings, get_settings
 from app.core.errors import AppError, error_response
 from app.core.logging import configure_logging
 from app.core.security import require_local_client, session_secret
 from app.db.connection import initialize_database, make_engine, session_factory
+from app.services.document_processing import DocumentProcessor
 
 logger = logging.getLogger("careeros")
 
@@ -27,18 +28,21 @@ def create_app(settings: Settings | None = None) -> FastAPI:
 
     @asynccontextmanager
     async def lifespan(app):
-        if settings.auto_init_db:
-            try:
+        try:
+            if settings.auto_init_db:
                 initialize_database(engine)
-            except SQLAlchemyError:
-                logger.error("database_initialization_failed")
+            application.state.processor.recover_interrupted()
+        except SQLAlchemyError:
+            logger.error("database_initialization_failed")
         yield
+        application.state.processor.shutdown()
         engine.dispose()
 
     application = FastAPI(title="CareerOS API", version=settings.version, lifespan=lifespan)
     application.state.settings = settings
     application.state.engine = engine
     application.state.session_factory = session_factory(engine)
+    application.state.processor = DocumentProcessor(application.state.session_factory, settings)
     application.add_middleware(SessionMiddleware, secret_key=session_secret(settings),
         session_cookie="careeros_session", max_age=30 * 24 * 3600, same_site="lax", https_only=False)
 
@@ -91,7 +95,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
 
     application.include_router(health.router, prefix="/api/v1")
     private = APIRouter(prefix="/api/v1", dependencies=[Depends(require_local_client)])
-    for router in (profiles.router, documents.router, dashboard.router):
+    for router in (profiles.router, documents.router, extraction.router, dashboard.router):
         private.include_router(router)
     application.include_router(private)
     return application

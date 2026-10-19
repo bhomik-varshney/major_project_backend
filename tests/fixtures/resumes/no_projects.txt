@@ -1,0 +1,6 @@
+Nisha Example
+Work Experience:
+Project Engineer | Example Labs | 2025-2026
+- Built an internal dashboard using React.
+Certifications:
+Python Fundamentals

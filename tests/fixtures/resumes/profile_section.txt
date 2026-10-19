@@ -1,0 +1,6 @@
+Nisha Example
+Profile
+Engineering student with an interest in accessible software.
+Experience:
+Backend Intern | Example Labs | Jun 2025-Aug 2025
+- Built APIs using FastAPI.

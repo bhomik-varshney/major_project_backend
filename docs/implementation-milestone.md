@@ -2,6 +2,8 @@
 
 19 October 2026. Local implementation, not a deployment or complete backend.
 
+Historical foundation report. Resume extraction and review were added afterward; see [the current milestone report](resume-processing-milestone.md) and README for present behavior. Results below describe the foundation checkpoint.
+
 ## Reference inspection
 
 Inspected the existing major-project frontend and backend before editing, and read the public Velion reference at commit `bddc8ec0256d512496088e349900262255037d8b`. Velion has a TanStack Start/React/Vite frontend, shared panel shells, a status rail, API/error modules, responsive workspace layouts, pointer-driven highlights, and a FastAPI application factory with provider contracts and deterministic test isolation. Its session store is process-local; this project's profiles/documents instead require durable SQL storage. Velion deployment uses Docker/Render and provider/MCP-specific setup that is outside this milestone.

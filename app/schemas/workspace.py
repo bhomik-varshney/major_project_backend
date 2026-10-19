@@ -11,7 +11,11 @@ class DocumentResponse(BaseModel):
     content_type: str
     size_bytes: int
     upload_status: Literal["stored"]
-    extraction_status: Literal["not_started"]
+    extraction_status: str
+    processing_status: str = "uploaded"
+    verification_status: str = "unverified"
+    processing_id: str | None = None
+    extraction_version: int | None = None
     created_at: datetime
 
 
@@ -46,6 +50,6 @@ class SummaryResponse(BaseModel):
     application_status_summary: dict[str, int] | None = None
     recent_activity: list[ActivityResponse]
     feature_states: dict[str, str] = {
-        "extraction": "planned", "jobs": "planned", "matching": "planned",
+        "extraction": "available", "jobs": "planned", "matching": "planned",
         "applications": "planned", "orchestration": "planned",
     }

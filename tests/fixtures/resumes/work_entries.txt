@@ -1,0 +1,11 @@
+Nisha Example
+Professional Experience
+Backend Intern | Example Labs | Jun 2025-Aug 2025 | Aligarh
+- Built APIs using FastAPI.
+Achievements: Reduced API latency by 20%.
+Software Developer at Sample Systems
+Jan 2026-Present
+Technologies: Java, PostgreSQL
+- Maintained billing services.
+Projects:
+Attendance Tool: Built attendance charts using Python.

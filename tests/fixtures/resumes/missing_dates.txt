@@ -1,0 +1,14 @@
+Nisha Example
+Education:
+B.Tech Computer Science
+Institution: Example University
+Specialization: Software Engineering
+CGPA: 8.6/10
+Experience:
+Backend Intern
+Company: Example Labs
+- Built APIs using FastAPI.
+Projects:
+Study Service
+Technologies: Python, FastAPI
+- Created student study groups.
