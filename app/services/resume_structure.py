@@ -6,14 +6,16 @@ import unicodedata
 from app.schemas.extraction import CandidateDraft, FieldEvidence, SourceReference
 
 HEADING_GROUPS = {
-    "career_objective": "Summary|Professional Summary|Profile|Profile Summary|Career Summary|Career Objective|Objective|Professional Objective|Job Objective|About Me|Overview|Personal Statement|Executive Summary|Career Profile",
-    "skills": "Skills|Technical Skills|Core Skills|Key Skills|Relevant Skills|Areas of Expertise|Technologies|Tools and Technologies|Programming Skills|Technical Proficiencies|Competencies|Skills and Interests",
+    "career_objective": "Summary|Professional Summary|Profile|Profile Summary|Career Summary|Career Objective|Objective|Professional Objective|Job Objective|About Me|Overview|Personal Statement|Executive Summary|Career Profile|Introduction",
+    "skills": "Skills|Technical Skills|Core Skills|Key Skills|Relevant Skills|Areas of Expertise|Core Competencies|Expertise|Tools|Programming Languages|Frameworks|Databases|Cloud Technologies|Technologies|Tools and Technologies|Programming Skills|Technical Proficiencies|Competencies|Skills and Interests",
     "education": "Education|Academic Background|Academic Qualifications|Educational Qualification|Qualifications|Degree|Academic History",
-    "experience": "Experience|Work Experience|Professional Experience|Employment History|Internship Experience|Internships|Industrial Training|Experience and Internships",
+    "experience": "Experience|Work Experience|Professional Experience|Employment History|Employment|Internship|Internship Experience|Internships|Industrial Training|Experience and Internships",
     "projects": "Projects|Academic Projects|Personal Projects|Technical Projects|Major Projects|Project Work|Selected Projects|Relevant Projects",
     "certifications": "Certifications|Certificates|Courses|Training|Professional Certifications|Online Courses",
     "achievements": "Achievements|Awards|Honors|Accomplishments|Extra-Curricular Achievements",
+    "publications": "Publications|Research Publications|Papers|Research Papers",
     "links": "Links|Profiles|Online Profiles|Portfolio|Social Links|Contact|Contact Information",
+    "additional_sections": "Research|Volunteer Experience|Volunteer Work|Leadership|Leadership Experience|Extracurricular Activities|Extracurricular|Languages|Interests|References|Hobbies|Volunteering|Activities|Additional Information",
     "preferred_roles": "Preferred Roles|Target Roles",
 }
 
@@ -29,15 +31,15 @@ def heading_key(text):
 
 
 SECTIONS = {heading_key(alias): section for section, aliases in HEADING_GROUPS.items() for alias in aliases.split("|")}
-STOP_HEADINGS = {heading_key(s) for s in ["References", "Languages", "Interests", "Hobbies", "Personal Details", "Declaration", "Volunteering", "Publications", "Activities", "Additional Information"]}
+STOP_HEADINGS = {heading_key(s) for s in ["References", "Languages", "Interests", "Hobbies", "Personal Details", "Declaration", "Volunteering", "Activities", "Additional Information"]}
 TECH_LABEL = re.compile(r"^(?:technologies(?:/tools)?|tech(?:nology)? stack|tools(?: and technologies)?|built with|programming languages|languages|frameworks|databases|skills)\s*:\s*(.*)", re.I)
-DEGREE = re.compile(r"\b(?:b\.?\s*tech|m\.?\s*tech|bachelor|master|degree|diploma|b\.?\s*sc|m\.?\s*sc|b\.?\s*e\.?\b|ph\.?\s*d|bca|mca|mba)\b", re.I)
+DEGREE = re.compile(r"\b(?:b\.?\s*tech|m\.?\s*tech|bachelor|master|degree|diploma|b\.?\s*sc|m\.?\s*sc|b\.?\s*e\.?\b|ph\.?\s*d|bca|mca|mba|class\s+(?:xii|xi|x|12|10))\b", re.I)
 DATE = r"(?:(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+)?(?:19|20)\d{2}"
 DATE_RANGE = re.compile(rf"({DATE})\s*(?:[-–—]|\bto\b)\s*({DATE}|Present|Current|Ongoing)", re.I)
 URL = re.compile(r"(?:https?://|www\.)[^\s<>|]+", re.I)
 # An explicit vocabulary, never technologies inferred from a role. Preserve matched spelling.
-TECH = re.compile(r"(?<![\w])(?:Python|JavaScript|TypeScript|Java|C\+\+|C#|React(?:\.js)?|Next\.js|Node(?:\.js)?|FastAPI|Django|Flask|PostgreSQL|MySQL|SQL|MongoDB|SQLite|Docker|Kubernetes|Git|GitHub Actions|HTML|CSS|Tailwind(?: CSS)?|AWS|Azure|TensorFlow|PyTorch|Pandas|NumPy|Power BI|Excel)(?![\w])", re.I)
-BULLET = re.compile(r"^\s*(?:[•●▪◦*\-–]\s+|\d+[.)]\s+)")
+TECH = re.compile(r"(?<![\w])(?:Python|JavaScript|TypeScript|Java|C\+\+|C#|React Three Fiber|React Native|React(?:\.js)?|Next\.js|Node(?:\.js)?|FastAPI|Django|Flask|PostgreSQL|MySQL|SQL|MongoDB|SQLite|Docker|Kubernetes|Git|GitHub Actions|HTML|CSS|Tailwind(?: CSS)?|AWS|Azure|TensorFlow|PyTorch|Pandas|NumPy|Power BI|Excel)(?![\w])", re.I)
+BULLET = re.compile(r"^\s*(?:[•●▪◦*\-–\x80-\x9f](?:\s+|$)|\d+[.)]\s+)")
 ACTION = re.compile(r"^(?:built|developed|created|implemented|designed|led|worked|responsible|contributed|improved|managed|achieved|reduced|increased|won|awarded|using|used|integrated|deployed|maintained|supported|tested|wrote|a\s|an\s|the\s)", re.I)
 ABSENT = re.compile(r"^(?:none|not applicable|n/?a|no (?:projects|experience|skills)(?: yet)?)[.!]?$", re.I)
 
@@ -80,6 +82,16 @@ def segment(blocks):
             heading = detect_heading(line)
             # Technology labels inside an entry belong to that entry, not a new skills section.
             current = states.get(column)
+            # Languages: is a category inside Technical Skills, not an instruction
+            # to discard the rest of that section.
+            if current is not None and current['field']=='skills' and ':' in line and heading and heading[0] in {'unclassified','additional_sections'}:
+                heading=None
+            if not heading and current is not None and current['field'] in {'contact','links'} and block.get('native_line') and len(line.split())>=9 and re.search(r'\b(?:undergraduate|graduate|student|specializing|professional|experienced)\b',line,re.I) and not re.search(r'@|https?://',line):
+                heading=('career_objective','',line)
+            if not heading and block.get('section_hint'):
+                heading=(block['section_hint'],line,'')
+            if not heading and block.get('structural_heading'):
+                heading=('unclassified',line,'')
             if not heading and current is not None and re.fullmatch(r"heading\s*1", block.get("style", ""), re.I) and len(line.split()) <= 8:
                 # Only a real top-level paragraph heading can stop an unknown section.
                 # Bold body text and short lines alone are never section headings.
@@ -100,7 +112,7 @@ def segment(blocks):
                 current = {"field": "contact", "heading": "", "heading_block": block, "records": [], "column": column}
                 sections.append(current); states[column] = current
             current["records"].append({"text": line, "raw": raw, "block": block, "line": line_number,
-                "bullet": bool(BULLET.match(raw) or block.get("list_item")), "section": current["field"], "heading": current["heading"]})
+                "bullet": bool(BULLET.match(raw) or block.get("list_item")), "section": current["field"], "heading": current["heading"], "section_inferred": bool(current["heading_block"].get("section_hint"))})
     return sections
 
 
@@ -123,9 +135,9 @@ def deterministic_extract(blocks):
         warnings.append("Possible multi-column layout: reading order is uncertain. Review each source block; columns were kept separate.")
 
     def put(path, value, record, *, confidence="medium", warning=None, normalized=False, group="", refs=None, original=None):
-        ambiguous = confidence == "low" or bool(record["block"].get("reading_order_uncertain"))
-        evidence[path] = FieldEvidence(source=reference(record), references=refs or [], parser_version="2", confidence="low" if ambiguous else confidence,
-            warning=warning or ("Reading order is uncertain; check the source." if ambiguous else None),
+        ambiguous = confidence == "low" or bool(record["block"].get("reading_order_uncertain")) or record.get("section_inferred",False)
+        evidence[path] = FieldEvidence(source=reference(record), references=refs or [], parser_version="3", confidence="low" if ambiguous else confidence,
+            warning=warning or ("Section bucket inferred from source-supported visual layout; confirm its meaning." if record.get("section_inferred") else "Reading order is uncertain; check the source." if ambiguous else None),
             classification="ambiguous" if ambiguous else "normalized" if normalized else "directly_found",
             source_section=record["section"], original_text=original if original is not None else str(value), heading=record["heading"], group_id=group,
             statement_type=statement_type(record["heading"]) if path == "career_objective" else "").model_dump()
@@ -206,9 +218,10 @@ def deterministic_extract(blocks):
                 if ABSENT.fullmatch(line):
                     continue
                 line = re.sub(r"^[^:]{1,40}:\s*", "", line)
-                for token in re.split(r"[,;|•·/]|\t+", line):
+                for token in re.split(r"[,;|•·/]|\t+", line.replace('C/C++','C∕C++')):
+                    token=token.replace('C∕C++','C/C++')
                     add_skill(token, record)
-        elif field in {"certifications", "achievements", "preferred_roles"}:
+        elif field in {"certifications", "achievements", "publications", "preferred_roles"}:
             for record in entries:
                 parts = re.split(r"[,;|]", record["text"]) if field == "preferred_roles" else [record["text"]]
                 for part in parts:
@@ -229,6 +242,7 @@ def parse_entries(field, records, values, put, technologies, warnings):
     current, index, group, last_blank = None, -1, "", True
     period_records = {}
     table_columns = []
+    pending_header=None
     column_names = {"degree": "qualification", "program": "qualification", "qualification": "qualification", "institution": "institution", "university": "institution", "period": "period", "dates": "period", "location": "location", "cgpa": "grade", "grade": "grade", "percentage": "grade", "specialization": "specialization", "startyear": "start_year", "endyear": "end_year", "expectedgraduation": "expected_graduation"}
 
     def assign(key, value, record, confidence="medium", warning=None):
@@ -244,6 +258,8 @@ def parse_entries(field, records, values, put, technologies, warnings):
             for item in value:
                 if len(current[key]) >= (40 if key == "technologies" else 10 if key == "links" else 30):
                     break
+                if key=='technologies' and any(re.search(r'(?<!\w)'+re.escape(item)+r'(?!\w)',existing,re.I) for existing in current[key]):
+                    continue
                 if normalize(item) not in [normalize(v) for v in current[key]]:
                     i = len(current[key]); current[key].append(item)
                     put(f"{field}.{index}.{key}.{i}", item, record, confidence=confidence, warning=warning, group=group, normalized=normalized)
@@ -266,7 +282,7 @@ def parse_entries(field, records, values, put, technologies, warnings):
         put(path, current["description"], record, refs=refs, group=group)
 
     proof_for = {}
-    for record in records:
+    for record_index,record in enumerate(records):
         text = record["text"]
         if not text:
             last_blank = True
@@ -274,19 +290,26 @@ def parse_entries(field, records, values, put, technologies, warnings):
         if ABSENT.fullmatch(text):
             current = None
             continue
+        next_record=next((r for r in records[record_index+1:] if r['text'].strip()),None)
+        role_pattern=r'\b(?:intern|engineer|developer|analyst|assistant|manager|designer|researcher|consultant|trainee)\b'
+        if field=='education' and not record['bullet'] and not DEGREE.search(text) and re.search(r'\b(?:university|college|institute|school)\b',text,re.I) and not re.match(r'^(?:institution|university)\s*:',text,re.I) and next_record and DEGREE.search(next_record['text']):
+            pending_header=record
+            continue
+        if field=='experience' and not record['bullet'] and next_record and re.search(role_pattern,next_record['text'],re.I) and not ACTION.match(text) and not re.match(r'^[^:]{1,40}:',text) and not re.search(role_pattern,text,re.I) and len(text)<160:
+            pending_header=record
+            continue
         raw_parts = [part.strip() for part in re.split(r"\s*\|\s*|\t+|\s+/\s+(?=https?://)", text)]
         if field == "education" and len(raw_parts) > 1 and sum(heading_key(part) in column_names for part in raw_parts) >= 2:
             table_columns = [column_names.get(heading_key(part), "") for part in raw_parts]
             continue
         row_values = dict(zip(table_columns, raw_parts)) if field == "education" and table_columns and len(raw_parts) == len(table_columns) else {}
         tech_match = TECH_LABEL.match(text)
-        labeled = re.match(r"^(project(?: name| title)?|title|role|contribution|organization|company|institution|university|degree|qualification|location|date(?:s)?|duration|period|speciali[sz]ation|cgpa|grade|percentage|expected graduation|responsibilities|achievements)\s*:\s*(.+)", text, re.I)
+        labeled = re.match(r"^(project(?: name| title)?|title|role|contribution|organization|company|institution|university|degree|qualification|location|date(?:s)?|duration|period|speciali[sz]ation|cgpa|grade|percentage|expected graduation|responsibilities|achievements|outcomes?|results?|repository|deployment|deployment url|live demo)\s*:\s*(.+)", text, re.I)
         date = DATE_RANGE.search(text)
         url_only = bool(URL.match(text))
         start = False
         parts = list(raw_parts)
         if field == "experience" and len(parts) > 1:
-            role_pattern = r"\b(?:intern|engineer|developer|analyst|assistant|manager|designer|researcher|consultant)\b"
             if not re.search(role_pattern, parts[0], re.I) and re.search(role_pattern, parts[1], re.I):
                 parts[0], parts[1] = parts[1], parts[0]
         if field == "education" and len(parts) > 1:
@@ -295,9 +318,12 @@ def parse_entries(field, records, values, put, technologies, warnings):
                 parts.insert(0, parts.pop(degree_index))
         uncertain = False
         if field == "projects":
+            stack_line=bool(record['block'].get('native_line') and current is not None and not current['description'] and not record['bullet'] and not tech_match and not labeled and not url_only and not ACTION.match(text) and ',' in parts[0] and TECH.search(parts[0]) and len(text.split())<=25)
+            link_labels=bool(re.fullmatch(r'(?:GitHub|Live Demo|Video|Portfolio|Hugging Face)(?:\s*\|\s*(?:GitHub|Live Demo|Video|Portfolio))*',text,re.I))
             title_label = labeled and labeled[1].lower() in {"project", "project name", "project title", "title"}
             prose_label = re.match(r"^([^:]{2,120}):\s+(.+)", text) if not tech_match and not labeled else None
-            plausible_title = not record["bullet"] and not tech_match and not labeled and not url_only and not ACTION.match(text) and not re.search(r"[.!?]$", text) and len(text) <= 160 and len(text.split()) <= 12
+            spaced_title=bool(record['block'].get('native_line') and record['block'].get('gap_before',0)>record['block'].get('position',{}).get('font_size',10)*1.7)
+            plausible_title = not record["bullet"] and not tech_match and not labeled and not url_only and not ACTION.match(text) and not re.search(r"[.!?]$", text) and len(text) <= 160 and (len(text.split()) <= 12 or spaced_title)
             start = bool(title_label or prose_label or (len(parts) > 1 and not tech_match and not labeled and not record["bullet"]) or plausible_title)
             if title_label:
                 parts = [labeled[2]]
@@ -307,11 +333,17 @@ def parse_entries(field, records, values, put, technologies, warnings):
                 start, uncertain = True, True
             if start and (ACTION.match(parts[0]) or heading_key(parts[0]) in {"projectname", "title", "description", "technologies"}):
                 start = False
+            if stack_line or link_labels or (date and date.group()==text) or re.fullmatch(DATE,text,re.I):start=False
+            if link_labels:continue
+            if stack_line:
+                stack=re.sub(r'\s+(?:GitHub|Live Demo|Video|Hugging Face)(?:\s*\|.*)?$','',text,flags=re.I)
+                assign('technologies',technologies(stack,record,explicit=True),record)
+                continue
         elif field == "experience":
             # Explicit role/company pairs, or a clearly labeled title. Never infer employer.
             at = re.match(r"^(.{2,120}?)\s+(?:at|@)\s+(.+)", text, re.I)
             role_label = labeled and labeled[1].lower() in {"role", "title"}
-            titleish = bool(re.search(r"\b(?:intern|engineer|developer|analyst|assistant|manager|designer|researcher|volunteer|consultant)\b", parts[0], re.I))
+            titleish = bool(re.search(role_pattern, parts[0], re.I))
             start = bool(not record["bullet"] and not tech_match and (at or (len(parts) >= 2 and titleish) or role_label or (titleish and len(text.split()) <= 8)))
             if at:
                 parts = [at[1], at[2]]
@@ -342,36 +374,52 @@ def parse_entries(field, records, values, put, technologies, warnings):
                         assign("technologies", technologies(part, record), record)
             elif field == "experience":
                 assign("role", parts[0][:160], record)
-                if len(parts) > 1 and not DATE_RANGE.search(parts[1]):
-                    assign("organization", parts[1][:160], record)
-                for part in parts[2:]:
+                if pending_header:
+                    org=re.split(r'\s+[—–-]\s+(?=Remote\b)',pending_header['text'],maxsplit=1)[0]
+                    assign('organization',org,pending_header)
+                    if org!=pending_header['text']:assign('location','Remote',pending_header)
+                    pending_header=None
+                for part in parts[1:]:
                     if DATE_RANGE.search(part) or re.fullmatch(DATE, part, re.I):
                         assign("period", part[:80], record)
+                    elif not current['organization']:
+                        assign('organization',part[:160],record)
                     else:
                         assign("location", part[:160], record)
             else:
-                assign("qualification", parts[0][:160], record)
-                if len(parts) > 1 and not DATE_RANGE.search(parts[1]):
+                qualification=re.split(r',?\s*(?:CGPA|CGPI|GPA|Grade)\s*:',parts[0],maxsplit=1,flags=re.I)[0].rstrip(', ')
+                assign("qualification", qualification[:160], record)
+                if pending_header:
+                    assign('institution',pending_header['text'][:160],pending_header)
+                    pending_header=None
+                if len(parts) > 1 and not current['institution'] and not DATE_RANGE.search(parts[1]) and not re.search(r'%|cgpa|cgpi|gpa|grade|expected|semester',parts[1],re.I):
                     assign("institution", parts[1][:160], record)
-                for part in parts[2:]:
+                for part in parts[1:]:
                     if DATE_RANGE.search(part) or re.fullmatch(DATE, part, re.I):
                         assign("period", part[:80], record)
                     elif re.search(r"cgpa|gpa|grade|%|percentage", part, re.I):
                         assign("grade", part[:80], record)
                     elif re.search(r"expected|graduat", part, re.I):
-                        assign("expected_graduation", part[:80], record)
+                        graduation=re.search(r'(?:expected\s+graduation|graduating|graduation)\s*[:\-]?\s*(?:19|20)\d{2}',part,re.I)
+                        assign("expected_graduation", graduation.group() if graduation else part[:80], record)
+                grade=re.search(r'(?:CGPA|CGPI|GPA|Grade)\s*:\s*[\d.]+',text,re.I)
+                if grade:assign('grade',grade.group(),record)
                 for key, value in row_values.items():
                     if key in current and value:
                         assign(key, value[:160 if key in {"qualification", "institution", "location", "specialization"} else 80], record)
             last_blank = False
         elif current is not None:
             if tech_match and field in {"projects", "experience"}:
-                assign("technologies", technologies(tech_match[1], record, explicit=True), record)
+                explicit_tools=technologies(tech_match[1], record, explicit=True)
+                assign("technologies", explicit_tools, record)
+                if field=='projects' and re.match(r'^tools\s*:',text,re.I):assign('tools',explicit_tools,record)
             elif labeled:
                 key = labeled[1].lower()
-                target = {"role": "role", "contribution": "role", "company": "organization", "organization": "organization", "institution": "institution", "university": "institution", "location": "location", "date": "period", "dates": "period", "duration": "period", "period": "period", "specialization": "specialization", "specialisation": "specialization", "cgpa": "grade", "grade": "grade", "percentage": "grade", "expected graduation": "expected_graduation"}.get(key)
+                target = {"role": "role", "contribution": "role", "repository":"repository", "deployment":"deployment_url", "deployment url":"deployment_url", "live demo":"deployment_url", "company": "organization", "organization": "organization", "institution": "institution", "university": "institution", "location": "location", "date": "period", "dates": "period", "duration": "period", "period": "period", "specialization": "specialization", "specialisation": "specialization", "cgpa": "grade", "grade": "grade", "percentage": "grade", "expected graduation": "expected_graduation"}.get(key)
                 if target in current:
                     assign(target, labeled[2][:160 if target not in {"grade", "period", "expected_graduation"} else 80], record)
+                elif key in {"outcome", "outcomes", "result", "results"} and field == "projects":
+                    assign('outcomes',[labeled[2]],record)
                 elif key in {"responsibilities", "achievements"} and field == "experience":
                     assign(key, [labeled[2]], record)
             elif url_only and field == "projects":
@@ -379,8 +427,8 @@ def parse_entries(field, records, values, put, technologies, warnings):
                 if not current["url"]:
                     assign("url", links[0], record)
                 assign("links", links, record)
-            elif date and len(text.split()) <= 8:
-                assign("period", date.group()[:80], record)
+            elif (date or re.fullmatch(DATE,text,re.I)) and len(text.split()) <= 8:
+                assign("period", (date.group() if date else text)[:80], record)
             elif field in {"experience", "projects"}:
                 description(text, record)
                 assign("technologies", technologies(text, record), record)
@@ -414,7 +462,7 @@ def parse_entries(field, records, values, put, technologies, warnings):
             warnings.append(f"{field.capitalize()}: {required} not detected; complete or deselect this entry before confirmation.")
 
 
-def anchored_ai_values(proposal, blocks):
+def anchored_ai_values(proposal, blocks, *, decisions=None):
     """Validate source text AND section/entry association, not merely substring presence."""
     values = proposal.values.model_dump()
     local, local_evidence, _ = deterministic_extract(blocks)
@@ -430,6 +478,7 @@ def anchored_ai_values(proposal, blocks):
         block = by_id.get(claim.block_id) if claim else None
         field = path.split(".")[0]
         supported = bool(claim and block and not claim.inferred and claim.quote.strip() and normalize(claim.quote) in normalize(block["text"]) and normalize(value).removeprefix("https://").removeprefix("http://") in normalize(claim.quote))
+        reason='source_literal_not_supported' if not supported else ''
         group = ""
         if supported and field in {"projects", "education", "experience"}:
             anchor = "name" if field == "projects" else "qualification" if field == "education" else "role"
@@ -445,18 +494,25 @@ def anchored_ai_values(proposal, blocks):
             same = next((p for p in candidates if p.get("group_id") in groups and p.get("group_id")
                 and any(normalize(claim.quote) in normalize(ref["quote"]) for ref in ([p["source"]] if p.get("source") else []) + p.get("references", []))), None)
             supported = bool(field in block_sections.get(claim.block_id, set()) and same)
+            if not supported:reason='entry_or_section_not_supported'
+            if supported and '.technologies.' in path and any(normalize(value)!=normalize(token) and normalize(value) in normalize(token) for i in matching for token in local[field][i].get('technologies',[])):
+                supported=False;reason='technology_name_fragment'
             group = same["group_id"] if same else ""
         elif supported and field == "career_objective":
             supported = "career_objective" in block_sections.get(claim.block_id, set())
+            if not supported:reason='statement_section_not_supported'
         elif supported and field == "skills":
             supported = any(normalize(value) == normalize(skill) for skill in local["skills"]) or bool(re.search(r"(?:skills|technologies|tools)\s*:", block["text"], re.I))
+            if not supported:reason='skill_not_explicitly_supported'
+        if decisions is not None:
+            decisions.append({'path':path,'block_id':claim.block_id if claim else None,'status':'accepted' if supported else 'withheld','reason':reason})
         if not supported:
             rejected += 1
             continue
         validated[path] = value
         heading = next((s["heading"] for s in segment(blocks) if s["field"] == field and any(r["block"]["block_id"] == claim.block_id for r in s["records"])), "")
         proof[path] = FieldEvidence(source=SourceReference(block_id=claim.block_id, page=block.get("page"), paragraph=block.get("paragraph"), line=claim.line, position=block.get("position"), quote=claim.quote),
-            confidence=claim.confidence, parser_version="2", classification="ambiguous" if claim.confidence == "low" else claim.classification, method="groq", warning=claim.warning,
+            confidence=claim.confidence, parser_version="3", classification="ambiguous" if claim.confidence == "low" else claim.classification, method="groq", warning=claim.warning,
             original_text=str(value), source_section=field, group_id=group, heading=heading,
             statement_type=statement_type(heading) if field == "career_objective" else "").model_dump()
     cleaned, cleaned_proof = CandidateDraft().model_dump(), {}
@@ -492,6 +548,8 @@ def merge_enhancement(local, local_evidence, enhanced, enhanced_evidence):
             # Preserve a full local statement; don't replace it with a model summary.
             if field == "career_objective" and values[field]:
                 continue
+            if values[field] and normalize(values[field]) != normalize(value):
+                continue  # Conflicting readings are retained separately in the audit.
             values[field] = value
             if field in enhanced_evidence:
                 evidence[field] = enhanced_evidence[field]

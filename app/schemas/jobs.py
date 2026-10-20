@@ -52,12 +52,12 @@ class Job(Schema):
     experience_years_max: int = Field(ge=0, le=3)
     description: str = Field(max_length=5000)  # Intentionally empty in labeled edge cases.
     responsibilities: list[str] = Field(max_length=12)
-    required_skills: list[str] = Field(min_length=1, max_length=30)
+    required_skills: list[str] = Field(default_factory=list, max_length=30)
     preferred_skills: list[str] = Field(max_length=30)
     tools_and_technologies: list[str] = Field(max_length=30)
     education_requirements: list[str] = Field(max_length=10)
     language_requirements: list[str] = Field(max_length=10)
-    normalized_skill_tokens: list[str] = Field(min_length=1, max_length=60)
+    normalized_skill_tokens: list[str] = Field(default_factory=list, max_length=60)
     category: str = Field(min_length=1, max_length=80)
     salary: Salary | None = None
     currency: Currency

@@ -2,9 +2,7 @@ from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from copy import deepcopy
 import hashlib
-import json
 import os
-from pathlib import Path
 import statistics
 import subprocess
 import sys
@@ -163,3 +161,15 @@ def test_controlled_evaluation_cases_reference_real_jobs_and_factual_properties(
         if 'category_match' in checks:assert candidate['category']==job.category
         if 'availability' in checks:assert availability(job,REFERENCE_DATE)==checks['availability']
         if 'shared_duplicate_group' in checks:assert len({j.id for j in jobs})==2 and len({j.metadata.duplicate_group for j in jobs})==1
+
+
+def test_http_search_response_performance(client):
+    response = client.get('/api/v1/jobs?keyword=Python&page_size=50')
+    assert response.status_code == 200 and len(response.json()['items']) == 50
+    elapsed = []
+    for _ in range(8):
+        start = time.perf_counter()
+        response = client.get('/api/v1/jobs?keyword=Python&page_size=50')
+        elapsed.append(time.perf_counter() - start)
+        assert response.status_code == 200 and response.json()['matched_total'] > 50
+    assert statistics.median(elapsed) < 0.5

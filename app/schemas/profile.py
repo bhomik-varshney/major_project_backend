@@ -44,7 +44,12 @@ class Project(Schema):
     period: str = Field(default="", max_length=80)
     links: list[str] = Field(default_factory=list, max_length=10)
 
-    @field_validator("url")
+    tools: list[str] = Field(default_factory=list,max_length=40)
+    outcomes: list[str] = Field(default_factory=list,max_length=30)
+    repository: str = Field(default="",max_length=500)
+    deployment_url: str = Field(default="",max_length=500)
+
+    @field_validator("url", "repository", "deployment_url")
     @classmethod
     def safe_link(cls, value):
         if value and not value.startswith(("http://", "https://")):
@@ -56,6 +61,11 @@ class SkillSubmission(Schema):
     name: str = Field(min_length=1, max_length=160)
     source: str = "manual"
     verified: bool = False
+
+
+class AdditionalResumeSection(Schema):
+    heading: str = Field(min_length=1,max_length=160)
+    content: str = Field(min_length=1,max_length=6000)
 
 
 class ProfileInput(Schema):
@@ -73,6 +83,8 @@ class ProfileInput(Schema):
     experience_level: Literal["", "student", "graduate", "early_career", "experienced"] = ""
     certifications: list[str] = Field(default_factory=list, max_length=30)
     achievements: list[str] = Field(default_factory=list, max_length=30)
+    additional_sections: list[AdditionalResumeSection] = Field(default_factory=list,max_length=30)
+    publications: list[str] = Field(default_factory=list, max_length=30)
     links: list[str] = Field(default_factory=list, max_length=30)
 
     @field_validator("skills", mode="before", json_schema_input_type=list[str | SkillSubmission])
@@ -101,7 +113,7 @@ class ProfileInput(Schema):
             raise ValueError("Enter a valid email address.")
         return value
 
-    @field_validator("skills", "preferred_roles", "preferred_locations", "certifications", "achievements")
+    @field_validator("skills", "preferred_roles", "preferred_locations", "certifications", "achievements", "publications")
     @classmethod
     def normalize_labels(cls, values):
         result, seen = [], set()

@@ -30,9 +30,9 @@ def save_edited_draft(db, extraction, payload):
     old_leaves, new_leaves = leaves(extraction.values), leaves(values)
     evidence = {}
     remap = {}
-    for field in ("skills", "links", "certifications", "achievements", "education", "projects", "experience"):
+    for field in ("skills", "links", "certifications", "achievements", "publications", "education", "projects", "experience", "additional_sections"):
         old_items = extraction.values.get(field, [])
-        anchor = {"education": "qualification", "projects": "name", "experience": "role"}.get(field)
+        anchor = {"education": "qualification", "projects": "name", "experience": "role", "additional_sections":"heading"}.get(field)
         for index, item in enumerate(values[field]):
             matches = [i for i, old in enumerate(old_items) if old == item]
             if not matches and anchor:

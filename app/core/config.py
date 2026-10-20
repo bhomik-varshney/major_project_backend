@@ -26,10 +26,37 @@ class Settings(BaseSettings):
     groq_api_key_2: SecretStr = Field(default=SecretStr(""), repr=False)
     groq_api_key_3: SecretStr = Field(default=SecretStr(""), repr=False)
     groq_model: str = "openai/gpt-oss-120b"
-    groq_max_output_tokens: int = Field(default=2500, ge=512, le=8000)
+    groq_text_model: str = ''
+    groq_vision_model_primary: str = 'qwen/qwen3.8-27b'
+    groq_vision_model_fallback: str = ''
+    render_max_pages: int = Field(default=12, ge=1, le=20)
+    vision_max_pages: int = Field(default=3, ge=1, le=5)
+    render_max_dimension: int = Field(default=2200, ge=800, le=2400)
+    resume_max_repair_cycles: int = Field(default=3,ge=0,le=3)
+    resume_repair_timeout_seconds: float = Field(default=45,ge=1,le=90)
+    preparation_timeout_seconds: float = Field(default=50, ge=1, le=90)
+    ocr_enabled: bool = True
+    libreoffice_path: str = ''
+    groq_source_batch_chars: int = Field(default=9000,ge=1000,le=12000)
+    groq_max_batches: int = Field(default=8,ge=1,le=12)
+    groq_max_output_tokens: int = Field(default=3500, ge=512, le=8000)
     groq_timeout_seconds: float = Field(default=30, gt=0, le=30)
     groq_key_cooldown_seconds: float = Field(default=5, ge=0, le=120)
     crew_timeout_seconds: float = Field(default=75, ge=1, le=120)
+    matching_timeout_seconds: float = Field(default=120,ge=5,le=180)
+    matching_minimum_score: float = Field(default=30,ge=0,le=100)
+    matching_critical_penalty: float = Field(default=15,ge=0,le=30)
+    matching_unknown_ceiling_base: float = Field(default=50,ge=0,le=100)
+    matching_embedding_timeout_seconds: float = Field(default=30,ge=1,le=60)
+    matching_ai_top_k: int = Field(default=8,ge=1,le=12)
+    matching_weights: dict[str,float] = Field(default_factory=lambda:dict(semantic=.20,required_skills=.30,preferred_skills=.08,title_category=.12,project_experience=.10,education=.04,experience=.06,location=.05,interests=.05))
+    matching_embedding_provider: Literal['none','ollama'] = 'none'
+    matching_embedding_model: str = 'nomic-embed-text'
+    matching_embedding_url: str = 'http://127.0.0.1:11434/api/embed'
+
+    @property
+    def text_model(self):
+        return self.groq_text_model or self.groq_model
 
     @property
     def groq_keys(self) -> tuple[SecretStr, ...]:
@@ -48,6 +75,12 @@ class Settings(BaseSettings):
     @model_validator(mode="after")
     def validate_origins(self):
         from urllib.parse import urlparse
+        expected={'semantic','required_skills','preferred_skills','title_category','project_experience','education','experience','location','interests'}
+        if set(self.matching_weights)!=expected or any(not 0<=weight<=1 for weight in self.matching_weights.values()) or abs(sum(self.matching_weights.values())-1)>1e-6:
+            raise ValueError('Matching weights must contain the documented components and sum to one')
+        embedding_url=urlparse(self.matching_embedding_url)
+        if embedding_url.scheme!='http' or embedding_url.hostname not in {'127.0.0.1','localhost','::1'} or embedding_url.username or embedding_url.password or embedding_url.query:
+            raise ValueError('The local embedding endpoint must use loopback HTTP without credentials or query parameters')
         for origin in self.origins:
             if urlparse(origin).hostname not in {"localhost", "127.0.0.1", "[::1]", "::1"}:
                 raise ValueError("This milestone supports loopback workspace origins only.")

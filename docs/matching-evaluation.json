@@ -1,0 +1,259 @@
+{
+  "dataset_version": "2026-10-demo-v2",
+  "reference_date": "2026-10-19",
+  "jobs": 1000,
+  "cases": [
+    {
+      "case": "backend_student",
+      "compared": 997,
+      "recommended": 45,
+      "relevant_in_corpus": 47,
+      "hybrid": {
+        "precision_at_10": 1.0,
+        "recall_at_10": 0.2127659574468085,
+        "ndcg_at_10": 1.0
+      },
+      "served_hybrid": {
+        "precision_at_10": 1.0,
+        "recall_at_10": 0.2127659574468085,
+        "ndcg_at_10": 1.0
+      },
+      "baseline": {
+        "precision_at_10": 1.0,
+        "recall_at_10": 0.2127659574468085,
+        "ndcg_at_10": 1.0
+      },
+      "recommendation_recall": 0.5106382978723404,
+      "seconds": 0.9234,
+      "semantic_fallback": true,
+      "consistent_repeat": true,
+      "top_ids": [
+        "demo-backend-0426",
+        "demo-backend-0886",
+        "demo-backend-0150",
+        "demo-backend-0104",
+        "demo-backend-0242",
+        "demo-backend-intern",
+        "demo-backend-0472",
+        "demo-backend-0656",
+        "demo-backend-0518",
+        "demo-backend-0058"
+      ]
+    },
+    {
+      "case": "frontend_aliases",
+      "compared": 997,
+      "recommended": 55,
+      "relevant_in_corpus": 68,
+      "hybrid": {
+        "precision_at_10": 1.0,
+        "recall_at_10": 0.14705882352941177,
+        "ndcg_at_10": 1.0
+      },
+      "served_hybrid": {
+        "precision_at_10": 1.0,
+        "recall_at_10": 0.14705882352941177,
+        "ndcg_at_10": 1.0
+      },
+      "baseline": {
+        "precision_at_10": 1.0,
+        "recall_at_10": 0.14705882352941177,
+        "ndcg_at_10": 1.0
+      },
+      "recommendation_recall": 0.6617647058823529,
+      "seconds": 0.9066,
+      "semantic_fallback": true,
+      "consistent_repeat": true,
+      "top_ids": [
+        "demo-frontend-0701",
+        "demo-frontend-0885",
+        "demo-frontend-0333",
+        "demo-frontend-0609",
+        "demo-web-0429",
+        "demo-frontend-0149",
+        "demo-frontend-0931",
+        "demo-frontend-0563",
+        "demo-web-0291",
+        "demo-frontend-0425"
+      ]
+    },
+    {
+      "case": "data_analyst",
+      "compared": 997,
+      "recommended": 162,
+      "relevant_in_corpus": 43,
+      "hybrid": {
+        "precision_at_10": 0.9,
+        "recall_at_10": 0.20930232558139536,
+        "ndcg_at_10": 0.933745776545611
+      },
+      "served_hybrid": {
+        "precision_at_10": 0.9,
+        "recall_at_10": 0.20930232558139536,
+        "ndcg_at_10": 0.933745776545611
+      },
+      "baseline": {
+        "precision_at_10": 1.0,
+        "recall_at_10": 0.23255813953488372,
+        "ndcg_at_10": 1.0
+      },
+      "recommendation_recall": 1.0,
+      "seconds": 1.2898,
+      "semantic_fallback": true,
+      "consistent_repeat": true,
+      "top_ids": [
+        "demo-data-intern",
+        "demo-data-analysis-0844",
+        "demo-data-analysis-0384",
+        "demo-data-analysis-0936",
+        "demo-data-analysis-0568",
+        "demo-data-analysis-0660",
+        "demo-data-analysis-0752",
+        "demo-data-analysis-0476",
+        "demo-renewable-energy-0744",
+        "demo-data-analysis-0292"
+      ]
+    },
+    {
+      "case": "design_student",
+      "compared": 997,
+      "recommended": 26,
+      "relevant_in_corpus": 44,
+      "hybrid": {
+        "precision_at_10": 1.0,
+        "recall_at_10": 0.22727272727272727,
+        "ndcg_at_10": 1.0
+      },
+      "served_hybrid": {
+        "precision_at_10": 1.0,
+        "recall_at_10": 0.22727272727272727,
+        "ndcg_at_10": 1.0
+      },
+      "baseline": {
+        "precision_at_10": 1.0,
+        "recall_at_10": 0.22727272727272727,
+        "ndcg_at_10": 1.0
+      },
+      "recommendation_recall": 0.5909090909090909,
+      "seconds": 1.2351,
+      "semantic_fallback": true,
+      "consistent_repeat": true,
+      "top_ids": [
+        "demo-ui-ux-0765",
+        "demo-ui-ux-0075",
+        "demo-product-design-0030",
+        "demo-ui-ux-0213",
+        "demo-ui-ux-0903",
+        "demo-ui-ux-0351",
+        "demo-ui-ux-0489",
+        "demo-ui-ux-0627",
+        "demo-product-design-0996",
+        "demo-product-design-0306"
+      ]
+    },
+    {
+      "case": "sparse_backend",
+      "compared": 997,
+      "recommended": 1,
+      "relevant_in_corpus": 69,
+      "hybrid": {
+        "precision_at_10": 1.0,
+        "recall_at_10": 0.14492753623188406,
+        "ndcg_at_10": 1.0
+      },
+      "served_hybrid": {
+        "precision_at_10": 0.1,
+        "recall_at_10": 0.014492753623188406,
+        "ndcg_at_10": 0.22009176629808017
+      },
+      "baseline": {
+        "precision_at_10": 0.7,
+        "recall_at_10": 0.10144927536231885,
+        "ndcg_at_10": 0.7909506325094736
+      },
+      "recommendation_recall": 0.014492753623188406,
+      "seconds": 0.9576,
+      "semantic_fallback": true,
+      "consistent_repeat": true,
+      "top_ids": [
+        "demo-backend-intern"
+      ]
+    },
+    {
+      "case": "ml_student",
+      "compared": 997,
+      "recommended": 63,
+      "relevant_in_corpus": 67,
+      "hybrid": {
+        "precision_at_10": 1.0,
+        "recall_at_10": 0.14925373134328357,
+        "ndcg_at_10": 1.0
+      },
+      "served_hybrid": {
+        "precision_at_10": 1.0,
+        "recall_at_10": 0.14925373134328357,
+        "ndcg_at_10": 1.0
+      },
+      "baseline": {
+        "precision_at_10": 1.0,
+        "recall_at_10": 0.14925373134328357,
+        "ndcg_at_10": 1.0
+      },
+      "recommendation_recall": 0.7313432835820896,
+      "seconds": 1.0489,
+      "semantic_fallback": true,
+      "consistent_repeat": true,
+      "top_ids": [
+        "demo-machine-learning-0202",
+        "demo-machine-learning-0478",
+        "demo-machine-learning-0386",
+        "demo-machine-learning-0156",
+        "demo-ml-intern",
+        "demo-machine-learning-0110",
+        "demo-machine-learning-0800",
+        "demo-machine-learning-0432",
+        "demo-machine-learning-0018",
+        "demo-machine-learning-0294"
+      ]
+    }
+  ],
+  "label_policy": "Authored career-domain labels before ranking: a relevant job belongs to a listed category. Broad proxy labels do not establish real-world suitability.",
+  "metric_policy": "Hybrid and baseline ranking metrics use all compared jobs before thresholding. served_hybrid measures thresholded output; precision@10 always divides by 10.",
+  "minimum_score": 30,
+  "provider": "none",
+  "live_embeddings_evaluated": false,
+  "live_ai_review_evaluated": false,
+  "aggregate": {
+    "hybrid": {
+      "precision_at_10": 0.983333,
+      "recall_at_10": 0.181764,
+      "ndcg_at_10": 0.988958
+    },
+    "served_hybrid": {
+      "precision_at_10": 0.833333,
+      "recall_at_10": 0.160024,
+      "ndcg_at_10": 0.858973
+    },
+    "baseline": {
+      "precision_at_10": 0.95,
+      "recall_at_10": 0.178393,
+      "ndcg_at_10": 0.965158
+    },
+    "mean_recommendation_recall": 0.584858,
+    "required_missing_oracle_checks": 8,
+    "required_missing_oracle_correct": 8,
+    "required_missing_oracle_accuracy": 1.0,
+    "explanation_id_checks": 9222,
+    "structural_explanation_support_rate": 1.0,
+    "unsupported_reason_rate": 0.0,
+    "mean_seconds": 1.0602,
+    "fallback_frequency": 1,
+    "repeat_consistency": 1
+  },
+  "limitations": [
+    "Category labels are synthetic domain proxies, not human hiring judgments.",
+    "Explanation support checks validate stored catalog membership and exact text, not general language truth.",
+    "Six profiles and hand-written skill oracles are a regression fixture, not a benchmark of general accuracy.",
+    "Embedding and AI review quality require separately configured live provider evaluation."
+  ]
+}

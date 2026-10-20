@@ -1,0 +1,41 @@
+{
+  "synthetic_only": true,
+  "status": "completed",
+  "jobs_scored": 997,
+  "stages": [
+    "preparing",
+    "normalizing",
+    "calculating_baseline",
+    "calculating_hybrid",
+    "generating_explanations",
+    "validating"
+  ],
+  "providers": {
+    "embeddings": {
+      "provider": "none",
+      "model": null,
+      "status": "not_configured",
+      "cache_hits": 0,
+      "cache_misses": 0
+    },
+    "ai_review": {
+      "status": "completed",
+      "reviewed_jobs": 3,
+      "model": "openai/gpt-oss-120b",
+      "engine": "crewai.Crew",
+      "tasks": [
+        "Recommendation Explanation Agent",
+        "Ranking Validation Agent"
+      ]
+    }
+  },
+  "validation": {
+    "checked": 997,
+    "unsupported_reasons": 0,
+    "duplicate_recommendations": 0,
+    "score_errors": 0,
+    "stable_order": true,
+    "warnings": []
+  },
+  "ai_selected_explanations": 3
+}

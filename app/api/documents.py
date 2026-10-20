@@ -18,7 +18,11 @@ def policy(request: Request, user: User = Depends(current_user)):
     return {"formats": ["pdf", "docx", "txt"], "max_bytes": request.app.state.settings.max_document_bytes,
         "max_documents": request.app.state.settings.max_documents_per_user, "extraction_available": True,
         "groq_configured": bool(request.app.state.settings.groq_keys),
-        "groq_model": request.app.state.settings.groq_model, "ocr_available": False}
+        "groq_model": request.app.state.settings.text_model,
+        "vision_primary": request.app.state.settings.groq_vision_model_primary,
+        "vision_fallback": request.app.state.settings.groq_vision_model_fallback,
+        "ocr_available": request.app.state.settings.ocr_enabled and bool(__import__('shutil').which('tesseract')),
+        "audit_available": True}
 
 
 def serialize_document(db, document):
@@ -93,3 +97,12 @@ def delete_document(document_id: str, user: User = Depends(current_user), db: Se
     add_activity(db, user.id, "document_deleted", "Document and its stored contents removed.")
     db.commit()
     return Response(status_code=204)
+
+
+@router.get('/{document_id}/original')
+def original_file(document_id:str,user:User=Depends(current_user),db:Session=Depends(get_db)):
+    document=owned_document(db,user.id,document_id)
+    # Force download: document content is never executable same-origin HTML.
+    suffix=document.filename.rsplit('.',1)[-1].lower()
+    return Response(document.content,media_type=document.content_type,headers={'Cache-Control':'no-store',
+        'Content-Disposition':f'attachment; filename="original-resume.{suffix}"','X-Content-Type-Options':'nosniff'})

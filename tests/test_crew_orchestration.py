@@ -28,7 +28,9 @@ def success_child(prepared, settings, manager, owner, deadline, scratch, output)
 
 
 def settings_at(tmp_path):
-    return Settings(document_storage_path=tmp_path/'private', crew_timeout_seconds=1)
+    # Include interpreter/SQLAlchemy import time when macOS spawns a child.
+    # The timeout test still holds its child well beyond this deadline.
+    return Settings(document_storage_path=tmp_path/'private', crew_timeout_seconds=3)
 
 
 def test_spawned_runner_shares_key_state_and_validates_result(tmp_path):

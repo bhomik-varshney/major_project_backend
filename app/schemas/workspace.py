@@ -45,11 +45,13 @@ class SummaryResponse(BaseModel):
     profile_skill_count: int
     extracted_skill_count: int = 0
     recommended_job_count: int | None = None
+    latest_matching_status: str | None = None
+    matching_stale: bool = False
     skill_gap_count: int | None = None
     pending_approval_count: int | None = None
     application_status_summary: dict[str, int] | None = None
     recent_activity: list[ActivityResponse]
     feature_states: dict[str, str] = {
-        "extraction": "available", "jobs": "seeded_demo", "matching": "planned",
-        "applications": "planned", "orchestration": "resume_only",
+        "extraction": "available", "jobs": "seeded_demo", "matching": "available",
+        "applications": "planned", "orchestration": "resume_and_matching",
     }

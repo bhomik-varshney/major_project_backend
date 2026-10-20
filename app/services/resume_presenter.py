@@ -37,8 +37,8 @@ def review_view(values, evidence, status, applied_fields=(), method="determinist
     statement = fact(values["career_objective"], "career_objective")
     structured = {"personal_info": {key: fact(values[key], key) for key in ("name", "email", "phone", "location")},
         "profile_statement": {"text": statement, "heading": statement["heading"], "type": statement["statement_type"] or "not_found"},
-        **{field: wrap(values[field], field) for field in ("education", "skills", "experience", "projects", "certifications", "achievements", "links")},
-        "warnings": list(warnings), "extraction_metadata": {"parser_version": "2" if any(p.get("parser_version") == "2" for p in evidence.values()) else "legacy" if evidence else "unknown", "method": method,
+        **{field: wrap(values[field], field) for field in ("education", "skills", "experience", "projects", "certifications", "achievements", "publications", "links")},
+        "warnings": list(warnings), "extraction_metadata": {"parser_version": "3" if any(p.get("parser_version") == "3" for p in evidence.values()) else "2" if any(p.get("parser_version") == "2" for p in evidence.values()) else "legacy" if evidence else "unknown", "method": method,
             "reading_order_uncertain": any("column" in warning.lower() for warning in warnings)}}
     # Optional legacy preference evidence still participates in the same review rules.
     for path, value in leaves(values).items():
@@ -69,6 +69,6 @@ def proposal_from_structured(structured):
     for field, value in raw["personal_info"].items():
         values[field] = unpack(value, field)
     values["career_objective"] = unpack(raw["profile_statement"]["text"], "career_objective")
-    for field in ("education", "skills", "experience", "projects", "certifications", "achievements", "links"):
+    for field in ("education", "skills", "experience", "projects", "certifications", "achievements", "publications", "links"):
         values[field] = unpack(raw[field], field)
     return AIProposal.model_validate({"values": values, "claims": claims})

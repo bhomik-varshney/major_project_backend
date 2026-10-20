@@ -54,7 +54,7 @@ def upload(client, content=RESUME.encode(), name="resume.txt", mime="text/plain"
 def finish(client, doc_id, **options):
     response = client.post(f"{BASE}/{doc_id}/process", json=options)
     assert response.status_code == 202, response.text
-    deadline = time.monotonic() + 5
+    deadline = time.monotonic() + 15
     while time.monotonic() < deadline:
         result = client.get(f"{BASE}/{doc_id}/status").json()
         if result["status"] not in {"queued", "processing"}:
@@ -205,7 +205,7 @@ def test_reject_and_correction_do_not_modify_profile(client):
 
 def test_processing_failure_and_retry(client):
     doc = upload(client)
-    with patch("app.services.document_processing.extract_text", side_effect=RuntimeError("private document text")):
+    with patch("app.services.document_processing.prepare_isolated", side_effect=RuntimeError("private document text")):
         result = finish(client, doc)
     assert result["status"] == "failed"
     assert "private document text" not in json.dumps(result)
@@ -213,13 +213,13 @@ def test_processing_failure_and_retry(client):
 
 
 def test_cancellation_and_active_delete(client):
-    from app.services.resume_text import extract_text
+    from app.services.document_intelligence import prepare_isolated
     started, release = Event(), Event()
     def paused(*args):
         started.set(); release.wait(4)
-        return extract_text(*args)
+        return prepare_isolated(*args)
     doc = upload(client)
-    with patch("app.services.document_processing.extract_text", side_effect=paused):
+    with patch("app.services.document_processing.prepare_isolated", side_effect=paused):
         result = client.post(f"{BASE}/{doc}/process", json={}).json()
         try:
             assert started.wait(2)

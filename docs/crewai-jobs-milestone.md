@@ -1,5 +1,8 @@
 # Resume Intelligence Crew and seeded jobs
 
+Historical text-first checkpoint. Current OCR, visual-task and audit implementation: [multimodal Resume Intelligence](multimodal-resume-intelligence.md).
+The subsequent [1,000-job dataset milestone](seeded-jobs-dataset.md) supersedes the original ten-job provider details below.
+
 19 October 2026. Local implementation in the existing backend and frontend. No deployment, commit, push, public authentication, external job integration, matching, or application automation is included.
 
 ## Reused foundation
@@ -67,7 +70,7 @@ Backend-only slots are `GROQ_API_KEY_1`, `_2`, `_3`. Empty slots are skipped; du
 
 401/403 disable a key until application restart and rotate. 429 (including quota limits), retryable 408/409/425/5xx, timeouts and network failures cool down and rotate. Cooldown grows exponentially from five seconds and honors numeric Retry-After up to 120 seconds. There is no waiting/retry loop around unavailable keys; exhausting the bounded attempts returns a controlled error immediately. Nonretryable schema/request/input-limit errors do not blindly cycle all keys.
 
-The pool belongs to one application instance and its children. Independent application replicas need a shared external coordination store. Multiple keys in one Groq account can share the same quotas; rotation does not increase those quotas. The default output reservation is 2,500 tokens, configurable with `GROQ_MAX_OUTPUT_TOKENS`. Large source/schema/output requests can still exceed an account's limits and fall back safely. Restart after changing credentials.
+The pool belongs to one application instance and its children. Independent application replicas need a shared external coordination store. Multiple keys in one Groq account can share the same quotas; rotation does not increase those quotas. The current default extraction output reservation is 3,500 tokens, configurable with `GROQ_MAX_OUTPUT_TOKENS`. Large source/schema/output requests can still exceed an account's limits and fall back safely. Restart after changing credentials.
 
 ## Database and API compatibility
 

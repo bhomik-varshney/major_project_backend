@@ -18,7 +18,7 @@ class RotatingGroqLLM(BaseLLM):
     _schema_name = PrivateAttr()
 
     def __init__(self, transport, output_model, owner, deadline, schema_name):
-        super().__init__(model=transport.settings.groq_model, provider='groq', temperature=0)
+        super().__init__(model=getattr(transport.settings,'text_model',transport.settings.groq_model), provider='groq', temperature=0)
         self._transport, self._schema = transport, strict_schema(output_model)
         self._owner, self._deadline = owner, deadline
         self._schema_name = schema_name
@@ -38,13 +38,26 @@ class RotatingGroqLLM(BaseLLM):
             messages=[{'role':'user','content':messages}]
         safe_messages=[{'role':m['role'],'content':m['content']} for m in messages if m.get('role') in {'system','user','assistant'} and isinstance(m.get('content'),str)]
         try:
-            raw = self._transport.complete(safe_messages,self._schema,owner=self._owner,deadline=self._deadline,schema_name=self._schema_name)
-            try:
-                value = self._output_model.model_validate_json(raw)
-                require_complete(value)
-            except (ValueError, TypeError):
-                raise ProviderUnavailable('groq_invalid_output', 'Groq returned invalid or incomplete structured output. Limited local extraction is available.') from None
-            return raw
+            options={}
+            if self._output_model.__name__=='ResumeClaims':options={'allow_wait':True}
+            elif self._schema_name=='resume_quality':options={'max_output_tokens':1600,'allow_wait':True}
+            # One bounded retry of the quality task only. GPT-OSS counts hidden
+            # reasoning in the completion allowance, even when it is not returned.
+            attempts=2 if self._schema_name=='resume_quality' else 1
+            for attempt in range(attempts):
+                try:
+                    raw = self._transport.complete(safe_messages,self._schema,owner=self._owner,deadline=self._deadline,schema_name=self._schema_name,**options)
+                    try:
+                        value = self._output_model.model_validate_json(raw)
+                        require_complete(value)
+                    except (ValueError, TypeError):
+                        raise ProviderUnavailable('groq_invalid_output', 'Groq returned invalid or incomplete structured output. Review the retained source-linked draft.') from None
+                    return raw
+                except ProviderUnavailable as exc:
+                    if attempt+1==attempts or exc.code not in {'groq_output_truncated','groq_invalid_output'}:
+                        raise
+                    options['max_output_tokens']=3200
+                    safe_messages=[*safe_messages,{'role':'user','content':'Return a complete JSON object matching the supplied schema. Limit the review to at most 4 priority issues and one short warning. Do not echo claims or source text.'}]
         except ProviderUnavailable as exc:
             self._last_error = exc
             raise

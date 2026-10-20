@@ -6,7 +6,26 @@ from app.schemas.agents import ResumeQualityReport, QualityIssue
 from app.services.resume_structure import leaves, normalize
 
 
-def check_resume(values, evidence):
+def source_check(values,evidence,blocks):
+    """Check every draft leaf against real block/quote spans, not model labels."""
+    by_id={b['block_id']:b for b in blocks};supported=0;problems=[];edited=0
+    for path,value in leaves(values).items():
+        proof=evidence.get(path,{})
+        if proof.get('method')=='user':
+            edited+=1
+            continue
+        refs=proof.get('references') or ([proof['source']] if proof.get('source') else [])
+        valid=bool(refs) and all(ref.get('block_id') in by_id and ref.get('quote','').strip() and normalize(ref['quote']) in normalize(by_id[ref['block_id']]['text']) for ref in refs)
+        quotes=normalize('\n'.join(ref.get('quote','') for ref in refs))
+        if not valid:problems.append({'path':path,'code':'invalid_source_reference'})
+        elif not all(normalize(line).removeprefix('https://').removeprefix('http://') in quotes for line in str(value).splitlines()):
+            problems.append({'path':path,'code':'source_value_mismatch'})
+        else:supported+=1
+    return {'supported_fields':supported,'unsupported_fields':len(problems),'candidate_edited_fields':edited,'problems':problems,
+        'scope':'Literal source support only; this does not establish factual truth or candidate confirmation.'}
+
+
+def check_resume(values, evidence, blocks=None):
     issues,warnings=[],[]
     for field in ('skills','projects'):
         labels=[normalize(v['name'] if isinstance(v,dict) else v) for v in values.get(field,[])]
@@ -27,4 +46,8 @@ def check_resume(values, evidence):
             issues.append(QualityIssue(path=path,code='missing_source'))
     if any(issue.code=='low_confidence' for issue in issues):
         warnings.append('Low-confidence fields require manual review; confidence is heuristic, not a correctness guarantee.')
+    if blocks is not None:
+        checks=source_check(values,evidence,blocks)
+        issues.extend(QualityIssue(**problem) for problem in checks['problems'])
+        if checks['problems']:warnings.append('Some draft values do not match their cited source spans. Correct or deselect them before confirmation.')
     return ResumeQualityReport(issues=issues[:200],warnings=list(dict.fromkeys(warnings))[:30])

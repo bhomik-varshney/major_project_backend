@@ -1,0 +1,33 @@
+Mira Example
+Email: mira@example.com
+Core Competencies
+Python, SQL, Git
+Personal Statement
+Engineering student building reliable campus services.
+Selected Projects
+Campus Directory
+Technologies: Python, FastAPI, SQL
+Tools: Git, Docker
+Outcomes: Reduced repeated data entry in the project demonstration.
+Repository: https://github.com/example/campus-directory
+Deployment: https://example.com/campus
+- Built a directory with searchable student services.
+Academic Background
+B.Tech | Example University | 2023 - 2027 | CGPA: 8.4
+Employment
+Backend Intern | Example Labs | May 2025 - Jul 2025
+- Implemented API validation.
+Certifications
+Cloud Fundamentals - Issued by Example Academy
+Research
+Explored retrieval methods for student information.
+Volunteer Experience
+Helped organise a community learning workshop.
+Leadership
+Coordinated the student development team.
+Languages
+English, Hindi
+Interests
+Accessible software and data visualisation
+References
+Available on request

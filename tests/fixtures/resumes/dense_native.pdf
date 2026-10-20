@@ -1,0 +1,196 @@
+%PDF-1.3
+%‚„œ”
+1 0 obj
+<<
+/Producer (pypdf)
+>>
+endobj
+2 0 obj
+<<
+/Type /Pages
+/Count 2
+/Kids [ 4 0 R 6 0 R ]
+>>
+endobj
+3 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+4 0 obj
+<<
+/Type /Page
+/Resources <<
+/Font <<
+/F1 <<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+/F2 <<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica-Bold
+>>
+>>
+>>
+/MediaBox [ 0.0 0.0 612 792 ]
+/Parent 2 0 R
+/Contents 5 0 R
+/Annots [ <<
+/Type /Annot
+/Subtype /Link
+/Rect [ 35 670 250 682 ]
+/A <<
+/S /URI
+/URI (https\072\057\057example\056com\057native\055portal)
+>>
+>> ]
+>>
+endobj
+5 0 obj
+<<
+/Length 1354
+>>
+stream
+BT /F1 9 Tf 35 755 Td
+(Mira Example) Tj
+0 -16 Td
+(mira@example.com | +91 90000 00000) Tj
+0 -16 Td
+(Computer engineering undergraduate specializing in application development and data systems.) Tj
+0 -16 Td
+(Projects) Tj
+0 -16 Td
+(Nat) Tj /F2 9 Tf (ive Portal - Campus Directory) Tj /F1 9 Tf
+0 -16 Td
+(Python, FastAPI, React GitHub) Tj
+0 -16 Td
+(- Built a campus directory using Python.) Tj
+0 -16 Td
+(Hosted records and search on the campus server.) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(Voice Response Evaluation - Technical Assessment with Multiple Independently Written Title Words) Tj
+0 -16 Td
+(PyTorch, PEFT, FastAPI) Tj
+0 -16 Td
+(- Built a model evaluation service.) Tj
+0 -16 Td
+(Measured scores, speed and failure cases.) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(Health Assistant - Team Project) Tj
+0 -16 Td
+(FastAPI, React/TypeScript) Tj
+0 -16 Td
+(- Built reminders and reports.) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(Traffic Grid - Simulation Project) Tj
+0 -16 Td
+(React Three Fiber, Three.js) Tj
+0 -16 Td
+(- Built a traffic visualization.) Tj
+0 -16 Td
+(Experience) Tj
+0 -16 Td
+(Example Labs - Remote) Tj
+0 -16 Td
+(Backend Developer Intern | May 2025 - Jul 2025) Tj
+0 -16 Td
+(- Built validated API endpoints.) Tj
+0 -16 Td
+(Training Institute - Remote) Tj
+0 -16 Td
+(Machine Learning Trainee | Dec 2024 - Jan 2025) Tj
+0 -16 Td
+(- Compared classifiers on sample data.) Tj
+0 -16 Td
+ET
+endstream
+endobj
+6 0 obj
+<<
+/Type /Page
+/Resources <<
+/Font <<
+/F1 <<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+/F2 <<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica-Bold
+>>
+>>
+>>
+/MediaBox [ 0.0 0.0 612 792 ]
+/Parent 2 0 R
+/Contents 7 0 R
+>>
+endobj
+7 0 obj
+<<
+/Length 713
+>>
+stream
+BT /F1 9 Tf 35 755 Td
+(Education) Tj
+0 -16 Td
+(Example University) Tj
+0 -16 Td
+(B.Tech, Computer Engineering, CGPI: 9.2 | Expected Graduation 2027) Tj
+0 -16 Td
+(Example Senior Secondary School) Tj
+0 -16 Td
+(Class XII, State Board | 95% | 2022-2023) Tj
+0 -16 Td
+(Example Public School) Tj
+0 -16 Td
+(Class X | 98% | 2020-2021) Tj
+0 -16 Td
+(Technical Skills) Tj
+0 -16 Td
+(Languages: Python, JavaScript, TypeScript, C/C++) Tj
+0 -16 Td
+(AI/ML: PyTorch, PEFT, QLoRA) Tj
+0 -16 Td
+(Frameworks & Frontend: FastAPI, React, React Native, React Three Fiber) Tj
+0 -16 Td
+(Tools: Docker, Git) Tj
+0 -16 Td
+(Achievements) Tj
+0 -16 Td
+(- Won the campus hackathon.) Tj
+0 -16 Td
+(- Finished the evaluation challenge.) Tj
+0 -16 Td
+ET
+endstream
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000015 00000 n 
+0000000054 00000 n 
+0000000119 00000 n 
+0000000168 00000 n 
+0000000560 00000 n 
+0000001966 00000 n 
+0000002211 00000 n 
+trailer
+<<
+/Size 8
+/Root 3 0 R
+/Info 1 0 R
+>>
+startxref
+2975
+%%EOF

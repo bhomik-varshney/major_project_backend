@@ -3,28 +3,34 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, create_model
 
-from app.schemas.profile import Education, Experience, ProfileInput, Project, Schema
+from app.schemas.profile import Education, Experience, ProfileInput, Project, Schema, AdditionalResumeSection
 from app.schemas.agent_run import AgentRunResponse
 
-ProfileField = Literal["name", "email", "phone", "location", "career_objective", "education", "skills", "experience", "projects", "preferred_roles", "preferred_locations", "experience_level", "certifications", "achievements", "links"]
+ProfileField = Literal["name", "email", "phone", "location", "career_objective", "education", "skills", "experience", "projects", "preferred_roles", "preferred_locations", "experience_level", "certifications", "achievements", "publications", "links", "additional_sections"]
 
 
 class EducationDraft(Education):
-    institution: str = Field(default="", max_length=160)
-    qualification: str = Field(default="", max_length=160)
+    institution: str = Field(default="", max_length=170)
+    qualification: str = Field(default="", max_length=170)
 
 
 class ExperienceDraft(Experience):
-    organization: str = Field(default="", max_length=160)
-    role: str = Field(default="", max_length=160)
+    organization: str = Field(default="", max_length=170)
+    role: str = Field(default="", max_length=170)
 
 
 class ProjectDraft(Project):
-    name: str = Field(default="", max_length=160)
+    name: str = Field(default="", max_length=170)
+
+
+class AdditionalSectionDraft(AdditionalResumeSection):
+    heading: str = Field(default="",max_length=160)
+    content: str = Field(default="",max_length=6000)
 
 
 class CandidateDraft(ProfileInput):
     name: str = Field(default="", max_length=120)
+    additional_sections: list[AdditionalSectionDraft] = Field(default_factory=list,max_length=30)
     education: list[EducationDraft] = Field(default_factory=list, max_length=20)
     experience: list[ExperienceDraft] = Field(default_factory=list, max_length=20)
     projects: list[ProjectDraft] = Field(default_factory=list, max_length=30)
@@ -46,10 +52,15 @@ class SourceReference(Schema):
 
 
 class FieldEvidence(Schema):
+    canonical_fact_id: str | None = None
+    evidence_ids: list[str] = Field(default_factory=list)
     source: SourceReference | None = None
     confidence: Literal["high", "medium", "low", "unknown"] = "unknown"
     method: Literal["deterministic", "groq", "user"] = "deterministic"
     warning: str | None = Field(default=None, max_length=300)
+    extraction_methods: list[str] = Field(default_factory=list)
+    layout_block_ids: list[str] = Field(default_factory=list)
+    ocr_confidence: float | None = Field(default=None, ge=0, le=1)
     edited: bool = False
     parser_version: str = "legacy"
     classification: Literal["directly_found", "normalized", "ambiguous", "not_found"] = "directly_found"
@@ -68,6 +79,8 @@ class ProcessInput(Schema):
     use_groq: bool = False
     allow_external_processing: bool = False
     restart: bool = False
+    use_vision: bool = False
+    allow_image_processing: bool = False
 
 
 class DraftUpdate(Schema):
@@ -80,8 +93,8 @@ class ExtractionVerification(Schema):
     processing_id: str
     expected_revision: int = Field(ge=1)
     expected_profile_revision: int = Field(ge=0)
-    fields: list[ProfileField] = Field(min_length=1, max_length=15)
-    replace_fields: list[ProfileField] = Field(default_factory=list, max_length=15)
+    fields: list[ProfileField] = Field(min_length=1, max_length=17)
+    replace_fields: list[ProfileField] = Field(default_factory=list, max_length=17)
     confirmed: Literal[True]
 
 
@@ -191,6 +204,7 @@ class StructuredResume(Schema):
     projects: list[ResumeProject] = Field(default_factory=list, max_length=30)
     certifications: list[ResumeFact] = Field(default_factory=list, max_length=30)
     achievements: list[ResumeFact] = Field(default_factory=list, max_length=30)
+    publications: list[ResumeFact] = Field(default_factory=list, max_length=30)
     links: list[ResumeFact] = Field(default_factory=list, max_length=30)
     warnings: list[str] = Field(default_factory=list)
     extraction_metadata: ExtractionMetadata = Field(default_factory=ExtractionMetadata)
@@ -235,6 +249,7 @@ class ProviderResume(Schema):
     projects: list[ProviderProject] = Field(default_factory=list, max_length=30)
     certifications: list[ProviderFact] = Field(default_factory=list, max_length=30)
     achievements: list[ProviderFact] = Field(default_factory=list, max_length=30)
+    publications: list[ProviderFact] = Field(default_factory=list, max_length=30)
     links: list[ProviderFact] = Field(default_factory=list, max_length=30)
     warnings: list[str] = Field(default_factory=list)
     extraction_metadata: ExtractionMetadata = Field(default_factory=ExtractionMetadata)

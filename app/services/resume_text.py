@@ -4,12 +4,12 @@ from tempfile import TemporaryDirectory
 from xml.etree import ElementTree as ET
 from zipfile import ZipFile
 
-from pypdf import PdfReader, mult
+from pypdf import PdfReader
 
 from app.core.errors import AppError
 
 
-def extract_text(content: bytes, filename: str, document_id: str, settings):
+def extract_text(content: bytes, filename: str, document_id: str, settings, *, allow_empty=False):
     root = settings.document_storage_path
     root.mkdir(parents=True, exist_ok=True, mode=0o700)
     blocks, warnings = [], []
@@ -18,7 +18,7 @@ def extract_text(content: bytes, filename: str, document_id: str, settings):
 
     def add(text, page=None, paragraph=None, **metadata):
         nonlocal total
-        text = text.replace("\x00", "").rstrip()
+        text = text.replace("\x00", "")
         available = settings.max_extraction_chars - total
         if available <= 0:
             return
@@ -38,37 +38,57 @@ def extract_text(content: bytes, filename: str, document_id: str, settings):
             with open(path, "xb", opener=lambda p, f: __import__("os").open(p, f, 0o600)) as out:
                 out.write(content)
             if suffix == ".pdf":
+                import pypdfium2 as pdfium
+                from app.services.pdf_native import native_lines,columns_uncertain
                 reader = PdfReader(path, strict=True)
                 page_count = len(reader.pages)
                 if page_count > settings.max_extraction_pages:
                     raise AppError(422, "document_page_limit", "This PDF has too many pages. Upload a shorter document.")
+                for page in reader.pages:
+                    stream=page.get_contents()
+                    if stream is not None and len(stream.get_data())>4*1024*1024:
+                        raise AppError(422,'document_complexity','This PDF page is too complex. Export a simpler text-based PDF.')
+                with pdfium.PdfDocument(content) as native_pdf:
+                    native_pages=[];remaining=settings.max_extraction_chars
+                    for number in range(page_count):
+                        if remaining<=0:
+                            native_pages.append([])
+                            continue
+                        native_page=native_pdf[number]
+                        try:
+                            lines=native_lines(native_page,remaining)
+                            native_pages.append(lines);remaining-=sum(len(line['text']) for line in lines)
+                        finally:native_page.close()
                 for number, page in enumerate(reader.pages, 1):
-                    stream = page.get_contents()
-                    if stream is not None and len(stream.get_data()) > 4 * 1024 * 1024:
-                        raise AppError(422, "document_complexity", "This PDF page is too complex. Export a simpler text-based PDF.")
-                    fragments = []
-                    def visitor(text, cm, tm, font, size):
-                        if text.strip():
-                            matrix = mult(tm, cm)
-                            fragments.append((text, float(matrix[4]), float(matrix[5]), float(size),
-                                bool(font and "bold" in str(font.get("/BaseFont", "")).lower())))
-                    plain = page.extract_text(visitor_text=visitor) or ""
-                    # Preserve content-stream order. Coordinates are evidence, not a license
-                    # to join columns; uncertain column pages require candidate review.
-                    xs = [x for _, x, _, _, _ in fragments]
+                    lines=native_pages[number-1]
+                    annotations=[]
+                    for ref in page.get('/Annots',[]):
+                        annotation=ref.get_object();action=annotation.get('/A',{})
+                        action=action.get_object() if hasattr(action,'get_object') else action
+                        uri=action.get('/URI','');rect=annotation.get('/Rect')
+                        if isinstance(uri,str) and uri.startswith(('https://','http://')) and len(uri)<=500 and rect and len(rect)==4:
+                            annotations.append((uri,[float(v) for v in rect]))
                     width = float(page.mediabox.width)
-                    uncertain = any(x < width * .4 for x in xs) and any(x > width * .5 for x in xs)
+                    uncertain=columns_uncertain(lines,width)
                     if uncertain:
                         warnings.append(f"Page {number}: possible multi-column layout; reading order is uncertain. Columns were not merged.")
-                    if not plain.strip():
-                        warnings.append(f"Page {number}: no usable text; image-only/scanned pages require future OCR.")
-                    for text, x, y, size, bold in fragments:
-                        for line_number, line in enumerate(text.splitlines(), 1):
-                            add(line, page=number, line=line_number, position={"x": x, "y": y, "font_size": size},
-                                bold=bold, page_width=width, reading_order_uncertain=uncertain)
-                    if not fragments and plain.strip():
-                        for line_number, line in enumerate(plain.splitlines(), 1):
-                            add(line, page=number, line=line_number, reading_order_uncertain=True)
+                    if not lines:
+                        warnings.append(f"Page {number}: no selectable text; OCR is needed.")
+                    for line_number,line in enumerate(lines,1):
+                        add(page=number,line=line_number,page_width=width,page_height=float(page.mediabox.height),reading_order_uncertain=uncertain,**line)
+                        # Link destinations are original PDF annotation data, kept
+                        # distinct from visible native text and attached in order.
+                        box=line['native_bbox'];linked=[]
+                        for item in annotations:
+                            uri,rect=item
+                            cx,cy=(rect[0]+rect[2])/2,(rect[1]+rect[3])/2
+                            if box[0]-2<=cx<=box[2]+2 and box[1]-3<=cy<=box[3]+3:
+                                linked.append(item)
+                        for uri,rect in linked:
+                            add(uri,page=number,line=line_number,source_engine='pdf_annotation',source_kind='link_destination',
+                                position={'x':rect[0],'y':rect[1],'font_size':max(1,rect[3]-rect[1])},native_bbox=rect,
+                                page_width=width,page_height=float(page.mediabox.height),reading_order_uncertain=uncertain)
+                            annotations.remove((uri,rect))
             elif suffix == ".docx":
                 ns = {"w": "http://schemas.openxmlformats.org/wordprocessingml/2006/main"}
                 with ZipFile(path) as archive:
@@ -103,8 +123,8 @@ def extract_text(content: bytes, filename: str, document_id: str, settings):
         raise
     except Exception as exc:
         raise AppError(422, "text_extraction_failed", "Text could not be read from this document. Export it again or enter your profile manually.") from exc
-    if not any(block["text"].strip() for block in blocks):
-        raise AppError(422, "no_readable_text", "No readable text was found. Scanned PDFs need OCR, which is not available yet. Upload a text-based file or use manual entry.")
+    if not allow_empty and not any(block["text"].strip() for block in blocks):
+        raise AppError(422, "no_readable_text", "No selectable text was found. Use the document-processing workflow for OCR, upload a text-based file, or use manual entry.")
     if total >= settings.max_extraction_chars and not warnings:
         warnings.append("Text limit reached. Some content may be omitted.")
     return blocks, page_count, warnings

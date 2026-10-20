@@ -3,10 +3,11 @@ from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from app.api.dependencies import current_user, get_db
-from app.db.models import Activity, Document, User, VerificationRecord
+from app.db.models import Activity, Document, User, VerificationRecord, MatchingRun
 from app.repositories.profiles import find_profile
 from app.schemas.workspace import SummaryResponse
 from app.services.profiles import completion, document_skills
+from app.services.matching import run_response
 
 router = APIRouter(tags=["Dashboard"])
 
@@ -15,7 +16,11 @@ router = APIRouter(tags=["Dashboard"])
 def summary(user: User = Depends(current_user), db: Session = Depends(get_db)):
     profile = find_profile(db, user.id)
     facts = profile.facts if profile else {}
+    latest = db.scalar(select(MatchingRun).where(MatchingRun.user_id == user.id).order_by(MatchingRun.created_at.desc()).limit(1))
+    matching = run_response(db, latest) if latest else None
     return SummaryResponse(
+        recommended_job_count=matching.result_count if matching and matching.status in {"completed", "partial"} and not matching.stale else None,
+        latest_matching_status=matching.status if matching else None, matching_stale=matching.stale if matching else False,
         profile_exists=profile is not None, candidate_name=facts.get("name"),
         profile_completion=completion(facts), profile_revision=profile.revision if profile else None,
         verification_state=("verified" if profile.verified else "unverified") if profile else "missing",

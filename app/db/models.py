@@ -119,3 +119,79 @@ class ResumeAgentRun(Base):
     error_code: Mapped[str | None] = mapped_column(String(80), nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
     completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+
+
+class ResumeProcessingAudit(Base):
+    __tablename__ = 'resume_processing_audits'
+    extraction_id: Mapped[str] = mapped_column(ForeignKey('document_extractions.id', ondelete='CASCADE'), primary_key=True)
+    user_id: Mapped[str] = mapped_column(ForeignKey('users.id'), index=True)
+    data: Mapped[dict] = mapped_column(JSON, default=dict, deferred=True)
+
+
+class ResumePageArtifact(Base):
+    __tablename__ = 'resume_page_artifacts'
+    __table_args__ = (UniqueConstraint('extraction_id', 'page', name='uq_resume_page'),)
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=new_id)
+    extraction_id: Mapped[str] = mapped_column(ForeignKey('document_extractions.id', ondelete='CASCADE'), index=True)
+    user_id: Mapped[str] = mapped_column(ForeignKey('users.id'), index=True)
+    page: Mapped[int] = mapped_column(Integer)
+    content: Mapped[bytes] = mapped_column(LargeBinary, deferred=True)
+
+
+class MatchingRun(Base):
+    __tablename__ = 'matching_runs'
+    id: Mapped[str] = mapped_column(String(36),primary_key=True,default=new_id)
+    user_id: Mapped[str] = mapped_column(ForeignKey('users.id'),index=True)
+    profile_revision: Mapped[int] = mapped_column(Integer)
+    candidate_hash: Mapped[str] = mapped_column(String(64))
+    active_user: Mapped[str | None] = mapped_column(String(36),unique=True,nullable=True)
+    status: Mapped[str] = mapped_column(String(40),default='queued')
+    stage: Mapped[str] = mapped_column(String(40),default='queued')
+    candidate_snapshot: Mapped[dict] = mapped_column(JSON,default=dict,deferred=True)
+    request: Mapped[dict] = mapped_column(JSON)
+    config: Mapped[dict] = mapped_column(JSON)
+    dataset_version: Mapped[str] = mapped_column(String(80))
+    dataset_reference_date: Mapped[str] = mapped_column(String(10))
+    total_jobs: Mapped[int] = mapped_column(Integer,default=0)
+    eligible_jobs: Mapped[int] = mapped_column(Integer,default=0)
+    result_count: Mapped[int] = mapped_column(Integer,default=0)
+    provider_metadata: Mapped[dict] = mapped_column(JSON,default=dict)
+    tasks: Mapped[list] = mapped_column(JSON,default=list)
+    warnings: Mapped[list] = mapped_column(JSON,default=list)
+    validation: Mapped[dict] = mapped_column(JSON,default=dict)
+    error_code: Mapped[str | None] = mapped_column(String(80),nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True),default=now)
+    completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True),nullable=True)
+    elapsed_ms: Mapped[int | None] = mapped_column(Integer,nullable=True)
+
+
+class MatchingResult(Base):
+    __tablename__ = 'matching_results'
+    __table_args__ = (UniqueConstraint('run_id','job_id',name='uq_match_run_opportunity'),)
+    id: Mapped[str] = mapped_column(String(36),primary_key=True,default=new_id)
+    run_id: Mapped[str] = mapped_column(ForeignKey('matching_runs.id',ondelete='CASCADE'),index=True)
+    job_id: Mapped[str] = mapped_column(String(100))
+    rank: Mapped[int] = mapped_column(Integer)
+    hybrid_score: Mapped[float] = mapped_column()
+    baseline_score: Mapped[float] = mapped_column()
+    normalized_job: Mapped[dict] = mapped_column(JSON,deferred=True)
+    data: Mapped[dict] = mapped_column(JSON,deferred=True)
+
+
+class EmbeddingCache(Base):
+    __tablename__ = 'embedding_cache'
+    key: Mapped[str] = mapped_column(String(64),primary_key=True)
+    provider: Mapped[str] = mapped_column(String(80))
+    model: Mapped[str] = mapped_column(String(160))
+    vector: Mapped[list] = mapped_column(JSON)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True),default=now)
+
+
+class SavedOpportunity(Base):
+    __tablename__ = 'saved_opportunities'
+    __table_args__ = (UniqueConstraint('user_id','job_id',name='uq_saved_opportunity'),)
+    id: Mapped[str] = mapped_column(String(36),primary_key=True,default=new_id)
+    user_id: Mapped[str] = mapped_column(ForeignKey('users.id'),index=True)
+    job_id: Mapped[str] = mapped_column(String(100))
+    job_snapshot: Mapped[dict] = mapped_column(JSON)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True),default=now)

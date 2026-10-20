@@ -1,0 +1,646 @@
+{
+  "cases": [
+    {
+      "fixture": "one_column.txt",
+      "seconds": 4.488,
+      "status": "awaiting_review",
+      "pages": 0,
+      "raw_evidence": 11,
+      "ocr_blocks": 0,
+      "native_blocks": 11,
+      "entities": 6,
+      "relations": 24,
+      "sections": 5,
+      "projects": 1,
+      "education": 1,
+      "experience": 0,
+      "additional_sections": 0,
+      "grounding": {
+        "supported_fields": 14,
+        "unsupported_fields": 0,
+        "candidate_edited_fields": 0,
+        "problems": [],
+        "scope": "Literal source support only; this does not establish factual truth or candidate confirmation."
+      },
+      "conflicts": 0,
+      "canonical_validation": {
+        "supported_fields": 14,
+        "unsupported_fields": 0,
+        "critical_passed": true
+      },
+      "repair_outcomes": [
+        "validated"
+      ],
+      "agents": [
+        {
+          "name": "vision_layout",
+          "status": "skipped",
+          "model": null,
+          "method": "local"
+        },
+        {
+          "name": "source_validation",
+          "status": "completed",
+          "model": null,
+          "method": "deterministic"
+        }
+      ],
+      "profile_unchanged": true,
+      "oracle_checks": 13,
+      "oracle_correct": 13
+    },
+    {
+      "fixture": "objective_only.txt",
+      "seconds": 0.655,
+      "status": "awaiting_review",
+      "pages": 0,
+      "raw_evidence": 6,
+      "ocr_blocks": 0,
+      "native_blocks": 6,
+      "entities": 4,
+      "relations": 10,
+      "sections": 3,
+      "projects": 0,
+      "education": 0,
+      "experience": 0,
+      "additional_sections": 0,
+      "grounding": {
+        "supported_fields": 4,
+        "unsupported_fields": 0,
+        "candidate_edited_fields": 0,
+        "problems": [],
+        "scope": "Literal source support only; this does not establish factual truth or candidate confirmation."
+      },
+      "conflicts": 0,
+      "canonical_validation": {
+        "supported_fields": 4,
+        "unsupported_fields": 0,
+        "critical_passed": true
+      },
+      "repair_outcomes": [
+        "validated"
+      ],
+      "agents": [
+        {
+          "name": "vision_layout",
+          "status": "skipped",
+          "model": null,
+          "method": "local"
+        },
+        {
+          "name": "source_validation",
+          "status": "completed",
+          "model": null,
+          "method": "deterministic"
+        }
+      ],
+      "profile_unchanged": true,
+      "oracle_checks": 3,
+      "oracle_correct": 3
+    },
+    {
+      "fixture": "unusual_headings.txt",
+      "seconds": 0.827,
+      "status": "awaiting_review",
+      "pages": 0,
+      "raw_evidence": 11,
+      "ocr_blocks": 0,
+      "native_blocks": 11,
+      "entities": 7,
+      "relations": 22,
+      "sections": 6,
+      "projects": 1,
+      "education": 0,
+      "experience": 0,
+      "additional_sections": 1,
+      "grounding": {
+        "supported_fields": 10,
+        "unsupported_fields": 0,
+        "candidate_edited_fields": 0,
+        "problems": [],
+        "scope": "Literal source support only; this does not establish factual truth or candidate confirmation."
+      },
+      "conflicts": 0,
+      "canonical_validation": {
+        "supported_fields": 10,
+        "unsupported_fields": 0,
+        "critical_passed": true
+      },
+      "repair_outcomes": [
+        "validated"
+      ],
+      "agents": [
+        {
+          "name": "vision_layout",
+          "status": "skipped",
+          "model": null,
+          "method": "local"
+        },
+        {
+          "name": "source_validation",
+          "status": "completed",
+          "model": null,
+          "method": "deterministic"
+        }
+      ],
+      "profile_unchanged": true,
+      "oracle_checks": 6,
+      "oracle_correct": 6
+    },
+    {
+      "fixture": "multiple_projects.txt",
+      "seconds": 0.835,
+      "status": "awaiting_review",
+      "pages": 0,
+      "raw_evidence": 9,
+      "ocr_blocks": 0,
+      "native_blocks": 9,
+      "entities": 5,
+      "relations": 20,
+      "sections": 2,
+      "projects": 2,
+      "education": 0,
+      "experience": 0,
+      "additional_sections": 0,
+      "grounding": {
+        "supported_fields": 14,
+        "unsupported_fields": 0,
+        "candidate_edited_fields": 0,
+        "problems": [],
+        "scope": "Literal source support only; this does not establish factual truth or candidate confirmation."
+      },
+      "conflicts": 0,
+      "canonical_validation": {
+        "supported_fields": 14,
+        "unsupported_fields": 0,
+        "critical_passed": true
+      },
+      "repair_outcomes": [
+        "validated"
+      ],
+      "agents": [
+        {
+          "name": "vision_layout",
+          "status": "skipped",
+          "model": null,
+          "method": "local"
+        },
+        {
+          "name": "source_validation",
+          "status": "completed",
+          "model": null,
+          "method": "deterministic"
+        }
+      ],
+      "profile_unchanged": true,
+      "oracle_checks": 11,
+      "oracle_correct": 11
+    },
+    {
+      "fixture": "project_technologies.txt",
+      "seconds": 0.661,
+      "status": "awaiting_review",
+      "pages": 0,
+      "raw_evidence": 10,
+      "ocr_blocks": 0,
+      "native_blocks": 10,
+      "entities": 6,
+      "relations": 31,
+      "sections": 2,
+      "projects": 2,
+      "education": 0,
+      "experience": 0,
+      "additional_sections": 0,
+      "grounding": {
+        "supported_fields": 22,
+        "unsupported_fields": 0,
+        "candidate_edited_fields": 0,
+        "problems": [],
+        "scope": "Literal source support only; this does not establish factual truth or candidate confirmation."
+      },
+      "conflicts": 0,
+      "canonical_validation": {
+        "supported_fields": 22,
+        "unsupported_fields": 0,
+        "critical_passed": true
+      },
+      "repair_outcomes": [
+        "validated"
+      ],
+      "agents": [
+        {
+          "name": "vision_layout",
+          "status": "skipped",
+          "model": null,
+          "method": "local"
+        },
+        {
+          "name": "source_validation",
+          "status": "completed",
+          "model": null,
+          "method": "deterministic"
+        }
+      ],
+      "profile_unchanged": true,
+      "oracle_checks": 12,
+      "oracle_correct": 12
+    },
+    {
+      "fixture": "work_entries.txt",
+      "seconds": 0.649,
+      "status": "awaiting_review",
+      "pages": 0,
+      "raw_evidence": 11,
+      "ocr_blocks": 0,
+      "native_blocks": 11,
+      "entities": 6,
+      "relations": 37,
+      "sections": 3,
+      "projects": 1,
+      "education": 0,
+      "experience": 2,
+      "additional_sections": 0,
+      "grounding": {
+        "supported_fields": 28,
+        "unsupported_fields": 0,
+        "candidate_edited_fields": 0,
+        "problems": [],
+        "scope": "Literal source support only; this does not establish factual truth or candidate confirmation."
+      },
+      "conflicts": 0,
+      "canonical_validation": {
+        "supported_fields": 28,
+        "unsupported_fields": 0,
+        "critical_passed": true
+      },
+      "repair_outcomes": [
+        "validated"
+      ],
+      "agents": [
+        {
+          "name": "vision_layout",
+          "status": "skipped",
+          "model": null,
+          "method": "local"
+        },
+        {
+          "name": "source_validation",
+          "status": "completed",
+          "model": null,
+          "method": "deterministic"
+        }
+      ],
+      "profile_unchanged": true,
+      "oracle_checks": 13,
+      "oracle_correct": 13
+    },
+    {
+      "fixture": "duplicate_skills.txt",
+      "seconds": 0.643,
+      "status": "awaiting_review",
+      "pages": 0,
+      "raw_evidence": 6,
+      "ocr_blocks": 0,
+      "native_blocks": 6,
+      "entities": 4,
+      "relations": 14,
+      "sections": 4,
+      "projects": 0,
+      "education": 0,
+      "experience": 0,
+      "additional_sections": 0,
+      "grounding": {
+        "supported_fields": 6,
+        "unsupported_fields": 0,
+        "candidate_edited_fields": 0,
+        "problems": [],
+        "scope": "Literal source support only; this does not establish factual truth or candidate confirmation."
+      },
+      "conflicts": 0,
+      "canonical_validation": {
+        "supported_fields": 6,
+        "unsupported_fields": 0,
+        "critical_passed": true
+      },
+      "repair_outcomes": [
+        "validated"
+      ],
+      "agents": [
+        {
+          "name": "vision_layout",
+          "status": "skipped",
+          "model": null,
+          "method": "local"
+        },
+        {
+          "name": "source_validation",
+          "status": "completed",
+          "model": null,
+          "method": "deterministic"
+        }
+      ],
+      "profile_unchanged": true,
+      "oracle_checks": 4,
+      "oracle_correct": 4
+    },
+    {
+      "fixture": "missing_dates.txt",
+      "seconds": 0.866,
+      "status": "awaiting_review",
+      "pages": 0,
+      "raw_evidence": 14,
+      "ocr_blocks": 0,
+      "native_blocks": 14,
+      "entities": 6,
+      "relations": 26,
+      "sections": 4,
+      "projects": 1,
+      "education": 1,
+      "experience": 1,
+      "additional_sections": 0,
+      "grounding": {
+        "supported_fields": 16,
+        "unsupported_fields": 0,
+        "candidate_edited_fields": 0,
+        "problems": [],
+        "scope": "Literal source support only; this does not establish factual truth or candidate confirmation."
+      },
+      "conflicts": 0,
+      "canonical_validation": {
+        "supported_fields": 16,
+        "unsupported_fields": 0,
+        "critical_passed": true
+      },
+      "repair_outcomes": [
+        "validated"
+      ],
+      "agents": [
+        {
+          "name": "vision_layout",
+          "status": "skipped",
+          "model": null,
+          "method": "local"
+        },
+        {
+          "name": "source_validation",
+          "status": "completed",
+          "model": null,
+          "method": "deterministic"
+        }
+      ],
+      "profile_unchanged": true,
+      "oracle_checks": 10,
+      "oracle_correct": 10
+    },
+    {
+      "fixture": "two_column.pdf",
+      "seconds": 1.443,
+      "status": "awaiting_review",
+      "pages": 1,
+      "raw_evidence": 9,
+      "ocr_blocks": 0,
+      "native_blocks": 9,
+      "entities": 5,
+      "relations": 21,
+      "sections": 4,
+      "projects": 1,
+      "education": 1,
+      "experience": 0,
+      "additional_sections": 0,
+      "grounding": {
+        "supported_fields": 12,
+        "unsupported_fields": 0,
+        "candidate_edited_fields": 0,
+        "problems": [],
+        "scope": "Literal source support only; this does not establish factual truth or candidate confirmation."
+      },
+      "conflicts": 0,
+      "canonical_validation": {
+        "supported_fields": 12,
+        "unsupported_fields": 0,
+        "critical_passed": true
+      },
+      "repair_outcomes": [
+        "validated"
+      ],
+      "agents": [
+        {
+          "name": "vision_layout",
+          "status": "skipped",
+          "model": null,
+          "method": "local"
+        },
+        {
+          "name": "source_validation",
+          "status": "completed",
+          "model": null,
+          "method": "deterministic"
+        }
+      ],
+      "profile_unchanged": true,
+      "oracle_checks": 7,
+      "oracle_correct": 7
+    },
+    {
+      "fixture": "table_education.docx",
+      "seconds": 6.522,
+      "status": "awaiting_review",
+      "pages": 1,
+      "raw_evidence": 6,
+      "ocr_blocks": 0,
+      "native_blocks": 6,
+      "entities": 4,
+      "relations": 15,
+      "sections": 3,
+      "projects": 0,
+      "education": 1,
+      "experience": 0,
+      "additional_sections": 0,
+      "grounding": {
+        "supported_fields": 9,
+        "unsupported_fields": 0,
+        "candidate_edited_fields": 0,
+        "problems": [],
+        "scope": "Literal source support only; this does not establish factual truth or candidate confirmation."
+      },
+      "conflicts": 0,
+      "canonical_validation": {
+        "supported_fields": 9,
+        "unsupported_fields": 0,
+        "critical_passed": true
+      },
+      "repair_outcomes": [
+        "validated"
+      ],
+      "agents": [
+        {
+          "name": "vision_layout",
+          "status": "skipped",
+          "model": null,
+          "method": "local"
+        },
+        {
+          "name": "source_validation",
+          "status": "completed",
+          "model": null,
+          "method": "deterministic"
+        }
+      ],
+      "profile_unchanged": true,
+      "oracle_checks": 7,
+      "oracle_correct": 7
+    },
+    {
+      "fixture": "image_resume.pdf",
+      "seconds": 1.449,
+      "status": "awaiting_review",
+      "pages": 1,
+      "raw_evidence": 9,
+      "ocr_blocks": 9,
+      "native_blocks": 0,
+      "entities": 5,
+      "relations": 18,
+      "sections": 4,
+      "projects": 1,
+      "education": 0,
+      "experience": 0,
+      "additional_sections": 0,
+      "grounding": {
+        "supported_fields": 9,
+        "unsupported_fields": 0,
+        "candidate_edited_fields": 0,
+        "problems": [],
+        "scope": "Literal source support only; this does not establish factual truth or candidate confirmation."
+      },
+      "conflicts": 0,
+      "canonical_validation": {
+        "supported_fields": 9,
+        "unsupported_fields": 0,
+        "critical_passed": true
+      },
+      "repair_outcomes": [
+        "validated"
+      ],
+      "agents": [
+        {
+          "name": "vision_layout",
+          "status": "skipped",
+          "model": null,
+          "method": "local"
+        },
+        {
+          "name": "source_validation",
+          "status": "completed",
+          "model": null,
+          "method": "deterministic"
+        }
+      ],
+      "profile_unchanged": true,
+      "oracle_checks": 0,
+      "oracle_correct": 0
+    },
+    {
+      "fixture": "dense_native.pdf",
+      "seconds": 1.312,
+      "status": "awaiting_review",
+      "pages": 2,
+      "raw_evidence": 41,
+      "ocr_blocks": 0,
+      "native_blocks": 41,
+      "entities": 16,
+      "relations": 99,
+      "sections": 8,
+      "projects": 4,
+      "education": 3,
+      "experience": 2,
+      "additional_sections": 0,
+      "grounding": {
+        "supported_fields": 74,
+        "unsupported_fields": 0,
+        "candidate_edited_fields": 0,
+        "problems": [],
+        "scope": "Literal source support only; this does not establish factual truth or candidate confirmation."
+      },
+      "conflicts": 0,
+      "canonical_validation": {
+        "supported_fields": 74,
+        "unsupported_fields": 0,
+        "critical_passed": true
+      },
+      "repair_outcomes": [
+        "validated"
+      ],
+      "agents": [
+        {
+          "name": "vision_layout",
+          "status": "skipped",
+          "model": null,
+          "method": "local"
+        },
+        {
+          "name": "source_validation",
+          "status": "completed",
+          "model": null,
+          "method": "deterministic"
+        }
+      ],
+      "profile_unchanged": true,
+      "oracle_checks": 0,
+      "oracle_correct": 0
+    },
+    {
+      "fixture": "connected_extras.txt",
+      "seconds": 0.814,
+      "status": "awaiting_review",
+      "pages": 0,
+      "raw_evidence": 33,
+      "ocr_blocks": 0,
+      "native_blocks": 33,
+      "entities": 15,
+      "relations": 79,
+      "sections": 13,
+      "projects": 1,
+      "education": 1,
+      "experience": 1,
+      "additional_sections": 6,
+      "grounding": {
+        "supported_fields": 48,
+        "unsupported_fields": 0,
+        "candidate_edited_fields": 0,
+        "problems": [],
+        "scope": "Literal source support only; this does not establish factual truth or candidate confirmation."
+      },
+      "conflicts": 0,
+      "canonical_validation": {
+        "supported_fields": 49,
+        "unsupported_fields": 0,
+        "critical_passed": true
+      },
+      "repair_outcomes": [
+        "validated"
+      ],
+      "agents": [
+        {
+          "name": "vision_layout",
+          "status": "skipped",
+          "model": null,
+          "method": "local"
+        },
+        {
+          "name": "source_validation",
+          "status": "completed",
+          "model": null,
+          "method": "deterministic"
+        }
+      ],
+      "profile_unchanged": true,
+      "oracle_checks": 4,
+      "oracle_correct": 4
+    }
+  ],
+  "unsupported_final_fields": 0,
+  "all_profiles_unchanged": true,
+  "live_requested": false,
+  "oracle_checks": 90,
+  "oracle_correct": 90
+}
