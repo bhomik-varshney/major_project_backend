@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-20",
+  "backend_tests": {
+    "passed": 333,
+    "warnings": 324
+  },
+  "chromium_browser_tests": {
+    "passed": 36,
+    "new_scenarios": 4
+  },
+  "frontend_typecheck": "passed",
+  "frontend_lint": {
+    "errors": 0,
+    "existing_warnings": 10
+  },
+  "production_build": "passed",
+  "python_compile": "passed",
+  "git_diff_whitespace": "passed in both repositories",
+  "dataset_validation": "passed",
+  "dataset_sha_matches_prior_milestone_validation": true,
+  "public_audit_privacy_scan": "passed; no private identity/contact values or credential patterns",
+  "main_backend_health": 200,
+  "main_frontend_matches": 200,
+  "main_frontend_jobs": 200,
+  "main_corrected_run": {
+    "status": "completed",
+    "recommendations": 34
+  },
+  "database_prior_rows_unchanged": true,
+  "private_resume_external_exports": false,
+  "limitations": [
+    "Chromium browser verification; no new Safari execution",
+    "Semantic and pretrained word-vector model quality unavailable, no live model-quality claim",
+    "Latency sample measured under concurrent audit load",
+    "No standalone backend lint tool configured"
+  ]
+}

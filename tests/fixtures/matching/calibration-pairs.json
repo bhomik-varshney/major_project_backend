@@ -1,0 +1,5054 @@
+[
+  {
+    "split": "train",
+    "case": "python_backend",
+    "candidate": {
+      "skills": [
+        "Python",
+        "SQL",
+        "FastAPI",
+        "REST APIs",
+        "Docker",
+        "PostgreSQL"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "backend",
+    "title": "Backend Developer",
+    "required": [
+      "Python",
+      "FastAPI",
+      "REST APIs"
+    ],
+    "preferred": [
+      "SQL",
+      "Docker",
+      "PostgreSQL"
+    ],
+    "description": "develop validated REST endpoints and database queries",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "exact_role_and_foundations"
+  },
+  {
+    "split": "train",
+    "case": "python_backend",
+    "candidate": {
+      "skills": [
+        "Python",
+        "SQL",
+        "FastAPI",
+        "REST APIs",
+        "Docker",
+        "PostgreSQL"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "frontend",
+    "title": "Frontend Developer",
+    "required": [
+      "React",
+      "TypeScript",
+      "HTML"
+    ],
+    "preferred": [
+      "CSS",
+      "Accessibility",
+      "JavaScript"
+    ],
+    "description": "implement accessible and responsive interfaces",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "python_backend",
+    "candidate": {
+      "skills": [
+        "Python",
+        "SQL",
+        "FastAPI",
+        "REST APIs",
+        "Docker",
+        "PostgreSQL"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "mobile",
+    "title": "Mobile Developer",
+    "required": [
+      "Kotlin",
+      "Android",
+      "REST APIs"
+    ],
+    "preferred": [
+      "Git",
+      "Unit testing"
+    ],
+    "description": "build and test mobile application screens",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "python_backend",
+    "candidate": {
+      "skills": [
+        "Python",
+        "SQL",
+        "FastAPI",
+        "REST APIs",
+        "Docker",
+        "PostgreSQL"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "web",
+    "title": "Web Developer",
+    "required": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "preferred": [
+      "Accessibility",
+      "Git"
+    ],
+    "description": "build usable websites and check browser compatibility",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "python_backend",
+    "candidate": {
+      "skills": [
+        "Python",
+        "SQL",
+        "FastAPI",
+        "REST APIs",
+        "Docker",
+        "PostgreSQL"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "machine_learning",
+    "title": "Machine Learning Engineer",
+    "required": [
+      "Python",
+      "Machine learning",
+      "Pandas"
+    ],
+    "preferred": [
+      "Model evaluation",
+      "Statistics"
+    ],
+    "description": "compare baseline models and document evaluation results",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "python_backend",
+    "candidate": {
+      "skills": [
+        "Python",
+        "SQL",
+        "FastAPI",
+        "REST APIs",
+        "Docker",
+        "PostgreSQL"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "natural_language_processing",
+    "title": "NLP Engineer",
+    "required": [
+      "Python",
+      "Natural language processing",
+      "Machine learning"
+    ],
+    "preferred": [
+      "Text processing",
+      "Model evaluation"
+    ],
+    "description": "evaluate text classification and retrieval experiments",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "python_backend",
+    "candidate": {
+      "skills": [
+        "Python",
+        "SQL",
+        "FastAPI",
+        "REST APIs",
+        "Docker",
+        "PostgreSQL"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "computer_vision",
+    "title": "Computer Vision Engineer",
+    "required": [
+      "Python",
+      "Computer vision",
+      "Image processing"
+    ],
+    "preferred": [
+      "Machine learning",
+      "Linear algebra"
+    ],
+    "description": "measure image model performance on approved datasets",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "python_backend",
+    "candidate": {
+      "skills": [
+        "Python",
+        "SQL",
+        "FastAPI",
+        "REST APIs",
+        "Docker",
+        "PostgreSQL"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "cybersecurity",
+    "title": "Security Analyst",
+    "required": [
+      "Networking",
+      "Linux",
+      "Threat analysis"
+    ],
+    "preferred": [
+      "Incident response",
+      "Security monitoring"
+    ],
+    "description": "triage lab security alerts and document findings",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "python_backend",
+    "candidate": {
+      "skills": [
+        "Python",
+        "SQL",
+        "FastAPI",
+        "REST APIs",
+        "Docker",
+        "PostgreSQL"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "site_reliability",
+    "title": "Site Reliability Engineer",
+    "required": [
+      "Linux",
+      "Python",
+      "Monitoring"
+    ],
+    "preferred": [
+      "Networking",
+      "Incident response"
+    ],
+    "description": "investigate service health and improve operational runbooks",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "python_backend",
+    "candidate": {
+      "skills": [
+        "Python",
+        "SQL",
+        "FastAPI",
+        "REST APIs",
+        "Docker",
+        "PostgreSQL"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "quality_assurance",
+    "title": "QA Engineer",
+    "required": [
+      "Software testing",
+      "Test cases",
+      "Bug reporting"
+    ],
+    "preferred": [
+      "SQL",
+      "Git"
+    ],
+    "description": "design test cases and report reproducible defects",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "python_backend",
+    "candidate": {
+      "skills": [
+        "Python",
+        "SQL",
+        "FastAPI",
+        "REST APIs",
+        "Docker",
+        "PostgreSQL"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "ui_ux",
+    "title": "UI/UX Designer",
+    "required": [
+      "User research",
+      "Wireframing",
+      "Accessibility"
+    ],
+    "preferred": [
+      "Usability testing",
+      "Interaction design"
+    ],
+    "description": "research user needs and test interface prototypes",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "python_backend",
+    "candidate": {
+      "skills": [
+        "Python",
+        "SQL",
+        "FastAPI",
+        "REST APIs",
+        "Docker",
+        "PostgreSQL"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "product_design",
+    "title": "Product Designer",
+    "required": [
+      "Interaction design",
+      "Design systems",
+      "Prototyping"
+    ],
+    "preferred": [
+      "Accessibility",
+      "User research"
+    ],
+    "description": "iterate on accessible product design systems",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "python_backend",
+    "candidate": {
+      "skills": [
+        "Python",
+        "SQL",
+        "FastAPI",
+        "REST APIs",
+        "Docker",
+        "PostgreSQL"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "product_management",
+    "title": "Product Manager",
+    "required": [
+      "Product discovery",
+      "Requirements analysis",
+      "Data analysis"
+    ],
+    "preferred": [
+      "Communication",
+      "Prioritization"
+    ],
+    "description": "document user problems and prioritize small product improvements",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "python_backend",
+    "candidate": {
+      "skills": [
+        "Python",
+        "SQL",
+        "FastAPI",
+        "REST APIs",
+        "Docker",
+        "PostgreSQL"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "backend",
+    "title": "Backend Developer",
+    "required": [
+      "Python",
+      "FastAPI"
+    ],
+    "preferred": [],
+    "description": "develop validated REST endpoints and database queries",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "authored_role_and_at_least_60_percent_foundations"
+  },
+  {
+    "split": "train",
+    "case": "python_backend",
+    "candidate": {
+      "skills": [
+        "Python",
+        "SQL",
+        "FastAPI",
+        "REST APIs",
+        "Docker",
+        "PostgreSQL"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "backend",
+    "title": "Backend Developer",
+    "required": [
+      "Python",
+      "FastAPI",
+      "REST APIs",
+      "SQL"
+    ],
+    "preferred": [],
+    "description": "develop validated REST endpoints and database queries",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "authored_role_and_at_least_60_percent_foundations"
+  },
+  {
+    "split": "train",
+    "case": "python_backend",
+    "candidate": {
+      "skills": [
+        "Python",
+        "SQL",
+        "FastAPI",
+        "REST APIs",
+        "Docker",
+        "PostgreSQL"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "backend",
+    "title": "Backend Developer",
+    "required": [
+      "Python",
+      "FastAPI",
+      "REST APIs",
+      "SQL",
+      "Docker"
+    ],
+    "preferred": [],
+    "description": "develop validated REST endpoints and database queries",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "authored_role_and_at_least_60_percent_foundations"
+  },
+  {
+    "split": "train",
+    "case": "python_backend",
+    "candidate": {
+      "skills": [
+        "Python",
+        "SQL",
+        "FastAPI",
+        "REST APIs",
+        "Docker",
+        "PostgreSQL"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "student",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "backend",
+    "title": "Backend Developer",
+    "required": [
+      "Python",
+      "FastAPI",
+      "REST APIs",
+      "SQL",
+      "Docker",
+      "PostgreSQL"
+    ],
+    "preferred": [],
+    "description": "develop validated REST endpoints and database queries",
+    "work_mode": "onsite",
+    "experience_min": 3,
+    "education": [
+      "Master degree"
+    ],
+    "relevant": 0,
+    "judgment": "explicit_remote_and_experience_mismatch"
+  },
+  {
+    "split": "train",
+    "case": "react_frontend",
+    "candidate": {
+      "skills": [
+        "JavaScript",
+        "React",
+        "HTML",
+        "CSS",
+        "TypeScript",
+        "Accessibility"
+      ],
+      "preferred_roles": [
+        "Frontend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "frontend",
+    "title": "Frontend Developer",
+    "required": [
+      "React",
+      "TypeScript",
+      "HTML"
+    ],
+    "preferred": [
+      "CSS",
+      "Accessibility",
+      "JavaScript"
+    ],
+    "description": "implement accessible and responsive interfaces",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "exact_role_and_foundations"
+  },
+  {
+    "split": "train",
+    "case": "react_frontend",
+    "candidate": {
+      "skills": [
+        "JavaScript",
+        "React",
+        "HTML",
+        "CSS",
+        "TypeScript",
+        "Accessibility"
+      ],
+      "preferred_roles": [
+        "Frontend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "software_engineering",
+    "title": "Software Engineer",
+    "required": [
+      "Python",
+      "Git",
+      "Data structures"
+    ],
+    "preferred": [
+      "SQL",
+      "REST APIs"
+    ],
+    "description": "build and test small product features",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "react_frontend",
+    "candidate": {
+      "skills": [
+        "JavaScript",
+        "React",
+        "HTML",
+        "CSS",
+        "TypeScript",
+        "Accessibility"
+      ],
+      "preferred_roles": [
+        "Frontend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "backend",
+    "title": "Backend Developer",
+    "required": [
+      "Python",
+      "FastAPI",
+      "REST APIs"
+    ],
+    "preferred": [
+      "SQL",
+      "Docker",
+      "PostgreSQL"
+    ],
+    "description": "develop validated REST endpoints and database queries",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "react_frontend",
+    "candidate": {
+      "skills": [
+        "JavaScript",
+        "React",
+        "HTML",
+        "CSS",
+        "TypeScript",
+        "Accessibility"
+      ],
+      "preferred_roles": [
+        "Frontend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "mobile",
+    "title": "Mobile Developer",
+    "required": [
+      "Kotlin",
+      "Android",
+      "REST APIs"
+    ],
+    "preferred": [
+      "Git",
+      "Unit testing"
+    ],
+    "description": "build and test mobile application screens",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "react_frontend",
+    "candidate": {
+      "skills": [
+        "JavaScript",
+        "React",
+        "HTML",
+        "CSS",
+        "TypeScript",
+        "Accessibility"
+      ],
+      "preferred_roles": [
+        "Frontend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "data_analysis",
+    "title": "Data Analyst",
+    "required": [
+      "SQL",
+      "Python",
+      "Statistics"
+    ],
+    "preferred": [
+      "Pandas",
+      "Data visualization",
+      "Excel"
+    ],
+    "description": "clean datasets and explain product trends",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "react_frontend",
+    "candidate": {
+      "skills": [
+        "JavaScript",
+        "React",
+        "HTML",
+        "CSS",
+        "TypeScript",
+        "Accessibility"
+      ],
+      "preferred_roles": [
+        "Frontend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "data_science",
+    "title": "Data Scientist",
+    "required": [
+      "Python",
+      "Statistics",
+      "Pandas"
+    ],
+    "preferred": [
+      "SQL",
+      "Machine learning"
+    ],
+    "description": "evaluate reproducible statistical models",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "react_frontend",
+    "candidate": {
+      "skills": [
+        "JavaScript",
+        "React",
+        "HTML",
+        "CSS",
+        "TypeScript",
+        "Accessibility"
+      ],
+      "preferred_roles": [
+        "Frontend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "machine_learning",
+    "title": "Machine Learning Engineer",
+    "required": [
+      "Python",
+      "Machine learning",
+      "Pandas"
+    ],
+    "preferred": [
+      "Model evaluation",
+      "Statistics"
+    ],
+    "description": "compare baseline models and document evaluation results",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "react_frontend",
+    "candidate": {
+      "skills": [
+        "JavaScript",
+        "React",
+        "HTML",
+        "CSS",
+        "TypeScript",
+        "Accessibility"
+      ],
+      "preferred_roles": [
+        "Frontend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "artificial_intelligence",
+    "title": "AI Engineer",
+    "required": [
+      "Python",
+      "Machine learning",
+      "REST APIs"
+    ],
+    "preferred": [
+      "Model evaluation",
+      "Responsible AI"
+    ],
+    "description": "prototype evaluated AI services with human review",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "react_frontend",
+    "candidate": {
+      "skills": [
+        "JavaScript",
+        "React",
+        "HTML",
+        "CSS",
+        "TypeScript",
+        "Accessibility"
+      ],
+      "preferred_roles": [
+        "Frontend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "natural_language_processing",
+    "title": "NLP Engineer",
+    "required": [
+      "Python",
+      "Natural language processing",
+      "Machine learning"
+    ],
+    "preferred": [
+      "Text processing",
+      "Model evaluation"
+    ],
+    "description": "evaluate text classification and retrieval experiments",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "react_frontend",
+    "candidate": {
+      "skills": [
+        "JavaScript",
+        "React",
+        "HTML",
+        "CSS",
+        "TypeScript",
+        "Accessibility"
+      ],
+      "preferred_roles": [
+        "Frontend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "computer_vision",
+    "title": "Computer Vision Engineer",
+    "required": [
+      "Python",
+      "Computer vision",
+      "Image processing"
+    ],
+    "preferred": [
+      "Machine learning",
+      "Linear algebra"
+    ],
+    "description": "measure image model performance on approved datasets",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "react_frontend",
+    "candidate": {
+      "skills": [
+        "JavaScript",
+        "React",
+        "HTML",
+        "CSS",
+        "TypeScript",
+        "Accessibility"
+      ],
+      "preferred_roles": [
+        "Frontend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "cybersecurity",
+    "title": "Security Analyst",
+    "required": [
+      "Networking",
+      "Linux",
+      "Threat analysis"
+    ],
+    "preferred": [
+      "Incident response",
+      "Security monitoring"
+    ],
+    "description": "triage lab security alerts and document findings",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "react_frontend",
+    "candidate": {
+      "skills": [
+        "JavaScript",
+        "React",
+        "HTML",
+        "CSS",
+        "TypeScript",
+        "Accessibility"
+      ],
+      "preferred_roles": [
+        "Frontend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "cloud",
+    "title": "Cloud Engineer",
+    "required": [
+      "Linux",
+      "Networking",
+      "AWS"
+    ],
+    "preferred": [
+      "Docker",
+      "Python"
+    ],
+    "description": "maintain supervised cloud development environments",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "react_frontend",
+    "candidate": {
+      "skills": [
+        "JavaScript",
+        "React",
+        "HTML",
+        "CSS",
+        "TypeScript",
+        "Accessibility"
+      ],
+      "preferred_roles": [
+        "Frontend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "devops",
+    "title": "DevOps Engineer",
+    "required": [
+      "Linux",
+      "Git",
+      "Docker"
+    ],
+    "preferred": [
+      "CI/CD",
+      "Python",
+      "Kubernetes"
+    ],
+    "description": "improve container builds and deployment pipelines",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "react_frontend",
+    "candidate": {
+      "skills": [
+        "JavaScript",
+        "React",
+        "HTML",
+        "CSS",
+        "TypeScript",
+        "Accessibility"
+      ],
+      "preferred_roles": [
+        "Frontend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "frontend",
+    "title": "Frontend Developer",
+    "required": [
+      "React",
+      "TypeScript"
+    ],
+    "preferred": [],
+    "description": "implement accessible and responsive interfaces",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "authored_role_and_at_least_60_percent_foundations"
+  },
+  {
+    "split": "train",
+    "case": "react_frontend",
+    "candidate": {
+      "skills": [
+        "JavaScript",
+        "React",
+        "HTML",
+        "CSS",
+        "TypeScript",
+        "Accessibility"
+      ],
+      "preferred_roles": [
+        "Frontend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "frontend",
+    "title": "Frontend Developer",
+    "required": [
+      "React",
+      "TypeScript",
+      "HTML",
+      "CSS"
+    ],
+    "preferred": [],
+    "description": "implement accessible and responsive interfaces",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "authored_role_and_at_least_60_percent_foundations"
+  },
+  {
+    "split": "train",
+    "case": "react_frontend",
+    "candidate": {
+      "skills": [
+        "JavaScript",
+        "React",
+        "HTML",
+        "CSS",
+        "TypeScript",
+        "Accessibility"
+      ],
+      "preferred_roles": [
+        "Frontend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "frontend",
+    "title": "Frontend Developer",
+    "required": [
+      "React",
+      "TypeScript",
+      "HTML",
+      "CSS",
+      "Accessibility"
+    ],
+    "preferred": [],
+    "description": "implement accessible and responsive interfaces",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "authored_role_and_at_least_60_percent_foundations"
+  },
+  {
+    "split": "train",
+    "case": "react_frontend",
+    "candidate": {
+      "skills": [
+        "JavaScript",
+        "React",
+        "HTML",
+        "CSS",
+        "TypeScript",
+        "Accessibility"
+      ],
+      "preferred_roles": [
+        "Frontend Developer"
+      ],
+      "experience_level": "student",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "frontend",
+    "title": "Frontend Developer",
+    "required": [
+      "React",
+      "TypeScript",
+      "HTML",
+      "CSS",
+      "Accessibility",
+      "JavaScript"
+    ],
+    "preferred": [],
+    "description": "implement accessible and responsive interfaces",
+    "work_mode": "onsite",
+    "experience_min": 3,
+    "education": [
+      "Master degree"
+    ],
+    "relevant": 0,
+    "judgment": "explicit_remote_and_experience_mismatch"
+  },
+  {
+    "split": "train",
+    "case": "analyst",
+    "candidate": {
+      "skills": [
+        "SQL",
+        "Excel",
+        "Statistics",
+        "Data analysis",
+        "Power BI"
+      ],
+      "preferred_roles": [
+        "Data Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "data_analysis",
+    "title": "Data Analyst",
+    "required": [
+      "SQL",
+      "Python",
+      "Statistics"
+    ],
+    "preferred": [
+      "Pandas",
+      "Data visualization",
+      "Excel"
+    ],
+    "description": "clean datasets and explain product trends",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "exact_role_and_foundations"
+  },
+  {
+    "split": "train",
+    "case": "analyst",
+    "candidate": {
+      "skills": [
+        "SQL",
+        "Excel",
+        "Statistics",
+        "Data analysis",
+        "Power BI"
+      ],
+      "preferred_roles": [
+        "Data Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "software_engineering",
+    "title": "Software Engineer",
+    "required": [
+      "Python",
+      "Git",
+      "Data structures"
+    ],
+    "preferred": [
+      "SQL",
+      "REST APIs"
+    ],
+    "description": "build and test small product features",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "analyst",
+    "candidate": {
+      "skills": [
+        "SQL",
+        "Excel",
+        "Statistics",
+        "Data analysis",
+        "Power BI"
+      ],
+      "preferred_roles": [
+        "Data Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "frontend",
+    "title": "Frontend Developer",
+    "required": [
+      "React",
+      "TypeScript",
+      "HTML"
+    ],
+    "preferred": [
+      "CSS",
+      "Accessibility",
+      "JavaScript"
+    ],
+    "description": "implement accessible and responsive interfaces",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "analyst",
+    "candidate": {
+      "skills": [
+        "SQL",
+        "Excel",
+        "Statistics",
+        "Data analysis",
+        "Power BI"
+      ],
+      "preferred_roles": [
+        "Data Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "backend",
+    "title": "Backend Developer",
+    "required": [
+      "Python",
+      "FastAPI",
+      "REST APIs"
+    ],
+    "preferred": [
+      "SQL",
+      "Docker",
+      "PostgreSQL"
+    ],
+    "description": "develop validated REST endpoints and database queries",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "analyst",
+    "candidate": {
+      "skills": [
+        "SQL",
+        "Excel",
+        "Statistics",
+        "Data analysis",
+        "Power BI"
+      ],
+      "preferred_roles": [
+        "Data Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "full_stack",
+    "title": "Full-Stack Developer",
+    "required": [
+      "JavaScript",
+      "React",
+      "Node.js"
+    ],
+    "preferred": [
+      "SQL",
+      "Git",
+      "REST APIs"
+    ],
+    "description": "deliver web features across the interface and API",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "analyst",
+    "candidate": {
+      "skills": [
+        "SQL",
+        "Excel",
+        "Statistics",
+        "Data analysis",
+        "Power BI"
+      ],
+      "preferred_roles": [
+        "Data Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "mobile",
+    "title": "Mobile Developer",
+    "required": [
+      "Kotlin",
+      "Android",
+      "REST APIs"
+    ],
+    "preferred": [
+      "Git",
+      "Unit testing"
+    ],
+    "description": "build and test mobile application screens",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "analyst",
+    "candidate": {
+      "skills": [
+        "SQL",
+        "Excel",
+        "Statistics",
+        "Data analysis",
+        "Power BI"
+      ],
+      "preferred_roles": [
+        "Data Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "web",
+    "title": "Web Developer",
+    "required": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "preferred": [
+      "Accessibility",
+      "Git"
+    ],
+    "description": "build usable websites and check browser compatibility",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "analyst",
+    "candidate": {
+      "skills": [
+        "SQL",
+        "Excel",
+        "Statistics",
+        "Data analysis",
+        "Power BI"
+      ],
+      "preferred_roles": [
+        "Data Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "machine_learning",
+    "title": "Machine Learning Engineer",
+    "required": [
+      "Python",
+      "Machine learning",
+      "Pandas"
+    ],
+    "preferred": [
+      "Model evaluation",
+      "Statistics"
+    ],
+    "description": "compare baseline models and document evaluation results",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "analyst",
+    "candidate": {
+      "skills": [
+        "SQL",
+        "Excel",
+        "Statistics",
+        "Data analysis",
+        "Power BI"
+      ],
+      "preferred_roles": [
+        "Data Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "artificial_intelligence",
+    "title": "AI Engineer",
+    "required": [
+      "Python",
+      "Machine learning",
+      "REST APIs"
+    ],
+    "preferred": [
+      "Model evaluation",
+      "Responsible AI"
+    ],
+    "description": "prototype evaluated AI services with human review",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "analyst",
+    "candidate": {
+      "skills": [
+        "SQL",
+        "Excel",
+        "Statistics",
+        "Data analysis",
+        "Power BI"
+      ],
+      "preferred_roles": [
+        "Data Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "natural_language_processing",
+    "title": "NLP Engineer",
+    "required": [
+      "Python",
+      "Natural language processing",
+      "Machine learning"
+    ],
+    "preferred": [
+      "Text processing",
+      "Model evaluation"
+    ],
+    "description": "evaluate text classification and retrieval experiments",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "analyst",
+    "candidate": {
+      "skills": [
+        "SQL",
+        "Excel",
+        "Statistics",
+        "Data analysis",
+        "Power BI"
+      ],
+      "preferred_roles": [
+        "Data Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "computer_vision",
+    "title": "Computer Vision Engineer",
+    "required": [
+      "Python",
+      "Computer vision",
+      "Image processing"
+    ],
+    "preferred": [
+      "Machine learning",
+      "Linear algebra"
+    ],
+    "description": "measure image model performance on approved datasets",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "analyst",
+    "candidate": {
+      "skills": [
+        "SQL",
+        "Excel",
+        "Statistics",
+        "Data analysis",
+        "Power BI"
+      ],
+      "preferred_roles": [
+        "Data Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "cybersecurity",
+    "title": "Security Analyst",
+    "required": [
+      "Networking",
+      "Linux",
+      "Threat analysis"
+    ],
+    "preferred": [
+      "Incident response",
+      "Security monitoring"
+    ],
+    "description": "triage lab security alerts and document findings",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "analyst",
+    "candidate": {
+      "skills": [
+        "SQL",
+        "Excel",
+        "Statistics",
+        "Data analysis",
+        "Power BI"
+      ],
+      "preferred_roles": [
+        "Data Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "cloud",
+    "title": "Cloud Engineer",
+    "required": [
+      "Linux",
+      "Networking",
+      "AWS"
+    ],
+    "preferred": [
+      "Docker",
+      "Python"
+    ],
+    "description": "maintain supervised cloud development environments",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "analyst",
+    "candidate": {
+      "skills": [
+        "SQL",
+        "Excel",
+        "Statistics",
+        "Data analysis",
+        "Power BI"
+      ],
+      "preferred_roles": [
+        "Data Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "data_analysis",
+    "title": "Data Analyst",
+    "required": [
+      "SQL",
+      "Python"
+    ],
+    "preferred": [],
+    "description": "clean datasets and explain product trends",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "authored_role_and_at_least_60_percent_foundations"
+  },
+  {
+    "split": "train",
+    "case": "analyst",
+    "candidate": {
+      "skills": [
+        "SQL",
+        "Excel",
+        "Statistics",
+        "Data analysis",
+        "Power BI"
+      ],
+      "preferred_roles": [
+        "Data Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "data_analysis",
+    "title": "Data Analyst",
+    "required": [
+      "SQL",
+      "Python",
+      "Statistics",
+      "Pandas"
+    ],
+    "preferred": [],
+    "description": "clean datasets and explain product trends",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "authored_role_and_at_least_60_percent_foundations"
+  },
+  {
+    "split": "train",
+    "case": "analyst",
+    "candidate": {
+      "skills": [
+        "SQL",
+        "Excel",
+        "Statistics",
+        "Data analysis",
+        "Power BI"
+      ],
+      "preferred_roles": [
+        "Data Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "data_analysis",
+    "title": "Data Analyst",
+    "required": [
+      "SQL",
+      "Python",
+      "Statistics",
+      "Pandas",
+      "Data visualization"
+    ],
+    "preferred": [],
+    "description": "clean datasets and explain product trends",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "authored_role_and_at_least_60_percent_foundations"
+  },
+  {
+    "split": "train",
+    "case": "analyst",
+    "candidate": {
+      "skills": [
+        "SQL",
+        "Excel",
+        "Statistics",
+        "Data analysis",
+        "Power BI"
+      ],
+      "preferred_roles": [
+        "Data Analyst"
+      ],
+      "experience_level": "student",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "data_analysis",
+    "title": "Data Analyst",
+    "required": [
+      "SQL",
+      "Python",
+      "Statistics",
+      "Pandas",
+      "Data visualization",
+      "Excel"
+    ],
+    "preferred": [],
+    "description": "clean datasets and explain product trends",
+    "work_mode": "onsite",
+    "experience_min": 3,
+    "education": [
+      "Master degree"
+    ],
+    "relevant": 0,
+    "judgment": "explicit_remote_and_experience_mismatch"
+  },
+  {
+    "split": "train",
+    "case": "designer",
+    "candidate": {
+      "skills": [
+        "Figma",
+        "User research",
+        "Wireframing",
+        "Accessibility",
+        "Interaction design"
+      ],
+      "preferred_roles": [
+        "UI/UX Designer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "ui_ux",
+    "title": "UI/UX Designer",
+    "required": [
+      "User research",
+      "Wireframing",
+      "Accessibility"
+    ],
+    "preferred": [
+      "Usability testing",
+      "Interaction design"
+    ],
+    "description": "research user needs and test interface prototypes",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "exact_role_and_foundations"
+  },
+  {
+    "split": "train",
+    "case": "designer",
+    "candidate": {
+      "skills": [
+        "Figma",
+        "User research",
+        "Wireframing",
+        "Accessibility",
+        "Interaction design"
+      ],
+      "preferred_roles": [
+        "UI/UX Designer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "software_engineering",
+    "title": "Software Engineer",
+    "required": [
+      "Python",
+      "Git",
+      "Data structures"
+    ],
+    "preferred": [
+      "SQL",
+      "REST APIs"
+    ],
+    "description": "build and test small product features",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "designer",
+    "candidate": {
+      "skills": [
+        "Figma",
+        "User research",
+        "Wireframing",
+        "Accessibility",
+        "Interaction design"
+      ],
+      "preferred_roles": [
+        "UI/UX Designer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "frontend",
+    "title": "Frontend Developer",
+    "required": [
+      "React",
+      "TypeScript",
+      "HTML"
+    ],
+    "preferred": [
+      "CSS",
+      "Accessibility",
+      "JavaScript"
+    ],
+    "description": "implement accessible and responsive interfaces",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "designer",
+    "candidate": {
+      "skills": [
+        "Figma",
+        "User research",
+        "Wireframing",
+        "Accessibility",
+        "Interaction design"
+      ],
+      "preferred_roles": [
+        "UI/UX Designer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "backend",
+    "title": "Backend Developer",
+    "required": [
+      "Python",
+      "FastAPI",
+      "REST APIs"
+    ],
+    "preferred": [
+      "SQL",
+      "Docker",
+      "PostgreSQL"
+    ],
+    "description": "develop validated REST endpoints and database queries",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "designer",
+    "candidate": {
+      "skills": [
+        "Figma",
+        "User research",
+        "Wireframing",
+        "Accessibility",
+        "Interaction design"
+      ],
+      "preferred_roles": [
+        "UI/UX Designer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "full_stack",
+    "title": "Full-Stack Developer",
+    "required": [
+      "JavaScript",
+      "React",
+      "Node.js"
+    ],
+    "preferred": [
+      "SQL",
+      "Git",
+      "REST APIs"
+    ],
+    "description": "deliver web features across the interface and API",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "designer",
+    "candidate": {
+      "skills": [
+        "Figma",
+        "User research",
+        "Wireframing",
+        "Accessibility",
+        "Interaction design"
+      ],
+      "preferred_roles": [
+        "UI/UX Designer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "mobile",
+    "title": "Mobile Developer",
+    "required": [
+      "Kotlin",
+      "Android",
+      "REST APIs"
+    ],
+    "preferred": [
+      "Git",
+      "Unit testing"
+    ],
+    "description": "build and test mobile application screens",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "designer",
+    "candidate": {
+      "skills": [
+        "Figma",
+        "User research",
+        "Wireframing",
+        "Accessibility",
+        "Interaction design"
+      ],
+      "preferred_roles": [
+        "UI/UX Designer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "web",
+    "title": "Web Developer",
+    "required": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "preferred": [
+      "Accessibility",
+      "Git"
+    ],
+    "description": "build usable websites and check browser compatibility",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "designer",
+    "candidate": {
+      "skills": [
+        "Figma",
+        "User research",
+        "Wireframing",
+        "Accessibility",
+        "Interaction design"
+      ],
+      "preferred_roles": [
+        "UI/UX Designer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "data_analysis",
+    "title": "Data Analyst",
+    "required": [
+      "SQL",
+      "Python",
+      "Statistics"
+    ],
+    "preferred": [
+      "Pandas",
+      "Data visualization",
+      "Excel"
+    ],
+    "description": "clean datasets and explain product trends",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "designer",
+    "candidate": {
+      "skills": [
+        "Figma",
+        "User research",
+        "Wireframing",
+        "Accessibility",
+        "Interaction design"
+      ],
+      "preferred_roles": [
+        "UI/UX Designer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "data_science",
+    "title": "Data Scientist",
+    "required": [
+      "Python",
+      "Statistics",
+      "Pandas"
+    ],
+    "preferred": [
+      "SQL",
+      "Machine learning"
+    ],
+    "description": "evaluate reproducible statistical models",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "designer",
+    "candidate": {
+      "skills": [
+        "Figma",
+        "User research",
+        "Wireframing",
+        "Accessibility",
+        "Interaction design"
+      ],
+      "preferred_roles": [
+        "UI/UX Designer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "machine_learning",
+    "title": "Machine Learning Engineer",
+    "required": [
+      "Python",
+      "Machine learning",
+      "Pandas"
+    ],
+    "preferred": [
+      "Model evaluation",
+      "Statistics"
+    ],
+    "description": "compare baseline models and document evaluation results",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "designer",
+    "candidate": {
+      "skills": [
+        "Figma",
+        "User research",
+        "Wireframing",
+        "Accessibility",
+        "Interaction design"
+      ],
+      "preferred_roles": [
+        "UI/UX Designer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "artificial_intelligence",
+    "title": "AI Engineer",
+    "required": [
+      "Python",
+      "Machine learning",
+      "REST APIs"
+    ],
+    "preferred": [
+      "Model evaluation",
+      "Responsible AI"
+    ],
+    "description": "prototype evaluated AI services with human review",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "designer",
+    "candidate": {
+      "skills": [
+        "Figma",
+        "User research",
+        "Wireframing",
+        "Accessibility",
+        "Interaction design"
+      ],
+      "preferred_roles": [
+        "UI/UX Designer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "natural_language_processing",
+    "title": "NLP Engineer",
+    "required": [
+      "Python",
+      "Natural language processing",
+      "Machine learning"
+    ],
+    "preferred": [
+      "Text processing",
+      "Model evaluation"
+    ],
+    "description": "evaluate text classification and retrieval experiments",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "designer",
+    "candidate": {
+      "skills": [
+        "Figma",
+        "User research",
+        "Wireframing",
+        "Accessibility",
+        "Interaction design"
+      ],
+      "preferred_roles": [
+        "UI/UX Designer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "computer_vision",
+    "title": "Computer Vision Engineer",
+    "required": [
+      "Python",
+      "Computer vision",
+      "Image processing"
+    ],
+    "preferred": [
+      "Machine learning",
+      "Linear algebra"
+    ],
+    "description": "measure image model performance on approved datasets",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "train",
+    "case": "designer",
+    "candidate": {
+      "skills": [
+        "Figma",
+        "User research",
+        "Wireframing",
+        "Accessibility",
+        "Interaction design"
+      ],
+      "preferred_roles": [
+        "UI/UX Designer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "ui_ux",
+    "title": "UI/UX Designer",
+    "required": [
+      "User research",
+      "Wireframing"
+    ],
+    "preferred": [],
+    "description": "research user needs and test interface prototypes",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "authored_role_and_at_least_60_percent_foundations"
+  },
+  {
+    "split": "train",
+    "case": "designer",
+    "candidate": {
+      "skills": [
+        "Figma",
+        "User research",
+        "Wireframing",
+        "Accessibility",
+        "Interaction design"
+      ],
+      "preferred_roles": [
+        "UI/UX Designer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "ui_ux",
+    "title": "UI/UX Designer",
+    "required": [
+      "User research",
+      "Wireframing",
+      "Accessibility",
+      "Usability testing"
+    ],
+    "preferred": [],
+    "description": "research user needs and test interface prototypes",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "authored_role_and_at_least_60_percent_foundations"
+  },
+  {
+    "split": "train",
+    "case": "designer",
+    "candidate": {
+      "skills": [
+        "Figma",
+        "User research",
+        "Wireframing",
+        "Accessibility",
+        "Interaction design"
+      ],
+      "preferred_roles": [
+        "UI/UX Designer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "ui_ux",
+    "title": "UI/UX Designer",
+    "required": [
+      "User research",
+      "Wireframing",
+      "Accessibility",
+      "Usability testing",
+      "Interaction design"
+    ],
+    "preferred": [],
+    "description": "research user needs and test interface prototypes",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "authored_role_and_at_least_60_percent_foundations"
+  },
+  {
+    "split": "train",
+    "case": "designer",
+    "candidate": {
+      "skills": [
+        "Figma",
+        "User research",
+        "Wireframing",
+        "Accessibility",
+        "Interaction design"
+      ],
+      "preferred_roles": [
+        "UI/UX Designer"
+      ],
+      "experience_level": "student",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "ui_ux",
+    "title": "UI/UX Designer",
+    "required": [
+      "User research",
+      "Wireframing",
+      "Accessibility",
+      "Usability testing",
+      "Interaction design"
+    ],
+    "preferred": [],
+    "description": "research user needs and test interface prototypes",
+    "work_mode": "onsite",
+    "experience_min": 3,
+    "education": [
+      "Master degree"
+    ],
+    "relevant": 0,
+    "judgment": "explicit_remote_and_experience_mismatch"
+  },
+  {
+    "split": "holdout",
+    "case": "java_backend",
+    "candidate": {
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "SQL",
+        "REST APIs",
+        "Git"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "backend",
+    "title": "Backend Engineer",
+    "required": [
+      "Java",
+      "Spring Boot",
+      "REST APIs"
+    ],
+    "preferred": [
+      "SQL",
+      "Git",
+      "Unit testing"
+    ],
+    "description": "build transactional application services with validated database access",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "exact_role_and_foundations"
+  },
+  {
+    "split": "holdout",
+    "case": "java_backend",
+    "candidate": {
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "SQL",
+        "REST APIs",
+        "Git"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "frontend",
+    "title": "Frontend Developer",
+    "required": [
+      "React",
+      "TypeScript",
+      "HTML"
+    ],
+    "preferred": [
+      "CSS",
+      "Accessibility",
+      "JavaScript"
+    ],
+    "description": "implement accessible and responsive interfaces",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "java_backend",
+    "candidate": {
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "SQL",
+        "REST APIs",
+        "Git"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "web",
+    "title": "Web Developer",
+    "required": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "preferred": [
+      "Accessibility",
+      "Git"
+    ],
+    "description": "build usable websites and check browser compatibility",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "java_backend",
+    "candidate": {
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "SQL",
+        "REST APIs",
+        "Git"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "data_analysis",
+    "title": "Data Analyst",
+    "required": [
+      "SQL",
+      "Python",
+      "Statistics"
+    ],
+    "preferred": [
+      "Pandas",
+      "Data visualization",
+      "Excel"
+    ],
+    "description": "clean datasets and explain product trends",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "java_backend",
+    "candidate": {
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "SQL",
+        "REST APIs",
+        "Git"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "data_science",
+    "title": "Data Scientist",
+    "required": [
+      "Python",
+      "Statistics",
+      "Pandas"
+    ],
+    "preferred": [
+      "SQL",
+      "Machine learning"
+    ],
+    "description": "evaluate reproducible statistical models",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "java_backend",
+    "candidate": {
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "SQL",
+        "REST APIs",
+        "Git"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "machine_learning",
+    "title": "Machine Learning Engineer",
+    "required": [
+      "Python",
+      "Machine learning",
+      "Pandas"
+    ],
+    "preferred": [
+      "Model evaluation",
+      "Statistics"
+    ],
+    "description": "compare baseline models and document evaluation results",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "java_backend",
+    "candidate": {
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "SQL",
+        "REST APIs",
+        "Git"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "artificial_intelligence",
+    "title": "AI Engineer",
+    "required": [
+      "Python",
+      "Machine learning",
+      "REST APIs"
+    ],
+    "preferred": [
+      "Model evaluation",
+      "Responsible AI"
+    ],
+    "description": "prototype evaluated AI services with human review",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "java_backend",
+    "candidate": {
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "SQL",
+        "REST APIs",
+        "Git"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "natural_language_processing",
+    "title": "NLP Engineer",
+    "required": [
+      "Python",
+      "Natural language processing",
+      "Machine learning"
+    ],
+    "preferred": [
+      "Text processing",
+      "Model evaluation"
+    ],
+    "description": "evaluate text classification and retrieval experiments",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "java_backend",
+    "candidate": {
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "SQL",
+        "REST APIs",
+        "Git"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "computer_vision",
+    "title": "Computer Vision Engineer",
+    "required": [
+      "Python",
+      "Computer vision",
+      "Image processing"
+    ],
+    "preferred": [
+      "Machine learning",
+      "Linear algebra"
+    ],
+    "description": "measure image model performance on approved datasets",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "java_backend",
+    "candidate": {
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "SQL",
+        "REST APIs",
+        "Git"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "cybersecurity",
+    "title": "Security Analyst",
+    "required": [
+      "Networking",
+      "Linux",
+      "Threat analysis"
+    ],
+    "preferred": [
+      "Incident response",
+      "Security monitoring"
+    ],
+    "description": "triage lab security alerts and document findings",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "java_backend",
+    "candidate": {
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "SQL",
+        "REST APIs",
+        "Git"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "cloud",
+    "title": "Cloud Engineer",
+    "required": [
+      "Linux",
+      "Networking",
+      "AWS"
+    ],
+    "preferred": [
+      "Docker",
+      "Python"
+    ],
+    "description": "maintain supervised cloud development environments",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "java_backend",
+    "candidate": {
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "SQL",
+        "REST APIs",
+        "Git"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "devops",
+    "title": "DevOps Engineer",
+    "required": [
+      "Linux",
+      "Git",
+      "Docker"
+    ],
+    "preferred": [
+      "CI/CD",
+      "Python",
+      "Kubernetes"
+    ],
+    "description": "improve container builds and deployment pipelines",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "java_backend",
+    "candidate": {
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "SQL",
+        "REST APIs",
+        "Git"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "site_reliability",
+    "title": "Site Reliability Engineer",
+    "required": [
+      "Linux",
+      "Python",
+      "Monitoring"
+    ],
+    "preferred": [
+      "Networking",
+      "Incident response"
+    ],
+    "description": "investigate service health and improve operational runbooks",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "java_backend",
+    "candidate": {
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "SQL",
+        "REST APIs",
+        "Git"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "backend",
+    "title": "Backend Engineer",
+    "required": [
+      "Java",
+      "Spring Boot"
+    ],
+    "preferred": [],
+    "description": "build transactional application services with validated database access",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "authored_role_and_at_least_60_percent_foundations"
+  },
+  {
+    "split": "holdout",
+    "case": "java_backend",
+    "candidate": {
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "SQL",
+        "REST APIs",
+        "Git"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "backend",
+    "title": "Backend Engineer",
+    "required": [
+      "Java",
+      "Spring Boot",
+      "REST APIs",
+      "SQL"
+    ],
+    "preferred": [],
+    "description": "build transactional application services with validated database access",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "authored_role_and_at_least_60_percent_foundations"
+  },
+  {
+    "split": "holdout",
+    "case": "java_backend",
+    "candidate": {
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "SQL",
+        "REST APIs",
+        "Git"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "backend",
+    "title": "Backend Engineer",
+    "required": [
+      "Java",
+      "Spring Boot",
+      "REST APIs",
+      "SQL",
+      "Git"
+    ],
+    "preferred": [],
+    "description": "build transactional application services with validated database access",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "authored_role_and_at_least_60_percent_foundations"
+  },
+  {
+    "split": "holdout",
+    "case": "java_backend",
+    "candidate": {
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "SQL",
+        "REST APIs",
+        "Git"
+      ],
+      "preferred_roles": [
+        "Backend Developer"
+      ],
+      "experience_level": "student",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "backend",
+    "title": "Backend Engineer",
+    "required": [
+      "Java",
+      "Spring Boot",
+      "REST APIs",
+      "SQL",
+      "Git",
+      "Unit testing"
+    ],
+    "preferred": [],
+    "description": "build transactional application services with validated database access",
+    "work_mode": "onsite",
+    "experience_min": 3,
+    "education": [
+      "Master degree"
+    ],
+    "relevant": 0,
+    "judgment": "explicit_remote_and_experience_mismatch"
+  },
+  {
+    "split": "holdout",
+    "case": "ml_research",
+    "candidate": {
+      "skills": [
+        "Python",
+        "Machine learning",
+        "Pandas",
+        "Model evaluation",
+        "Statistics"
+      ],
+      "preferred_roles": [
+        "Machine Learning Engineer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "machine_learning",
+    "title": "Machine Learning Engineer",
+    "required": [
+      "Python",
+      "Machine learning",
+      "Pandas"
+    ],
+    "preferred": [
+      "Model evaluation",
+      "Statistics"
+    ],
+    "description": "compare baseline models and document evaluation results",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "exact_role_and_foundations"
+  },
+  {
+    "split": "holdout",
+    "case": "ml_research",
+    "candidate": {
+      "skills": [
+        "Python",
+        "Machine learning",
+        "Pandas",
+        "Model evaluation",
+        "Statistics"
+      ],
+      "preferred_roles": [
+        "Machine Learning Engineer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "software_engineering",
+    "title": "Software Engineer",
+    "required": [
+      "Python",
+      "Git",
+      "Data structures"
+    ],
+    "preferred": [
+      "SQL",
+      "REST APIs"
+    ],
+    "description": "build and test small product features",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "ml_research",
+    "candidate": {
+      "skills": [
+        "Python",
+        "Machine learning",
+        "Pandas",
+        "Model evaluation",
+        "Statistics"
+      ],
+      "preferred_roles": [
+        "Machine Learning Engineer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "frontend",
+    "title": "Frontend Developer",
+    "required": [
+      "React",
+      "TypeScript",
+      "HTML"
+    ],
+    "preferred": [
+      "CSS",
+      "Accessibility",
+      "JavaScript"
+    ],
+    "description": "implement accessible and responsive interfaces",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "ml_research",
+    "candidate": {
+      "skills": [
+        "Python",
+        "Machine learning",
+        "Pandas",
+        "Model evaluation",
+        "Statistics"
+      ],
+      "preferred_roles": [
+        "Machine Learning Engineer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "backend",
+    "title": "Backend Developer",
+    "required": [
+      "Python",
+      "FastAPI",
+      "REST APIs"
+    ],
+    "preferred": [
+      "SQL",
+      "Docker",
+      "PostgreSQL"
+    ],
+    "description": "develop validated REST endpoints and database queries",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "ml_research",
+    "candidate": {
+      "skills": [
+        "Python",
+        "Machine learning",
+        "Pandas",
+        "Model evaluation",
+        "Statistics"
+      ],
+      "preferred_roles": [
+        "Machine Learning Engineer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "full_stack",
+    "title": "Full-Stack Developer",
+    "required": [
+      "JavaScript",
+      "React",
+      "Node.js"
+    ],
+    "preferred": [
+      "SQL",
+      "Git",
+      "REST APIs"
+    ],
+    "description": "deliver web features across the interface and API",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "ml_research",
+    "candidate": {
+      "skills": [
+        "Python",
+        "Machine learning",
+        "Pandas",
+        "Model evaluation",
+        "Statistics"
+      ],
+      "preferred_roles": [
+        "Machine Learning Engineer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "mobile",
+    "title": "Mobile Developer",
+    "required": [
+      "Kotlin",
+      "Android",
+      "REST APIs"
+    ],
+    "preferred": [
+      "Git",
+      "Unit testing"
+    ],
+    "description": "build and test mobile application screens",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "ml_research",
+    "candidate": {
+      "skills": [
+        "Python",
+        "Machine learning",
+        "Pandas",
+        "Model evaluation",
+        "Statistics"
+      ],
+      "preferred_roles": [
+        "Machine Learning Engineer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "web",
+    "title": "Web Developer",
+    "required": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "preferred": [
+      "Accessibility",
+      "Git"
+    ],
+    "description": "build usable websites and check browser compatibility",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "ml_research",
+    "candidate": {
+      "skills": [
+        "Python",
+        "Machine learning",
+        "Pandas",
+        "Model evaluation",
+        "Statistics"
+      ],
+      "preferred_roles": [
+        "Machine Learning Engineer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "cybersecurity",
+    "title": "Security Analyst",
+    "required": [
+      "Networking",
+      "Linux",
+      "Threat analysis"
+    ],
+    "preferred": [
+      "Incident response",
+      "Security monitoring"
+    ],
+    "description": "triage lab security alerts and document findings",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "ml_research",
+    "candidate": {
+      "skills": [
+        "Python",
+        "Machine learning",
+        "Pandas",
+        "Model evaluation",
+        "Statistics"
+      ],
+      "preferred_roles": [
+        "Machine Learning Engineer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "cloud",
+    "title": "Cloud Engineer",
+    "required": [
+      "Linux",
+      "Networking",
+      "AWS"
+    ],
+    "preferred": [
+      "Docker",
+      "Python"
+    ],
+    "description": "maintain supervised cloud development environments",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "ml_research",
+    "candidate": {
+      "skills": [
+        "Python",
+        "Machine learning",
+        "Pandas",
+        "Model evaluation",
+        "Statistics"
+      ],
+      "preferred_roles": [
+        "Machine Learning Engineer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "devops",
+    "title": "DevOps Engineer",
+    "required": [
+      "Linux",
+      "Git",
+      "Docker"
+    ],
+    "preferred": [
+      "CI/CD",
+      "Python",
+      "Kubernetes"
+    ],
+    "description": "improve container builds and deployment pipelines",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "ml_research",
+    "candidate": {
+      "skills": [
+        "Python",
+        "Machine learning",
+        "Pandas",
+        "Model evaluation",
+        "Statistics"
+      ],
+      "preferred_roles": [
+        "Machine Learning Engineer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "site_reliability",
+    "title": "Site Reliability Engineer",
+    "required": [
+      "Linux",
+      "Python",
+      "Monitoring"
+    ],
+    "preferred": [
+      "Networking",
+      "Incident response"
+    ],
+    "description": "investigate service health and improve operational runbooks",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "ml_research",
+    "candidate": {
+      "skills": [
+        "Python",
+        "Machine learning",
+        "Pandas",
+        "Model evaluation",
+        "Statistics"
+      ],
+      "preferred_roles": [
+        "Machine Learning Engineer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "database",
+    "title": "Database Administrator",
+    "required": [
+      "SQL",
+      "PostgreSQL",
+      "Database backups"
+    ],
+    "preferred": [
+      "Linux",
+      "Query optimization"
+    ],
+    "description": "test database backups and review query plans",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "ml_research",
+    "candidate": {
+      "skills": [
+        "Python",
+        "Machine learning",
+        "Pandas",
+        "Model evaluation",
+        "Statistics"
+      ],
+      "preferred_roles": [
+        "Machine Learning Engineer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "quality_assurance",
+    "title": "QA Engineer",
+    "required": [
+      "Software testing",
+      "Test cases",
+      "Bug reporting"
+    ],
+    "preferred": [
+      "SQL",
+      "Git"
+    ],
+    "description": "design test cases and report reproducible defects",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "ml_research",
+    "candidate": {
+      "skills": [
+        "Python",
+        "Machine learning",
+        "Pandas",
+        "Model evaluation",
+        "Statistics"
+      ],
+      "preferred_roles": [
+        "Machine Learning Engineer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "machine_learning",
+    "title": "Machine Learning Engineer",
+    "required": [
+      "Python",
+      "Machine learning"
+    ],
+    "preferred": [],
+    "description": "compare baseline models and document evaluation results",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "authored_role_and_at_least_60_percent_foundations"
+  },
+  {
+    "split": "holdout",
+    "case": "ml_research",
+    "candidate": {
+      "skills": [
+        "Python",
+        "Machine learning",
+        "Pandas",
+        "Model evaluation",
+        "Statistics"
+      ],
+      "preferred_roles": [
+        "Machine Learning Engineer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "machine_learning",
+    "title": "Machine Learning Engineer",
+    "required": [
+      "Python",
+      "Machine learning",
+      "Pandas",
+      "Model evaluation"
+    ],
+    "preferred": [],
+    "description": "compare baseline models and document evaluation results",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "authored_role_and_at_least_60_percent_foundations"
+  },
+  {
+    "split": "holdout",
+    "case": "ml_research",
+    "candidate": {
+      "skills": [
+        "Python",
+        "Machine learning",
+        "Pandas",
+        "Model evaluation",
+        "Statistics"
+      ],
+      "preferred_roles": [
+        "Machine Learning Engineer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "machine_learning",
+    "title": "Machine Learning Engineer",
+    "required": [
+      "Python",
+      "Machine learning",
+      "Pandas",
+      "Model evaluation",
+      "Statistics"
+    ],
+    "preferred": [],
+    "description": "compare baseline models and document evaluation results",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "authored_role_and_at_least_60_percent_foundations"
+  },
+  {
+    "split": "holdout",
+    "case": "ml_research",
+    "candidate": {
+      "skills": [
+        "Python",
+        "Machine learning",
+        "Pandas",
+        "Model evaluation",
+        "Statistics"
+      ],
+      "preferred_roles": [
+        "Machine Learning Engineer"
+      ],
+      "experience_level": "student",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "machine_learning",
+    "title": "Machine Learning Engineer",
+    "required": [
+      "Python",
+      "Machine learning",
+      "Pandas",
+      "Model evaluation",
+      "Statistics"
+    ],
+    "preferred": [],
+    "description": "compare baseline models and document evaluation results",
+    "work_mode": "onsite",
+    "experience_min": 3,
+    "education": [
+      "Master degree"
+    ],
+    "relevant": 0,
+    "judgment": "explicit_remote_and_experience_mismatch"
+  },
+  {
+    "split": "holdout",
+    "case": "security",
+    "candidate": {
+      "skills": [
+        "Linux",
+        "Networking",
+        "Threat analysis",
+        "Incident response",
+        "Security monitoring"
+      ],
+      "preferred_roles": [
+        "Security Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "cybersecurity",
+    "title": "Security Analyst",
+    "required": [
+      "Networking",
+      "Linux",
+      "Threat analysis"
+    ],
+    "preferred": [
+      "Incident response",
+      "Security monitoring"
+    ],
+    "description": "triage lab security alerts and document findings",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "exact_role_and_foundations"
+  },
+  {
+    "split": "holdout",
+    "case": "security",
+    "candidate": {
+      "skills": [
+        "Linux",
+        "Networking",
+        "Threat analysis",
+        "Incident response",
+        "Security monitoring"
+      ],
+      "preferred_roles": [
+        "Security Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "software_engineering",
+    "title": "Software Engineer",
+    "required": [
+      "Python",
+      "Git",
+      "Data structures"
+    ],
+    "preferred": [
+      "SQL",
+      "REST APIs"
+    ],
+    "description": "build and test small product features",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "security",
+    "candidate": {
+      "skills": [
+        "Linux",
+        "Networking",
+        "Threat analysis",
+        "Incident response",
+        "Security monitoring"
+      ],
+      "preferred_roles": [
+        "Security Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "frontend",
+    "title": "Frontend Developer",
+    "required": [
+      "React",
+      "TypeScript",
+      "HTML"
+    ],
+    "preferred": [
+      "CSS",
+      "Accessibility",
+      "JavaScript"
+    ],
+    "description": "implement accessible and responsive interfaces",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "security",
+    "candidate": {
+      "skills": [
+        "Linux",
+        "Networking",
+        "Threat analysis",
+        "Incident response",
+        "Security monitoring"
+      ],
+      "preferred_roles": [
+        "Security Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "backend",
+    "title": "Backend Developer",
+    "required": [
+      "Python",
+      "FastAPI",
+      "REST APIs"
+    ],
+    "preferred": [
+      "SQL",
+      "Docker",
+      "PostgreSQL"
+    ],
+    "description": "develop validated REST endpoints and database queries",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "security",
+    "candidate": {
+      "skills": [
+        "Linux",
+        "Networking",
+        "Threat analysis",
+        "Incident response",
+        "Security monitoring"
+      ],
+      "preferred_roles": [
+        "Security Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "full_stack",
+    "title": "Full-Stack Developer",
+    "required": [
+      "JavaScript",
+      "React",
+      "Node.js"
+    ],
+    "preferred": [
+      "SQL",
+      "Git",
+      "REST APIs"
+    ],
+    "description": "deliver web features across the interface and API",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "security",
+    "candidate": {
+      "skills": [
+        "Linux",
+        "Networking",
+        "Threat analysis",
+        "Incident response",
+        "Security monitoring"
+      ],
+      "preferred_roles": [
+        "Security Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "mobile",
+    "title": "Mobile Developer",
+    "required": [
+      "Kotlin",
+      "Android",
+      "REST APIs"
+    ],
+    "preferred": [
+      "Git",
+      "Unit testing"
+    ],
+    "description": "build and test mobile application screens",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "security",
+    "candidate": {
+      "skills": [
+        "Linux",
+        "Networking",
+        "Threat analysis",
+        "Incident response",
+        "Security monitoring"
+      ],
+      "preferred_roles": [
+        "Security Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "web",
+    "title": "Web Developer",
+    "required": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "preferred": [
+      "Accessibility",
+      "Git"
+    ],
+    "description": "build usable websites and check browser compatibility",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "security",
+    "candidate": {
+      "skills": [
+        "Linux",
+        "Networking",
+        "Threat analysis",
+        "Incident response",
+        "Security monitoring"
+      ],
+      "preferred_roles": [
+        "Security Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "data_analysis",
+    "title": "Data Analyst",
+    "required": [
+      "SQL",
+      "Python",
+      "Statistics"
+    ],
+    "preferred": [
+      "Pandas",
+      "Data visualization",
+      "Excel"
+    ],
+    "description": "clean datasets and explain product trends",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "security",
+    "candidate": {
+      "skills": [
+        "Linux",
+        "Networking",
+        "Threat analysis",
+        "Incident response",
+        "Security monitoring"
+      ],
+      "preferred_roles": [
+        "Security Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "data_science",
+    "title": "Data Scientist",
+    "required": [
+      "Python",
+      "Statistics",
+      "Pandas"
+    ],
+    "preferred": [
+      "SQL",
+      "Machine learning"
+    ],
+    "description": "evaluate reproducible statistical models",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "security",
+    "candidate": {
+      "skills": [
+        "Linux",
+        "Networking",
+        "Threat analysis",
+        "Incident response",
+        "Security monitoring"
+      ],
+      "preferred_roles": [
+        "Security Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "machine_learning",
+    "title": "Machine Learning Engineer",
+    "required": [
+      "Python",
+      "Machine learning",
+      "Pandas"
+    ],
+    "preferred": [
+      "Model evaluation",
+      "Statistics"
+    ],
+    "description": "compare baseline models and document evaluation results",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "security",
+    "candidate": {
+      "skills": [
+        "Linux",
+        "Networking",
+        "Threat analysis",
+        "Incident response",
+        "Security monitoring"
+      ],
+      "preferred_roles": [
+        "Security Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "artificial_intelligence",
+    "title": "AI Engineer",
+    "required": [
+      "Python",
+      "Machine learning",
+      "REST APIs"
+    ],
+    "preferred": [
+      "Model evaluation",
+      "Responsible AI"
+    ],
+    "description": "prototype evaluated AI services with human review",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "security",
+    "candidate": {
+      "skills": [
+        "Linux",
+        "Networking",
+        "Threat analysis",
+        "Incident response",
+        "Security monitoring"
+      ],
+      "preferred_roles": [
+        "Security Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "natural_language_processing",
+    "title": "NLP Engineer",
+    "required": [
+      "Python",
+      "Natural language processing",
+      "Machine learning"
+    ],
+    "preferred": [
+      "Text processing",
+      "Model evaluation"
+    ],
+    "description": "evaluate text classification and retrieval experiments",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "security",
+    "candidate": {
+      "skills": [
+        "Linux",
+        "Networking",
+        "Threat analysis",
+        "Incident response",
+        "Security monitoring"
+      ],
+      "preferred_roles": [
+        "Security Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "computer_vision",
+    "title": "Computer Vision Engineer",
+    "required": [
+      "Python",
+      "Computer vision",
+      "Image processing"
+    ],
+    "preferred": [
+      "Machine learning",
+      "Linear algebra"
+    ],
+    "description": "measure image model performance on approved datasets",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "security",
+    "candidate": {
+      "skills": [
+        "Linux",
+        "Networking",
+        "Threat analysis",
+        "Incident response",
+        "Security monitoring"
+      ],
+      "preferred_roles": [
+        "Security Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "cybersecurity",
+    "title": "Security Analyst",
+    "required": [
+      "Networking",
+      "Linux"
+    ],
+    "preferred": [],
+    "description": "triage lab security alerts and document findings",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "authored_role_and_at_least_60_percent_foundations"
+  },
+  {
+    "split": "holdout",
+    "case": "security",
+    "candidate": {
+      "skills": [
+        "Linux",
+        "Networking",
+        "Threat analysis",
+        "Incident response",
+        "Security monitoring"
+      ],
+      "preferred_roles": [
+        "Security Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "cybersecurity",
+    "title": "Security Analyst",
+    "required": [
+      "Networking",
+      "Linux",
+      "Threat analysis",
+      "Incident response"
+    ],
+    "preferred": [],
+    "description": "triage lab security alerts and document findings",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "authored_role_and_at_least_60_percent_foundations"
+  },
+  {
+    "split": "holdout",
+    "case": "security",
+    "candidate": {
+      "skills": [
+        "Linux",
+        "Networking",
+        "Threat analysis",
+        "Incident response",
+        "Security monitoring"
+      ],
+      "preferred_roles": [
+        "Security Analyst"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "cybersecurity",
+    "title": "Security Analyst",
+    "required": [
+      "Networking",
+      "Linux",
+      "Threat analysis",
+      "Incident response",
+      "Security monitoring"
+    ],
+    "preferred": [],
+    "description": "triage lab security alerts and document findings",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "authored_role_and_at_least_60_percent_foundations"
+  },
+  {
+    "split": "holdout",
+    "case": "security",
+    "candidate": {
+      "skills": [
+        "Linux",
+        "Networking",
+        "Threat analysis",
+        "Incident response",
+        "Security monitoring"
+      ],
+      "preferred_roles": [
+        "Security Analyst"
+      ],
+      "experience_level": "student",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "cybersecurity",
+    "title": "Security Analyst",
+    "required": [
+      "Networking",
+      "Linux",
+      "Threat analysis",
+      "Incident response",
+      "Security monitoring"
+    ],
+    "preferred": [],
+    "description": "triage lab security alerts and document findings",
+    "work_mode": "onsite",
+    "experience_min": 3,
+    "education": [
+      "Master degree"
+    ],
+    "relevant": 0,
+    "judgment": "explicit_remote_and_experience_mismatch"
+  },
+  {
+    "split": "holdout",
+    "case": "mobile",
+    "candidate": {
+      "skills": [
+        "Kotlin",
+        "Android",
+        "REST APIs",
+        "Git",
+        "Unit testing"
+      ],
+      "preferred_roles": [
+        "Mobile Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "mobile",
+    "title": "Mobile Developer",
+    "required": [
+      "Kotlin",
+      "Android",
+      "REST APIs"
+    ],
+    "preferred": [
+      "Git",
+      "Unit testing"
+    ],
+    "description": "build and test mobile application screens",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "exact_role_and_foundations"
+  },
+  {
+    "split": "holdout",
+    "case": "mobile",
+    "candidate": {
+      "skills": [
+        "Kotlin",
+        "Android",
+        "REST APIs",
+        "Git",
+        "Unit testing"
+      ],
+      "preferred_roles": [
+        "Mobile Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "frontend",
+    "title": "Frontend Developer",
+    "required": [
+      "React",
+      "TypeScript",
+      "HTML"
+    ],
+    "preferred": [
+      "CSS",
+      "Accessibility",
+      "JavaScript"
+    ],
+    "description": "implement accessible and responsive interfaces",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "mobile",
+    "candidate": {
+      "skills": [
+        "Kotlin",
+        "Android",
+        "REST APIs",
+        "Git",
+        "Unit testing"
+      ],
+      "preferred_roles": [
+        "Mobile Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "backend",
+    "title": "Backend Developer",
+    "required": [
+      "Python",
+      "FastAPI",
+      "REST APIs"
+    ],
+    "preferred": [
+      "SQL",
+      "Docker",
+      "PostgreSQL"
+    ],
+    "description": "develop validated REST endpoints and database queries",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "mobile",
+    "candidate": {
+      "skills": [
+        "Kotlin",
+        "Android",
+        "REST APIs",
+        "Git",
+        "Unit testing"
+      ],
+      "preferred_roles": [
+        "Mobile Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "web",
+    "title": "Web Developer",
+    "required": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "preferred": [
+      "Accessibility",
+      "Git"
+    ],
+    "description": "build usable websites and check browser compatibility",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "mobile",
+    "candidate": {
+      "skills": [
+        "Kotlin",
+        "Android",
+        "REST APIs",
+        "Git",
+        "Unit testing"
+      ],
+      "preferred_roles": [
+        "Mobile Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "data_analysis",
+    "title": "Data Analyst",
+    "required": [
+      "SQL",
+      "Python",
+      "Statistics"
+    ],
+    "preferred": [
+      "Pandas",
+      "Data visualization",
+      "Excel"
+    ],
+    "description": "clean datasets and explain product trends",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "mobile",
+    "candidate": {
+      "skills": [
+        "Kotlin",
+        "Android",
+        "REST APIs",
+        "Git",
+        "Unit testing"
+      ],
+      "preferred_roles": [
+        "Mobile Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "data_science",
+    "title": "Data Scientist",
+    "required": [
+      "Python",
+      "Statistics",
+      "Pandas"
+    ],
+    "preferred": [
+      "SQL",
+      "Machine learning"
+    ],
+    "description": "evaluate reproducible statistical models",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "mobile",
+    "candidate": {
+      "skills": [
+        "Kotlin",
+        "Android",
+        "REST APIs",
+        "Git",
+        "Unit testing"
+      ],
+      "preferred_roles": [
+        "Mobile Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "machine_learning",
+    "title": "Machine Learning Engineer",
+    "required": [
+      "Python",
+      "Machine learning",
+      "Pandas"
+    ],
+    "preferred": [
+      "Model evaluation",
+      "Statistics"
+    ],
+    "description": "compare baseline models and document evaluation results",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "mobile",
+    "candidate": {
+      "skills": [
+        "Kotlin",
+        "Android",
+        "REST APIs",
+        "Git",
+        "Unit testing"
+      ],
+      "preferred_roles": [
+        "Mobile Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "artificial_intelligence",
+    "title": "AI Engineer",
+    "required": [
+      "Python",
+      "Machine learning",
+      "REST APIs"
+    ],
+    "preferred": [
+      "Model evaluation",
+      "Responsible AI"
+    ],
+    "description": "prototype evaluated AI services with human review",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "mobile",
+    "candidate": {
+      "skills": [
+        "Kotlin",
+        "Android",
+        "REST APIs",
+        "Git",
+        "Unit testing"
+      ],
+      "preferred_roles": [
+        "Mobile Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "natural_language_processing",
+    "title": "NLP Engineer",
+    "required": [
+      "Python",
+      "Natural language processing",
+      "Machine learning"
+    ],
+    "preferred": [
+      "Text processing",
+      "Model evaluation"
+    ],
+    "description": "evaluate text classification and retrieval experiments",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "mobile",
+    "candidate": {
+      "skills": [
+        "Kotlin",
+        "Android",
+        "REST APIs",
+        "Git",
+        "Unit testing"
+      ],
+      "preferred_roles": [
+        "Mobile Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "computer_vision",
+    "title": "Computer Vision Engineer",
+    "required": [
+      "Python",
+      "Computer vision",
+      "Image processing"
+    ],
+    "preferred": [
+      "Machine learning",
+      "Linear algebra"
+    ],
+    "description": "measure image model performance on approved datasets",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "mobile",
+    "candidate": {
+      "skills": [
+        "Kotlin",
+        "Android",
+        "REST APIs",
+        "Git",
+        "Unit testing"
+      ],
+      "preferred_roles": [
+        "Mobile Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "cybersecurity",
+    "title": "Security Analyst",
+    "required": [
+      "Networking",
+      "Linux",
+      "Threat analysis"
+    ],
+    "preferred": [
+      "Incident response",
+      "Security monitoring"
+    ],
+    "description": "triage lab security alerts and document findings",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "mobile",
+    "candidate": {
+      "skills": [
+        "Kotlin",
+        "Android",
+        "REST APIs",
+        "Git",
+        "Unit testing"
+      ],
+      "preferred_roles": [
+        "Mobile Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "cloud",
+    "title": "Cloud Engineer",
+    "required": [
+      "Linux",
+      "Networking",
+      "AWS"
+    ],
+    "preferred": [
+      "Docker",
+      "Python"
+    ],
+    "description": "maintain supervised cloud development environments",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "mobile",
+    "candidate": {
+      "skills": [
+        "Kotlin",
+        "Android",
+        "REST APIs",
+        "Git",
+        "Unit testing"
+      ],
+      "preferred_roles": [
+        "Mobile Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "devops",
+    "title": "DevOps Engineer",
+    "required": [
+      "Linux",
+      "Git",
+      "Docker"
+    ],
+    "preferred": [
+      "CI/CD",
+      "Python",
+      "Kubernetes"
+    ],
+    "description": "improve container builds and deployment pipelines",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 0,
+    "judgment": "unrelated_role_shared_keywords"
+  },
+  {
+    "split": "holdout",
+    "case": "mobile",
+    "candidate": {
+      "skills": [
+        "Kotlin",
+        "Android",
+        "REST APIs",
+        "Git",
+        "Unit testing"
+      ],
+      "preferred_roles": [
+        "Mobile Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "mobile",
+    "title": "Mobile Developer",
+    "required": [
+      "Kotlin",
+      "Android"
+    ],
+    "preferred": [],
+    "description": "build and test mobile application screens",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "authored_role_and_at_least_60_percent_foundations"
+  },
+  {
+    "split": "holdout",
+    "case": "mobile",
+    "candidate": {
+      "skills": [
+        "Kotlin",
+        "Android",
+        "REST APIs",
+        "Git",
+        "Unit testing"
+      ],
+      "preferred_roles": [
+        "Mobile Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "mobile",
+    "title": "Mobile Developer",
+    "required": [
+      "Kotlin",
+      "Android",
+      "REST APIs",
+      "Git"
+    ],
+    "preferred": [],
+    "description": "build and test mobile application screens",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "authored_role_and_at_least_60_percent_foundations"
+  },
+  {
+    "split": "holdout",
+    "case": "mobile",
+    "candidate": {
+      "skills": [
+        "Kotlin",
+        "Android",
+        "REST APIs",
+        "Git",
+        "Unit testing"
+      ],
+      "preferred_roles": [
+        "Mobile Developer"
+      ],
+      "experience_level": "graduate",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "mobile",
+    "title": "Mobile Developer",
+    "required": [
+      "Kotlin",
+      "Android",
+      "REST APIs",
+      "Git",
+      "Unit testing"
+    ],
+    "preferred": [],
+    "description": "build and test mobile application screens",
+    "work_mode": "remote",
+    "experience_min": 0,
+    "education": [],
+    "relevant": 1,
+    "judgment": "authored_role_and_at_least_60_percent_foundations"
+  },
+  {
+    "split": "holdout",
+    "case": "mobile",
+    "candidate": {
+      "skills": [
+        "Kotlin",
+        "Android",
+        "REST APIs",
+        "Git",
+        "Unit testing"
+      ],
+      "preferred_roles": [
+        "Mobile Developer"
+      ],
+      "experience_level": "student",
+      "preferred_locations": [
+        "Remote"
+      ]
+    },
+    "category": "mobile",
+    "title": "Mobile Developer",
+    "required": [
+      "Kotlin",
+      "Android",
+      "REST APIs",
+      "Git",
+      "Unit testing"
+    ],
+    "preferred": [],
+    "description": "build and test mobile application screens",
+    "work_mode": "onsite",
+    "experience_min": 3,
+    "education": [
+      "Master degree"
+    ],
+    "relevant": 0,
+    "judgment": "explicit_remote_and_experience_mismatch"
+  }
+]

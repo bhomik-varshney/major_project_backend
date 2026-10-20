@@ -65,3 +65,44 @@ ROLES = (
     recipe('renewable_energy','Energy Technology Analyst','Renewable energy','Energy analytics','Python|Data analysis|Excel|Statistics|Energy systems','Pandas|Excel|MATLAB','analyze synthetic energy-production and efficiency data'),
     recipe('developer_relations','Developer Relations Associate','Developer tools','Developer education','Technical writing|Communication|Git|REST APIs|Python','Git|Markdown|Postman','prepare tested developer examples and collect product feedback'),
 )
+
+# Additional distinct graduate domains and coherent alternatives within common ones.
+ROLES += (
+    recipe('data_engineering','Data Engineer','Analytics services','Data platform','Python|SQL|ETL|Data modeling|Apache Spark|Data validation','Airflow|dbt|Apache Spark','build incremental data pipelines and validate warehouse tables'),
+    recipe('deep_learning','Deep Learning Engineer','AI products','Model research','Python|PyTorch|Deep learning|Linear algebra|Model evaluation','PyTorch|CUDA|TensorBoard','compare neural architectures and measure held-out model performance'),
+    recipe('generative_ai','Generative AI Engineer','AI products','Applied AI','Python|LLMs|Retrieval augmented generation|REST APIs|Model evaluation','LangChain|FastAPI|Vector databases','evaluate grounded retrieval and generation on synthetic documents'),
+    recipe('ethical_hacking','Penetration Testing Analyst','Security services','Security research','Networking|Linux|Web security|Vulnerability assessment|Technical writing','Burp Suite|Nmap|OWASP ZAP','assess authorized sandbox applications and document reproducible vulnerabilities'),
+    recipe('security_operations','SOC Analyst','Security services','Security operations','SIEM|Incident response|Threat analysis|Networking|Linux','Splunk|Wireshark|SIEM','investigate training alerts and improve detection runbooks'),
+    recipe('platform_engineering','Platform Engineer','Cloud software','Internal platforms','Linux|Docker|Kubernetes|Terraform|CI/CD|Python','Terraform|Kubernetes|GitHub Actions','create reviewed internal service templates and deployment tooling'),
+    recipe('performance_testing','Performance Test Engineer','Software services','Quality engineering','Software testing|Performance testing|HTTP|Python|SQL','k6|JMeter|Grafana','measure service latency and identify reproducible load bottlenecks'),
+    recipe('electronics','Electronics Engineer','Electronics','Hardware engineering','Electronics|Circuit design|PCB design|Sensors|Signal processing','KiCad|Oscilloscope|LTspice','prototype circuits and validate measured electrical behavior'),
+    recipe('industrial_automation','Automation Engineer','Industrial automation','Control engineering','PLC|Control systems|Sensors|Electronics|Troubleshooting','Siemens TIA Portal|SCADA|MATLAB','test simulated control sequences and document safety interlocks'),
+    recipe('ar_vr','XR Developer','Immersive technology','Immersive products','C#|Unity|AR/VR|Linear algebra|Interaction design','Unity|OpenXR|Blender','prototype immersive interactions and evaluate device performance'),
+    recipe('frontend','Frontend Engineer','Digital products','Web engineering','JavaScript|React|HTML|CSS|Accessibility|Git','Vite|React|Playwright','build responsive browser interfaces and validate keyboard navigation'),
+    recipe('frontend','UI Developer','Digital products','Web engineering','TypeScript|Vue|HTML|CSS|Accessibility|Git','Vue|Vite|Vitest','implement reusable interface components and accessible forms'),
+    recipe('frontend','Angular Developer','Enterprise technology','Web engineering','TypeScript|Angular|HTML|CSS|RxJS|Git','Angular|Jest|Node.js','deliver tested enterprise interface modules'),
+    recipe('backend','Backend Engineer','Enterprise technology','API engineering','Java|Spring Boot|REST APIs|SQL|Git|Unit testing','Maven|JUnit|PostgreSQL','build transactional application services with validated database access'),
+    recipe('backend','API Developer','Web services','API engineering','JavaScript|Node.js|REST APIs|SQL|Git|PostgreSQL','Express|Node.js|PostgreSQL','build web service endpoints and test authentication workflows'),
+    recipe('backend','Python Developer','Cloud software','API engineering','Python|SQL|Git|REST APIs|Django|Unit testing','Django|pytest|PostgreSQL','implement database-backed service features under code review'),
+    recipe('backend','Go Developer','Cloud software','API engineering','Go|REST APIs|SQL|Docker|Git|Unit testing','Go|PostgreSQL|Docker','develop small concurrent service components and integration tests'),
+    recipe('full_stack','Full Stack Engineer','Digital products','Product engineering','TypeScript|React|Node.js|PostgreSQL|Git|REST APIs','Next.js|Node.js|PostgreSQL','deliver typed web interfaces and persisted API features'),
+    recipe('full_stack','Web Application Developer','Web services','Product engineering','Python|Django|HTML|CSS|SQL|JavaScript','Django|PostgreSQL|Git','deliver accessible database-backed business applications'),
+    recipe('mobile','iOS Developer','Consumer technology','Mobile engineering','Swift|iOS|REST APIs|Git|Unit testing','Xcode|SwiftUI|Git','build accessible mobile screens and test network integration'),
+    recipe('mobile','Cross Platform Developer','Consumer technology','Mobile engineering','TypeScript|React Native|REST APIs|Git|Unit testing','Expo|React Native|Jest','build mobile application workflows and validate device behavior'),
+    recipe('mobile','Flutter Developer','Consumer technology','Mobile engineering','Dart|Flutter|REST APIs|Git|Unit testing','Flutter|Firebase|Android Studio','implement cross-platform interfaces and integration tests'),
+    recipe('cloud','Cloud Infrastructure Engineer','Cloud services','Cloud infrastructure','Linux|Networking|Azure|Terraform|Python','Azure|Terraform|Docker','maintain monitored development cloud infrastructure'),
+    recipe('cloud','Cloud Operations Engineer','Cloud services','Cloud infrastructure','Linux|Networking|Google Cloud|Docker|Python','Google Cloud|Terraform|Cloud Monitoring','review cloud deployment health and automate approved maintenance'),
+    recipe('test_automation','QA Automation Engineer','Software services','Test engineering','Java|Software testing|Selenium|Git|REST APIs','Selenium|JUnit|Postman','automate regression checks and investigate test failures'),
+    recipe('test_automation','Browser Automation Engineer','Digital products','Test engineering','TypeScript|Software testing|Playwright|Git|REST APIs','Playwright|Node.js|Postman','build stable browser regression suites and review defects'),
+    recipe('data_analysis','Reporting Analyst','Business services','Analytics','SQL|Excel|Data analysis|Data visualization|Statistics','Excel|Power BI|SQL','investigate operational metrics and explain dashboard trends'),
+    recipe('data_science','Applied Data Scientist','Analytics services','Data science','Python|Statistics|Pandas|SQL|Model evaluation|Machine learning','scikit-learn|Jupyter|Pandas','test predictive hypotheses against reproducible statistical baselines'),
+    recipe('generative_ai','LLM Application Developer','AI products','Applied AI','Python|LLMs|Natural language processing|REST APIs|Model evaluation|SQL','LangGraph|FastAPI|Vector databases','build evaluated conversational tools with grounded evidence'),
+)
+
+# Relative demand for this student-oriented test corpus, not labor-market estimates.
+CATEGORY_WEIGHTS = {role.category: 100 for role in ROLES}
+CATEGORY_WEIGHTS.update(software_engineering=800, frontend=650, backend=800, full_stack=650,
+    web=300, data_analysis=500, data_engineering=320, data_science=300, machine_learning=350,
+    generative_ai=250, mobile=320, cloud=300, devops=300, test_automation=300,
+    quality_assurance=250, cybersecurity=240, ui_ux=220, product_design=180,
+    business_analysis=200, it_support=180, business_intelligence=200)

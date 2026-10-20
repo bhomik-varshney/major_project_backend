@@ -1,0 +1,810 @@
+{
+  "dataset": "2026-10-demo-v3-10000",
+  "records": 10000,
+  "deduplicated": 9990,
+  "duplicates_removed": 10,
+  "minimum_raw_score": 30,
+  "pool_size": 1200,
+  "cases": [
+    {
+      "case": "backend_student",
+      "corpus": 9990,
+      "retrieved": 1200,
+      "relevant_in_corpus": 1437,
+      "methods": {
+        "tfidf": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.006958942240779402,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "bm25": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.006958942240779402,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "skill_overlap": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.006958942240779402,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "word2vec": {
+          "status": "unavailable"
+        },
+        "embedding": {
+          "status": "unavailable"
+        },
+        "hybrid_exhaustive": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.006958942240779402,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "hybrid": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.006958942240779402,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "recall_of_exhaustive_top_10": 1.0,
+      "relevant_retrieval_recall": 0.5901183020180932,
+      "above_threshold": {
+        "20": 1867,
+        "30": 830,
+        "40": 378,
+        "50": 182,
+        "60": 140,
+        "70": 19,
+        "80": 0
+      },
+      "mean_relevant_score": 31.020033124565067,
+      "mean_irrelevant_score": 7.336599649245879,
+      "seconds_exhaustive": 10.426
+    },
+    {
+      "case": "frontend_aliases",
+      "corpus": 9990,
+      "retrieved": 1200,
+      "relevant_in_corpus": 1437,
+      "methods": {
+        "tfidf": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.006958942240779402,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "bm25": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.006958942240779402,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "skill_overlap": {
+          "precision_at_10": 0.0,
+          "recall_at_10": 0.0,
+          "hit_rate": 0,
+          "mrr": 0,
+          "ndcg_at_10": 0.0
+        },
+        "word2vec": {
+          "status": "unavailable"
+        },
+        "embedding": {
+          "status": "unavailable"
+        },
+        "hybrid_exhaustive": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.006958942240779402,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "hybrid": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.006958942240779402,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "recall_of_exhaustive_top_10": 1.0,
+      "relevant_retrieval_recall": 0.7585247042449548,
+      "above_threshold": {
+        "20": 1440,
+        "30": 1128,
+        "40": 853,
+        "50": 625,
+        "60": 381,
+        "70": 19,
+        "80": 0
+      },
+      "mean_relevant_score": 43.69557258176757,
+      "mean_irrelevant_score": 2.3201839003858296,
+      "seconds_exhaustive": 10.7249
+    },
+    {
+      "case": "data_analyst",
+      "corpus": 9990,
+      "retrieved": 1200,
+      "relevant_in_corpus": 630,
+      "methods": {
+        "tfidf": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.015873015873015872,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "bm25": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.015873015873015872,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "skill_overlap": {
+          "precision_at_10": 0.0,
+          "recall_at_10": 0.0,
+          "hit_rate": 0,
+          "mrr": 0,
+          "ndcg_at_10": 0.0
+        },
+        "word2vec": {
+          "status": "unavailable"
+        },
+        "embedding": {
+          "status": "unavailable"
+        },
+        "hybrid_exhaustive": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.015873015873015872,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "hybrid": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.015873015873015872,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "recall_of_exhaustive_top_10": 1.0,
+      "relevant_retrieval_recall": 0.9936507936507937,
+      "above_threshold": {
+        "20": 2804,
+        "30": 1563,
+        "40": 1051,
+        "50": 674,
+        "60": 271,
+        "70": 19,
+        "80": 0
+      },
+      "mean_relevant_score": 56.698835396825395,
+      "mean_irrelevant_score": 10.956560683760683,
+      "seconds_exhaustive": 14.0932
+    },
+    {
+      "case": "design_student",
+      "corpus": 9990,
+      "retrieved": 1200,
+      "relevant_in_corpus": 359,
+      "methods": {
+        "tfidf": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.027855153203342618,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "bm25": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.027855153203342618,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "skill_overlap": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.027855153203342618,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "word2vec": {
+          "status": "unavailable"
+        },
+        "embedding": {
+          "status": "unavailable"
+        },
+        "hybrid_exhaustive": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.027855153203342618,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "hybrid": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.027855153203342618,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "recall_of_exhaustive_top_10": 1.0,
+      "relevant_retrieval_recall": 1.0,
+      "above_threshold": {
+        "20": 358,
+        "30": 260,
+        "40": 93,
+        "50": 55,
+        "60": 15,
+        "70": 0,
+        "80": 0
+      },
+      "mean_relevant_score": 36.300711420612814,
+      "mean_irrelevant_score": 0.0037986709583636173,
+      "seconds_exhaustive": 10.8863
+    },
+    {
+      "case": "sparse_backend",
+      "corpus": 9990,
+      "retrieved": 1200,
+      "relevant_in_corpus": 1887,
+      "methods": {
+        "tfidf": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.005299417064122946,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "bm25": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.005299417064122946,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "skill_overlap": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.005299417064122946,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "word2vec": {
+          "status": "unavailable"
+        },
+        "embedding": {
+          "status": "unavailable"
+        },
+        "hybrid_exhaustive": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.005299417064122946,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "hybrid": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.005299417064122946,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "recall_of_exhaustive_top_10": 1.0,
+      "relevant_retrieval_recall": 0.3815580286168522,
+      "above_threshold": {
+        "20": 588,
+        "30": 278,
+        "40": 189,
+        "50": 37,
+        "60": 2,
+        "70": 0,
+        "80": 0
+      },
+      "mean_relevant_score": 14.865717435082141,
+      "mean_irrelevant_score": 2.8868917931630262,
+      "seconds_exhaustive": 6.4468
+    },
+    {
+      "case": "ml_student",
+      "corpus": 9990,
+      "retrieved": 1200,
+      "relevant_in_corpus": 674,
+      "methods": {
+        "tfidf": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.01483679525222552,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "bm25": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.01483679525222552,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "skill_overlap": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.01483679525222552,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "word2vec": {
+          "status": "unavailable"
+        },
+        "embedding": {
+          "status": "unavailable"
+        },
+        "hybrid_exhaustive": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.01483679525222552,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "hybrid": {
+          "precision_at_10": 1.0,
+          "recall_at_10": 0.01483679525222552,
+          "hit_rate": 1,
+          "mrr": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "recall_of_exhaustive_top_10": 1.0,
+      "relevant_retrieval_recall": 1.0,
+      "above_threshold": {
+        "20": 1111,
+        "30": 723,
+        "40": 611,
+        "50": 520,
+        "60": 269,
+        "70": 0,
+        "80": 0
+      },
+      "mean_relevant_score": 55.27737566765579,
+      "mean_irrelevant_score": 3.5312386324602834,
+      "seconds_exhaustive": 6.7884
+    }
+  ],
+  "aggregate": {
+    "tfidf": {
+      "precision_at_10": 1.0,
+      "recall_at_10": 0.012964,
+      "hit_rate": 1,
+      "mrr": 1.0,
+      "ndcg_at_10": 1.0
+    },
+    "bm25": {
+      "precision_at_10": 1.0,
+      "recall_at_10": 0.012964,
+      "hit_rate": 1,
+      "mrr": 1.0,
+      "ndcg_at_10": 1.0
+    },
+    "skill_overlap": {
+      "precision_at_10": 0.666667,
+      "recall_at_10": 0.009158,
+      "hit_rate": 0.666667,
+      "mrr": 0.666667,
+      "ndcg_at_10": 0.666667
+    },
+    "hybrid_exhaustive": {
+      "precision_at_10": 1.0,
+      "recall_at_10": 0.012964,
+      "hit_rate": 1,
+      "mrr": 1.0,
+      "ndcg_at_10": 1.0
+    },
+    "hybrid": {
+      "precision_at_10": 1.0,
+      "recall_at_10": 0.012964,
+      "hit_rate": 1,
+      "mrr": 1.0,
+      "ndcg_at_10": 1.0
+    }
+  },
+  "mean_top10_retrieval_recall": 1.0,
+  "required_missing_oracle_accuracy": 1.0,
+  "required_missing_oracle_checks": 8,
+  "explanation_support_rate": 1.0,
+  "unsupported_reason_rate": 0.0,
+  "explanation_checks": 95731,
+  "calibration": {
+    "train_pairs": 68,
+    "holdout_pairs": 68,
+    "holdout_brier": 0.038735062891838236,
+    "raw_score_brier": 0.03984578014614706,
+    "train_positive": 13,
+    "holdout_positive": 16,
+    "artifact": {
+      "version": "synthetic-isotonic-v1",
+      "training_pairs": 68,
+      "score_config": {
+        "weights": {
+          "semantic": 0.2,
+          "required_skills": 0.3,
+          "preferred_skills": 0.08,
+          "title_category": 0.12,
+          "project_experience": 0.1,
+          "education": 0.04,
+          "experience": 0.06,
+          "location": 0.05,
+          "interests": 0.05
+        },
+        "critical_penalty": 15.0,
+        "unknown_ceiling_base": 50.0,
+        "lexical_strategy": "tfidf",
+        "semantic": false
+      },
+      "training_sha256": "f036fc770c70caa61f49c2e3cbd0123ea49bdacf0de1527b0ee35b238e2c689e",
+      "bins": [
+        {
+          "lower": 0,
+          "upper": 20,
+          "percentage": 2.0,
+          "examples": 48,
+          "positive_labels": 0
+        },
+        {
+          "lower": 20,
+          "upper": 40,
+          "percentage": 33.3333,
+          "examples": 1,
+          "positive_labels": 0
+        },
+        {
+          "lower": 40,
+          "upper": 60,
+          "percentage": 33.3333,
+          "examples": 4,
+          "positive_labels": 1
+        },
+        {
+          "lower": 60,
+          "upper": 80,
+          "percentage": 71.4286,
+          "examples": 12,
+          "positive_labels": 9
+        },
+        {
+          "lower": 80,
+          "upper": 100,
+          "percentage": 80.0,
+          "examples": 3,
+          "positive_labels": 3
+        }
+      ],
+      "policy": "Fixed-width raw-score bins, Laplace smoothing, weighted monotonic PAVA. Disjoint candidate families held out. Experimental synthetic relevance frequency, not hiring probability."
+    }
+  },
+  "authored_holdout_comparison": {
+    "cases": [
+      {
+        "case": "java_backend",
+        "judgments": 17,
+        "positives": 4,
+        "methods": {
+          "tfidf": {
+            "precision_at_10": 0.4,
+            "recall_at_10": 1.0,
+            "hit_rate": 1,
+            "mrr": 1.0,
+            "ndcg_at_10": 0.9828920819566879,
+            "precision_at_3": 1.0,
+            "ndcg_at_3": 1.0,
+            "mean_relevant_score": 28.9345015,
+            "mean_irrelevant_score": 4.235992769230769
+          },
+          "bm25": {
+            "precision_at_10": 0.4,
+            "recall_at_10": 1.0,
+            "hit_rate": 1,
+            "mrr": 1.0,
+            "ndcg_at_10": 0.9558295932317544,
+            "precision_at_3": 0.6666666666666666,
+            "ndcg_at_3": 0.7653606369886217,
+            "mean_relevant_score": 35.1125529438412,
+            "mean_irrelevant_score": 6.638464772943216
+          },
+          "skill_overlap": {
+            "precision_at_10": 0.4,
+            "recall_at_10": 1.0,
+            "hit_rate": 1,
+            "mrr": 1.0,
+            "ndcg_at_10": 1.0,
+            "precision_at_3": 1.0,
+            "ndcg_at_3": 1.0,
+            "mean_relevant_score": 100.0,
+            "mean_irrelevant_score": 14.102564102564102
+          },
+          "hybrid": {
+            "precision_at_10": 0.4,
+            "recall_at_10": 1.0,
+            "hit_rate": 1,
+            "mrr": 1.0,
+            "ndcg_at_10": 1.0,
+            "precision_at_3": 1.0,
+            "ndcg_at_3": 1.0,
+            "mean_relevant_score": 75.083925,
+            "mean_irrelevant_score": 8.168807692307691
+          },
+          "hybrid_bm25": {
+            "precision_at_10": 0.4,
+            "recall_at_10": 1.0,
+            "hit_rate": 1,
+            "mrr": 1.0,
+            "ndcg_at_10": 1.0,
+            "precision_at_3": 1.0,
+            "ndcg_at_3": 1.0,
+            "mean_relevant_score": 76.61314999999999,
+            "mean_irrelevant_score": 8.647415384615385
+          }
+        }
+      },
+      {
+        "case": "ml_research",
+        "judgments": 17,
+        "positives": 4,
+        "methods": {
+          "tfidf": {
+            "precision_at_10": 0.4,
+            "recall_at_10": 1.0,
+            "hit_rate": 1,
+            "mrr": 1.0,
+            "ndcg_at_10": 0.9558295932317544,
+            "precision_at_3": 0.6666666666666666,
+            "ndcg_at_3": 0.7653606369886217,
+            "mean_relevant_score": 47.972726249999994,
+            "mean_irrelevant_score": 4.502581692307692
+          },
+          "bm25": {
+            "precision_at_10": 0.4,
+            "recall_at_10": 1.0,
+            "hit_rate": 1,
+            "mrr": 1.0,
+            "ndcg_at_10": 0.9558295932317544,
+            "precision_at_3": 0.6666666666666666,
+            "ndcg_at_3": 0.7653606369886217,
+            "mean_relevant_score": 46.29103812909279,
+            "mean_irrelevant_score": 6.187376653815176
+          },
+          "skill_overlap": {
+            "precision_at_10": 0.4,
+            "recall_at_10": 1.0,
+            "hit_rate": 1,
+            "mrr": 1.0,
+            "ndcg_at_10": 1.0,
+            "precision_at_3": 1.0,
+            "ndcg_at_3": 1.0,
+            "mean_relevant_score": 100.0,
+            "mean_irrelevant_score": 15.384615384615385
+          },
+          "hybrid": {
+            "precision_at_10": 0.4,
+            "recall_at_10": 1.0,
+            "hit_rate": 1,
+            "mrr": 1.0,
+            "ndcg_at_10": 1.0,
+            "precision_at_3": 1.0,
+            "ndcg_at_3": 1.0,
+            "mean_relevant_score": 81.79175000000001,
+            "mean_irrelevant_score": 8.923284615384615
+          },
+          "hybrid_bm25": {
+            "precision_at_10": 0.4,
+            "recall_at_10": 1.0,
+            "hit_rate": 1,
+            "mrr": 1.0,
+            "ndcg_at_10": 0.9828920819566879,
+            "precision_at_3": 1.0,
+            "ndcg_at_3": 1.0,
+            "mean_relevant_score": 81.358025,
+            "mean_irrelevant_score": 9.270384615384616
+          }
+        }
+      },
+      {
+        "case": "mobile",
+        "judgments": 17,
+        "positives": 4,
+        "methods": {
+          "tfidf": {
+            "precision_at_10": 0.4,
+            "recall_at_10": 1.0,
+            "hit_rate": 1,
+            "mrr": 1.0,
+            "ndcg_at_10": 0.9438661545147247,
+            "precision_at_3": 0.6666666666666666,
+            "ndcg_at_3": 0.7653606369886217,
+            "mean_relevant_score": 43.69768025,
+            "mean_irrelevant_score": 6.9094599230769225
+          },
+          "bm25": {
+            "precision_at_10": 0.4,
+            "recall_at_10": 1.0,
+            "hit_rate": 1,
+            "mrr": 1.0,
+            "ndcg_at_10": 0.9558295932317544,
+            "precision_at_3": 0.6666666666666666,
+            "ndcg_at_3": 0.7653606369886217,
+            "mean_relevant_score": 38.72096419969829,
+            "mean_irrelevant_score": 6.764925727342845
+          },
+          "skill_overlap": {
+            "precision_at_10": 0.4,
+            "recall_at_10": 1.0,
+            "hit_rate": 1,
+            "mrr": 1.0,
+            "ndcg_at_10": 1.0,
+            "precision_at_3": 1.0,
+            "ndcg_at_3": 1.0,
+            "mean_relevant_score": 100.0,
+            "mean_irrelevant_score": 15.384615384615385
+          },
+          "hybrid": {
+            "precision_at_10": 0.4,
+            "recall_at_10": 1.0,
+            "hit_rate": 1,
+            "mrr": 1.0,
+            "ndcg_at_10": 0.9828920819566879,
+            "precision_at_3": 1.0,
+            "ndcg_at_3": 1.0,
+            "mean_relevant_score": 80.379975,
+            "mean_irrelevant_score": 9.672107692307693
+          },
+          "hybrid_bm25": {
+            "precision_at_10": 0.4,
+            "recall_at_10": 1.0,
+            "hit_rate": 1,
+            "mrr": 1.0,
+            "ndcg_at_10": 0.9828920819566879,
+            "precision_at_3": 1.0,
+            "ndcg_at_3": 1.0,
+            "mean_relevant_score": 79.1502,
+            "mean_irrelevant_score": 9.600346153846154
+          }
+        }
+      },
+      {
+        "case": "security",
+        "judgments": 17,
+        "positives": 4,
+        "methods": {
+          "tfidf": {
+            "precision_at_10": 0.4,
+            "recall_at_10": 1.0,
+            "hit_rate": 1,
+            "mrr": 1.0,
+            "ndcg_at_10": 0.9558295932317544,
+            "precision_at_3": 0.6666666666666666,
+            "ndcg_at_3": 0.7653606369886217,
+            "mean_relevant_score": 34.2761595,
+            "mean_irrelevant_score": 3.261517076923077
+          },
+          "bm25": {
+            "precision_at_10": 0.4,
+            "recall_at_10": 1.0,
+            "hit_rate": 1,
+            "mrr": 1.0,
+            "ndcg_at_10": 0.9558295932317544,
+            "precision_at_3": 0.6666666666666666,
+            "ndcg_at_3": 0.7653606369886217,
+            "mean_relevant_score": 39.7276797733868,
+            "mean_irrelevant_score": 4.315052742700769
+          },
+          "skill_overlap": {
+            "precision_at_10": 0.4,
+            "recall_at_10": 1.0,
+            "hit_rate": 1,
+            "mrr": 1.0,
+            "ndcg_at_10": 1.0,
+            "precision_at_3": 1.0,
+            "ndcg_at_3": 1.0,
+            "mean_relevant_score": 100.0,
+            "mean_irrelevant_score": 7.6923076923076925
+          },
+          "hybrid": {
+            "precision_at_10": 0.4,
+            "recall_at_10": 1.0,
+            "hit_rate": 1,
+            "mrr": 1.0,
+            "ndcg_at_10": 0.9828920819566879,
+            "precision_at_3": 1.0,
+            "ndcg_at_3": 1.0,
+            "mean_relevant_score": 77.4817,
+            "mean_irrelevant_score": 5.856246153846154
+          },
+          "hybrid_bm25": {
+            "precision_at_10": 0.4,
+            "recall_at_10": 1.0,
+            "hit_rate": 1,
+            "mrr": 1.0,
+            "ndcg_at_10": 0.9828920819566879,
+            "precision_at_3": 1.0,
+            "ndcg_at_3": 1.0,
+            "mean_relevant_score": 78.8481,
+            "mean_irrelevant_score": 6.116261538461538
+          }
+        }
+      }
+    ],
+    "aggregate": {
+      "tfidf": {
+        "precision_at_3": 0.75,
+        "ndcg_at_3": 0.82402,
+        "precision_at_10": 0.4,
+        "ndcg_at_10": 0.959604,
+        "mrr": 1.0,
+        "mean_relevant_score": 38.720267,
+        "mean_irrelevant_score": 4.727388
+      },
+      "bm25": {
+        "precision_at_3": 0.666667,
+        "ndcg_at_3": 0.765361,
+        "precision_at_10": 0.4,
+        "ndcg_at_10": 0.95583,
+        "mrr": 1.0,
+        "mean_relevant_score": 39.963059,
+        "mean_irrelevant_score": 5.976455
+      },
+      "skill_overlap": {
+        "precision_at_3": 1.0,
+        "ndcg_at_3": 1.0,
+        "precision_at_10": 0.4,
+        "ndcg_at_10": 1.0,
+        "mrr": 1.0,
+        "mean_relevant_score": 100.0,
+        "mean_irrelevant_score": 13.141026
+      },
+      "hybrid": {
+        "precision_at_3": 1.0,
+        "ndcg_at_3": 1.0,
+        "precision_at_10": 0.4,
+        "ndcg_at_10": 0.991446,
+        "mrr": 1.0,
+        "mean_relevant_score": 78.684337,
+        "mean_irrelevant_score": 8.155112
+      },
+      "hybrid_bm25": {
+        "precision_at_3": 1.0,
+        "ndcg_at_3": 1.0,
+        "precision_at_10": 0.4,
+        "ndcg_at_10": 0.987169,
+        "mrr": 1.0,
+        "mean_relevant_score": 78.992369,
+        "mean_irrelevant_score": 8.408602
+      }
+    },
+    "policy": "Authored holdout pairs, candidate families disjoint from calibration training; role/skill/remote/experience judgments. Broad corpus metrics reported separately."
+  },
+  "availability": {
+    "embedding": "not_configured; no live semantic-quality claim",
+    "word2vec": "no suitable pretrained local model; not used for ranking"
+  },
+  "limitations": [
+    "Career-category relevance proxies are broad and do not establish employer suitability.",
+    "Calibration uses authored synthetic examples and disjoint candidate families; needs a substantially larger human-labeled benchmark.",
+    "Recall@10 decreases with a larger relevant corpus; compare precision and top10 retrieval recall as well.",
+    "No live embeddings or word-vector quality evaluation is possible without suitable configured artifacts."
+  ],
+  "selected_method": "hybrid with TF-IDF lexical feature; BM25 and skill postings contribute retrieval only; no unavailable semantic features are scored"
+}

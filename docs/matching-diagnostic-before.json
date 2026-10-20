@@ -1,0 +1,391 @@
+{
+  "dataset_version": "2026-10-demo-v2",
+  "records": 1000,
+  "categories": {
+    "artificial_intelligence": 22,
+    "backend": 25,
+    "blockchain": 21,
+    "business_analysis": 22,
+    "business_intelligence": 21,
+    "cloud": 22,
+    "computer_vision": 22,
+    "cybersecurity": 22,
+    "data_analysis": 22,
+    "data_science": 22,
+    "database": 22,
+    "developer_relations": 21,
+    "devops": 23,
+    "digital_marketing": 21,
+    "ecommerce": 21,
+    "edtech": 21,
+    "embedded": 21,
+    "fintech": 21,
+    "frontend": 24,
+    "full_stack": 23,
+    "game_development": 21,
+    "gis": 21,
+    "healthtech": 21,
+    "hr_technology": 21,
+    "iot": 21,
+    "it_support": 21,
+    "machine_learning": 23,
+    "martech": 21,
+    "mobile": 21,
+    "software_engineering": 24,
+    "natural_language_processing": 22,
+    "networking": 21,
+    "operations": 21,
+    "product_design": 22,
+    "product_management": 22,
+    "project_management": 22,
+    "test_automation": 23,
+    "quality_assurance": 22,
+    "renewable_energy": 21,
+    "research": 21,
+    "robotics": 21,
+    "site_reliability": 22,
+    "systems": 21,
+    "technical_writing": 21,
+    "ui_ux": 22,
+    "web": 22
+  },
+  "duplicates_removed": 3,
+  "empty_description": 23,
+  "empty_department": 10,
+  "missing_salary": 248,
+  "availability": {
+    "active": 838,
+    "future": 27,
+    "expired": 135
+  },
+  "cases": [
+    {
+      "case": "backend_student",
+      "jobs": 997,
+      "score_quantiles": {
+        "0": 0.0,
+        "0.1": 0.0,
+        "0.25": 0.0,
+        "0.5": 5.3782,
+        "0.75": 13.2291,
+        "0.9": 22.1812,
+        "1": 73.5279
+      },
+      "above_threshold": {
+        "20": 117,
+        "30": 45,
+        "40": 31,
+        "50": 23,
+        "60": 23,
+        "70": 6,
+        "80": 0
+      },
+      "mean_relevant_score": 44.91117446808511,
+      "mean_irrelevant_score": 7.192422631578947,
+      "top10_component_mean": {
+        "semantic": 0.0,
+        "lexical_similarity": 4.685,
+        "required_skills": 30.125,
+        "preferred_skills": 8.033,
+        "title_category": 12.05,
+        "project_experience": 1.856,
+        "education": 3.6,
+        "experience": 5.239,
+        "location": 3.521,
+        "interests": 1.486
+      },
+      "common_missing": [
+        [
+          "git",
+          24
+        ],
+        [
+          "data structures",
+          22
+        ],
+        [
+          "java",
+          1
+        ]
+      ]
+    },
+    {
+      "case": "frontend_aliases",
+      "jobs": 997,
+      "score_quantiles": {
+        "0": 0.0,
+        "0.1": 0.0,
+        "0.25": 0.0,
+        "0.5": 0.0,
+        "0.75": 1.7986,
+        "0.9": 17.2176,
+        "1": 71.344
+      },
+      "above_threshold": {
+        "20": 85,
+        "30": 55,
+        "40": 50,
+        "50": 45,
+        "60": 38,
+        "70": 1,
+        "80": 0
+      },
+      "mean_relevant_score": 49.12782941176471,
+      "mean_irrelevant_score": 2.2361252960172227,
+      "top10_component_mean": {
+        "semantic": 0.0,
+        "lexical_similarity": 5.944,
+        "required_skills": 32.102,
+        "preferred_skills": 5.833,
+        "title_category": 12.841,
+        "project_experience": 1.651,
+        "education": 0.0,
+        "experience": 5.548,
+        "location": 3.267,
+        "interests": 1.106
+      },
+      "common_missing": [
+        [
+          "node.js",
+          23
+        ],
+        [
+          "sql",
+          22
+        ],
+        [
+          "rest apis",
+          11
+        ]
+      ]
+    },
+    {
+      "case": "data_analyst",
+      "jobs": 997,
+      "score_quantiles": {
+        "0": 0.0,
+        "0.1": 0.0,
+        "0.25": 0.0,
+        "0.5": 7.5635,
+        "0.75": 20.6417,
+        "0.9": 37.9891,
+        "1": 67.5979
+      },
+      "above_threshold": {
+        "20": 255,
+        "30": 162,
+        "40": 93,
+        "50": 47,
+        "60": 13,
+        "70": 0,
+        "80": 0
+      },
+      "mean_relevant_score": 54.49702093023256,
+      "mean_irrelevant_score": 11.433866981132075,
+      "top10_component_mean": {
+        "semantic": 0.0,
+        "lexical_similarity": 1.9,
+        "required_skills": 34.001,
+        "preferred_skills": 3.421,
+        "title_category": 12.934,
+        "project_experience": 0.0,
+        "education": 3.556,
+        "experience": 5.667,
+        "location": 1.693,
+        "interests": 0.588
+      },
+      "common_missing": [
+        [
+          "data modeling",
+          21
+        ],
+        [
+          "data visualization",
+          17
+        ],
+        [
+          "pandas",
+          10
+        ]
+      ]
+    },
+    {
+      "case": "design_student",
+      "jobs": 997,
+      "score_quantiles": {
+        "0": 0.0,
+        "0.1": 0.0,
+        "0.25": 0.0,
+        "0.5": 0.0,
+        "0.75": 0.0,
+        "0.9": 0.0,
+        "1": 46.8285
+      },
+      "above_threshold": {
+        "20": 44,
+        "30": 26,
+        "40": 1,
+        "50": 0,
+        "60": 0,
+        "70": 0,
+        "80": 0
+      },
+      "mean_relevant_score": 31.701470454545454,
+      "mean_irrelevant_score": 0.0,
+      "top10_component_mean": {
+        "semantic": 0.0,
+        "lexical_similarity": 3.021,
+        "required_skills": 21.212,
+        "preferred_skills": 0.694,
+        "title_category": 10.152,
+        "project_experience": 0.569,
+        "education": 0.0,
+        "experience": 4.554,
+        "location": 2.699,
+        "interests": 0.22
+      },
+      "common_missing": [
+        [
+          "accessibility",
+          36
+        ],
+        [
+          "interaction design",
+          30
+        ],
+        [
+          "usability testing",
+          15
+        ]
+      ]
+    },
+    {
+      "case": "sparse_backend",
+      "jobs": 997,
+      "score_quantiles": {
+        "0": 0.0,
+        "0.1": 0.0,
+        "0.25": 0.0,
+        "0.5": 0.0,
+        "0.75": 3.6506,
+        "0.9": 10.5059,
+        "1": 42.1673
+      },
+      "above_threshold": {
+        "20": 50,
+        "30": 1,
+        "40": 1,
+        "50": 0,
+        "60": 0,
+        "70": 0,
+        "80": 0
+      },
+      "mean_relevant_score": 18.292646376811593,
+      "mean_irrelevant_score": 1.7280910560344827,
+      "top10_component_mean": {
+        "semantic": 0.0,
+        "lexical_similarity": 3.253,
+        "required_skills": 16.693,
+        "preferred_skills": 0.356,
+        "title_category": 16.191,
+        "project_experience": 0.0,
+        "education": 0.0,
+        "experience": 0.0,
+        "location": 0.0,
+        "interests": 0.898
+      },
+      "common_missing": [
+        [
+          "rest apis",
+          29
+        ],
+        [
+          "git",
+          24
+        ],
+        [
+          "fastapi",
+          23
+        ],
+        [
+          "data structures",
+          22
+        ],
+        [
+          "statistics",
+          21
+        ],
+        [
+          "docker",
+          11
+        ],
+        [
+          "pandas",
+          10
+        ],
+        [
+          "data visualization",
+          10
+        ]
+      ]
+    },
+    {
+      "case": "ml_student",
+      "jobs": 997,
+      "score_quantiles": {
+        "0": 0.0,
+        "0.1": 0.0,
+        "0.25": 0.0,
+        "0.5": 0.0,
+        "0.75": 4.4747,
+        "0.9": 23.7288,
+        "1": 68.8732
+      },
+      "above_threshold": {
+        "20": 115,
+        "30": 63,
+        "40": 45,
+        "50": 40,
+        "60": 24,
+        "70": 0,
+        "80": 0
+      },
+      "mean_relevant_score": 48.599676119402986,
+      "mean_irrelevant_score": 3.0381054838709676,
+      "top10_component_mean": {
+        "semantic": 0.0,
+        "lexical_similarity": 4.557,
+        "required_skills": 32.102,
+        "preferred_skills": 5.417,
+        "title_category": 12.841,
+        "project_experience": 0.741,
+        "education": 0.0,
+        "experience": 5.514,
+        "location": 3.788,
+        "interests": 1.224
+      },
+      "common_missing": [
+        [
+          "rest apis",
+          22
+        ],
+        [
+          "sql",
+          15
+        ],
+        [
+          "responsible ai",
+          7
+        ]
+      ]
+    }
+  ],
+  "findings": [
+    "One main stack per category; equal allocation undersupplies common graduate software paths.",
+    "Lexical cosine measures word alignment, not a probability. No calibrated percentage exists.",
+    "Preferred skills reduce scores even for candidates meeting all requirements; required skills have both weighted deficit and explicit penalty.",
+    "All 1000 records are compared today; fixed 20-page snapshot will truncate an expanded corpus.",
+    "Missing candidate fields remain unknown with renormalization and an evidence ceiling. Preserve this behavior.",
+    "No configured semantic embedding service: do not interpret lexical fallback as semantic quality."
+  ]
+}

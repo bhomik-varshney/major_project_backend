@@ -1,0 +1,703 @@
+{
+  "document_hash_matches_attachment": false,
+  "pdf_pages": 2,
+  "native_text_characters": 4633,
+  "document_status": "provided_attachment_not_in_stored_documents",
+  "extraction_status": "awaiting_review",
+  "extraction_revision": 1,
+  "extraction_version": 1,
+  "profile_revision": 8,
+  "profile_verified": true,
+  "confirmed_fields_used": [
+    "career_objective",
+    "education",
+    "experience",
+    "experience_level",
+    "location",
+    "projects",
+    "skills"
+  ],
+  "excluded_unconfirmed_fields": [],
+  "counts": {
+    "skills": 36,
+    "projects": 4,
+    "education": 3,
+    "experience": 2,
+    "preferred_roles": 0,
+    "preferred_locations": 0
+  },
+  "name_literal_present": true,
+  "objective_present": true,
+  "candidate_roles": [],
+  "candidate_location": "india",
+  "preferred_locations": [],
+  "normalized_skill_count": 36,
+  "ai_related_normalized_skills": [
+    "groq llm api",
+    "hugging face transformers",
+    "langfuse",
+    "langgraph",
+    "opencv",
+    "python",
+    "pytorch"
+  ],
+  "current_snapshot_matches_latest_run": true,
+  "latest_runs": [
+    {
+      "status": "completed",
+      "created_at": "2026-10-20 08:16:17.491996",
+      "revision": 8,
+      "request": {
+        "filters": {
+          "keyword": "",
+          "category": "artificial_intelligence",
+          "skills": [],
+          "location": "Bengaluru,India",
+          "country": "",
+          "remote": null,
+          "work_mode": "onsite",
+          "employment_type": null,
+          "experience": null,
+          "company": "",
+          "industry": "",
+          "posted_from": null,
+          "posted_to": null,
+          "availability": "active",
+          "as_of": "2026-10-19",
+          "page": 1,
+          "page_size": 50,
+          "max_results": 10000
+        },
+        "minimum_score": 0.0,
+        "use_ai": true,
+        "retrieval_pool_size": 1200,
+        "allow_external_processing": true
+      },
+      "total_jobs": 10000,
+      "compared": 0,
+      "results": 0,
+      "validation": {
+        "checked": 0,
+        "unsupported_reasons": 0,
+        "duplicate_recommendations": 0,
+        "score_errors": 0,
+        "stable_order": true,
+        "warnings": [],
+        "calibration": {
+          "status": "experimental",
+          "method": "monotonic empirical synthetic label frequency",
+          "threshold_basis": "raw_hybrid_score"
+        },
+        "eligible_before_retrieval": 0,
+        "outside_retrieval_pool": 0,
+        "scored_jobs": 0,
+        "below_threshold": 0,
+        "filtered_out": 10000
+      },
+      "tasks": [
+        {
+          "stage": "preparing",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        },
+        {
+          "stage": "normalizing",
+          "status": "completed",
+          "eligible_jobs": 0,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        },
+        {
+          "stage": "calculating_baseline",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        },
+        {
+          "stage": "retrieving",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": 0,
+          "retrieved_count": 0,
+          "scored_jobs": null
+        },
+        {
+          "stage": "calculating_hybrid",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": 0
+        },
+        {
+          "stage": "calibrating",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        },
+        {
+          "stage": "generating_explanations",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        },
+        {
+          "stage": "validating",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        }
+      ]
+    },
+    {
+      "status": "completed",
+      "created_at": "2026-10-20 08:15:15.604347",
+      "revision": 8,
+      "request": {
+        "filters": {
+          "keyword": "",
+          "category": "artificial_intelligence",
+          "skills": [],
+          "location": "Bengaluru,India",
+          "country": "",
+          "remote": null,
+          "work_mode": "onsite",
+          "employment_type": null,
+          "experience": null,
+          "company": "",
+          "industry": "",
+          "posted_from": null,
+          "posted_to": null,
+          "availability": "active",
+          "as_of": "2026-10-19",
+          "page": 1,
+          "page_size": 50,
+          "max_results": 10000
+        },
+        "minimum_score": 30.0,
+        "use_ai": true,
+        "retrieval_pool_size": 1200,
+        "allow_external_processing": true
+      },
+      "total_jobs": 10000,
+      "compared": 0,
+      "results": 0,
+      "validation": {
+        "checked": 0,
+        "unsupported_reasons": 0,
+        "duplicate_recommendations": 0,
+        "score_errors": 0,
+        "stable_order": true,
+        "warnings": [],
+        "calibration": {
+          "status": "experimental",
+          "method": "monotonic empirical synthetic label frequency",
+          "threshold_basis": "raw_hybrid_score"
+        },
+        "eligible_before_retrieval": 0,
+        "outside_retrieval_pool": 0,
+        "scored_jobs": 0,
+        "below_threshold": 0,
+        "filtered_out": 10000
+      },
+      "tasks": [
+        {
+          "stage": "preparing",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        },
+        {
+          "stage": "normalizing",
+          "status": "completed",
+          "eligible_jobs": 0,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        },
+        {
+          "stage": "calculating_baseline",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        },
+        {
+          "stage": "retrieving",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": 0,
+          "retrieved_count": 0,
+          "scored_jobs": null
+        },
+        {
+          "stage": "calculating_hybrid",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": 0
+        },
+        {
+          "stage": "calibrating",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        },
+        {
+          "stage": "generating_explanations",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        },
+        {
+          "stage": "validating",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        }
+      ]
+    },
+    {
+      "status": "completed",
+      "created_at": "2026-10-20 08:14:55.322948",
+      "revision": 8,
+      "request": {
+        "filters": {
+          "keyword": "",
+          "category": "artificial_intelligence",
+          "skills": [],
+          "location": "Bengaluru",
+          "country": "",
+          "remote": null,
+          "work_mode": "onsite",
+          "employment_type": null,
+          "experience": null,
+          "company": "",
+          "industry": "",
+          "posted_from": null,
+          "posted_to": null,
+          "availability": "active",
+          "as_of": "2026-10-19",
+          "page": 1,
+          "page_size": 50,
+          "max_results": 10000
+        },
+        "minimum_score": 30.0,
+        "use_ai": false,
+        "retrieval_pool_size": 1200,
+        "allow_external_processing": false
+      },
+      "total_jobs": 10000,
+      "compared": 1,
+      "results": 0,
+      "validation": {
+        "checked": 1,
+        "unsupported_reasons": 0,
+        "duplicate_recommendations": 0,
+        "score_errors": 0,
+        "stable_order": true,
+        "warnings": [],
+        "calibration": {
+          "status": "experimental",
+          "method": "monotonic empirical synthetic label frequency",
+          "threshold_basis": "raw_hybrid_score"
+        },
+        "eligible_before_retrieval": 1,
+        "outside_retrieval_pool": 0,
+        "scored_jobs": 1,
+        "below_threshold": 1,
+        "filtered_out": 9999
+      },
+      "tasks": [
+        {
+          "stage": "preparing",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        },
+        {
+          "stage": "normalizing",
+          "status": "completed",
+          "eligible_jobs": 1,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        },
+        {
+          "stage": "calculating_baseline",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        },
+        {
+          "stage": "retrieving",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": 1,
+          "retrieved_count": 1,
+          "scored_jobs": null
+        },
+        {
+          "stage": "calculating_hybrid",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": 1
+        },
+        {
+          "stage": "calibrating",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        },
+        {
+          "stage": "generating_explanations",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        },
+        {
+          "stage": "validating",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        }
+      ]
+    },
+    {
+      "status": "completed",
+      "created_at": "2026-10-20 03:10:30.740236",
+      "revision": 8,
+      "request": {
+        "filters": {
+          "keyword": "",
+          "category": "artificial_intelligence",
+          "skills": [],
+          "location": "Hyderabad",
+          "country": "",
+          "remote": null,
+          "work_mode": "onsite",
+          "employment_type": null,
+          "experience": null,
+          "company": "",
+          "industry": "",
+          "posted_from": null,
+          "posted_to": null,
+          "availability": "active",
+          "as_of": "2026-10-19",
+          "page": 1,
+          "page_size": 50,
+          "max_results": 1000
+        },
+        "minimum_score": 0.0,
+        "use_ai": true,
+        "allow_external_processing": true
+      },
+      "total_jobs": 1000,
+      "compared": 1,
+      "results": 1,
+      "validation": {
+        "checked": 1,
+        "unsupported_reasons": 0,
+        "duplicate_recommendations": 0,
+        "score_errors": 0,
+        "stable_order": true,
+        "warnings": [],
+        "scored_jobs": 1,
+        "below_threshold": 0,
+        "filtered_out": 999
+      },
+      "tasks": [
+        {
+          "stage": "preparing",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        },
+        {
+          "stage": "normalizing",
+          "status": "completed",
+          "eligible_jobs": 1,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        },
+        {
+          "stage": "calculating_baseline",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        },
+        {
+          "stage": "calculating_hybrid",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": 1
+        },
+        {
+          "stage": "generating_explanations",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        },
+        {
+          "stage": "validating",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        }
+      ]
+    },
+    {
+      "status": "completed",
+      "created_at": "2026-10-20 03:08:58.166245",
+      "revision": 8,
+      "request": {
+        "filters": {
+          "keyword": "",
+          "category": "artificial_intelligence",
+          "skills": [],
+          "location": "",
+          "country": "",
+          "remote": null,
+          "work_mode": "onsite",
+          "employment_type": null,
+          "experience": null,
+          "company": "",
+          "industry": "",
+          "posted_from": null,
+          "posted_to": null,
+          "availability": "active",
+          "as_of": "2026-10-19",
+          "page": 1,
+          "page_size": 50,
+          "max_results": 1000
+        },
+        "minimum_score": 0.0,
+        "use_ai": true,
+        "allow_external_processing": true
+      },
+      "total_jobs": 1000,
+      "compared": 8,
+      "results": 8,
+      "validation": {
+        "checked": 8,
+        "unsupported_reasons": 0,
+        "duplicate_recommendations": 0,
+        "score_errors": 0,
+        "stable_order": true,
+        "warnings": [],
+        "scored_jobs": 8,
+        "below_threshold": 0,
+        "filtered_out": 992
+      },
+      "tasks": [
+        {
+          "stage": "preparing",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        },
+        {
+          "stage": "normalizing",
+          "status": "completed",
+          "eligible_jobs": 8,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        },
+        {
+          "stage": "calculating_baseline",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        },
+        {
+          "stage": "calculating_hybrid",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": 8
+        },
+        {
+          "stage": "generating_explanations",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        },
+        {
+          "stage": "validating",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        }
+      ]
+    },
+    {
+      "status": "completed",
+      "created_at": "2026-10-20 03:08:47.355893",
+      "revision": 8,
+      "request": {
+        "filters": {
+          "keyword": "",
+          "category": "artificial_intelligence",
+          "skills": [],
+          "location": "INDIA",
+          "country": "",
+          "remote": null,
+          "work_mode": "onsite",
+          "employment_type": null,
+          "experience": null,
+          "company": "",
+          "industry": "",
+          "posted_from": null,
+          "posted_to": null,
+          "availability": "active",
+          "as_of": "2026-10-19",
+          "page": 1,
+          "page_size": 50,
+          "max_results": 1000
+        },
+        "minimum_score": 0.0,
+        "use_ai": true,
+        "allow_external_processing": true
+      },
+      "total_jobs": 1000,
+      "compared": 0,
+      "results": 0,
+      "validation": {
+        "checked": 0,
+        "unsupported_reasons": 0,
+        "duplicate_recommendations": 0,
+        "score_errors": 0,
+        "stable_order": true,
+        "warnings": [],
+        "scored_jobs": 0,
+        "below_threshold": 0,
+        "filtered_out": 1000
+      },
+      "tasks": [
+        {
+          "stage": "preparing",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        },
+        {
+          "stage": "normalizing",
+          "status": "completed",
+          "eligible_jobs": 0,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        },
+        {
+          "stage": "calculating_baseline",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        },
+        {
+          "stage": "calculating_hybrid",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": 0
+        },
+        {
+          "stage": "generating_explanations",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        },
+        {
+          "stage": "validating",
+          "status": "completed",
+          "eligible_jobs": null,
+          "corpus_size": null,
+          "retrieved_count": null,
+          "scored_jobs": null
+        }
+      ]
+    }
+  ],
+  "resume_confirmation_records": 0,
+  "last_extraction_fields": [
+    "achievements",
+    "additional_sections",
+    "career_objective",
+    "certifications",
+    "education",
+    "email",
+    "experience",
+    "experience_level",
+    "links",
+    "location",
+    "name",
+    "phone",
+    "preferred_locations",
+    "preferred_roles",
+    "projects",
+    "publications",
+    "skills"
+  ]
+}

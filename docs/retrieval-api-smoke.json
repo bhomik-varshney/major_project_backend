@@ -1,0 +1,28 @@
+{
+  "synthetic_only": true,
+  "status": "completed",
+  "records": 10000,
+  "categories": 56,
+  "last_page_items": 50,
+  "retrieval_corpus": 8430,
+  "retrieved": 1200,
+  "excluded": 7230,
+  "recommended_above_30": 767,
+  "run_seconds": 10.6715,
+  "warm_search_median_ms": 23.304,
+  "profile_unchanged": true,
+  "all_stages": [
+    "completed",
+    "completed",
+    "completed",
+    "completed",
+    "completed",
+    "completed",
+    "completed",
+    "completed"
+  ],
+  "score_errors": 0,
+  "calibration": "experimental",
+  "audit_exclusions_present": true,
+  "summary_payload_exclusions_omitted": true
+}

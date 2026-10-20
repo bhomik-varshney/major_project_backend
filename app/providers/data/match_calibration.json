@@ -1,0 +1,60 @@
+{
+  "version": "synthetic-isotonic-v1",
+  "training_pairs": 68,
+  "score_config": {
+    "weights": {
+      "semantic": 0.2,
+      "required_skills": 0.3,
+      "preferred_skills": 0.08,
+      "title_category": 0.12,
+      "project_experience": 0.1,
+      "education": 0.04,
+      "experience": 0.06,
+      "location": 0.05,
+      "interests": 0.05
+    },
+    "critical_penalty": 15.0,
+    "unknown_ceiling_base": 50.0,
+    "lexical_strategy": "tfidf",
+    "semantic": false
+  },
+  "training_sha256": "f036fc770c70caa61f49c2e3cbd0123ea49bdacf0de1527b0ee35b238e2c689e",
+  "bins": [
+    {
+      "lower": 0,
+      "upper": 20,
+      "percentage": 2.0,
+      "examples": 48,
+      "positive_labels": 0
+    },
+    {
+      "lower": 20,
+      "upper": 40,
+      "percentage": 33.3333,
+      "examples": 1,
+      "positive_labels": 0
+    },
+    {
+      "lower": 40,
+      "upper": 60,
+      "percentage": 33.3333,
+      "examples": 4,
+      "positive_labels": 1
+    },
+    {
+      "lower": 60,
+      "upper": 80,
+      "percentage": 71.4286,
+      "examples": 12,
+      "positive_labels": 9
+    },
+    {
+      "lower": 80,
+      "upper": 100,
+      "percentage": 80.0,
+      "examples": 3,
+      "positive_labels": 3
+    }
+  ],
+  "policy": "Fixed-width raw-score bins, Laplace smoothing, weighted monotonic PAVA. Disjoint candidate families held out. Experimental synthetic relevance frequency, not hiring probability."
+}

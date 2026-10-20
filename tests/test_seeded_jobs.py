@@ -12,14 +12,14 @@ def test_seeded_records_are_stable_labeled_bounded_and_diverse(client):
     second = client.get('/api/v1/jobs?page_size=50')
     assert first.status_code == 200 and first.json() == second.json()
     data = first.json()
-    assert data['total'] == data['matched_total'] == 1000 and data['source'] == 'seeded_mock'
+    assert data['total'] == data['matched_total'] == 10000 and data['source'] == 'seeded_mock'
     snapshot = SeededJobProvider().snapshot()
-    assert len({j.id for j in snapshot.jobs}) == 1000
-    assert len({j.category for j in snapshot.jobs}) == 46
+    assert len({j.id for j in snapshot.jobs}) == 10000
+    assert len({j.category for j in snapshot.jobs}) == 56
     assert all(j.source == 'seeded_mock' and j.generated_data and j.metadata.is_demo and 'example.invalid' in j.application_url for j in snapshot.jobs)
     a = client.get('/api/v1/jobs?page=1&page_size=3').json()
     b = client.get('/api/v1/jobs?page=2&page_size=3').json()
-    assert a['total'] == b['total'] == 1000 and len(a['items']) == len(b['items']) == 3
+    assert a['total'] == b['total'] == 10000 and len(a['items']) == len(b['items']) == 3
     assert not {j['id'] for j in a['items']} & {j['id'] for j in b['items']}
 
 
@@ -50,7 +50,7 @@ def test_empty_results(client, query):
     assert client.get('/api/v1/jobs?'+query).json()['items'] == []
 
 
-@pytest.mark.parametrize('query', ['page=0', 'page_size=51', 'max_results=1001', 'max_results=0', 'remote=maybe', 'experience=senior', 'work_mode=somewhere', 'posted_from=not-date', 'posted_from=2026-11-01&posted_to=2026-10-01', 'keyword='+'x'*121, '&'.join('skill=x' for _ in range(21))])
+@pytest.mark.parametrize('query', ['page=0', 'page_size=51', 'max_results=10001', 'max_results=0', 'remote=maybe', 'experience=senior', 'work_mode=somewhere', 'posted_from=not-date', 'posted_from=2026-11-01&posted_to=2026-10-01', 'keyword='+'x'*121, '&'.join('skill=x' for _ in range(21))])
 def test_filter_limits(client, query):
     assert client.get('/api/v1/jobs?'+query).status_code == 422
 
@@ -92,7 +92,7 @@ def test_posted_range_availability_and_limit(client):
     data = client.get('/api/v1/jobs?posted_from=2026-10-01&posted_to=2026-10-15').json()
     assert data['total'] == sum(date(2026,10,1)<=j.posted_date<=date(2026,10,15) for j in records)
     data = client.get('/api/v1/jobs?max_results=8&page_size=6&page=2').json()
-    assert data['matched_total'] == 1000 and data['total'] == 8 and len(data['items']) == 2
+    assert data['matched_total'] == 10000 and data['total'] == 8 and len(data['items']) == 2
     assert client.get('/api/v1/jobs?max_results=8&page_size=6&page=3').json()['items']==[]
 
 
@@ -104,6 +104,6 @@ def test_synonyms_mult_word_skills_and_filter_options(client):
         data = client.get('/api/v1/jobs',params={'skill':skill}).json()
         assert data['total']>0 and all(skill in job['normalized_skill_tokens'] for job in data['items'])
     options = client.get('/api/v1/jobs/options').json()
-    assert options['total']==1000 and len(options['categories'])==46
+    assert options['total']==10000 and len(options['categories'])==56
     assert set(options['work_modes'])=={'remote','hybrid','onsite'}
     assert set(options['experience_levels'])=={'student','fresher','graduate','entry_level','junior','limited_experience'}

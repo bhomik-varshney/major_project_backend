@@ -1,0 +1,57 @@
+{
+  "provided_pdf_processed_locally": true,
+  "status": "draft_ready",
+  "canonical_status": "needs_review",
+  "confirmed_profile_mutated": false,
+  "counts": {
+    "skills": {
+      "current_confirmed": 36,
+      "r2_local_draft": 36
+    },
+    "projects": {
+      "current_confirmed": 4,
+      "r2_local_draft": 4
+    },
+    "education": {
+      "current_confirmed": 3,
+      "r2_local_draft": 3
+    },
+    "experience": {
+      "current_confirmed": 2,
+      "r2_local_draft": 2
+    }
+  },
+  "raw_skill_additions_in_r2": [],
+  "raw_skill_absent_from_r2": [],
+  "objective_present_in_both": true,
+  "preferred_roles_in_draft": [],
+  "preferred_locations_in_draft": [],
+  "validation": {
+    "schema_valid": true,
+    "checked_fields": 134,
+    "supported_fields": 134,
+    "unsupported_fields": 0,
+    "critical_passed": true,
+    "checks": {
+      "source_fields": 134,
+      "entity_relationships": 165,
+      "source_conflicts": 0,
+      "sections": 7,
+      "schema_errors": 0
+    }
+  },
+  "issue_codes": [
+    "uncertain_value"
+  ],
+  "ai_topics_explicitly_in_source": [
+    "generative AI",
+    "agentic systems",
+    "LLM fine-tuning",
+    "machine learning",
+    "NLP",
+    "Word2Vec",
+    "TF-IDF"
+  ],
+  "stored_attachment_hash_match": false,
+  "interpretation": "R2 evaluated locally as a review draft; current confirmed revision-8 snapshot was used for the actual failed matching run. No new draft was silently confirmed."
+}

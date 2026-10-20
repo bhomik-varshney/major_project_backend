@@ -1,0 +1,110 @@
+{
+  "synthetic_only": true,
+  "status": "completed",
+  "jobs_scored": 9990,
+  "stages": [
+    "preparing",
+    "normalizing",
+    "calculating_baseline",
+    "retrieving",
+    "calculating_hybrid",
+    "calibrating",
+    "generating_explanations",
+    "validating"
+  ],
+  "providers": {
+    "embeddings": {
+      "provider": "none",
+      "model": null,
+      "status": "not_configured",
+      "cache_hits": 0,
+      "cache_misses": 0
+    },
+    "retrieval": {
+      "status": "active",
+      "provider": "local",
+      "model": null,
+      "methods": {
+        "tfidf": {
+          "status": "active",
+          "version": "tfidf-word-bigram-logtf-smoothidf-v1"
+        },
+        "bm25": {
+          "status": "active",
+          "version": "bm25-positive-idf-k1-1.2-b-.75-v1",
+          "k1": 1.2,
+          "b": 0.75,
+          "query_saturation_bound": 62.22901918948775
+        },
+        "skill_overlap": {
+          "status": "active",
+          "policy": "inverted skill postings; distinct exact/synonym required-skill recall; no related-skill credit",
+          "indexed_skills": 207
+        },
+        "word2vec": {
+          "status": "not_configured",
+          "reason": "No suitable pretrained local word-vector artifact is configured."
+        },
+        "embedding": {
+          "status": "unavailable"
+        }
+      }
+    },
+    "ai_review": {
+      "status": "not_selected",
+      "model": null,
+      "reviewed_jobs": 0
+    }
+  },
+  "seconds": 44.0977,
+  "pool_size": 10000,
+  "corpus_jobs": 10000,
+  "calibrated_results": 9990,
+  "validation": {
+    "checked": 9990,
+    "unsupported_reasons": 0,
+    "duplicate_recommendations": 0,
+    "score_errors": 0,
+    "stable_order": true,
+    "warnings": [],
+    "retrieval": {
+      "status": "completed",
+      "policy": "reciprocal-rank fusion, k=60; full filtered corpus; small pools include zero-signal rows",
+      "corpus_size": 9990,
+      "pool_limit": 10000,
+      "retrieved_count": 9990,
+      "excluded_count": 0,
+      "methods": {
+        "tfidf": {
+          "status": "active",
+          "version": "tfidf-word-bigram-logtf-smoothidf-v1"
+        },
+        "bm25": {
+          "status": "active",
+          "version": "bm25-positive-idf-k1-1.2-b-.75-v1",
+          "k1": 1.2,
+          "b": 0.75,
+          "query_saturation_bound": 62.22901918948775
+        },
+        "skill_overlap": {
+          "status": "active",
+          "policy": "inverted skill postings; distinct exact/synonym required-skill recall; no related-skill credit",
+          "indexed_skills": 207
+        },
+        "word2vec": {
+          "status": "not_configured",
+          "reason": "No suitable pretrained local word-vector artifact is configured."
+        },
+        "embedding": {
+          "status": "unavailable"
+        }
+      }
+    },
+    "calibration": {
+      "status": "experimental",
+      "method": "monotonic empirical synthetic label frequency",
+      "threshold_basis": "raw_hybrid_score"
+    }
+  },
+  "ai_selected_explanations": 0
+}

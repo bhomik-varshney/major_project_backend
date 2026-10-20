@@ -1,0 +1,37 @@
+{
+  "backend_full_suite": {
+    "passed": 310
+  },
+  "backend_compatibility_focused": {
+    "passed": 46,
+    "unique_backend_tests_covered": 311
+  },
+  "browser_full_suite": {
+    "passed": 32
+  },
+  "browser_matching_after_mobile_fix": {
+    "passed": 4
+  },
+  "typecheck": "passed",
+  "lint": {
+    "errors": 0,
+    "existing_fast_refresh_warnings": 10
+  },
+  "production_build": "passed",
+  "dataset_validation": "passed",
+  "historical_v2_listings_validated": 1000,
+  "database": {
+    "historical_ranked_results_validated": 1683,
+    "all_main_database_tables_unchanged": true,
+    "integrity": "ok",
+    "profiles": 7,
+    "verification_receipts": 8,
+    "matching_runs": 12
+  },
+  "main_http_health_and_pages": "200",
+  "external_models": {
+    "groq_synthetic_review": "completed",
+    "live_semantic_embedding": "not_configured",
+    "local_word_vectors": "not_configured"
+  }
+}

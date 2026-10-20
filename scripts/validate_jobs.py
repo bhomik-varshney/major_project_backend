@@ -24,8 +24,8 @@ def validate_dataset(path=DATA_PATH, *, seed=DEFAULT_SEED, reproducible=True):
     path = Path(path)
     content = path.read_bytes()
     rows = json.loads(content)
-    if not isinstance(rows, list) or len(rows) != 1000:
-        raise ValueError('The dataset must contain exactly 1000 records.')
+    if not isinstance(rows, list) or len(rows) != 10000:
+        raise ValueError('The dataset must contain exactly 10000 records.')
     # Validate twice from independent loads: no partially written or unstable fixture.
     if json.loads(path.read_bytes()) != rows:
         raise ValueError('Dataset changed during validation.')
@@ -37,6 +37,8 @@ def validate_dataset(path=DATA_PATH, *, seed=DEFAULT_SEED, reproducible=True):
         if job.id in ids:
             raise ValueError('Duplicate ID.')
         ids.add(job.id)
+        if job.category not in {role.category for role in ROLES}:
+            raise ValueError('Unknown career category.')
         if job.metadata.seed != seed:
             raise ValueError('Unexpected generator seed.')
         raw = json.dumps(row, sort_keys=True)
@@ -52,6 +54,11 @@ def validate_dataset(path=DATA_PATH, *, seed=DEFAULT_SEED, reproducible=True):
             raise ValueError('Unlabeled empty description.')
         if (not job.department or job.metadata.company_size is None) and 'incomplete_metadata' not in tags:
             raise ValueError('Unlabeled incomplete metadata.')
+        from app.services.job_normalization import search_text
+        if not job.subcategory or job.title_tokens!=search_text(job.title).split() or job.category_tokens!=search_text(job.category.replace('_',' ')).split():
+            raise ValueError('Invalid normalized title/category metadata.')
+        if job.embedding_metadata.get('text_sha256')!=hashlib.sha256(job.searchable_text.encode()).hexdigest():
+            raise ValueError('Invalid embedding content fingerprint.')
         jobs.append(job)
     categories = Counter(job.category for job in jobs)
     if not {role.category for role in ROLES}.issubset(categories):

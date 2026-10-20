@@ -1,0 +1,3718 @@
+[
+  {
+    "job_id": "demo-artificial-intelligence-0175",
+    "title": "AI Engineer \u2014 Entry Level",
+    "category": "artificial_intelligence",
+    "location": "Bengaluru",
+    "country": "India",
+    "work_mode": "onsite",
+    "date_status": "active",
+    "required_skills": [
+      "Python",
+      "Machine learning"
+    ],
+    "matched_required": [
+      "Python"
+    ],
+    "missing_required": [
+      "Machine learning"
+    ],
+    "raw_score": 23.5912,
+    "baseline": 2.3656504748911877,
+    "components": {
+      "semantic": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Semantic embeddings are unavailable; this component is not scored.",
+        "evidence": []
+      },
+      "lexical_similarity": {
+        "score": 2.3656504748911877,
+        "state": "likely_match",
+        "configured_weight": 0.2,
+        "effective_weight": 0.24096385542168677,
+        "contribution": 0.5700362590099248,
+        "reason": "Visible TF-IDF baseline used as fallback text similarity.",
+        "evidence": []
+      },
+      "required_skills": {
+        "score": 50.0,
+        "state": "likely_match",
+        "configured_weight": 0.3,
+        "effective_weight": 0.3614457831325301,
+        "contribution": 18.072289156626507,
+        "reason": "Fraction of distinct listed required skills supported by explicit confirmed skill/technology fields.",
+        "evidence": [
+          {
+            "candidate_path": "skills.0",
+            "job_path": "required_skills.0"
+          }
+        ]
+      },
+      "preferred_skills": {
+        "score": 0.0,
+        "state": "explicit_mismatch",
+        "configured_weight": 0.08,
+        "effective_weight": 0.0963855421686747,
+        "contribution": 0.0,
+        "reason": "Fraction of distinct preferred skills supported; repeated required skills are not counted twice.",
+        "evidence": []
+      },
+      "title_category": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.12,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed preferred role is available.",
+        "evidence": []
+      },
+      "project_experience": {
+        "score": 2.380502109036873,
+        "state": "likely_match",
+        "configured_weight": 0.1,
+        "effective_weight": 0.12048192771084339,
+        "contribution": 0.2868074830164908,
+        "reason": "Relevance of confirmed project/work text to the listing. Uses semantic cosine when available, otherwise TF-IDF.",
+        "evidence": [
+          {
+            "candidate_path": "projects/experience",
+            "job_path": "description/responsibilities"
+          }
+        ]
+      },
+      "education": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.04,
+        "effective_weight": 0.04819277108433735,
+        "contribution": 4.819277108433735,
+        "reason": "Documented qualification level meets the written level; subject and eligibility still need review.",
+        "evidence": [
+          {
+            "candidate_path": "education",
+            "job_path": "education_requirements"
+          }
+        ]
+      },
+      "experience": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.06,
+        "effective_weight": 0.07228915662650602,
+        "contribution": 7.228915662650602,
+        "reason": "Confirmed dated work covers approximately 0.42 years; this listing asks for at least 0. Internship equivalence is not guaranteed.",
+        "evidence": [
+          {
+            "candidate_path": "experience",
+            "job_path": "experience_years_min"
+          }
+        ]
+      },
+      "location": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.05,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed work-location preference is available. A home address is not a relocation preference.",
+        "evidence": []
+      },
+      "interests": {
+        "score": 1.8905387847404098,
+        "state": "likely_match",
+        "configured_weight": 0.05,
+        "effective_weight": 0.06024096385542169,
+        "contribution": 0.11388787859881988,
+        "reason": "TF-IDF alignment of the confirmed summary and preferred roles with this opportunity.",
+        "evidence": [
+          {
+            "candidate_path": "career_objective/preferred_roles",
+            "job_path": "title/category/description"
+          }
+        ]
+      }
+    },
+    "penalty": 7.5,
+    "before_hard_filter": "rejected: combined location literal absent",
+    "intended_location_relation": "exact_city",
+    "intended_role_relation": "AI_related_domain"
+  },
+  {
+    "job_id": "demo-computer-vision-1638",
+    "title": "Computer Vision Engineer \u2014 Graduate",
+    "category": "computer_vision",
+    "location": "Bengaluru",
+    "country": "India",
+    "work_mode": "onsite",
+    "date_status": "active",
+    "required_skills": [
+      "Python",
+      "Computer vision",
+      "Image processing",
+      "ML"
+    ],
+    "matched_required": [
+      "Python"
+    ],
+    "missing_required": [
+      "Computer vision",
+      "Image processing",
+      "ML"
+    ],
+    "raw_score": 10.6364,
+    "baseline": 2.0261823682154554,
+    "components": {
+      "semantic": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Semantic embeddings are unavailable; this component is not scored.",
+        "evidence": []
+      },
+      "lexical_similarity": {
+        "score": 2.0261823682154554,
+        "state": "likely_match",
+        "configured_weight": 0.2,
+        "effective_weight": 0.24096385542168677,
+        "contribution": 0.4882367152326399,
+        "reason": "Visible TF-IDF baseline used as fallback text similarity.",
+        "evidence": []
+      },
+      "required_skills": {
+        "score": 25.0,
+        "state": "likely_match",
+        "configured_weight": 0.3,
+        "effective_weight": 0.3614457831325301,
+        "contribution": 9.036144578313253,
+        "reason": "Fraction of distinct listed required skills supported by explicit confirmed skill/technology fields.",
+        "evidence": [
+          {
+            "candidate_path": "skills.0",
+            "job_path": "required_skills.0"
+          }
+        ]
+      },
+      "preferred_skills": {
+        "score": 0.0,
+        "state": "explicit_mismatch",
+        "configured_weight": 0.08,
+        "effective_weight": 0.0963855421686747,
+        "contribution": 0.0,
+        "reason": "Fraction of distinct preferred skills supported; repeated required skills are not counted twice.",
+        "evidence": []
+      },
+      "title_category": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.12,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed preferred role is available.",
+        "evidence": []
+      },
+      "project_experience": {
+        "score": 1.155669154664451,
+        "state": "likely_match",
+        "configured_weight": 0.1,
+        "effective_weight": 0.12048192771084339,
+        "contribution": 0.13923724754993388,
+        "reason": "Relevance of confirmed project/work text to the listing. Uses semantic cosine when available, otherwise TF-IDF.",
+        "evidence": [
+          {
+            "candidate_path": "projects/experience",
+            "job_path": "description/responsibilities"
+          }
+        ]
+      },
+      "education": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.04,
+        "effective_weight": 0.04819277108433735,
+        "contribution": 4.819277108433735,
+        "reason": "Documented qualification level meets the written level; subject and eligibility still need review.",
+        "evidence": [
+          {
+            "candidate_path": "education",
+            "job_path": "education_requirements"
+          }
+        ]
+      },
+      "experience": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.06,
+        "effective_weight": 0.07228915662650602,
+        "contribution": 7.228915662650602,
+        "reason": "Confirmed dated work covers approximately 0.42 years; this listing asks for at least 0. Internship equivalence is not guaranteed.",
+        "evidence": [
+          {
+            "candidate_path": "experience",
+            "job_path": "experience_years_min"
+          }
+        ]
+      },
+      "location": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.05,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed work-location preference is available. A home address is not a relocation preference.",
+        "evidence": []
+      },
+      "interests": {
+        "score": 2.8981469047518895,
+        "state": "likely_match",
+        "configured_weight": 0.05,
+        "effective_weight": 0.06024096385542169,
+        "contribution": 0.17458716293686083,
+        "reason": "TF-IDF alignment of the confirmed summary and preferred roles with this opportunity.",
+        "evidence": [
+          {
+            "candidate_path": "career_objective/preferred_roles",
+            "job_path": "title/category/description"
+          }
+        ]
+      }
+    },
+    "penalty": 11.25,
+    "before_hard_filter": "rejected: combined location literal absent",
+    "intended_location_relation": "exact_city",
+    "intended_role_relation": "AI_related_domain"
+  },
+  {
+    "job_id": "demo-computer-vision-1667",
+    "title": "Computer Vision Engineer \u2014 Entry Level",
+    "category": "computer_vision",
+    "location": "Bengaluru",
+    "country": "India",
+    "work_mode": "onsite",
+    "date_status": "active",
+    "required_skills": [
+      "Python",
+      "Computer vision",
+      "Image processing"
+    ],
+    "matched_required": [
+      "Python"
+    ],
+    "missing_required": [
+      "Computer vision",
+      "Image processing"
+    ],
+    "raw_score": 14.8287,
+    "baseline": 1.9679997309224446,
+    "components": {
+      "semantic": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Semantic embeddings are unavailable; this component is not scored.",
+        "evidence": []
+      },
+      "lexical_similarity": {
+        "score": 1.9679997309224446,
+        "state": "likely_match",
+        "configured_weight": 0.2,
+        "effective_weight": 0.24096385542168677,
+        "contribution": 0.4742168026319144,
+        "reason": "Visible TF-IDF baseline used as fallback text similarity.",
+        "evidence": []
+      },
+      "required_skills": {
+        "score": 33.333333333333336,
+        "state": "likely_match",
+        "configured_weight": 0.3,
+        "effective_weight": 0.3614457831325301,
+        "contribution": 12.048192771084338,
+        "reason": "Fraction of distinct listed required skills supported by explicit confirmed skill/technology fields.",
+        "evidence": [
+          {
+            "candidate_path": "skills.0",
+            "job_path": "required_skills.0"
+          }
+        ]
+      },
+      "preferred_skills": {
+        "score": 0.0,
+        "state": "explicit_mismatch",
+        "configured_weight": 0.08,
+        "effective_weight": 0.0963855421686747,
+        "contribution": 0.0,
+        "reason": "Fraction of distinct preferred skills supported; repeated required skills are not counted twice.",
+        "evidence": []
+      },
+      "title_category": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.12,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed preferred role is available.",
+        "evidence": []
+      },
+      "project_experience": {
+        "score": 0.7198541868393694,
+        "state": "likely_match",
+        "configured_weight": 0.1,
+        "effective_weight": 0.12048192771084339,
+        "contribution": 0.08672942010112886,
+        "reason": "Relevance of confirmed project/work text to the listing. Uses semantic cosine when available, otherwise TF-IDF.",
+        "evidence": [
+          {
+            "candidate_path": "projects/experience",
+            "job_path": "description/responsibilities"
+          }
+        ]
+      },
+      "education": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.04,
+        "effective_weight": 0.04819277108433735,
+        "contribution": 4.819277108433735,
+        "reason": "Documented qualification level meets the written level; subject and eligibility still need review.",
+        "evidence": [
+          {
+            "candidate_path": "education",
+            "job_path": "education_requirements"
+          }
+        ]
+      },
+      "experience": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.06,
+        "effective_weight": 0.07228915662650602,
+        "contribution": 7.228915662650602,
+        "reason": "Confirmed dated work covers approximately 0.42 years; this listing asks for at least 0. Internship equivalence is not guaranteed.",
+        "evidence": [
+          {
+            "candidate_path": "experience",
+            "job_path": "experience_years_min"
+          }
+        ]
+      },
+      "location": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.05,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed work-location preference is available. A home address is not a relocation preference.",
+        "evidence": []
+      },
+      "interests": {
+        "score": 2.8451871773882256,
+        "state": "likely_match",
+        "configured_weight": 0.05,
+        "effective_weight": 0.06024096385542169,
+        "contribution": 0.17139681791495337,
+        "reason": "TF-IDF alignment of the confirmed summary and preferred roles with this opportunity.",
+        "evidence": [
+          {
+            "candidate_path": "career_objective/preferred_roles",
+            "job_path": "title/category/description"
+          }
+        ]
+      }
+    },
+    "penalty": 10.0,
+    "before_hard_filter": "rejected: combined location literal absent",
+    "intended_location_relation": "exact_city",
+    "intended_role_relation": "AI_related_domain"
+  },
+  {
+    "job_id": "demo-computer-vision-1668",
+    "title": "Computer Vision Engineer (Entry Level)",
+    "category": "computer_vision",
+    "location": "Bengaluru",
+    "country": "India",
+    "work_mode": "onsite",
+    "date_status": "active",
+    "required_skills": [
+      "Python",
+      "Computer vision",
+      "Image processing",
+      "ML"
+    ],
+    "matched_required": [
+      "Python"
+    ],
+    "missing_required": [
+      "Computer vision",
+      "Image processing",
+      "ML"
+    ],
+    "raw_score": 10.5793,
+    "baseline": 1.901653788305947,
+    "components": {
+      "semantic": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Semantic embeddings are unavailable; this component is not scored.",
+        "evidence": []
+      },
+      "lexical_similarity": {
+        "score": 1.901653788305947,
+        "state": "likely_match",
+        "configured_weight": 0.2,
+        "effective_weight": 0.24096385542168677,
+        "contribution": 0.45822982850745714,
+        "reason": "Visible TF-IDF baseline used as fallback text similarity.",
+        "evidence": []
+      },
+      "required_skills": {
+        "score": 25.0,
+        "state": "likely_match",
+        "configured_weight": 0.3,
+        "effective_weight": 0.3614457831325301,
+        "contribution": 9.036144578313253,
+        "reason": "Fraction of distinct listed required skills supported by explicit confirmed skill/technology fields.",
+        "evidence": [
+          {
+            "candidate_path": "skills.0",
+            "job_path": "required_skills.0"
+          }
+        ]
+      },
+      "preferred_skills": {
+        "score": 0.0,
+        "state": "explicit_mismatch",
+        "configured_weight": 0.08,
+        "effective_weight": 0.0963855421686747,
+        "contribution": 0.0,
+        "reason": "Fraction of distinct preferred skills supported; repeated required skills are not counted twice.",
+        "evidence": []
+      },
+      "title_category": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.12,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed preferred role is available.",
+        "evidence": []
+      },
+      "project_experience": {
+        "score": 1.0606635032313587,
+        "state": "likely_match",
+        "configured_weight": 0.1,
+        "effective_weight": 0.12048192771084339,
+        "contribution": 0.12779078352185047,
+        "reason": "Relevance of confirmed project/work text to the listing. Uses semantic cosine when available, otherwise TF-IDF.",
+        "evidence": [
+          {
+            "candidate_path": "projects/experience",
+            "job_path": "description/responsibilities"
+          }
+        ]
+      },
+      "education": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.04,
+        "effective_weight": 0.04819277108433735,
+        "contribution": 4.819277108433735,
+        "reason": "Documented qualification level meets the written level; subject and eligibility still need review.",
+        "evidence": [
+          {
+            "candidate_path": "education",
+            "job_path": "education_requirements"
+          }
+        ]
+      },
+      "experience": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.06,
+        "effective_weight": 0.07228915662650602,
+        "contribution": 7.228915662650602,
+        "reason": "Confirmed dated work covers approximately 0.42 years; this listing asks for at least 0. Internship equivalence is not guaranteed.",
+        "evidence": [
+          {
+            "candidate_path": "experience",
+            "job_path": "experience_years_min"
+          }
+        ]
+      },
+      "location": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.05,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed work-location preference is available. A home address is not a relocation preference.",
+        "evidence": []
+      },
+      "interests": {
+        "score": 2.638204541190611,
+        "state": "likely_match",
+        "configured_weight": 0.05,
+        "effective_weight": 0.06024096385542169,
+        "contribution": 0.15892798440907296,
+        "reason": "TF-IDF alignment of the confirmed summary and preferred roles with this opportunity.",
+        "evidence": [
+          {
+            "candidate_path": "career_objective/preferred_roles",
+            "job_path": "title/category/description"
+          }
+        ]
+      }
+    },
+    "penalty": 11.25,
+    "before_hard_filter": "rejected: combined location literal absent",
+    "intended_location_relation": "exact_city",
+    "intended_role_relation": "AI_related_domain"
+  },
+  {
+    "job_id": "demo-computer-vision-1670",
+    "title": "Computer Vision Engineer \u2014 Entry Level",
+    "category": "computer_vision",
+    "location": "Bengaluru",
+    "country": "India",
+    "work_mode": "onsite",
+    "date_status": "active",
+    "required_skills": [
+      "Python",
+      "Computer vision",
+      "Image processing"
+    ],
+    "matched_required": [
+      "Python"
+    ],
+    "missing_required": [
+      "Computer vision",
+      "Image processing"
+    ],
+    "raw_score": 14.8137,
+    "baseline": 1.9310903404333377,
+    "components": {
+      "semantic": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Semantic embeddings are unavailable; this component is not scored.",
+        "evidence": []
+      },
+      "lexical_similarity": {
+        "score": 1.9310903404333377,
+        "state": "likely_match",
+        "configured_weight": 0.2,
+        "effective_weight": 0.24096385542168677,
+        "contribution": 0.4653229735983947,
+        "reason": "Visible TF-IDF baseline used as fallback text similarity.",
+        "evidence": []
+      },
+      "required_skills": {
+        "score": 33.333333333333336,
+        "state": "likely_match",
+        "configured_weight": 0.3,
+        "effective_weight": 0.3614457831325301,
+        "contribution": 12.048192771084338,
+        "reason": "Fraction of distinct listed required skills supported by explicit confirmed skill/technology fields.",
+        "evidence": [
+          {
+            "candidate_path": "skills.0",
+            "job_path": "required_skills.0"
+          }
+        ]
+      },
+      "preferred_skills": {
+        "score": 0.0,
+        "state": "explicit_mismatch",
+        "configured_weight": 0.08,
+        "effective_weight": 0.0963855421686747,
+        "contribution": 0.0,
+        "reason": "Fraction of distinct preferred skills supported; repeated required skills are not counted twice.",
+        "evidence": []
+      },
+      "title_category": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.12,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed preferred role is available.",
+        "evidence": []
+      },
+      "project_experience": {
+        "score": 0.6719498166544552,
+        "state": "likely_match",
+        "configured_weight": 0.1,
+        "effective_weight": 0.12048192771084339,
+        "contribution": 0.08095780923547653,
+        "reason": "Relevance of confirmed project/work text to the listing. Uses semantic cosine when available, otherwise TF-IDF.",
+        "evidence": [
+          {
+            "candidate_path": "projects/experience",
+            "job_path": "description/responsibilities"
+          }
+        ]
+      },
+      "education": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.04,
+        "effective_weight": 0.04819277108433735,
+        "contribution": 4.819277108433735,
+        "reason": "Documented qualification level meets the written level; subject and eligibility still need review.",
+        "evidence": [
+          {
+            "candidate_path": "education",
+            "job_path": "education_requirements"
+          }
+        ]
+      },
+      "experience": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.06,
+        "effective_weight": 0.07228915662650602,
+        "contribution": 7.228915662650602,
+        "reason": "Confirmed dated work covers approximately 0.42 years; this listing asks for at least 0. Internship equivalence is not guaranteed.",
+        "evidence": [
+          {
+            "candidate_path": "experience",
+            "job_path": "experience_years_min"
+          }
+        ]
+      },
+      "location": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.05,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed work-location preference is available. A home address is not a relocation preference.",
+        "evidence": []
+      },
+      "interests": {
+        "score": 2.838926765787085,
+        "state": "likely_match",
+        "configured_weight": 0.05,
+        "effective_weight": 0.06024096385542169,
+        "contribution": 0.171019684685969,
+        "reason": "TF-IDF alignment of the confirmed summary and preferred roles with this opportunity.",
+        "evidence": [
+          {
+            "candidate_path": "career_objective/preferred_roles",
+            "job_path": "title/category/description"
+          }
+        ]
+      }
+    },
+    "penalty": 10.0,
+    "before_hard_filter": "rejected: combined location literal absent",
+    "intended_location_relation": "exact_city",
+    "intended_role_relation": "AI_related_domain"
+  },
+  {
+    "job_id": "demo-computer-vision-1684",
+    "title": "Computer Vision Engineer (Graduate)",
+    "category": "computer_vision",
+    "location": "Bengaluru",
+    "country": "India",
+    "work_mode": "onsite",
+    "date_status": "active",
+    "required_skills": [
+      "Python",
+      "Computer vision",
+      "Image processing",
+      "Machine learning"
+    ],
+    "matched_required": [
+      "Python"
+    ],
+    "missing_required": [
+      "Computer vision",
+      "Image processing",
+      "Machine learning"
+    ],
+    "raw_score": 10.6478,
+    "baseline": 2.1349000213975664,
+    "components": {
+      "semantic": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Semantic embeddings are unavailable; this component is not scored.",
+        "evidence": []
+      },
+      "lexical_similarity": {
+        "score": 2.1349000213975664,
+        "state": "likely_match",
+        "configured_weight": 0.2,
+        "effective_weight": 0.24096385542168677,
+        "contribution": 0.5144337400957992,
+        "reason": "Visible TF-IDF baseline used as fallback text similarity.",
+        "evidence": []
+      },
+      "required_skills": {
+        "score": 25.0,
+        "state": "likely_match",
+        "configured_weight": 0.3,
+        "effective_weight": 0.3614457831325301,
+        "contribution": 9.036144578313253,
+        "reason": "Fraction of distinct listed required skills supported by explicit confirmed skill/technology fields.",
+        "evidence": [
+          {
+            "candidate_path": "skills.0",
+            "job_path": "required_skills.0"
+          }
+        ]
+      },
+      "preferred_skills": {
+        "score": 0.0,
+        "state": "explicit_mismatch",
+        "configured_weight": 0.08,
+        "effective_weight": 0.0963855421686747,
+        "contribution": 0.0,
+        "reason": "Fraction of distinct preferred skills supported; repeated required skills are not counted twice.",
+        "evidence": []
+      },
+      "title_category": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.12,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed preferred role is available.",
+        "evidence": []
+      },
+      "project_experience": {
+        "score": 1.0664613792431932,
+        "state": "likely_match",
+        "configured_weight": 0.1,
+        "effective_weight": 0.12048192771084339,
+        "contribution": 0.12848932280038475,
+        "reason": "Relevance of confirmed project/work text to the listing. Uses semantic cosine when available, otherwise TF-IDF.",
+        "evidence": [
+          {
+            "candidate_path": "projects/experience",
+            "job_path": "description/responsibilities"
+          }
+        ]
+      },
+      "education": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.04,
+        "effective_weight": 0.04819277108433735,
+        "contribution": 4.819277108433735,
+        "reason": "Documented qualification level meets the written level; subject and eligibility still need review.",
+        "evidence": [
+          {
+            "candidate_path": "education",
+            "job_path": "education_requirements"
+          }
+        ]
+      },
+      "experience": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.06,
+        "effective_weight": 0.07228915662650602,
+        "contribution": 7.228915662650602,
+        "reason": "Confirmed dated work covers approximately 0.42 years; this listing asks for at least 0. Internship equivalence is not guaranteed.",
+        "evidence": [
+          {
+            "candidate_path": "experience",
+            "job_path": "experience_years_min"
+          }
+        ]
+      },
+      "location": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.05,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed work-location preference is available. A home address is not a relocation preference.",
+        "evidence": []
+      },
+      "interests": {
+        "score": 2.831441639398908,
+        "state": "likely_match",
+        "configured_weight": 0.05,
+        "effective_weight": 0.06024096385542169,
+        "contribution": 0.17056877345776555,
+        "reason": "TF-IDF alignment of the confirmed summary and preferred roles with this opportunity.",
+        "evidence": [
+          {
+            "candidate_path": "career_objective/preferred_roles",
+            "job_path": "title/category/description"
+          }
+        ]
+      }
+    },
+    "penalty": 11.25,
+    "before_hard_filter": "rejected: combined location literal absent",
+    "intended_location_relation": "exact_city",
+    "intended_role_relation": "AI_related_domain"
+  },
+  {
+    "job_id": "demo-data-science-2672",
+    "title": "Applied Data Scientist (Intern)",
+    "category": "data_science",
+    "location": "Bengaluru",
+    "country": "India",
+    "work_mode": "onsite",
+    "date_status": "active",
+    "required_skills": [
+      "Python",
+      "Statistics",
+      "Pandas",
+      "SQL",
+      "Model evaluation",
+      "Machine learning"
+    ],
+    "matched_required": [
+      "Python"
+    ],
+    "missing_required": [
+      "Statistics",
+      "Pandas",
+      "SQL",
+      "Model evaluation",
+      "Machine learning"
+    ],
+    "raw_score": 7.9952,
+    "baseline": 1.2757507743148722,
+    "components": {
+      "semantic": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Semantic embeddings are unavailable; this component is not scored.",
+        "evidence": []
+      },
+      "lexical_similarity": {
+        "score": 1.2757507743148722,
+        "state": "likely_match",
+        "configured_weight": 0.2,
+        "effective_weight": 0.26666666666666666,
+        "contribution": 0.34020020648396593,
+        "reason": "Visible TF-IDF baseline used as fallback text similarity.",
+        "evidence": []
+      },
+      "required_skills": {
+        "score": 16.666666666666668,
+        "state": "likely_match",
+        "configured_weight": 0.3,
+        "effective_weight": 0.39999999999999997,
+        "contribution": 6.666666666666667,
+        "reason": "Fraction of distinct listed required skills supported by explicit confirmed skill/technology fields.",
+        "evidence": [
+          {
+            "candidate_path": "skills.0",
+            "job_path": "required_skills.0"
+          }
+        ]
+      },
+      "preferred_skills": {
+        "score": null,
+        "state": "not_applicable",
+        "configured_weight": 0.08,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Fraction of distinct preferred skills supported; repeated required skills are not counted twice.",
+        "evidence": []
+      },
+      "title_category": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.12,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed preferred role is available.",
+        "evidence": []
+      },
+      "project_experience": {
+        "score": 1.0309783722909152,
+        "state": "likely_match",
+        "configured_weight": 0.1,
+        "effective_weight": 0.13333333333333333,
+        "contribution": 0.13746378297212203,
+        "reason": "Relevance of confirmed project/work text to the listing. Uses semantic cosine when available, otherwise TF-IDF.",
+        "evidence": [
+          {
+            "candidate_path": "projects/experience",
+            "job_path": "description/responsibilities"
+          }
+        ]
+      },
+      "education": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.04,
+        "effective_weight": 0.05333333333333334,
+        "contribution": 5.333333333333334,
+        "reason": "Documented qualification level meets the written level; subject and eligibility still need review.",
+        "evidence": [
+          {
+            "candidate_path": "education",
+            "job_path": "education_requirements"
+          }
+        ]
+      },
+      "experience": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.06,
+        "effective_weight": 0.08,
+        "contribution": 8.0,
+        "reason": "Confirmed dated work covers approximately 0.42 years; this listing asks for at least 0. Internship equivalence is not guaranteed.",
+        "evidence": [
+          {
+            "candidate_path": "experience",
+            "job_path": "experience_years_min"
+          }
+        ]
+      },
+      "location": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.05,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed work-location preference is available. A home address is not a relocation preference.",
+        "evidence": []
+      },
+      "interests": {
+        "score": 0.26268587886812916,
+        "state": "likely_match",
+        "configured_weight": 0.05,
+        "effective_weight": 0.06666666666666667,
+        "contribution": 0.017512391924541945,
+        "reason": "TF-IDF alignment of the confirmed summary and preferred roles with this opportunity.",
+        "evidence": [
+          {
+            "candidate_path": "career_objective/preferred_roles",
+            "job_path": "title/category/description"
+          }
+        ]
+      }
+    },
+    "penalty": 12.5,
+    "before_hard_filter": "rejected: combined location literal absent",
+    "intended_location_relation": "exact_city",
+    "intended_role_relation": "AI_related_domain"
+  },
+  {
+    "job_id": "demo-data-science-2677",
+    "title": "Data Scientist \u2014 Graduate",
+    "category": "data_science",
+    "location": "Bengaluru",
+    "country": "India",
+    "work_mode": "onsite",
+    "date_status": "active",
+    "required_skills": [
+      "Python",
+      "Statistics",
+      "Pandas"
+    ],
+    "matched_required": [
+      "Python"
+    ],
+    "missing_required": [
+      "Statistics",
+      "Pandas"
+    ],
+    "raw_score": 14.3595,
+    "baseline": 0.7163631496392199,
+    "components": {
+      "semantic": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Semantic embeddings are unavailable; this component is not scored.",
+        "evidence": []
+      },
+      "lexical_similarity": {
+        "score": 0.7163631496392199,
+        "state": "likely_match",
+        "configured_weight": 0.2,
+        "effective_weight": 0.24096385542168677,
+        "contribution": 0.17261762641908915,
+        "reason": "Visible TF-IDF baseline used as fallback text similarity.",
+        "evidence": []
+      },
+      "required_skills": {
+        "score": 33.333333333333336,
+        "state": "likely_match",
+        "configured_weight": 0.3,
+        "effective_weight": 0.3614457831325301,
+        "contribution": 12.048192771084338,
+        "reason": "Fraction of distinct listed required skills supported by explicit confirmed skill/technology fields.",
+        "evidence": [
+          {
+            "candidate_path": "skills.0",
+            "job_path": "required_skills.0"
+          }
+        ]
+      },
+      "preferred_skills": {
+        "score": 0.0,
+        "state": "explicit_mismatch",
+        "configured_weight": 0.08,
+        "effective_weight": 0.0963855421686747,
+        "contribution": 0.0,
+        "reason": "Fraction of distinct preferred skills supported; repeated required skills are not counted twice.",
+        "evidence": []
+      },
+      "title_category": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.12,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed preferred role is available.",
+        "evidence": []
+      },
+      "project_experience": {
+        "score": 0.19802128201487496,
+        "state": "likely_match",
+        "configured_weight": 0.1,
+        "effective_weight": 0.12048192771084339,
+        "contribution": 0.023857985784924696,
+        "reason": "Relevance of confirmed project/work text to the listing. Uses semantic cosine when available, otherwise TF-IDF.",
+        "evidence": [
+          {
+            "candidate_path": "projects/experience",
+            "job_path": "description/responsibilities"
+          }
+        ]
+      },
+      "education": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.04,
+        "effective_weight": 0.04819277108433735,
+        "contribution": 4.819277108433735,
+        "reason": "Documented qualification level meets the written level; subject and eligibility still need review.",
+        "evidence": [
+          {
+            "candidate_path": "education",
+            "job_path": "education_requirements"
+          }
+        ]
+      },
+      "experience": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.06,
+        "effective_weight": 0.07228915662650602,
+        "contribution": 7.228915662650602,
+        "reason": "Confirmed dated work covers approximately 0.42 years; this listing asks for at least 0. Internship equivalence is not guaranteed.",
+        "evidence": [
+          {
+            "candidate_path": "experience",
+            "job_path": "experience_years_min"
+          }
+        ]
+      },
+      "location": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.05,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed work-location preference is available. A home address is not a relocation preference.",
+        "evidence": []
+      },
+      "interests": {
+        "score": 1.1070056814882692,
+        "state": "likely_match",
+        "configured_weight": 0.05,
+        "effective_weight": 0.06024096385542169,
+        "contribution": 0.06668708924628128,
+        "reason": "TF-IDF alignment of the confirmed summary and preferred roles with this opportunity.",
+        "evidence": [
+          {
+            "candidate_path": "career_objective/preferred_roles",
+            "job_path": "title/category/description"
+          }
+        ]
+      }
+    },
+    "penalty": 10.0,
+    "before_hard_filter": "rejected: combined location literal absent",
+    "intended_location_relation": "exact_city",
+    "intended_role_relation": "AI_related_domain"
+  },
+  {
+    "job_id": "demo-data-science-2725",
+    "title": "Data Scientist \u2014 Graduate",
+    "category": "data_science",
+    "location": "Bengaluru",
+    "country": "India",
+    "work_mode": "onsite",
+    "date_status": "active",
+    "required_skills": [
+      "Python",
+      "Statistics"
+    ],
+    "matched_required": [
+      "Python"
+    ],
+    "missing_required": [
+      "Statistics"
+    ],
+    "raw_score": 19.3749,
+    "baseline": 0.7679453953378885,
+    "components": {
+      "semantic": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Semantic embeddings are unavailable; this component is not scored.",
+        "evidence": []
+      },
+      "lexical_similarity": {
+        "score": 0.7679453953378885,
+        "state": "likely_match",
+        "configured_weight": 0.2,
+        "effective_weight": 0.25316455696202533,
+        "contribution": 0.19441655578174394,
+        "reason": "Visible TF-IDF baseline used as fallback text similarity.",
+        "evidence": []
+      },
+      "required_skills": {
+        "score": 50.0,
+        "state": "likely_match",
+        "configured_weight": 0.3,
+        "effective_weight": 0.37974683544303794,
+        "contribution": 18.987341772151897,
+        "reason": "Fraction of distinct listed required skills supported by explicit confirmed skill/technology fields.",
+        "evidence": [
+          {
+            "candidate_path": "skills.0",
+            "job_path": "required_skills.0"
+          }
+        ]
+      },
+      "preferred_skills": {
+        "score": 0.0,
+        "state": "explicit_mismatch",
+        "configured_weight": 0.08,
+        "effective_weight": 0.10126582278481013,
+        "contribution": 0.0,
+        "reason": "Fraction of distinct preferred skills supported; repeated required skills are not counted twice.",
+        "evidence": []
+      },
+      "title_category": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.12,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed preferred role is available.",
+        "evidence": []
+      },
+      "project_experience": {
+        "score": 0.216946320031132,
+        "state": "likely_match",
+        "configured_weight": 0.1,
+        "effective_weight": 0.12658227848101267,
+        "contribution": 0.02746155949761165,
+        "reason": "Relevance of confirmed project/work text to the listing. Uses semantic cosine when available, otherwise TF-IDF.",
+        "evidence": [
+          {
+            "candidate_path": "projects/experience",
+            "job_path": "description/responsibilities"
+          }
+        ]
+      },
+      "education": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.04,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "The education wording requires employer review; no degree level was inferred.",
+        "evidence": []
+      },
+      "experience": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.06,
+        "effective_weight": 0.07594936708860758,
+        "contribution": 7.594936708860758,
+        "reason": "Confirmed dated work covers approximately 0.42 years; this listing asks for at least 0. Internship equivalence is not guaranteed.",
+        "evidence": [
+          {
+            "candidate_path": "experience",
+            "job_path": "experience_years_min"
+          }
+        ]
+      },
+      "location": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.05,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed work-location preference is available. A home address is not a relocation preference.",
+        "evidence": []
+      },
+      "interests": {
+        "score": 1.1176965050030767,
+        "state": "likely_match",
+        "configured_weight": 0.05,
+        "effective_weight": 0.06329113924050633,
+        "contribution": 0.070740285126777,
+        "reason": "TF-IDF alignment of the confirmed summary and preferred roles with this opportunity.",
+        "evidence": [
+          {
+            "candidate_path": "career_objective/preferred_roles",
+            "job_path": "title/category/description"
+          }
+        ]
+      }
+    },
+    "penalty": 7.5,
+    "before_hard_filter": "rejected: combined location literal absent",
+    "intended_location_relation": "exact_city",
+    "intended_role_relation": "AI_related_domain"
+  },
+  {
+    "job_id": "demo-data-science-2777",
+    "title": "Data Scientist \u2014 Entry Level",
+    "category": "data_science",
+    "location": "Bengaluru",
+    "country": "India",
+    "work_mode": "onsite",
+    "date_status": "active",
+    "required_skills": [
+      "Python",
+      "Statistics",
+      "Pandas",
+      "SQL"
+    ],
+    "matched_required": [
+      "Python"
+    ],
+    "missing_required": [
+      "Statistics",
+      "Pandas",
+      "SQL"
+    ],
+    "raw_score": 10.0967,
+    "baseline": 0.711703368351252,
+    "components": {
+      "semantic": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Semantic embeddings are unavailable; this component is not scored.",
+        "evidence": []
+      },
+      "lexical_similarity": {
+        "score": 0.711703368351252,
+        "state": "likely_match",
+        "configured_weight": 0.2,
+        "effective_weight": 0.24096385542168677,
+        "contribution": 0.17149478755451858,
+        "reason": "Visible TF-IDF baseline used as fallback text similarity.",
+        "evidence": []
+      },
+      "required_skills": {
+        "score": 25.0,
+        "state": "likely_match",
+        "configured_weight": 0.3,
+        "effective_weight": 0.3614457831325301,
+        "contribution": 9.036144578313253,
+        "reason": "Fraction of distinct listed required skills supported by explicit confirmed skill/technology fields.",
+        "evidence": [
+          {
+            "candidate_path": "skills.0",
+            "job_path": "required_skills.0"
+          }
+        ]
+      },
+      "preferred_skills": {
+        "score": 0.0,
+        "state": "explicit_mismatch",
+        "configured_weight": 0.08,
+        "effective_weight": 0.0963855421686747,
+        "contribution": 0.0,
+        "reason": "Fraction of distinct preferred skills supported; repeated required skills are not counted twice.",
+        "evidence": []
+      },
+      "title_category": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.12,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed preferred role is available.",
+        "evidence": []
+      },
+      "project_experience": {
+        "score": 0.21315562916796876,
+        "state": "likely_match",
+        "configured_weight": 0.1,
+        "effective_weight": 0.12048192771084339,
+        "contribution": 0.025681401104574553,
+        "reason": "Relevance of confirmed project/work text to the listing. Uses semantic cosine when available, otherwise TF-IDF.",
+        "evidence": [
+          {
+            "candidate_path": "projects/experience",
+            "job_path": "description/responsibilities"
+          }
+        ]
+      },
+      "education": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.04,
+        "effective_weight": 0.04819277108433735,
+        "contribution": 4.819277108433735,
+        "reason": "Documented qualification level meets the written level; subject and eligibility still need review.",
+        "evidence": [
+          {
+            "candidate_path": "education",
+            "job_path": "education_requirements"
+          }
+        ]
+      },
+      "experience": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.06,
+        "effective_weight": 0.07228915662650602,
+        "contribution": 7.228915662650602,
+        "reason": "Confirmed dated work covers approximately 0.42 years; this listing asks for at least 0. Internship equivalence is not guaranteed.",
+        "evidence": [
+          {
+            "candidate_path": "experience",
+            "job_path": "experience_years_min"
+          }
+        ]
+      },
+      "location": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.05,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed work-location preference is available. A home address is not a relocation preference.",
+        "evidence": []
+      },
+      "interests": {
+        "score": 1.0816174096579951,
+        "state": "likely_match",
+        "configured_weight": 0.05,
+        "effective_weight": 0.06024096385542169,
+        "contribution": 0.06515767528060212,
+        "reason": "TF-IDF alignment of the confirmed summary and preferred roles with this opportunity.",
+        "evidence": [
+          {
+            "candidate_path": "career_objective/preferred_roles",
+            "job_path": "title/category/description"
+          }
+        ]
+      }
+    },
+    "penalty": 11.25,
+    "before_hard_filter": "rejected: combined location literal absent",
+    "intended_location_relation": "exact_city",
+    "intended_role_relation": "AI_related_domain"
+  },
+  {
+    "job_id": "demo-data-science-2795",
+    "title": "Data Scientist Junior",
+    "category": "data_science",
+    "location": "Bengaluru",
+    "country": "India",
+    "work_mode": "onsite",
+    "date_status": "active",
+    "required_skills": [
+      "Python",
+      "Statistics"
+    ],
+    "matched_required": [
+      "Python"
+    ],
+    "missing_required": [
+      "Statistics"
+    ],
+    "raw_score": 19.3497,
+    "baseline": 0.7960974146091941,
+    "components": {
+      "semantic": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Semantic embeddings are unavailable; this component is not scored.",
+        "evidence": []
+      },
+      "lexical_similarity": {
+        "score": 0.7960974146091941,
+        "state": "likely_match",
+        "configured_weight": 0.2,
+        "effective_weight": 0.25316455696202533,
+        "contribution": 0.20154364926815044,
+        "reason": "Visible TF-IDF baseline used as fallback text similarity.",
+        "evidence": []
+      },
+      "required_skills": {
+        "score": 50.0,
+        "state": "likely_match",
+        "configured_weight": 0.3,
+        "effective_weight": 0.37974683544303794,
+        "contribution": 18.987341772151897,
+        "reason": "Fraction of distinct listed required skills supported by explicit confirmed skill/technology fields.",
+        "evidence": [
+          {
+            "candidate_path": "skills.0",
+            "job_path": "required_skills.0"
+          }
+        ]
+      },
+      "preferred_skills": {
+        "score": 0.0,
+        "state": "explicit_mismatch",
+        "configured_weight": 0.08,
+        "effective_weight": 0.10126582278481013,
+        "contribution": 0.0,
+        "reason": "Fraction of distinct preferred skills supported; repeated required skills are not counted twice.",
+        "evidence": []
+      },
+      "title_category": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.12,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed preferred role is available.",
+        "evidence": []
+      },
+      "project_experience": {
+        "score": 0.05875644112740344,
+        "state": "likely_match",
+        "configured_weight": 0.1,
+        "effective_weight": 0.12658227848101267,
+        "contribution": 0.007437524193342209,
+        "reason": "Relevance of confirmed project/work text to the listing. Uses semantic cosine when available, otherwise TF-IDF.",
+        "evidence": [
+          {
+            "candidate_path": "projects/experience",
+            "job_path": "description/responsibilities"
+          }
+        ]
+      },
+      "education": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.04,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "The education wording requires employer review; no degree level was inferred.",
+        "evidence": []
+      },
+      "experience": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.06,
+        "effective_weight": 0.07594936708860758,
+        "contribution": 7.594936708860758,
+        "reason": "Confirmed dated work covers approximately 0.42 years; this listing asks for at least 0. Internship equivalence is not guaranteed.",
+        "evidence": [
+          {
+            "candidate_path": "experience",
+            "job_path": "experience_years_min"
+          }
+        ]
+      },
+      "location": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.05,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed work-location preference is available. A home address is not a relocation preference.",
+        "evidence": []
+      },
+      "interests": {
+        "score": 0.9237275974355477,
+        "state": "likely_match",
+        "configured_weight": 0.05,
+        "effective_weight": 0.06329113924050633,
+        "contribution": 0.05846377198959163,
+        "reason": "TF-IDF alignment of the confirmed summary and preferred roles with this opportunity.",
+        "evidence": [
+          {
+            "candidate_path": "career_objective/preferred_roles",
+            "job_path": "title/category/description"
+          }
+        ]
+      }
+    },
+    "penalty": 7.5,
+    "before_hard_filter": "rejected: combined location literal absent",
+    "intended_location_relation": "exact_city",
+    "intended_role_relation": "AI_related_domain"
+  },
+  {
+    "job_id": "demo-data-science-2797",
+    "title": "Data Scientist \u2014 Fresher",
+    "category": "data_science",
+    "location": "Bengaluru",
+    "country": "India",
+    "work_mode": "onsite",
+    "date_status": "active",
+    "required_skills": [
+      "Python",
+      "Statistics"
+    ],
+    "matched_required": [
+      "Python"
+    ],
+    "missing_required": [
+      "Statistics"
+    ],
+    "raw_score": 22.9026,
+    "baseline": 0.7632955643128315,
+    "components": {
+      "semantic": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Semantic embeddings are unavailable; this component is not scored.",
+        "evidence": []
+      },
+      "lexical_similarity": {
+        "score": 0.7632955643128315,
+        "state": "likely_match",
+        "configured_weight": 0.2,
+        "effective_weight": 0.24096385542168677,
+        "contribution": 0.18392664200309194,
+        "reason": "Visible TF-IDF baseline used as fallback text similarity.",
+        "evidence": []
+      },
+      "required_skills": {
+        "score": 50.0,
+        "state": "likely_match",
+        "configured_weight": 0.3,
+        "effective_weight": 0.3614457831325301,
+        "contribution": 18.072289156626507,
+        "reason": "Fraction of distinct listed required skills supported by explicit confirmed skill/technology fields.",
+        "evidence": [
+          {
+            "candidate_path": "skills.0",
+            "job_path": "required_skills.0"
+          }
+        ]
+      },
+      "preferred_skills": {
+        "score": 0.0,
+        "state": "explicit_mismatch",
+        "configured_weight": 0.08,
+        "effective_weight": 0.0963855421686747,
+        "contribution": 0.0,
+        "reason": "Fraction of distinct preferred skills supported; repeated required skills are not counted twice.",
+        "evidence": []
+      },
+      "title_category": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.12,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed preferred role is available.",
+        "evidence": []
+      },
+      "project_experience": {
+        "score": 0.2567460557158988,
+        "state": "likely_match",
+        "configured_weight": 0.1,
+        "effective_weight": 0.12048192771084339,
+        "contribution": 0.03093325972480709,
+        "reason": "Relevance of confirmed project/work text to the listing. Uses semantic cosine when available, otherwise TF-IDF.",
+        "evidence": [
+          {
+            "candidate_path": "projects/experience",
+            "job_path": "description/responsibilities"
+          }
+        ]
+      },
+      "education": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.04,
+        "effective_weight": 0.04819277108433735,
+        "contribution": 4.819277108433735,
+        "reason": "Documented qualification level meets the written level; subject and eligibility still need review.",
+        "evidence": [
+          {
+            "candidate_path": "education",
+            "job_path": "education_requirements"
+          }
+        ]
+      },
+      "experience": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.06,
+        "effective_weight": 0.07228915662650602,
+        "contribution": 7.228915662650602,
+        "reason": "Confirmed dated work covers approximately 0.42 years; this listing asks for at least 0. Internship equivalence is not guaranteed.",
+        "evidence": [
+          {
+            "candidate_path": "experience",
+            "job_path": "experience_years_min"
+          }
+        ]
+      },
+      "location": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.05,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed work-location preference is available. A home address is not a relocation preference.",
+        "evidence": []
+      },
+      "interests": {
+        "score": 1.1168417375991857,
+        "state": "likely_match",
+        "configured_weight": 0.05,
+        "effective_weight": 0.06024096385542169,
+        "contribution": 0.06727962274693891,
+        "reason": "TF-IDF alignment of the confirmed summary and preferred roles with this opportunity.",
+        "evidence": [
+          {
+            "candidate_path": "career_objective/preferred_roles",
+            "job_path": "title/category/description"
+          }
+        ]
+      }
+    },
+    "penalty": 7.5,
+    "before_hard_filter": "rejected: combined location literal absent",
+    "intended_location_relation": "exact_city",
+    "intended_role_relation": "AI_related_domain"
+  },
+  {
+    "job_id": "demo-data-science-2811",
+    "title": "Data Scientist \u2014 Graduate",
+    "category": "data_science",
+    "location": "Bengaluru",
+    "country": "India",
+    "work_mode": "onsite",
+    "date_status": "active",
+    "required_skills": [
+      "Python",
+      "Statistics"
+    ],
+    "matched_required": [
+      "Python"
+    ],
+    "missing_required": [
+      "Statistics"
+    ],
+    "raw_score": 22.9647,
+    "baseline": 0.8928128540393855,
+    "components": {
+      "semantic": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Semantic embeddings are unavailable; this component is not scored.",
+        "evidence": []
+      },
+      "lexical_similarity": {
+        "score": 0.8928128540393855,
+        "state": "likely_match",
+        "configured_weight": 0.2,
+        "effective_weight": 0.24096385542168677,
+        "contribution": 0.21513562747937,
+        "reason": "Visible TF-IDF baseline used as fallback text similarity.",
+        "evidence": []
+      },
+      "required_skills": {
+        "score": 50.0,
+        "state": "likely_match",
+        "configured_weight": 0.3,
+        "effective_weight": 0.3614457831325301,
+        "contribution": 18.072289156626507,
+        "reason": "Fraction of distinct listed required skills supported by explicit confirmed skill/technology fields.",
+        "evidence": [
+          {
+            "candidate_path": "skills.0",
+            "job_path": "required_skills.0"
+          }
+        ]
+      },
+      "preferred_skills": {
+        "score": 0.0,
+        "state": "explicit_mismatch",
+        "configured_weight": 0.08,
+        "effective_weight": 0.0963855421686747,
+        "contribution": 0.0,
+        "reason": "Fraction of distinct preferred skills supported; repeated required skills are not counted twice.",
+        "evidence": []
+      },
+      "title_category": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.12,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed preferred role is available.",
+        "evidence": []
+      },
+      "project_experience": {
+        "score": 0.31887694038440134,
+        "state": "likely_match",
+        "configured_weight": 0.1,
+        "effective_weight": 0.12048192771084339,
+        "contribution": 0.03841890848004836,
+        "reason": "Relevance of confirmed project/work text to the listing. Uses semantic cosine when available, otherwise TF-IDF.",
+        "evidence": [
+          {
+            "candidate_path": "projects/experience",
+            "job_path": "description/responsibilities"
+          }
+        ]
+      },
+      "education": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.04,
+        "effective_weight": 0.04819277108433735,
+        "contribution": 4.819277108433735,
+        "reason": "Documented qualification level meets the written level; subject and eligibility still need review.",
+        "evidence": [
+          {
+            "candidate_path": "education",
+            "job_path": "education_requirements"
+          }
+        ]
+      },
+      "experience": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.06,
+        "effective_weight": 0.07228915662650602,
+        "contribution": 7.228915662650602,
+        "reason": "Confirmed dated work covers approximately 0.42 years; this listing asks for at least 0. Internship equivalence is not guaranteed.",
+        "evidence": [
+          {
+            "candidate_path": "experience",
+            "job_path": "experience_years_min"
+          }
+        ]
+      },
+      "location": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.05,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed work-location preference is available. A home address is not a relocation preference.",
+        "evidence": []
+      },
+      "interests": {
+        "score": 1.5057847916983953,
+        "state": "likely_match",
+        "configured_weight": 0.05,
+        "effective_weight": 0.06024096385542169,
+        "contribution": 0.09070992721074672,
+        "reason": "TF-IDF alignment of the confirmed summary and preferred roles with this opportunity.",
+        "evidence": [
+          {
+            "candidate_path": "career_objective/preferred_roles",
+            "job_path": "title/category/description"
+          }
+        ]
+      }
+    },
+    "penalty": 7.5,
+    "before_hard_filter": "rejected: combined location literal absent",
+    "intended_location_relation": "exact_city",
+    "intended_role_relation": "AI_related_domain"
+  },
+  {
+    "job_id": "demo-data-science-2834",
+    "title": "Applied Data Scientist Trainee",
+    "category": "data_science",
+    "location": "Bengaluru",
+    "country": "India",
+    "work_mode": "onsite",
+    "date_status": "active",
+    "required_skills": [
+      "Python",
+      "Statistics",
+      "Pandas",
+      "SQL"
+    ],
+    "matched_required": [
+      "Python"
+    ],
+    "missing_required": [
+      "Statistics",
+      "Pandas",
+      "SQL"
+    ],
+    "raw_score": 10.166,
+    "baseline": 1.0419434185008143,
+    "components": {
+      "semantic": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Semantic embeddings are unavailable; this component is not scored.",
+        "evidence": []
+      },
+      "lexical_similarity": {
+        "score": 1.0419434185008143,
+        "state": "likely_match",
+        "configured_weight": 0.2,
+        "effective_weight": 0.24096385542168677,
+        "contribution": 0.2510707032532083,
+        "reason": "Visible TF-IDF baseline used as fallback text similarity.",
+        "evidence": []
+      },
+      "required_skills": {
+        "score": 25.0,
+        "state": "likely_match",
+        "configured_weight": 0.3,
+        "effective_weight": 0.3614457831325301,
+        "contribution": 9.036144578313253,
+        "reason": "Fraction of distinct listed required skills supported by explicit confirmed skill/technology fields.",
+        "evidence": [
+          {
+            "candidate_path": "skills.0",
+            "job_path": "required_skills.0"
+          }
+        ]
+      },
+      "preferred_skills": {
+        "score": 0.0,
+        "state": "explicit_mismatch",
+        "configured_weight": 0.08,
+        "effective_weight": 0.0963855421686747,
+        "contribution": 0.0,
+        "reason": "Fraction of distinct preferred skills supported; repeated required skills are not counted twice.",
+        "evidence": []
+      },
+      "title_category": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.12,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed preferred role is available.",
+        "evidence": []
+      },
+      "project_experience": {
+        "score": 0.5339603185456777,
+        "state": "likely_match",
+        "configured_weight": 0.1,
+        "effective_weight": 0.12048192771084339,
+        "contribution": 0.06433256849947926,
+        "reason": "Relevance of confirmed project/work text to the listing. Uses semantic cosine when available, otherwise TF-IDF.",
+        "evidence": [
+          {
+            "candidate_path": "projects/experience",
+            "job_path": "description/responsibilities"
+          }
+        ]
+      },
+      "education": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.04,
+        "effective_weight": 0.04819277108433735,
+        "contribution": 4.819277108433735,
+        "reason": "Documented qualification level meets the written level; subject and eligibility still need review.",
+        "evidence": [
+          {
+            "candidate_path": "education",
+            "job_path": "education_requirements"
+          }
+        ]
+      },
+      "experience": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.06,
+        "effective_weight": 0.07228915662650602,
+        "contribution": 7.228915662650602,
+        "reason": "Confirmed dated work covers approximately 0.42 years; this listing asks for at least 0. Internship equivalence is not guaranteed.",
+        "evidence": [
+          {
+            "candidate_path": "experience",
+            "job_path": "experience_years_min"
+          }
+        ]
+      },
+      "location": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.05,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed work-location preference is available. A home address is not a relocation preference.",
+        "evidence": []
+      },
+      "interests": {
+        "score": 0.27031021805070915,
+        "state": "likely_match",
+        "configured_weight": 0.05,
+        "effective_weight": 0.06024096385542169,
+        "contribution": 0.016283748075343926,
+        "reason": "TF-IDF alignment of the confirmed summary and preferred roles with this opportunity.",
+        "evidence": [
+          {
+            "candidate_path": "career_objective/preferred_roles",
+            "job_path": "title/category/description"
+          }
+        ]
+      }
+    },
+    "penalty": 11.25,
+    "before_hard_filter": "rejected: combined location literal absent",
+    "intended_location_relation": "exact_city",
+    "intended_role_relation": "AI_related_domain"
+  },
+  {
+    "job_id": "demo-data-science-2922",
+    "title": "Applied Data Scientist Junior",
+    "category": "data_science",
+    "location": "Bengaluru",
+    "country": "India",
+    "work_mode": "onsite",
+    "date_status": "active",
+    "required_skills": [
+      "Python",
+      "Statistics",
+      "Pandas",
+      "SQL"
+    ],
+    "matched_required": [
+      "Python"
+    ],
+    "missing_required": [
+      "Statistics",
+      "Pandas",
+      "SQL"
+    ],
+    "raw_score": 6.0639,
+    "baseline": 0.7759613687214496,
+    "components": {
+      "semantic": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Semantic embeddings are unavailable; this component is not scored.",
+        "evidence": []
+      },
+      "lexical_similarity": {
+        "score": 0.7759613687214496,
+        "state": "likely_match",
+        "configured_weight": 0.2,
+        "effective_weight": 0.25316455696202533,
+        "contribution": 0.19644591613201257,
+        "reason": "Visible TF-IDF baseline used as fallback text similarity.",
+        "evidence": []
+      },
+      "required_skills": {
+        "score": 25.0,
+        "state": "likely_match",
+        "configured_weight": 0.3,
+        "effective_weight": 0.37974683544303794,
+        "contribution": 9.493670886075948,
+        "reason": "Fraction of distinct listed required skills supported by explicit confirmed skill/technology fields.",
+        "evidence": [
+          {
+            "candidate_path": "skills.0",
+            "job_path": "required_skills.0"
+          }
+        ]
+      },
+      "preferred_skills": {
+        "score": 0.0,
+        "state": "explicit_mismatch",
+        "configured_weight": 0.08,
+        "effective_weight": 0.10126582278481013,
+        "contribution": 0.0,
+        "reason": "Fraction of distinct preferred skills supported; repeated required skills are not counted twice.",
+        "evidence": []
+      },
+      "title_category": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.12,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed preferred role is available.",
+        "evidence": []
+      },
+      "project_experience": {
+        "score": 0.2276332802904647,
+        "state": "likely_match",
+        "configured_weight": 0.1,
+        "effective_weight": 0.12658227848101267,
+        "contribution": 0.028814339277274014,
+        "reason": "Relevance of confirmed project/work text to the listing. Uses semantic cosine when available, otherwise TF-IDF.",
+        "evidence": [
+          {
+            "candidate_path": "projects/experience",
+            "job_path": "description/responsibilities"
+          }
+        ]
+      },
+      "education": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.04,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "The education wording requires employer review; no degree level was inferred.",
+        "evidence": []
+      },
+      "experience": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.06,
+        "effective_weight": 0.07594936708860758,
+        "contribution": 7.594936708860758,
+        "reason": "Confirmed dated work covers approximately 0.42 years; this listing asks for at least 0. Internship equivalence is not guaranteed.",
+        "evidence": [
+          {
+            "candidate_path": "experience",
+            "job_path": "experience_years_min"
+          }
+        ]
+      },
+      "location": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.05,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed work-location preference is available. A home address is not a relocation preference.",
+        "evidence": []
+      },
+      "interests": {
+        "score": 0.0,
+        "state": "likely_match",
+        "configured_weight": 0.05,
+        "effective_weight": 0.06329113924050633,
+        "contribution": 0.0,
+        "reason": "TF-IDF alignment of the confirmed summary and preferred roles with this opportunity.",
+        "evidence": [
+          {
+            "candidate_path": "career_objective/preferred_roles",
+            "job_path": "title/category/description"
+          }
+        ]
+      }
+    },
+    "penalty": 11.25,
+    "before_hard_filter": "rejected: combined location literal absent",
+    "intended_location_relation": "exact_city",
+    "intended_role_relation": "AI_related_domain"
+  },
+  {
+    "job_id": "demo-artificial-intelligence-0104",
+    "title": "AI Engineer (Graduate)",
+    "category": "artificial_intelligence",
+    "location": "Remote \u2014 India",
+    "country": "India",
+    "work_mode": "remote",
+    "date_status": "active",
+    "required_skills": [
+      "Python",
+      "Machine learning",
+      "REST APIs",
+      "Model evaluation"
+    ],
+    "matched_required": [
+      "Python"
+    ],
+    "missing_required": [
+      "Machine learning",
+      "REST APIs",
+      "Model evaluation"
+    ],
+    "raw_score": 10.8749,
+    "baseline": 2.4998710964702613,
+    "components": {
+      "semantic": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Semantic embeddings are unavailable; this component is not scored.",
+        "evidence": []
+      },
+      "lexical_similarity": {
+        "score": 2.4998710964702613,
+        "state": "likely_match",
+        "configured_weight": 0.2,
+        "effective_weight": 0.24096385542168677,
+        "contribution": 0.6023785774627136,
+        "reason": "Visible TF-IDF baseline used as fallback text similarity.",
+        "evidence": []
+      },
+      "required_skills": {
+        "score": 25.0,
+        "state": "likely_match",
+        "configured_weight": 0.3,
+        "effective_weight": 0.3614457831325301,
+        "contribution": 9.036144578313253,
+        "reason": "Fraction of distinct listed required skills supported by explicit confirmed skill/technology fields.",
+        "evidence": [
+          {
+            "candidate_path": "skills.0",
+            "job_path": "required_skills.0"
+          }
+        ]
+      },
+      "preferred_skills": {
+        "score": 0.0,
+        "state": "explicit_mismatch",
+        "configured_weight": 0.08,
+        "effective_weight": 0.0963855421686747,
+        "contribution": 0.0,
+        "reason": "Fraction of distinct preferred skills supported; repeated required skills are not counted twice.",
+        "evidence": []
+      },
+      "title_category": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.12,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed preferred role is available.",
+        "evidence": []
+      },
+      "project_experience": {
+        "score": 2.579768383765753,
+        "state": "likely_match",
+        "configured_weight": 0.1,
+        "effective_weight": 0.12048192771084339,
+        "contribution": 0.3108154679235847,
+        "reason": "Relevance of confirmed project/work text to the listing. Uses semantic cosine when available, otherwise TF-IDF.",
+        "evidence": [
+          {
+            "candidate_path": "projects/experience",
+            "job_path": "description/responsibilities"
+          }
+        ]
+      },
+      "education": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.04,
+        "effective_weight": 0.04819277108433735,
+        "contribution": 4.819277108433735,
+        "reason": "Documented qualification level meets the written level; subject and eligibility still need review.",
+        "evidence": [
+          {
+            "candidate_path": "education",
+            "job_path": "education_requirements"
+          }
+        ]
+      },
+      "experience": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.06,
+        "effective_weight": 0.07228915662650602,
+        "contribution": 7.228915662650602,
+        "reason": "Confirmed dated work covers approximately 0.42 years; this listing asks for at least 0. Internship equivalence is not guaranteed.",
+        "evidence": [
+          {
+            "candidate_path": "experience",
+            "job_path": "experience_years_min"
+          }
+        ]
+      },
+      "location": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.05,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed work-location preference is available. A home address is not a relocation preference.",
+        "evidence": []
+      },
+      "interests": {
+        "score": 2.1138608694949617,
+        "state": "likely_match",
+        "configured_weight": 0.05,
+        "effective_weight": 0.06024096385542169,
+        "contribution": 0.12734101623463626,
+        "reason": "TF-IDF alignment of the confirmed summary and preferred roles with this opportunity.",
+        "evidence": [
+          {
+            "candidate_path": "career_objective/preferred_roles",
+            "job_path": "title/category/description"
+          }
+        ]
+      }
+    },
+    "penalty": 11.25,
+    "before_hard_filter": "rejected: combined location literal absent",
+    "intended_location_relation": "remote_compatible",
+    "intended_role_relation": "AI_related_domain"
+  },
+  {
+    "job_id": "demo-artificial-intelligence-0105",
+    "title": "AI Engineer Associate",
+    "category": "artificial_intelligence",
+    "location": "Remote \u2014 India",
+    "country": "India",
+    "work_mode": "remote",
+    "date_status": "active",
+    "required_skills": [
+      "Python",
+      "ML"
+    ],
+    "matched_required": [
+      "Python"
+    ],
+    "missing_required": [
+      "ML"
+    ],
+    "raw_score": 12.3857,
+    "baseline": 2.0396725184406836,
+    "components": {
+      "semantic": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Semantic embeddings are unavailable; this component is not scored.",
+        "evidence": []
+      },
+      "lexical_similarity": {
+        "score": 2.0396725184406836,
+        "state": "likely_match",
+        "configured_weight": 0.2,
+        "effective_weight": 0.25316455696202533,
+        "contribution": 0.5163727894786542,
+        "reason": "Visible TF-IDF baseline used as fallback text similarity.",
+        "evidence": []
+      },
+      "required_skills": {
+        "score": 50.0,
+        "state": "likely_match",
+        "configured_weight": 0.3,
+        "effective_weight": 0.37974683544303794,
+        "contribution": 18.987341772151897,
+        "reason": "Fraction of distinct listed required skills supported by explicit confirmed skill/technology fields.",
+        "evidence": [
+          {
+            "candidate_path": "skills.0",
+            "job_path": "required_skills.0"
+          }
+        ]
+      },
+      "preferred_skills": {
+        "score": 0.0,
+        "state": "explicit_mismatch",
+        "configured_weight": 0.08,
+        "effective_weight": 0.10126582278481013,
+        "contribution": 0.0,
+        "reason": "Fraction of distinct preferred skills supported; repeated required skills are not counted twice.",
+        "evidence": []
+      },
+      "title_category": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.12,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed preferred role is available.",
+        "evidence": []
+      },
+      "project_experience": {
+        "score": 1.992835377196453,
+        "state": "likely_match",
+        "configured_weight": 0.1,
+        "effective_weight": 0.12658227848101267,
+        "contribution": 0.25225764268309536,
+        "reason": "Relevance of confirmed project/work text to the listing. Uses semantic cosine when available, otherwise TF-IDF.",
+        "evidence": [
+          {
+            "candidate_path": "projects/experience",
+            "job_path": "description/responsibilities"
+          }
+        ]
+      },
+      "education": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.04,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "The education wording requires employer review; no degree level was inferred.",
+        "evidence": []
+      },
+      "experience": {
+        "score": 0.0,
+        "state": "explicit_mismatch",
+        "configured_weight": 0.06,
+        "effective_weight": 0.07594936708860758,
+        "contribution": 0.0,
+        "reason": "Confirmed dated work covers approximately 0.42 years; this listing asks for at least 1. Internship equivalence is not guaranteed.",
+        "evidence": [
+          {
+            "candidate_path": "experience",
+            "job_path": "experience_years_min"
+          }
+        ]
+      },
+      "location": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.05,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed work-location preference is available. A home address is not a relocation preference.",
+        "evidence": []
+      },
+      "interests": {
+        "score": 2.0496164692004832,
+        "state": "likely_match",
+        "configured_weight": 0.05,
+        "effective_weight": 0.06329113924050633,
+        "contribution": 0.12972256134180274,
+        "reason": "TF-IDF alignment of the confirmed summary and preferred roles with this opportunity.",
+        "evidence": [
+          {
+            "candidate_path": "career_objective/preferred_roles",
+            "job_path": "title/category/description"
+          }
+        ]
+      }
+    },
+    "penalty": 7.5,
+    "before_hard_filter": "rejected: combined location literal absent",
+    "intended_location_relation": "remote_compatible",
+    "intended_role_relation": "AI_related_domain"
+  },
+  {
+    "job_id": "demo-artificial-intelligence-0107",
+    "title": "AI Engineer \u2014 Entry Level",
+    "category": "artificial_intelligence",
+    "location": "Remote \u2014 India",
+    "country": "India",
+    "work_mode": "remote",
+    "date_status": "active",
+    "required_skills": [
+      "Python",
+      "Machine learning",
+      "REST APIs",
+      "Model evaluation",
+      "Responsible AI"
+    ],
+    "matched_required": [
+      "Python"
+    ],
+    "missing_required": [
+      "Machine learning",
+      "REST APIs",
+      "Model evaluation",
+      "Responsible AI"
+    ],
+    "raw_score": 6.0122,
+    "baseline": 2.2805508800600087,
+    "components": {
+      "semantic": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Semantic embeddings are unavailable; this component is not scored.",
+        "evidence": []
+      },
+      "lexical_similarity": {
+        "score": 2.2805508800600087,
+        "state": "likely_match",
+        "configured_weight": 0.2,
+        "effective_weight": 0.28169014084507044,
+        "contribution": 0.6424086986084532,
+        "reason": "Visible TF-IDF baseline used as fallback text similarity.",
+        "evidence": []
+      },
+      "required_skills": {
+        "score": 20.0,
+        "state": "likely_match",
+        "configured_weight": 0.3,
+        "effective_weight": 0.4225352112676056,
+        "contribution": 8.450704225352112,
+        "reason": "Fraction of distinct listed required skills supported by explicit confirmed skill/technology fields.",
+        "evidence": [
+          {
+            "candidate_path": "skills.0",
+            "job_path": "required_skills.0"
+          }
+        ]
+      },
+      "preferred_skills": {
+        "score": null,
+        "state": "not_applicable",
+        "configured_weight": 0.08,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Fraction of distinct preferred skills supported; repeated required skills are not counted twice.",
+        "evidence": []
+      },
+      "title_category": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.12,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed preferred role is available.",
+        "evidence": []
+      },
+      "project_experience": {
+        "score": 2.410215666783828,
+        "state": "likely_match",
+        "configured_weight": 0.1,
+        "effective_weight": 0.14084507042253522,
+        "contribution": 0.33946699532166597,
+        "reason": "Relevance of confirmed project/work text to the listing. Uses semantic cosine when available, otherwise TF-IDF.",
+        "evidence": [
+          {
+            "candidate_path": "projects/experience",
+            "job_path": "description/responsibilities"
+          }
+        ]
+      },
+      "education": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.04,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "The education wording requires employer review; no degree level was inferred.",
+        "evidence": []
+      },
+      "experience": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.06,
+        "effective_weight": 0.08450704225352113,
+        "contribution": 8.450704225352112,
+        "reason": "Confirmed dated work covers approximately 0.42 years; this listing asks for at least 0. Internship equivalence is not guaranteed.",
+        "evidence": [
+          {
+            "candidate_path": "experience",
+            "job_path": "experience_years_min"
+          }
+        ]
+      },
+      "location": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.05,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed work-location preference is available. A home address is not a relocation preference.",
+        "evidence": []
+      },
+      "interests": {
+        "score": 1.8306942161474153,
+        "state": "likely_match",
+        "configured_weight": 0.05,
+        "effective_weight": 0.07042253521126761,
+        "contribution": 0.12892212789770532,
+        "reason": "TF-IDF alignment of the confirmed summary and preferred roles with this opportunity.",
+        "evidence": [
+          {
+            "candidate_path": "career_objective/preferred_roles",
+            "job_path": "title/category/description"
+          }
+        ]
+      }
+    },
+    "penalty": 12.0,
+    "before_hard_filter": "rejected: combined location literal absent",
+    "intended_location_relation": "remote_compatible",
+    "intended_role_relation": "AI_related_domain"
+  },
+  {
+    "job_id": "demo-artificial-intelligence-0116",
+    "title": "AI Engineer (Graduate)",
+    "category": "artificial_intelligence",
+    "location": "Pune",
+    "country": "India",
+    "work_mode": "hybrid",
+    "date_status": "active",
+    "required_skills": [
+      "Python",
+      "Machine learning",
+      "REST APIs",
+      "Model evaluation",
+      "Responsible AI"
+    ],
+    "matched_required": [
+      "Python"
+    ],
+    "missing_required": [
+      "Machine learning",
+      "REST APIs",
+      "Model evaluation",
+      "Responsible AI"
+    ],
+    "raw_score": 6.0497,
+    "baseline": 2.358288784873196,
+    "components": {
+      "semantic": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Semantic embeddings are unavailable; this component is not scored.",
+        "evidence": []
+      },
+      "lexical_similarity": {
+        "score": 2.358288784873196,
+        "state": "likely_match",
+        "configured_weight": 0.2,
+        "effective_weight": 0.28169014084507044,
+        "contribution": 0.6643066999642806,
+        "reason": "Visible TF-IDF baseline used as fallback text similarity.",
+        "evidence": []
+      },
+      "required_skills": {
+        "score": 20.0,
+        "state": "likely_match",
+        "configured_weight": 0.3,
+        "effective_weight": 0.4225352112676056,
+        "contribution": 8.450704225352112,
+        "reason": "Fraction of distinct listed required skills supported by explicit confirmed skill/technology fields.",
+        "evidence": [
+          {
+            "candidate_path": "skills.0",
+            "job_path": "required_skills.0"
+          }
+        ]
+      },
+      "preferred_skills": {
+        "score": null,
+        "state": "not_applicable",
+        "configured_weight": 0.08,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Fraction of distinct preferred skills supported; repeated required skills are not counted twice.",
+        "evidence": []
+      },
+      "title_category": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.12,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed preferred role is available.",
+        "evidence": []
+      },
+      "project_experience": {
+        "score": 2.517133320367665,
+        "state": "likely_match",
+        "configured_weight": 0.1,
+        "effective_weight": 0.14084507042253522,
+        "contribution": 0.3545258197700937,
+        "reason": "Relevance of confirmed project/work text to the listing. Uses semantic cosine when available, otherwise TF-IDF.",
+        "evidence": [
+          {
+            "candidate_path": "projects/experience",
+            "job_path": "description/responsibilities"
+          }
+        ]
+      },
+      "education": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.04,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "The education wording requires employer review; no degree level was inferred.",
+        "evidence": []
+      },
+      "experience": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.06,
+        "effective_weight": 0.08450704225352113,
+        "contribution": 8.450704225352112,
+        "reason": "Confirmed dated work covers approximately 0.42 years; this listing asks for at least 0. Internship equivalence is not guaranteed.",
+        "evidence": [
+          {
+            "candidate_path": "experience",
+            "job_path": "experience_years_min"
+          }
+        ]
+      },
+      "location": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.05,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed work-location preference is available. A home address is not a relocation preference.",
+        "evidence": []
+      },
+      "interests": {
+        "score": 1.8389636619406564,
+        "state": "likely_match",
+        "configured_weight": 0.05,
+        "effective_weight": 0.07042253521126761,
+        "contribution": 0.1295044832352575,
+        "reason": "TF-IDF alignment of the confirmed summary and preferred roles with this opportunity.",
+        "evidence": [
+          {
+            "candidate_path": "career_objective/preferred_roles",
+            "job_path": "title/category/description"
+          }
+        ]
+      }
+    },
+    "penalty": 12.0,
+    "before_hard_filter": "rejected: combined location literal absent",
+    "intended_location_relation": "different_city",
+    "intended_role_relation": "AI_related_domain"
+  },
+  {
+    "job_id": "demo-artificial-intelligence-0128",
+    "title": "AI Engineer (Intern)",
+    "category": "artificial_intelligence",
+    "location": "Pune",
+    "country": "India",
+    "work_mode": "onsite",
+    "date_status": "expired",
+    "required_skills": [
+      "Python",
+      "Machine learning"
+    ],
+    "matched_required": [
+      "Python"
+    ],
+    "missing_required": [
+      "Machine learning"
+    ],
+    "raw_score": 20.11,
+    "baseline": 2.432833222725749,
+    "components": {
+      "semantic": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Semantic embeddings are unavailable; this component is not scored.",
+        "evidence": []
+      },
+      "lexical_similarity": {
+        "score": 2.432833222725749,
+        "state": "likely_match",
+        "configured_weight": 0.2,
+        "effective_weight": 0.25316455696202533,
+        "contribution": 0.6159071449938606,
+        "reason": "Visible TF-IDF baseline used as fallback text similarity.",
+        "evidence": []
+      },
+      "required_skills": {
+        "score": 50.0,
+        "state": "likely_match",
+        "configured_weight": 0.3,
+        "effective_weight": 0.37974683544303794,
+        "contribution": 18.987341772151897,
+        "reason": "Fraction of distinct listed required skills supported by explicit confirmed skill/technology fields.",
+        "evidence": [
+          {
+            "candidate_path": "skills.0",
+            "job_path": "required_skills.0"
+          }
+        ]
+      },
+      "preferred_skills": {
+        "score": 0.0,
+        "state": "explicit_mismatch",
+        "configured_weight": 0.08,
+        "effective_weight": 0.10126582278481013,
+        "contribution": 0.0,
+        "reason": "Fraction of distinct preferred skills supported; repeated required skills are not counted twice.",
+        "evidence": []
+      },
+      "title_category": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.12,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed preferred role is available.",
+        "evidence": []
+      },
+      "project_experience": {
+        "score": 2.287457868081835,
+        "state": "likely_match",
+        "configured_weight": 0.1,
+        "effective_weight": 0.12658227848101267,
+        "contribution": 0.2895516288711184,
+        "reason": "Relevance of confirmed project/work text to the listing. Uses semantic cosine when available, otherwise TF-IDF.",
+        "evidence": [
+          {
+            "candidate_path": "projects/experience",
+            "job_path": "description/responsibilities"
+          }
+        ]
+      },
+      "education": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.04,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "The education wording requires employer review; no degree level was inferred.",
+        "evidence": []
+      },
+      "experience": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.06,
+        "effective_weight": 0.07594936708860758,
+        "contribution": 7.594936708860758,
+        "reason": "Confirmed dated work covers approximately 0.42 years; this listing asks for at least 0. Internship equivalence is not guaranteed.",
+        "evidence": [
+          {
+            "candidate_path": "experience",
+            "job_path": "experience_years_min"
+          }
+        ]
+      },
+      "location": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.05,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed work-location preference is available. A home address is not a relocation preference.",
+        "evidence": []
+      },
+      "interests": {
+        "score": 1.9317127340562001,
+        "state": "likely_match",
+        "configured_weight": 0.05,
+        "effective_weight": 0.06329113924050633,
+        "contribution": 0.12226029962381015,
+        "reason": "TF-IDF alignment of the confirmed summary and preferred roles with this opportunity.",
+        "evidence": [
+          {
+            "candidate_path": "career_objective/preferred_roles",
+            "job_path": "title/category/description"
+          }
+        ]
+      }
+    },
+    "penalty": 7.5,
+    "before_hard_filter": "rejected: combined location literal absent",
+    "intended_location_relation": "different_city",
+    "intended_role_relation": "AI_related_domain"
+  },
+  {
+    "job_id": "demo-artificial-intelligence-0159",
+    "title": "AI Engineer \u2014 Fresher",
+    "category": "artificial_intelligence",
+    "location": "Pune",
+    "country": "India",
+    "work_mode": "hybrid",
+    "date_status": "active",
+    "required_skills": [
+      "Python",
+      "ML",
+      "RESTful API"
+    ],
+    "matched_required": [
+      "Python"
+    ],
+    "missing_required": [
+      "ML",
+      "RESTful API"
+    ],
+    "raw_score": 11.1347,
+    "baseline": 2.0188055994630774,
+    "components": {
+      "semantic": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Semantic embeddings are unavailable; this component is not scored.",
+        "evidence": []
+      },
+      "lexical_similarity": {
+        "score": 2.0188055994630774,
+        "state": "likely_match",
+        "configured_weight": 0.2,
+        "effective_weight": 0.25316455696202533,
+        "contribution": 0.5110900251805259,
+        "reason": "Visible TF-IDF baseline used as fallback text similarity.",
+        "evidence": []
+      },
+      "required_skills": {
+        "score": 33.333333333333336,
+        "state": "likely_match",
+        "configured_weight": 0.3,
+        "effective_weight": 0.37974683544303794,
+        "contribution": 12.658227848101266,
+        "reason": "Fraction of distinct listed required skills supported by explicit confirmed skill/technology fields.",
+        "evidence": [
+          {
+            "candidate_path": "skills.0",
+            "job_path": "required_skills.0"
+          }
+        ]
+      },
+      "preferred_skills": {
+        "score": 0.0,
+        "state": "explicit_mismatch",
+        "configured_weight": 0.08,
+        "effective_weight": 0.10126582278481013,
+        "contribution": 0.0,
+        "reason": "Fraction of distinct preferred skills supported; repeated required skills are not counted twice.",
+        "evidence": []
+      },
+      "title_category": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.12,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed preferred role is available.",
+        "evidence": []
+      },
+      "project_experience": {
+        "score": 1.9630640958649537,
+        "state": "likely_match",
+        "configured_weight": 0.1,
+        "effective_weight": 0.12658227848101267,
+        "contribution": 0.24848912605885493,
+        "reason": "Relevance of confirmed project/work text to the listing. Uses semantic cosine when available, otherwise TF-IDF.",
+        "evidence": [
+          {
+            "candidate_path": "projects/experience",
+            "job_path": "description/responsibilities"
+          }
+        ]
+      },
+      "education": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.04,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "The education wording requires employer review; no degree level was inferred.",
+        "evidence": []
+      },
+      "experience": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.06,
+        "effective_weight": 0.07594936708860758,
+        "contribution": 7.594936708860758,
+        "reason": "Confirmed dated work covers approximately 0.42 years; this listing asks for at least 0. Internship equivalence is not guaranteed.",
+        "evidence": [
+          {
+            "candidate_path": "experience",
+            "job_path": "experience_years_min"
+          }
+        ]
+      },
+      "location": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.05,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed work-location preference is available. A home address is not a relocation preference.",
+        "evidence": []
+      },
+      "interests": {
+        "score": 1.9263641120548094,
+        "state": "likely_match",
+        "configured_weight": 0.05,
+        "effective_weight": 0.06329113924050633,
+        "contribution": 0.12192177924397529,
+        "reason": "TF-IDF alignment of the confirmed summary and preferred roles with this opportunity.",
+        "evidence": [
+          {
+            "candidate_path": "career_objective/preferred_roles",
+            "job_path": "title/category/description"
+          }
+        ]
+      }
+    },
+    "penalty": 10.0,
+    "before_hard_filter": "rejected: combined location literal absent",
+    "intended_location_relation": "different_city",
+    "intended_role_relation": "AI_related_domain"
+  },
+  {
+    "job_id": "demo-cloud-1359",
+    "title": "Cloud Engineer \u2014 Entry Level",
+    "category": "cloud",
+    "location": "Indore",
+    "country": "India",
+    "work_mode": "hybrid",
+    "date_status": "active",
+    "required_skills": [
+      "Linux",
+      "Networking",
+      "Amazon Web Services",
+      "Docker"
+    ],
+    "matched_required": [
+      "Docker"
+    ],
+    "missing_required": [
+      "Linux",
+      "Networking",
+      "Amazon Web Services"
+    ],
+    "raw_score": 16.115,
+    "baseline": 0.4505439346897694,
+    "components": {
+      "semantic": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Semantic embeddings are unavailable; this component is not scored.",
+        "evidence": []
+      },
+      "lexical_similarity": {
+        "score": 0.4505439346897694,
+        "state": "likely_match",
+        "configured_weight": 0.2,
+        "effective_weight": 0.25316455696202533,
+        "contribution": 0.11406175561766314,
+        "reason": "Visible TF-IDF baseline used as fallback text similarity.",
+        "evidence": []
+      },
+      "required_skills": {
+        "score": 25.0,
+        "state": "likely_match",
+        "configured_weight": 0.3,
+        "effective_weight": 0.37974683544303794,
+        "contribution": 9.493670886075948,
+        "reason": "Fraction of distinct listed required skills supported by explicit confirmed skill/technology fields.",
+        "evidence": [
+          {
+            "candidate_path": "skills.5",
+            "job_path": "required_skills.3"
+          }
+        ]
+      },
+      "preferred_skills": {
+        "score": 100.0,
+        "state": "confirmed_match",
+        "configured_weight": 0.08,
+        "effective_weight": 0.10126582278481013,
+        "contribution": 10.126582278481013,
+        "reason": "Fraction of distinct preferred skills supported; repeated required skills are not counted twice.",
+        "evidence": [
+          {
+            "candidate_path": "skills.0",
+            "job_path": "preferred_skills.0"
+          }
+        ]
+      },
+      "title_category": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.12,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed preferred role is available.",
+        "evidence": []
+      },
+      "project_experience": {
+        "score": 0.2820724456961962,
+        "state": "likely_match",
+        "configured_weight": 0.1,
+        "effective_weight": 0.12658227848101267,
+        "contribution": 0.03570537287293623,
+        "reason": "Relevance of confirmed project/work text to the listing. Uses semantic cosine when available, otherwise TF-IDF.",
+        "evidence": [
+          {
+            "candidate_path": "projects/experience",
+            "job_path": "description/responsibilities"
+          }
+        ]
+      },
+      "education": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.04,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "The education wording requires employer review; no degree level was inferred.",
+        "evidence": []
+      },
+      "experience": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.06,
+        "effective_weight": 0.07594936708860758,
+        "contribution": 7.594936708860758,
+        "reason": "Confirmed dated work covers approximately 0.42 years; this listing asks for at least 0. Internship equivalence is not guaranteed.",
+        "evidence": [
+          {
+            "candidate_path": "experience",
+            "job_path": "experience_years_min"
+          }
+        ]
+      },
+      "location": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.05,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed work-location preference is available. A home address is not a relocation preference.",
+        "evidence": []
+      },
+      "interests": {
+        "score": 0.0,
+        "state": "likely_match",
+        "configured_weight": 0.05,
+        "effective_weight": 0.06329113924050633,
+        "contribution": 0.0,
+        "reason": "TF-IDF alignment of the confirmed summary and preferred roles with this opportunity.",
+        "evidence": [
+          {
+            "candidate_path": "career_objective/preferred_roles",
+            "job_path": "title/category/description"
+          }
+        ]
+      }
+    },
+    "penalty": 11.25,
+    "before_hard_filter": "rejected: combined location literal absent",
+    "intended_location_relation": "different_city",
+    "intended_role_relation": "unrelated_domain"
+  },
+  {
+    "job_id": "demo-cloud-1360",
+    "title": "Cloud Infrastructure Engineer (Entry Level)",
+    "category": "cloud",
+    "location": "Indore",
+    "country": "India",
+    "work_mode": "onsite",
+    "date_status": "active",
+    "required_skills": [
+      "Linux",
+      "Networking",
+      "Azure",
+      "Terraform"
+    ],
+    "matched_required": [],
+    "missing_required": [
+      "Linux",
+      "Networking",
+      "Azure",
+      "Terraform"
+    ],
+    "raw_score": 0.0,
+    "baseline": 0.11365050822926634,
+    "components": {
+      "semantic": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Semantic embeddings are unavailable; this component is not scored.",
+        "evidence": []
+      },
+      "lexical_similarity": {
+        "score": 0.11365050822926634,
+        "state": "likely_match",
+        "configured_weight": 0.2,
+        "effective_weight": 0.26666666666666666,
+        "contribution": 0.030306802194471023,
+        "reason": "Visible TF-IDF baseline used as fallback text similarity.",
+        "evidence": []
+      },
+      "required_skills": {
+        "score": 0.0,
+        "state": "explicit_mismatch",
+        "configured_weight": 0.3,
+        "effective_weight": 0.39999999999999997,
+        "contribution": 0.0,
+        "reason": "Fraction of distinct listed required skills supported by explicit confirmed skill/technology fields.",
+        "evidence": []
+      },
+      "preferred_skills": {
+        "score": null,
+        "state": "not_applicable",
+        "configured_weight": 0.08,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Fraction of distinct preferred skills supported; repeated required skills are not counted twice.",
+        "evidence": []
+      },
+      "title_category": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.12,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed preferred role is available.",
+        "evidence": []
+      },
+      "project_experience": {
+        "score": 0.1562110867419742,
+        "state": "likely_match",
+        "configured_weight": 0.1,
+        "effective_weight": 0.13333333333333333,
+        "contribution": 0.020828144898929892,
+        "reason": "Relevance of confirmed project/work text to the listing. Uses semantic cosine when available, otherwise TF-IDF.",
+        "evidence": [
+          {
+            "candidate_path": "projects/experience",
+            "job_path": "description/responsibilities"
+          }
+        ]
+      },
+      "education": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.04,
+        "effective_weight": 0.05333333333333334,
+        "contribution": 5.333333333333334,
+        "reason": "Documented qualification level meets the written level; subject and eligibility still need review.",
+        "evidence": [
+          {
+            "candidate_path": "education",
+            "job_path": "education_requirements"
+          }
+        ]
+      },
+      "experience": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.06,
+        "effective_weight": 0.08,
+        "contribution": 8.0,
+        "reason": "Confirmed dated work covers approximately 0.42 years; this listing asks for at least 0. Internship equivalence is not guaranteed.",
+        "evidence": [
+          {
+            "candidate_path": "experience",
+            "job_path": "experience_years_min"
+          }
+        ]
+      },
+      "location": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.05,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed work-location preference is available. A home address is not a relocation preference.",
+        "evidence": []
+      },
+      "interests": {
+        "score": 0.0,
+        "state": "likely_match",
+        "configured_weight": 0.05,
+        "effective_weight": 0.06666666666666667,
+        "contribution": 0.0,
+        "reason": "TF-IDF alignment of the confirmed summary and preferred roles with this opportunity.",
+        "evidence": [
+          {
+            "candidate_path": "career_objective/preferred_roles",
+            "job_path": "title/category/description"
+          }
+        ]
+      }
+    },
+    "penalty": 15.0,
+    "before_hard_filter": "rejected: combined location literal absent",
+    "intended_location_relation": "different_city",
+    "intended_role_relation": "unrelated_domain"
+  },
+  {
+    "job_id": "demo-cloud-1361",
+    "title": "Cloud Operations Engineer \u2014 Graduate",
+    "category": "cloud",
+    "location": "Bengaluru",
+    "country": "India",
+    "work_mode": "onsite",
+    "date_status": "active",
+    "required_skills": [
+      "Linux",
+      "Networking"
+    ],
+    "matched_required": [],
+    "missing_required": [
+      "Linux",
+      "Networking"
+    ],
+    "raw_score": 0.0,
+    "baseline": 0.6861933328979919,
+    "components": {
+      "semantic": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Semantic embeddings are unavailable; this component is not scored.",
+        "evidence": []
+      },
+      "lexical_similarity": {
+        "score": 0.6861933328979919,
+        "state": "likely_match",
+        "configured_weight": 0.2,
+        "effective_weight": 0.25316455696202533,
+        "contribution": 0.17371983111341568,
+        "reason": "Visible TF-IDF baseline used as fallback text similarity.",
+        "evidence": []
+      },
+      "required_skills": {
+        "score": 0.0,
+        "state": "explicit_mismatch",
+        "configured_weight": 0.3,
+        "effective_weight": 0.37974683544303794,
+        "contribution": 0.0,
+        "reason": "Fraction of distinct listed required skills supported by explicit confirmed skill/technology fields.",
+        "evidence": []
+      },
+      "preferred_skills": {
+        "score": 66.66666666666667,
+        "state": "likely_match",
+        "configured_weight": 0.08,
+        "effective_weight": 0.10126582278481013,
+        "contribution": 6.751054852320675,
+        "reason": "Fraction of distinct preferred skills supported; repeated required skills are not counted twice.",
+        "evidence": [
+          {
+            "candidate_path": "skills.5",
+            "job_path": "preferred_skills.1"
+          },
+          {
+            "candidate_path": "skills.0",
+            "job_path": "preferred_skills.2"
+          }
+        ]
+      },
+      "title_category": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.12,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed preferred role is available.",
+        "evidence": []
+      },
+      "project_experience": {
+        "score": 0.4714691851361229,
+        "state": "likely_match",
+        "configured_weight": 0.1,
+        "effective_weight": 0.12658227848101267,
+        "contribution": 0.059679643688116825,
+        "reason": "Relevance of confirmed project/work text to the listing. Uses semantic cosine when available, otherwise TF-IDF.",
+        "evidence": [
+          {
+            "candidate_path": "projects/experience",
+            "job_path": "description/responsibilities"
+          }
+        ]
+      },
+      "education": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.04,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "The education wording requires employer review; no degree level was inferred.",
+        "evidence": []
+      },
+      "experience": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.06,
+        "effective_weight": 0.07594936708860758,
+        "contribution": 7.594936708860758,
+        "reason": "Confirmed dated work covers approximately 0.42 years; this listing asks for at least 0. Internship equivalence is not guaranteed.",
+        "evidence": [
+          {
+            "candidate_path": "experience",
+            "job_path": "experience_years_min"
+          }
+        ]
+      },
+      "location": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.05,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed work-location preference is available. A home address is not a relocation preference.",
+        "evidence": []
+      },
+      "interests": {
+        "score": 0.0,
+        "state": "likely_match",
+        "configured_weight": 0.05,
+        "effective_weight": 0.06329113924050633,
+        "contribution": 0.0,
+        "reason": "TF-IDF alignment of the confirmed summary and preferred roles with this opportunity.",
+        "evidence": [
+          {
+            "candidate_path": "career_objective/preferred_roles",
+            "job_path": "title/category/description"
+          }
+        ]
+      }
+    },
+    "penalty": 15.0,
+    "before_hard_filter": "rejected: combined location literal absent",
+    "intended_location_relation": "exact_city",
+    "intended_role_relation": "unrelated_domain"
+  },
+  {
+    "job_id": "demo-artificial-intelligence-0109",
+    "title": "AI Engineer Intern",
+    "category": "artificial_intelligence",
+    "location": "Lucknow",
+    "country": "India",
+    "work_mode": "onsite",
+    "date_status": "expired",
+    "required_skills": [
+      "Python",
+      "Machine learning",
+      "REST APIs",
+      "Model evaluation"
+    ],
+    "matched_required": [
+      "Python"
+    ],
+    "missing_required": [
+      "Machine learning",
+      "REST APIs",
+      "Model evaluation"
+    ],
+    "raw_score": 10.833,
+    "baseline": 2.4496548122380326,
+    "components": {
+      "semantic": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Semantic embeddings are unavailable; this component is not scored.",
+        "evidence": []
+      },
+      "lexical_similarity": {
+        "score": 2.4496548122380326,
+        "state": "likely_match",
+        "configured_weight": 0.2,
+        "effective_weight": 0.24096385542168677,
+        "contribution": 0.5902782680091645,
+        "reason": "Visible TF-IDF baseline used as fallback text similarity.",
+        "evidence": []
+      },
+      "required_skills": {
+        "score": 25.0,
+        "state": "likely_match",
+        "configured_weight": 0.3,
+        "effective_weight": 0.3614457831325301,
+        "contribution": 9.036144578313253,
+        "reason": "Fraction of distinct listed required skills supported by explicit confirmed skill/technology fields.",
+        "evidence": [
+          {
+            "candidate_path": "skills.0",
+            "job_path": "required_skills.0"
+          }
+        ]
+      },
+      "preferred_skills": {
+        "score": 0.0,
+        "state": "explicit_mismatch",
+        "configured_weight": 0.08,
+        "effective_weight": 0.0963855421686747,
+        "contribution": 0.0,
+        "reason": "Fraction of distinct preferred skills supported; repeated required skills are not counted twice.",
+        "evidence": []
+      },
+      "title_category": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.12,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed preferred role is available.",
+        "evidence": []
+      },
+      "project_experience": {
+        "score": 2.4716196852170675,
+        "state": "likely_match",
+        "configured_weight": 0.1,
+        "effective_weight": 0.12048192771084339,
+        "contribution": 0.2977855042430202,
+        "reason": "Relevance of confirmed project/work text to the listing. Uses semantic cosine when available, otherwise TF-IDF.",
+        "evidence": [
+          {
+            "candidate_path": "projects/experience",
+            "job_path": "description/responsibilities"
+          }
+        ]
+      },
+      "education": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.04,
+        "effective_weight": 0.04819277108433735,
+        "contribution": 4.819277108433735,
+        "reason": "Documented qualification level meets the written level; subject and eligibility still need review.",
+        "evidence": [
+          {
+            "candidate_path": "education",
+            "job_path": "education_requirements"
+          }
+        ]
+      },
+      "experience": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.06,
+        "effective_weight": 0.07228915662650602,
+        "contribution": 7.228915662650602,
+        "reason": "Confirmed dated work covers approximately 0.42 years; this listing asks for at least 0. Internship equivalence is not guaranteed.",
+        "evidence": [
+          {
+            "candidate_path": "experience",
+            "job_path": "experience_years_min"
+          }
+        ]
+      },
+      "location": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.05,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed work-location preference is available. A home address is not a relocation preference.",
+        "evidence": []
+      },
+      "interests": {
+        "score": 1.83622282489986,
+        "state": "likely_match",
+        "configured_weight": 0.05,
+        "effective_weight": 0.06024096385542169,
+        "contribution": 0.11061583282529279,
+        "reason": "TF-IDF alignment of the confirmed summary and preferred roles with this opportunity.",
+        "evidence": [
+          {
+            "candidate_path": "career_objective/preferred_roles",
+            "job_path": "title/category/description"
+          }
+        ]
+      }
+    },
+    "penalty": 11.25,
+    "before_hard_filter": "rejected: combined location literal absent",
+    "intended_location_relation": "different_city",
+    "intended_role_relation": "AI_related_domain"
+  },
+  {
+    "job_id": "demo-artificial-intelligence-0111",
+    "title": "AI Engineer \u2014 Graduate",
+    "category": "artificial_intelligence",
+    "location": "Remote \u2014 India",
+    "country": "India",
+    "work_mode": "remote",
+    "date_status": "future",
+    "required_skills": [
+      "Python",
+      "ML",
+      "RESTful API",
+      "Model evaluation"
+    ],
+    "matched_required": [
+      "Python"
+    ],
+    "missing_required": [
+      "ML",
+      "RESTful API",
+      "Model evaluation"
+    ],
+    "raw_score": 10.7828,
+    "baseline": 2.2318005679426176,
+    "components": {
+      "semantic": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "Semantic embeddings are unavailable; this component is not scored.",
+        "evidence": []
+      },
+      "lexical_similarity": {
+        "score": 2.2318005679426176,
+        "state": "likely_match",
+        "configured_weight": 0.2,
+        "effective_weight": 0.24096385542168677,
+        "contribution": 0.5377832693837633,
+        "reason": "Visible TF-IDF baseline used as fallback text similarity.",
+        "evidence": []
+      },
+      "required_skills": {
+        "score": 25.0,
+        "state": "likely_match",
+        "configured_weight": 0.3,
+        "effective_weight": 0.3614457831325301,
+        "contribution": 9.036144578313253,
+        "reason": "Fraction of distinct listed required skills supported by explicit confirmed skill/technology fields.",
+        "evidence": [
+          {
+            "candidate_path": "skills.0",
+            "job_path": "required_skills.0"
+          }
+        ]
+      },
+      "preferred_skills": {
+        "score": 0.0,
+        "state": "explicit_mismatch",
+        "configured_weight": 0.08,
+        "effective_weight": 0.0963855421686747,
+        "contribution": 0.0,
+        "reason": "Fraction of distinct preferred skills supported; repeated required skills are not counted twice.",
+        "evidence": []
+      },
+      "title_category": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.12,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed preferred role is available.",
+        "evidence": []
+      },
+      "project_experience": {
+        "score": 2.3167304610853745,
+        "state": "likely_match",
+        "configured_weight": 0.1,
+        "effective_weight": 0.12048192771084339,
+        "contribution": 0.27912415193799694,
+        "reason": "Relevance of confirmed project/work text to the listing. Uses semantic cosine when available, otherwise TF-IDF.",
+        "evidence": [
+          {
+            "candidate_path": "projects/experience",
+            "job_path": "description/responsibilities"
+          }
+        ]
+      },
+      "education": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.04,
+        "effective_weight": 0.04819277108433735,
+        "contribution": 4.819277108433735,
+        "reason": "Documented qualification level meets the written level; subject and eligibility still need review.",
+        "evidence": [
+          {
+            "candidate_path": "education",
+            "job_path": "education_requirements"
+          }
+        ]
+      },
+      "experience": {
+        "score": 100.0,
+        "state": "likely_match",
+        "configured_weight": 0.06,
+        "effective_weight": 0.07228915662650602,
+        "contribution": 7.228915662650602,
+        "reason": "Confirmed dated work covers approximately 0.42 years; this listing asks for at least 0. Internship equivalence is not guaranteed.",
+        "evidence": [
+          {
+            "candidate_path": "experience",
+            "job_path": "experience_years_min"
+          }
+        ]
+      },
+      "location": {
+        "score": null,
+        "state": "missing_information",
+        "configured_weight": 0.05,
+        "effective_weight": 0,
+        "contribution": 0,
+        "reason": "No confirmed work-location preference is available. A home address is not a relocation preference.",
+        "evidence": []
+      },
+      "interests": {
+        "score": 2.1836725233192427,
+        "state": "likely_match",
+        "configured_weight": 0.05,
+        "effective_weight": 0.06024096385542169,
+        "contribution": 0.13154653754935197,
+        "reason": "TF-IDF alignment of the confirmed summary and preferred roles with this opportunity.",
+        "evidence": [
+          {
+            "candidate_path": "career_objective/preferred_roles",
+            "job_path": "title/category/description"
+          }
+        ]
+      }
+    },
+    "penalty": 11.25,
+    "before_hard_filter": "rejected: combined location literal absent",
+    "intended_location_relation": "remote_compatible",
+    "intended_role_relation": "AI_related_domain"
+  }
+]

@@ -27,7 +27,7 @@ def generated():
 
 def test_generation_reproducible_across_processes_and_hash_seeds(generated):
     blob=dataset_bytes(generated)
-    assert len(generated)==1000 and DATA_PATH.read_bytes()==blob
+    assert len(generated)==10000 and DATA_PATH.read_bytes()==blob
     assert dataset_bytes(generate_jobs())==blob
     assert dataset_bytes(generate_jobs(DEFAULT_SEED+1))!=blob
     assert {j['id'] for j in generate_jobs(DEFAULT_SEED+1)}=={j['id'] for j in generated}
@@ -38,12 +38,12 @@ def test_generation_reproducible_across_processes_and_hash_seeds(generated):
 
 def test_schema_domains_mix_edge_cases_and_quality(generated):
     report=validate_dataset()
-    assert report['records']==1000 and len(report['categories'])==46
-    assert sum(report['availability'].values())==1000
-    assert report['experience_levels']['limited_experience']<60
+    assert report['records']==10000 and len(report['categories'])==56
+    assert sum(report['availability'].values())==10000
+    assert report['experience_levels']['limited_experience']<600
     assert set(report['work_modes'])=={'remote','hybrid','onsite'}
-    assert 150<report['employment_types']['internship']<400
-    assert len({j['id'] for j in generated})==1000
+    assert 1500<report['employment_types']['internship']<4000
+    assert len({j['id'] for j in generated})==10000
     assert all(set(Job.model_fields).issubset(j) for j in generated)
     groups=Counter(j['metadata']['duplicate_group'] for j in generated if j['metadata']['duplicate_group'])
     assert len(groups)==3 and all(n==2 for n in groups.values())
@@ -78,21 +78,21 @@ def test_validator_rejects_missing_ids_fields_identical_records_and_secrets(tmp_
 
 def test_atomic_reseed_cache_invalidation_and_reset(tmp_path):
     path=tmp_path/'jobs.json'
-    assert reseed_jobs(path)==1000
+    assert reseed_jobs(path)==10000
     provider=SeededJobProvider(path)
     first=provider.snapshot()
     assert provider.snapshot() is first
     provider.reset()
     assert provider.snapshot()==first and provider.snapshot() is not first
-    assert reseed_jobs(path,DEFAULT_SEED+1)==1000
+    assert reseed_jobs(path,DEFAULT_SEED+1)==10000
     assert provider.snapshot()!=first
-    assert len(provider.snapshot().jobs)==1000
+    assert len(provider.snapshot().jobs)==10000
     with ThreadPoolExecutor(max_workers=4) as pool:
         snapshots=list(pool.map(lambda _:provider.snapshot(),range(12)))
     assert all(snapshot is snapshots[0] for snapshot in snapshots)
     assert not list(tmp_path.glob('.jobs-*.tmp'))
     path.write_text('{broken')
-    assert reseed_jobs(path)==1000 and validate_dataset(path)['records']==1000
+    assert reseed_jobs(path)==10000 and validate_dataset(path)['records']==10000
 
 
 def test_reseed_refuses_non_job_files(tmp_path):
@@ -108,6 +108,11 @@ def test_fixture_seeding_never_modifies_workspace_database(tmp_path,client,appli
     from test_document_processing import upload, finish
     client.post('/api/v1/profile',json=profile)
     doc=upload(client);finish(client,doc)
+    from test_matching import start_finished
+    revision=client.get('/api/v1/profile').json()['revision']
+    assert client.post('/api/v1/profile/verify',json={'expected_revision':revision,'confirmed':True}).status_code==200
+    run=start_finished(client,{'filters':{'category':'backend'},'minimum_score':30})
+    assert run['result_count']>0
     tables=inspect(application.state.engine).get_table_names()
     def database_snapshot():
         with application.state.engine.connect() as connection:

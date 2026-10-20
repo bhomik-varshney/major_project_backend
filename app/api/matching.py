@@ -1,6 +1,6 @@
 from typing import Literal
 from fastapi import APIRouter,Depends,Query,Request
-from sqlalchemy import select,update,delete
+from sqlalchemy import select,update,delete,func
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session,undefer
 
@@ -10,6 +10,7 @@ from app.db.models import MatchingRun,MatchingResult,SavedOpportunity,User,now
 from app.schemas.matching import MatchingStart,MatchingRunResponse,MatchingPage,RankedMatch,ACTIVE_MATCHING,MatchingReadiness,MatchingAudit,MatchingDetail,MatchingExplanation,SavedMatch
 from app.services.match_normalization import fingerprint,canonical_skill
 from app.services.matching import readiness,run_response,filtered_snapshot
+from app.services.jobs import filter_jobs_with_audit,keyword_match,category_match
 
 router=APIRouter(prefix='/matching',tags=['Hybrid matching'])
 
@@ -33,15 +34,16 @@ def start_run(payload:MatchingStart,request:Request,user:User=Depends(current_us
         raise AppError(409,'matching_in_progress','A matching run is already active. Wait for it to finish or cancel it.')
     snapshot=request.app.state.job_provider.snapshot()
     filters=payload.filters.model_copy(update={'page':1,'page_size':50})
-    jobs=filtered_snapshot(snapshot,filters)
+    eligible,filter_audit=filter_jobs_with_audit(snapshot,filters,include_excluded=True)
+    jobs=eligible[:filters.max_results]
     settings=request.app.state.settings;minimum=settings.matching_minimum_score if payload.minimum_score is None else payload.minimum_score
     config={'weights':settings.matching_weights,'critical_penalty_max':settings.matching_critical_penalty,'unknown_ceiling_base':settings.matching_unknown_ceiling_base,
-        'baseline':'tfidf-word-bigram-logtf-smoothidf-v1','version':'hybrid-v1','engine':'crewai.Flow','ai_top_k':settings.matching_ai_top_k}
+        'baseline':'tfidf-word-bigram-logtf-smoothidf-v1','version':'hybrid-v2-retrieval','engine':'crewai.Flow','ai_top_k':settings.matching_ai_top_k,'retrieval_pool_size':payload.retrieval_pool_size or settings.matching_retrieval_pool_size,'lexical_strategy':settings.matching_lexical_strategy,'calibration':'synthetic-isotonic-v1','filter_version':'structured-filters-v1'}
     processor=request.app.state.matching_processor;processor.reserve()
     run=MatchingRun(user_id=user.id,profile_revision=ready['profile_revision'],candidate_hash=fingerprint(facts),active_user=user.id,
         candidate_snapshot={'confirmed_facts':facts},dataset_version=snapshot.version,dataset_reference_date=str(snapshot.reference_date),total_jobs=len(snapshot.jobs),
-        request={'filters':filters.model_dump(mode='json'),'minimum_score':minimum,'use_ai':payload.use_ai,'allow_external_processing':payload.allow_external_processing},
-        config=config,warnings=list(snapshot.warnings))
+        request={'filters':filters.model_dump(mode='json'),'minimum_score':minimum,'use_ai':payload.use_ai,'retrieval_pool_size':payload.retrieval_pool_size,'allow_external_processing':payload.allow_external_processing},
+        config=config,validation={'filter_audit':filter_audit},warnings=list(snapshot.warnings))
     try:db.add(run);db.commit();db.refresh(run)
     except IntegrityError:
         db.rollback();processor.capacity.release()
@@ -69,14 +71,14 @@ def results(run_id:str,page:int=Query(1,ge=1,le=10000),page_size:int=Query(6,ge=
     user:User=Depends(current_user),db:Session=Depends(get_db)):
     run=owned(db,user.id,run_id)
     if run.status not in {'completed','partial'}:raise AppError(409,'matching_not_ready','Ranked results are not ready. Check the run status or retry.')
-    threshold=max(run.request['minimum_score'],minimum_score or 0)
+    threshold=run.request['minimum_score'] if minimum_score is None else minimum_score
     rows=db.scalars(select(MatchingResult).where(MatchingResult.run_id==run_id,MatchingResult.hybrid_score>=threshold).options(undefer(MatchingResult.data))).all()
     saved=set(db.scalars(select(SavedOpportunity.job_id).where(SavedOpportunity.user_id==user.id))) if saved_only else set()
     selected=[];wanted={canonical_skill(s) for s in skill if s.strip()}
     for row in rows:
         job=row.data['job']
-        if keyword.strip().casefold() not in ' '.join([job['title'],job['company'],job['description']]).casefold():continue
-        if category and job['category'].casefold()!=category.casefold():continue
+        if keyword and not keyword_match(keyword,RankedMatch.model_validate(row.data).job):continue
+        if category and not category_match(category,job)['accepted']:continue
         if country and job['country'].casefold()!=country.casefold():continue
         if work_mode and job['work_mode']!=work_mode:continue
         if not wanted.issubset({canonical_skill(s) for s in job['required_skills']+job['preferred_skills']}):continue
@@ -84,13 +86,19 @@ def results(run_id:str,page:int=Query(1,ge=1,le=10000),page_size:int=Query(6,ge=
         selected.append(row)
     selected.sort(key=(lambda r:(-r.hybrid_score,-r.baseline_score,r.job_id)) if sort=='hybrid' else (lambda r:(-r.baseline_score,-r.hybrid_score,r.job_id)))
     start=(page-1)*page_size
-    return MatchingPage(run=run_response(db,run),items=[RankedMatch.model_validate(r.data) for r in selected[start:start+page_size]],total=len(selected),page=page,page_size=page_size)
+    items=[RankedMatch.model_validate(r.data) for r in selected[start:start+page_size]]
+    scored=db.scalar(select(func.count()).select_from(MatchingResult).where(MatchingResult.run_id==run_id))
+    filter_audit=run.validation.get('filter_audit',{})
+    hard_count=filter_audit.get('after_hard_filters',run.total_jobs-run.validation.get('filtered_out',0))
+    state='no_jobs_in_dataset' if not run.total_jobs else 'jobs_filtered_out' if not hard_count else 'no_retrieval_candidates' if not scored else 'score_below_threshold' if not rows else 'result_filters_excluded' if not selected else 'page_out_of_range' if not items else 'ready'
+    diagnostics={'empty_state':state,'total_jobs':run.total_jobs,'after_hard_filters':hard_count,'after_retrieval':scored,'after_score_filter':len(rows),'after_result_filters':len(selected),'displayed_items':len(items),'saved_minimum_score':run.request['minimum_score'],'requested_minimum_score':minimum_score,'effective_minimum_score':threshold,'score_scale':'raw hybrid points, 0–100; 0.5 means 0.5 points','filters_apply_before_score':True,'candidate_source':'confirmed_fields_only'}
+    return MatchingPage(run=run_response(db,run),diagnostics=diagnostics,items=items,total=len(selected),page=page,page_size=page_size)
 
 
 @router.get('/runs/{run_id}/audit',response_model=MatchingAudit)
 def audit(run_id:str,user:User=Depends(current_user),db:Session=Depends(get_db)):
     run=owned(db,user.id,run_id)
-    return {'run':run_response(db,run),'candidate_snapshot':run.candidate_snapshot,'profile_source':'confirmed_fields_only','draft_data_used':False}
+    return {'filter_audit':run.validation.get('filter_audit',{}),'retrieval':run.validation.get('retrieval',{}),'run':run_response(db,run),'candidate_snapshot':run.candidate_snapshot,'profile_source':'confirmed_fields_only','draft_data_used':False}
 
 
 @router.get('/runs/{run_id}/results/{job_id}',response_model=MatchingDetail)

@@ -1,0 +1,27 @@
+{
+  "frontend_requests": [
+    {
+      "url": "http://localhost:8001/api/v1/matching/runs/RUN_ID/results?page=1&page_size=6&saved_only=false&sort=hybrid",
+      "status": 200,
+      "body": {
+        "total": 0,
+        "items": 0,
+        "page": 1,
+        "page_size": 6
+      }
+    },
+    {
+      "url": "http://localhost:8001/api/v1/matching/runs/RUN_ID/results?page=1&page_size=6&saved_only=false&sort=hybrid",
+      "status": 200,
+      "body": {
+        "total": 0,
+        "items": 0,
+        "page": 1,
+        "page_size": 6
+      }
+    }
+  ],
+  "displayed_cards": 0,
+  "zero_results_visible": true,
+  "zero_threshold_visible": 2
+}

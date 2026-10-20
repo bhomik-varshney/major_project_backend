@@ -48,6 +48,9 @@ class Settings(BaseSettings):
     matching_critical_penalty: float = Field(default=15,ge=0,le=30)
     matching_unknown_ceiling_base: float = Field(default=50,ge=0,le=100)
     matching_embedding_timeout_seconds: float = Field(default=30,ge=1,le=60)
+    matching_retrieval_pool_size: int = Field(default=1200,ge=50,le=10000)
+    matching_lexical_strategy: Literal['tfidf','bm25'] = 'tfidf'
+    matching_word_vector_path: Path | None = None
     matching_ai_top_k: int = Field(default=8,ge=1,le=12)
     matching_weights: dict[str,float] = Field(default_factory=lambda:dict(semantic=.20,required_skills=.30,preferred_skills=.08,title_category=.12,project_experience=.10,education=.04,experience=.06,location=.05,interests=.05))
     matching_embedding_provider: Literal['none','ollama'] = 'none'

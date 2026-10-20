@@ -1,0 +1,72 @@
+{
+  "request_filters": {
+    "location": "Bengaluru,India",
+    "category": "artificial_intelligence",
+    "work_mode": "onsite",
+    "availability": "active"
+  },
+  "search_http_status": 200,
+  "search_response": {
+    "total": 0,
+    "matched_total": 0,
+    "page": 1,
+    "page_size": 6,
+    "source": "seeded_mock",
+    "dataset_version": "2026-10-demo-v3-10000",
+    "reference_date": "2026-10-19",
+    "warnings": []
+  },
+  "items": [],
+  "matching": {
+    "http_status": 200,
+    "status": "completed",
+    "total_jobs": 10000,
+    "jobs_scored": 0,
+    "threshold": 0.0,
+    "result_count": 0,
+    "response_body": {
+      "items": [],
+      "total": 0,
+      "page": 1,
+      "page_size": 6
+    }
+  },
+  "city_only": {
+    "jobs_scored": 1,
+    "saved_minimum": 30,
+    "count_at_saved_threshold": 0,
+    "count_after_requesting_zero": 0
+  },
+  "r2_local_processing": {
+    "status": "awaiting_review",
+    "page_count": 2,
+    "profile_unchanged": true,
+    "external_processing": false,
+    "audit_keys": [
+      "schema_version",
+      "pipeline_version",
+      "id",
+      "document_id",
+      "status",
+      "stage",
+      "quality",
+      "pages",
+      "exact_text",
+      "ocr",
+      "layout",
+      "agents",
+      "warnings",
+      "draft",
+      "review",
+      "consent",
+      "duration_ms",
+      "raw_evidence",
+      "canonical",
+      "canonical_initial",
+      "canonical_validation",
+      "repair_iterations",
+      "canonical_workflow",
+      "canonical_status"
+    ]
+  }
+}

@@ -1,0 +1,2499 @@
+{
+  "candidate_source": "R2 locally extracted, unconfirmed draft; isolated preview evaluation only",
+  "is_confirmed_production_run": false,
+  "external_processing": false,
+  "confirmed_profile_changed": false,
+  "status": "completed",
+  "jobs_after_filters": 34,
+  "jobs_scored": 34,
+  "seconds": 3.9797,
+  "score_distribution": {
+    "minimum": 6.1626,
+    "median": 14.55305,
+    "mean": 15.58845588235294,
+    "maximum": 48.9983
+  },
+  "threshold_counts": {
+    "0": 34,
+    "0.1": 34,
+    "0.5": 34,
+    "30": 1,
+    "50": 0,
+    "100": 0
+  },
+  "normalized_skills": [
+    "bertscore",
+    "bitsandbytes",
+    "c/c++",
+    "crewai",
+    "docker",
+    "docker compose",
+    "fastapi",
+    "flask",
+    "git",
+    "groq (llama 3.3 70b)",
+    "groq llm api",
+    "html",
+    "hugging face transformers",
+    "javascript",
+    "langfuse",
+    "langgraph",
+    "mcp",
+    "mcp apps",
+    "mediapipe",
+    "model context protocol (mcp)",
+    "openai agents sdk",
+    "opencv",
+    "peft",
+    "python",
+    "pytorch",
+    "qlora",
+    "react",
+    "react 19",
+    "react native",
+    "react three fiber",
+    "render",
+    "spacy",
+    "tanstack start",
+    "tesseract ocr",
+    "three.js",
+    "typescript"
+  ],
+  "derived_topics": [
+    "AI",
+    "Machine learning",
+    "Generative AI",
+    "Natural language processing",
+    "Computer vision",
+    "Deep learning"
+  ],
+  "explicit_preferred_roles": [],
+  "explicit_preferred_locations": [],
+  "stages": [
+    {
+      "stage": "preparing",
+      "status": "completed"
+    },
+    {
+      "stage": "normalizing",
+      "status": "completed"
+    },
+    {
+      "stage": "calculating_baseline",
+      "status": "completed"
+    },
+    {
+      "stage": "retrieving",
+      "status": "completed"
+    },
+    {
+      "stage": "calculating_hybrid",
+      "status": "completed"
+    },
+    {
+      "stage": "calibrating",
+      "status": "completed"
+    },
+    {
+      "stage": "generating_explanations",
+      "status": "completed"
+    },
+    {
+      "stage": "validating",
+      "status": "completed"
+    }
+  ],
+  "score_errors": 0,
+  "providers": {
+    "embeddings": {
+      "provider": "none",
+      "model": null,
+      "status": "not_configured",
+      "cache_hits": 0,
+      "cache_misses": 0
+    },
+    "retrieval": {
+      "status": "active",
+      "provider": "local",
+      "model": null,
+      "methods": {
+        "tfidf": {
+          "status": "active",
+          "version": "tfidf-word-bigram-logtf-smoothidf-v1"
+        },
+        "bm25": {
+          "status": "active",
+          "version": "bm25-positive-idf-k1-1.2-b-.75-v1",
+          "k1": 1.2,
+          "b": 0.75,
+          "query_saturation_bound": 113.0523778857864
+        },
+        "skill_overlap": {
+          "status": "active",
+          "policy": "inverted skill postings; distinct exact/synonym required-skill recall; no related-skill credit",
+          "indexed_skills": 16
+        },
+        "word2vec": {
+          "status": "not_configured",
+          "reason": "No suitable pretrained local word-vector artifact is configured."
+        },
+        "embedding": {
+          "status": "unavailable"
+        }
+      }
+    },
+    "ai_review": {
+      "status": "not_selected",
+      "model": null,
+      "reviewed_jobs": 0
+    }
+  },
+  "mock_job_results": [
+    {
+      "job_id": "demo-deep-learning-3061",
+      "title": "Deep Learning Engineer \u2014 Fresher",
+      "raw_score": 48.9983,
+      "method_scores": {
+        "tfidf": 2.12943735972498,
+        "bm25": 10.452372425969386,
+        "skill_overlap": 100.0,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 11.816655573036652,
+        "lexical": 2.12943735972498
+      },
+      "required_skill_overlap": 2,
+      "missing_required_skill_count": 0,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 2.12943735972498,
+          "state": "likely_match",
+          "contribution": 0.5131174360783084
+        },
+        "required_skills": {
+          "score": 100.0,
+          "state": "confirmed_match",
+          "contribution": 36.144578313253014
+        },
+        "preferred_skills": {
+          "score": 0.0,
+          "state": "explicit_mismatch",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 2.086143821153673,
+          "state": "likely_match",
+          "contribution": 0.2513426290546594
+        },
+        "education": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 4.819277108433735
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 7.228915662650602
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 0.6817250305197678,
+          "state": "likely_match",
+          "contribution": 0.04106777292287759
+        }
+      },
+      "critical_penalty": 0.0
+    },
+    {
+      "job_id": "demo-generative-ai-5505",
+      "title": "Generative AI Engineer Intern",
+      "raw_score": 24.1052,
+      "method_scores": {
+        "tfidf": 3.1926742813560063,
+        "bm25": 12.66903797211743,
+        "skill_overlap": 50.0,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 14.322648682731968,
+        "lexical": 3.1926742813560063
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 1,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 3.1926742813560063,
+          "state": "likely_match",
+          "contribution": 0.7693191039412064
+        },
+        "required_skills": {
+          "score": 50.0,
+          "state": "likely_match",
+          "contribution": 18.072289156626507
+        },
+        "preferred_skills": {
+          "score": 0.0,
+          "state": "explicit_mismatch",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 1.9757034060161893,
+          "state": "likely_match",
+          "contribution": 0.23803655494170958
+        },
+        "education": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 4.819277108433735
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 7.228915662650602
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 7.923479748778109,
+          "state": "likely_match",
+          "contribution": 0.47731805715530784
+        }
+      },
+      "critical_penalty": 7.5
+    },
+    {
+      "job_id": "demo-artificial-intelligence-0175",
+      "title": "AI Engineer \u2014 Entry Level",
+      "raw_score": 23.6134,
+      "method_scores": {
+        "tfidf": 2.3226641034167654,
+        "bm25": 9.069064184110413,
+        "skill_overlap": 50.0,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 10.252792712125014,
+        "lexical": 2.3226641034167654
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 1,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 2.3226641034167654,
+          "state": "likely_match",
+          "contribution": 0.5596780972088592
+        },
+        "required_skills": {
+          "score": 50.0,
+          "state": "likely_match",
+          "contribution": 18.072289156626507
+        },
+        "preferred_skills": {
+          "score": 0.0,
+          "state": "explicit_mismatch",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 2.588635873760651,
+          "state": "likely_match",
+          "contribution": 0.3118838402121267
+        },
+        "education": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 4.819277108433735
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 7.228915662650602
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 2.013807836428901,
+          "state": "likely_match",
+          "contribution": 0.12131372508607839
+        }
+      },
+      "critical_penalty": 7.5
+    },
+    {
+      "job_id": "demo-deep-learning-3067",
+      "title": "Deep Learning Engineer Intern",
+      "raw_score": 23.5185,
+      "method_scores": {
+        "tfidf": 2.408919083730236,
+        "bm25": 12.939963575591266,
+        "skill_overlap": 50.0,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 14.628936519760554,
+        "lexical": 2.408919083730236
+      },
+      "required_skill_overlap": 2,
+      "missing_required_skill_count": 2,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 2.408919083730236,
+          "state": "likely_match",
+          "contribution": 0.5804624298145148
+        },
+        "required_skills": {
+          "score": 50.0,
+          "state": "likely_match",
+          "contribution": 18.072289156626507
+        },
+        "preferred_skills": {
+          "score": 0.0,
+          "state": "explicit_mismatch",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 2.315087243225406,
+          "state": "likely_match",
+          "contribution": 0.27892617388257906
+        },
+        "education": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 4.819277108433735
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 7.228915662650602
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 0.6405728692360583,
+          "state": "likely_match",
+          "contribution": 0.038588727062413154
+        }
+      },
+      "critical_penalty": 7.5
+    },
+    {
+      "job_id": "demo-data-science-2811",
+      "title": "Data Scientist \u2014 Graduate",
+      "raw_score": 23.1179,
+      "method_scores": {
+        "tfidf": 1.2038730061519025,
+        "bm25": 5.583984348324209,
+        "skill_overlap": 50.0,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 6.3128270865506515,
+        "lexical": 1.2038730061519025
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 1,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 1.2038730061519025,
+          "state": "likely_match",
+          "contribution": 0.29008988100045846
+        },
+        "required_skills": {
+          "score": 50.0,
+          "state": "likely_match",
+          "contribution": 18.072289156626507
+        },
+        "preferred_skills": {
+          "score": 0.0,
+          "state": "explicit_mismatch",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 0.880673899592861,
+          "state": "likely_match",
+          "contribution": 0.10610528910757362
+        },
+        "education": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 4.819277108433735
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 7.228915662650602
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 1.6794843438844445,
+          "state": "likely_match",
+          "contribution": 0.10117375565568944
+        }
+      },
+      "critical_penalty": 7.5
+    },
+    {
+      "job_id": "demo-data-science-2797",
+      "title": "Data Scientist \u2014 Fresher",
+      "raw_score": 22.9623,
+      "method_scores": {
+        "tfidf": 0.8775391552016282,
+        "bm25": 3.7918297215483654,
+        "skill_overlap": 50.0,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 4.28675366559042,
+        "lexical": 0.8775391552016282
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 1,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 0.8775391552016282,
+          "state": "likely_match",
+          "contribution": 0.21145521812087428
+        },
+        "required_skills": {
+          "score": 50.0,
+          "state": "likely_match",
+          "contribution": 18.072289156626507
+        },
+        "preferred_skills": {
+          "score": 0.0,
+          "state": "explicit_mismatch",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 0.6955950721911632,
+          "state": "likely_match",
+          "contribution": 0.08380663520375461
+        },
+        "education": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 4.819277108433735
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 7.228915662650602
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 0.7731171309783116,
+          "state": "likely_match",
+          "contribution": 0.046573321143271784
+        }
+      },
+      "critical_penalty": 7.5
+    },
+    {
+      "job_id": "demo-deep-learning-3065",
+      "title": "Deep Learning Engineer Intern",
+      "raw_score": 21.5074,
+      "method_scores": {
+        "tfidf": 2.800594687371736,
+        "bm25": 13.910900502622313,
+        "skill_overlap": 40.0,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 15.726603803540337,
+        "lexical": 2.800594687371736
+      },
+      "required_skill_overlap": 2,
+      "missing_required_skill_count": 3,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 2.800594687371736,
+          "state": "likely_match",
+          "contribution": 0.7468252499657962
+        },
+        "required_skills": {
+          "score": 40.0,
+          "state": "likely_match",
+          "contribution": 15.999999999999998
+        },
+        "preferred_skills": {
+          "score": null,
+          "state": "not_applicable",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 2.876089715058033,
+          "state": "likely_match",
+          "contribution": 0.3834786286744044
+        },
+        "education": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 5.333333333333334
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 8.0
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 0.6569347956745634,
+          "state": "likely_match",
+          "contribution": 0.04379565304497089
+        }
+      },
+      "critical_penalty": 9.0
+    },
+    {
+      "job_id": "demo-deep-learning-3064",
+      "title": "Deep Learning Engineer (Trainee)",
+      "raw_score": 21.2432,
+      "method_scores": {
+        "tfidf": 2.227785266547255,
+        "bm25": 11.316538477955595,
+        "skill_overlap": 40.0,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 12.793615843688778,
+        "lexical": 2.227785266547255
+      },
+      "required_skill_overlap": 2,
+      "missing_required_skill_count": 3,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 2.227785266547255,
+          "state": "likely_match",
+          "contribution": 0.594076071079268
+        },
+        "required_skills": {
+          "score": 40.0,
+          "state": "likely_match",
+          "contribution": 15.999999999999998
+        },
+        "preferred_skills": {
+          "score": null,
+          "state": "not_applicable",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 2.368070271729552,
+          "state": "likely_match",
+          "contribution": 0.31574270289727363
+        },
+        "education": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 5.333333333333334
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 8.0
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 0.0,
+          "state": "likely_match",
+          "contribution": 0.0
+        }
+      },
+      "critical_penalty": 9.0
+    },
+    {
+      "job_id": "demo-deep-learning-3049",
+      "title": "Deep Learning Engineer \u2014 Graduate",
+      "raw_score": 21.1342,
+      "method_scores": {
+        "tfidf": 1.9435546178945187,
+        "bm25": 9.17902251608363,
+        "skill_overlap": 40.0,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 10.377103221104285,
+        "lexical": 1.9435546178945187
+      },
+      "required_skill_overlap": 2,
+      "missing_required_skill_count": 3,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 1.9435546178945187,
+          "state": "likely_match",
+          "contribution": 0.5182812314385383
+        },
+        "required_skills": {
+          "score": 40.0,
+          "state": "likely_match",
+          "contribution": 15.999999999999998
+        },
+        "preferred_skills": {
+          "score": null,
+          "state": "not_applicable",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 2.1196342218559048,
+          "state": "likely_match",
+          "contribution": 0.282617896247454
+        },
+        "education": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 5.333333333333334
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 8.0
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 0.0,
+          "state": "likely_match",
+          "contribution": 0.0
+        }
+      },
+      "critical_penalty": 9.0
+    },
+    {
+      "job_id": "demo-machine-learning-6225",
+      "title": "Machine Learning Engineer Junior",
+      "raw_score": 20.226,
+      "method_scores": {
+        "tfidf": 2.6593958677150966,
+        "bm25": 11.900935279018961,
+        "skill_overlap": 50.0,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 13.454290323579386,
+        "lexical": 2.6593958677150966
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 1,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 2.6593958677150966,
+          "state": "likely_match",
+          "contribution": 0.6732647766367333
+        },
+        "required_skills": {
+          "score": 50.0,
+          "state": "likely_match",
+          "contribution": 18.987341772151897
+        },
+        "preferred_skills": {
+          "score": 0.0,
+          "state": "explicit_mismatch",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 2.7408424690319477,
+          "state": "likely_match",
+          "contribution": 0.34694208468758836
+        },
+        "education": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 7.594936708860758
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 1.9522502860142004,
+          "state": "likely_match",
+          "contribution": 0.12356014468444307
+        }
+      },
+      "critical_penalty": 7.5
+    },
+    {
+      "job_id": "demo-data-science-2725",
+      "title": "Data Scientist \u2014 Graduate",
+      "raw_score": 19.4364,
+      "method_scores": {
+        "tfidf": 0.9136702639767995,
+        "bm25": 3.9648029204688964,
+        "skill_overlap": 50.0,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 4.482303980075192,
+        "lexical": 0.9136702639767995
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 1,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 0.9136702639767995,
+          "state": "likely_match",
+          "contribution": 0.23130892758906318
+        },
+        "required_skills": {
+          "score": 50.0,
+          "state": "likely_match",
+          "contribution": 18.987341772151897
+        },
+        "preferred_skills": {
+          "score": 0.0,
+          "state": "explicit_mismatch",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 0.5951550797695881,
+          "state": "likely_match",
+          "contribution": 0.07533608604678331
+        },
+        "education": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 7.594936708860758
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 0.7504983876983592,
+          "state": "likely_match",
+          "contribution": 0.047499897955592355
+        }
+      },
+      "critical_penalty": 7.5
+    },
+    {
+      "job_id": "demo-data-science-2795",
+      "title": "Data Scientist Junior",
+      "raw_score": 19.301,
+      "method_scores": {
+        "tfidf": 0.6812016590077551,
+        "bm25": 3.430472685194722,
+        "skill_overlap": 50.0,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 3.8782309433350206,
+        "lexical": 0.6812016590077551
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 1,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 0.6812016590077551,
+          "state": "likely_match",
+          "contribution": 0.17245611620449497
+        },
+        "required_skills": {
+          "score": 50.0,
+          "state": "likely_match",
+          "contribution": 18.987341772151897
+        },
+        "preferred_skills": {
+          "score": 0.0,
+          "state": "explicit_mismatch",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 0.05886305157967504,
+          "state": "likely_match",
+          "contribution": 0.007451019187300638
+        },
+        "education": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 7.594936708860758
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 0.6136427400926048,
+          "state": "likely_match",
+          "contribution": 0.03883814810712689
+        }
+      },
+      "critical_penalty": 7.5
+    },
+    {
+      "job_id": "demo-natural-language-processing-6981",
+      "title": "NLP Engineer Junior",
+      "raw_score": 15.7485,
+      "method_scores": {
+        "tfidf": 4.483985129835697,
+        "bm25": 14.452121022195017,
+        "skill_overlap": 33.333333333333336,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 16.338466470523088,
+        "lexical": 4.483985129835697
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 2,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 4.483985129835697,
+          "state": "likely_match",
+          "contribution": 1.0804783445387225
+        },
+        "required_skills": {
+          "score": 33.333333333333336,
+          "state": "likely_match",
+          "contribution": 12.048192771084338
+        },
+        "preferred_skills": {
+          "score": 0.0,
+          "state": "explicit_mismatch",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 4.744849987605225,
+          "state": "likely_match",
+          "contribution": 0.5716686732054488
+        },
+        "education": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 4.819277108433735
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 7.228915662650602
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 0.0,
+          "state": "likely_match",
+          "contribution": 0.0
+        }
+      },
+      "critical_penalty": 10.0
+    },
+    {
+      "job_id": "demo-machine-learning-6221",
+      "title": "Machine Learning Engineer Intern",
+      "raw_score": 14.934,
+      "method_scores": {
+        "tfidf": 2.176779075636964,
+        "bm25": 9.486732599525869,
+        "skill_overlap": 33.333333333333336,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 10.724976787430073,
+        "lexical": 2.176779075636964
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 2,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 2.176779075636964,
+          "state": "likely_match",
+          "contribution": 0.5245250784667383
+        },
+        "required_skills": {
+          "score": 33.333333333333336,
+          "state": "likely_match",
+          "contribution": 12.048192771084338
+        },
+        "preferred_skills": {
+          "score": 0.0,
+          "state": "explicit_mismatch",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 1.8364411007509078,
+          "state": "likely_match",
+          "contribution": 0.22125796394589253
+        },
+        "education": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 4.819277108433735
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 7.228915662650602
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 1.5241824133763726,
+          "state": "likely_match",
+          "contribution": 0.09181821767327547
+        }
+      },
+      "critical_penalty": 10.0
+    },
+    {
+      "job_id": "demo-computer-vision-1667",
+      "title": "Computer Vision Engineer \u2014 Entry Level",
+      "raw_score": 14.8974,
+      "method_scores": {
+        "tfidf": 2.080500408391166,
+        "bm25": 11.949488749584976,
+        "skill_overlap": 33.333333333333336,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 13.509181176600338,
+        "lexical": 2.080500408391166
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 2,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 2.080500408391166,
+          "state": "likely_match",
+          "contribution": 0.5013253996123292
+        },
+        "required_skills": {
+          "score": 33.333333333333336,
+          "state": "likely_match",
+          "contribution": 12.048192771084338
+        },
+        "preferred_skills": {
+          "score": 0.0,
+          "state": "explicit_mismatch",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 1.0976515506883642,
+          "state": "likely_match",
+          "contribution": 0.13224717478173065
+        },
+        "education": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 4.819277108433735
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 7.228915662650602
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 2.7788990656151324,
+          "state": "likely_match",
+          "contribution": 0.1674035581695863
+        }
+      },
+      "critical_penalty": 10.0
+    },
+    {
+      "job_id": "demo-computer-vision-1670",
+      "title": "Computer Vision Engineer \u2014 Entry Level",
+      "raw_score": 14.816,
+      "method_scores": {
+        "tfidf": 1.8799232386254916,
+        "bm25": 10.283566993386144,
+        "skill_overlap": 33.333333333333336,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 11.625817017500905,
+        "lexical": 1.8799232386254916
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 2,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 1.8799232386254916,
+          "state": "likely_match",
+          "contribution": 0.4529935514760221
+        },
+        "required_skills": {
+          "score": 33.333333333333336,
+          "state": "likely_match",
+          "contribution": 12.048192771084338
+        },
+        "preferred_skills": {
+          "score": 0.0,
+          "state": "explicit_mismatch",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 0.8377664163923505,
+          "state": "likely_match",
+          "contribution": 0.10093571281835549
+        },
+        "education": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 4.819277108433735
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 7.228915662650602
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 2.7510598684130154,
+          "state": "likely_match",
+          "contribution": 0.16572649809716963
+        }
+      },
+      "critical_penalty": 10.0
+    },
+    {
+      "job_id": "demo-machine-learning-6330",
+      "title": "Machine Learning Engineer Trainee",
+      "raw_score": 14.7154,
+      "method_scores": {
+        "tfidf": 1.5797822148568694,
+        "bm25": 7.705453733819097,
+        "skill_overlap": 33.333333333333336,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 8.711198672971603,
+        "lexical": 1.5797822148568694
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 2,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 1.5797822148568694,
+          "state": "likely_match",
+          "contribution": 0.3806704132185228
+        },
+        "required_skills": {
+          "score": 33.333333333333336,
+          "state": "likely_match",
+          "contribution": 12.048192771084338
+        },
+        "preferred_skills": {
+          "score": 0.0,
+          "state": "explicit_mismatch",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 1.2004489606452247,
+          "state": "likely_match",
+          "contribution": 0.14463240489701504
+        },
+        "education": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 4.819277108433735
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 7.228915662650602
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 1.5552493535719976,
+          "state": "likely_match",
+          "contribution": 0.09368972009469866
+        }
+      },
+      "critical_penalty": 10.0
+    },
+    {
+      "job_id": "demo-data-science-2677",
+      "title": "Data Scientist \u2014 Graduate",
+      "raw_score": 14.3907,
+      "method_scores": {
+        "tfidf": 0.7597293662277949,
+        "bm25": 2.76659327330571,
+        "skill_overlap": 33.333333333333336,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 3.1276994819003185,
+        "lexical": 0.7597293662277949
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 2,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 0.7597293662277949,
+          "state": "likely_match",
+          "contribution": 0.18306731716332408
+        },
+        "required_skills": {
+          "score": 33.333333333333336,
+          "state": "likely_match",
+          "contribution": 12.048192771084338
+        },
+        "preferred_skills": {
+          "score": 0.0,
+          "state": "explicit_mismatch",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 0.5426134151435525,
+          "state": "likely_match",
+          "contribution": 0.06537511025825934
+        },
+        "education": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 4.819277108433735
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 7.228915662650602
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 0.761133244620809,
+          "state": "likely_match",
+          "contribution": 0.045851400278361994
+        }
+      },
+      "critical_penalty": 10.0
+    },
+    {
+      "job_id": "demo-natural-language-processing-6983",
+      "title": "NLP Engineer Intern",
+      "raw_score": 11.8471,
+      "method_scores": {
+        "tfidf": 5.468290653458167,
+        "bm25": 21.391867311969115,
+        "skill_overlap": 25.0,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 24.18401467035334,
+        "lexical": 5.468290653458167
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 3,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 5.468290653458167,
+          "state": "likely_match",
+          "contribution": 1.3176603984236548
+        },
+        "required_skills": {
+          "score": 25.0,
+          "state": "likely_match",
+          "contribution": 9.036144578313253
+        },
+        "preferred_skills": {
+          "score": 0.0,
+          "state": "explicit_mismatch",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 5.474506756221815,
+          "state": "likely_match",
+          "contribution": 0.6595791272556404
+        },
+        "education": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 4.819277108433735
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 7.228915662650602
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 0.5890887602088212,
+          "state": "likely_match",
+          "contribution": 0.03548727471137477
+        }
+      },
+      "critical_penalty": 11.25
+    },
+    {
+      "job_id": "demo-generative-ai-5380",
+      "title": "LLM Application Developer (Trainee)",
+      "raw_score": 11.7057,
+      "method_scores": {
+        "tfidf": 4.750309588312383,
+        "bm25": 21.37870121898321,
+        "skill_overlap": 25.0,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 24.16913008915812,
+        "lexical": 4.750309588312383
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 3,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 4.750309588312383,
+          "state": "likely_match",
+          "contribution": 1.1446529128463576
+        },
+        "required_skills": {
+          "score": 25.0,
+          "state": "likely_match",
+          "contribution": 9.036144578313253
+        },
+        "preferred_skills": {
+          "score": 0.0,
+          "state": "explicit_mismatch",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 3.7861498579022497,
+          "state": "likely_match",
+          "contribution": 0.4561626334821988
+        },
+        "education": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 4.819277108433735
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 7.228915662650602
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 4.4903373068183425,
+          "state": "likely_match",
+          "contribution": 0.2705022473986954
+        }
+      },
+      "critical_penalty": 11.25
+    },
+    {
+      "job_id": "demo-machine-learning-6459",
+      "title": "Machine Learning Engineer Intern",
+      "raw_score": 10.8346,
+      "method_scores": {
+        "tfidf": 1.5289675551702897,
+        "bm25": 5.915915471106777,
+        "skill_overlap": 33.333333333333336,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 6.688083113799333,
+        "lexical": 1.5289675551702897
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 2,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 1.5289675551702897,
+          "state": "likely_match",
+          "contribution": 0.38708039371399744
+        },
+        "required_skills": {
+          "score": 33.333333333333336,
+          "state": "likely_match",
+          "contribution": 12.658227848101266
+        },
+        "preferred_skills": {
+          "score": 0.0,
+          "state": "explicit_mismatch",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 1.1645327304776345,
+          "state": "likely_match",
+          "contribution": 0.147409206389574
+        },
+        "education": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 7.594936708860758
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 0.742327475676356,
+          "state": "likely_match",
+          "contribution": 0.046982751625085827
+        }
+      },
+      "critical_penalty": 10.0
+    },
+    {
+      "job_id": "demo-machine-learning-6280",
+      "title": "Machine Learning Engineer (Trainee)",
+      "raw_score": 10.7671,
+      "method_scores": {
+        "tfidf": 2.387234477809175,
+        "bm25": 10.284477406169636,
+        "skill_overlap": 25.0,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 11.62684626080122,
+        "lexical": 2.387234477809175
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 3,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 2.387234477809175,
+          "state": "likely_match",
+          "contribution": 0.5752372235684761
+        },
+        "required_skills": {
+          "score": 25.0,
+          "state": "likely_match",
+          "contribution": 9.036144578313253
+        },
+        "preferred_skills": {
+          "score": 0.0,
+          "state": "explicit_mismatch",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 2.2137260025325527,
+          "state": "likely_match",
+          "contribution": 0.2667139762087413
+        },
+        "education": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 4.819277108433735
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 7.228915662650602
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 1.5070825599065547,
+          "state": "likely_match",
+          "contribution": 0.09078810601846717
+        }
+      },
+      "critical_penalty": 11.25
+    },
+    {
+      "job_id": "demo-computer-vision-1684",
+      "title": "Computer Vision Engineer (Graduate)",
+      "raw_score": 10.709,
+      "method_scores": {
+        "tfidf": 2.2547730707223423,
+        "bm25": 12.194025933185806,
+        "skill_overlap": 25.0,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 13.785636277476009,
+        "lexical": 2.2547730707223423
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 3,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 2.2547730707223423,
+          "state": "likely_match",
+          "contribution": 0.5433188122222512
+        },
+        "required_skills": {
+          "score": 25.0,
+          "state": "likely_match",
+          "contribution": 9.036144578313253
+        },
+        "preferred_skills": {
+          "score": 0.0,
+          "state": "explicit_mismatch",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 1.3270074684843527,
+          "state": "likely_match",
+          "contribution": 0.15988041788968108
+        },
+        "education": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 4.819277108433735
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 7.228915662650602
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 2.846307726062839,
+          "state": "likely_match",
+          "contribution": 0.171464320847159
+        }
+      },
+      "critical_penalty": 11.25
+    },
+    {
+      "job_id": "demo-computer-vision-1638",
+      "title": "Computer Vision Engineer \u2014 Graduate",
+      "raw_score": 10.6933,
+      "method_scores": {
+        "tfidf": 2.1365454582165877,
+        "bm25": 10.892811368766244,
+        "skill_overlap": 25.0,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 12.314582271003516,
+        "lexical": 2.1365454582165877
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 3,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 2.1365454582165877,
+          "state": "likely_match",
+          "contribution": 0.5148302308955633
+        },
+        "required_skills": {
+          "score": 25.0,
+          "state": "likely_match",
+          "contribution": 9.036144578313253
+        },
+        "preferred_skills": {
+          "score": 0.0,
+          "state": "explicit_mismatch",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 1.389521410361203,
+          "state": "likely_match",
+          "contribution": 0.16741221811580762
+        },
+        "education": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 4.819277108433735
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 7.228915662650602
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 2.9339250619857706,
+          "state": "likely_match",
+          "contribution": 0.17674247361360065
+        }
+      },
+      "critical_penalty": 11.25
+    },
+    {
+      "job_id": "demo-computer-vision-1668",
+      "title": "Computer Vision Engineer (Entry Level)",
+      "raw_score": 10.5508,
+      "method_scores": {
+        "tfidf": 1.8177439480954085,
+        "bm25": 9.275517224572821,
+        "skill_overlap": 25.0,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 10.486192783585272,
+        "lexical": 1.8177439480954085
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 3,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 1.8177439480954085,
+          "state": "likely_match",
+          "contribution": 0.43801058990250813
+        },
+        "required_skills": {
+          "score": 25.0,
+          "state": "likely_match",
+          "contribution": 9.036144578313253
+        },
+        "preferred_skills": {
+          "score": 0.0,
+          "state": "explicit_mismatch",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 1.1969809491651817,
+          "state": "likely_match",
+          "contribution": 0.14421457218857614
+        },
+        "education": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 4.819277108433735
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 7.228915662650602
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 2.2278414572182905,
+          "state": "likely_match",
+          "contribution": 0.13420731669989702
+        }
+      },
+      "critical_penalty": 11.25
+    },
+    {
+      "job_id": "demo-data-science-2834",
+      "title": "Applied Data Scientist Trainee",
+      "raw_score": 10.5419,
+      "method_scores": {
+        "tfidf": 1.8909211258249414,
+        "bm25": 10.300029951206223,
+        "skill_overlap": 25.0,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 11.64442878278684,
+        "lexical": 1.8909211258249414
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 3,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 1.8909211258249414,
+          "state": "likely_match",
+          "contribution": 0.45564364477709435
+        },
+        "required_skills": {
+          "score": 25.0,
+          "state": "likely_match",
+          "contribution": 9.036144578313253
+        },
+        "preferred_skills": {
+          "score": 0.0,
+          "state": "explicit_mismatch",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 1.7688721224420147,
+          "state": "likely_match",
+          "contribution": 0.21311712318578493
+        },
+        "education": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 4.819277108433735
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 7.228915662650602
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 0.644342264805106,
+          "state": "likely_match",
+          "contribution": 0.03881579908464495
+        }
+      },
+      "critical_penalty": 11.25
+    },
+    {
+      "job_id": "demo-data-science-2777",
+      "title": "Data Scientist \u2014 Entry Level",
+      "raw_score": 10.1309,
+      "method_scores": {
+        "tfidf": 0.7573123186593087,
+        "bm25": 2.741468304774435,
+        "skill_overlap": 25.0,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 3.0992951075326562,
+        "lexical": 0.7573123186593087
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 3,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 0.7573123186593087,
+          "state": "likely_match",
+          "contribution": 0.18248489606248405
+        },
+        "required_skills": {
+          "score": 25.0,
+          "state": "likely_match",
+          "contribution": 9.036144578313253
+        },
+        "preferred_skills": {
+          "score": 0.0,
+          "state": "explicit_mismatch",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 0.5888999690495464,
+          "state": "likely_match",
+          "contribution": 0.07095180349994536
+        },
+        "education": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 4.819277108433735
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 7.228915662650602
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 0.7165353408082376,
+          "state": "likely_match",
+          "contribution": 0.043164779566761305
+        }
+      },
+      "critical_penalty": 11.25
+    },
+    {
+      "job_id": "demo-data-science-2925",
+      "title": "Data Scientist \u2014 Fresher",
+      "raw_score": 9.9745,
+      "method_scores": {
+        "tfidf": 1.3829841972347976,
+        "bm25": 6.743658113306034,
+        "skill_overlap": 20.0,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 7.623865853580232,
+        "lexical": 1.3829841972347976
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 4,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 1.3829841972347976,
+          "state": "likely_match",
+          "contribution": 0.36879578592927936
+        },
+        "required_skills": {
+          "score": 20.0,
+          "state": "likely_match",
+          "contribution": 7.999999999999999
+        },
+        "preferred_skills": {
+          "score": null,
+          "state": "not_applicable",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 1.2311370766955736,
+          "state": "likely_match",
+          "contribution": 0.16415161022607647
+        },
+        "education": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 5.333333333333334
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 8.0
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 1.622813267084884,
+          "state": "likely_match",
+          "contribution": 0.10818755113899227
+        }
+      },
+      "critical_penalty": 12.0
+    },
+    {
+      "job_id": "demo-generative-ai-5406",
+      "title": "LLM Application Developer Intern",
+      "raw_score": 9.9701,
+      "method_scores": {
+        "tfidf": 4.811121972751187,
+        "bm25": 18.90369866948502,
+        "skill_overlap": 25.0,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 21.37108085421658,
+        "lexical": 4.811121972751187
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 3,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 4.811121972751187,
+          "state": "likely_match",
+          "contribution": 1.355245626127095
+        },
+        "required_skills": {
+          "score": 25.0,
+          "state": "likely_match",
+          "contribution": 10.56338028169014
+        },
+        "preferred_skills": {
+          "score": null,
+          "state": "not_applicable",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 3.6471361503307995,
+          "state": "likely_match",
+          "contribution": 0.5136811479339155
+        },
+        "education": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 8.450704225352112
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 4.786111065030821,
+          "state": "likely_match",
+          "contribution": 0.3370500750021705
+        }
+      },
+      "critical_penalty": 11.25
+    },
+    {
+      "job_id": "demo-data-science-2672",
+      "title": "Applied Data Scientist (Intern)",
+      "raw_score": 8.2422,
+      "method_scores": {
+        "tfidf": 1.7771599138360676,
+        "bm25": 8.290206854076894,
+        "skill_overlap": 16.666666666666668,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 9.372275980184375,
+        "lexical": 1.7771599138360676
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 5,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 1.7771599138360676,
+          "state": "likely_match",
+          "contribution": 0.4739093103562847
+        },
+        "required_skills": {
+          "score": 16.666666666666668,
+          "state": "likely_match",
+          "contribution": 6.666666666666667
+        },
+        "preferred_skills": {
+          "score": null,
+          "state": "not_applicable",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 1.700629881719842,
+          "state": "likely_match",
+          "contribution": 0.22675065089597893
+        },
+        "education": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 5.333333333333334
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 8.0
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 0.6234531038362351,
+          "state": "likely_match",
+          "contribution": 0.04156354025574901
+        }
+      },
+      "critical_penalty": 12.5
+    },
+    {
+      "job_id": "demo-machine-learning-6395",
+      "title": "Machine Learning Engineer \u2014 Graduate",
+      "raw_score": 6.5085,
+      "method_scores": {
+        "tfidf": 1.6923333295566623,
+        "bm25": 6.9785544016811745,
+        "skill_overlap": 25.0,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 7.889421693153781,
+        "lexical": 1.6923333295566623
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 3,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 1.6923333295566623,
+          "state": "likely_match",
+          "contribution": 0.4284388176092816
+        },
+        "required_skills": {
+          "score": 25.0,
+          "state": "likely_match",
+          "contribution": 9.493670886075948
+        },
+        "preferred_skills": {
+          "score": 0.0,
+          "state": "explicit_mismatch",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 1.5426203486644836,
+          "state": "likely_match",
+          "contribution": 0.1952683985651245
+        },
+        "education": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 7.594936708860758
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 0.7290355653053895,
+          "state": "likely_match",
+          "contribution": 0.04614149147502465
+        }
+      },
+      "critical_penalty": 11.25
+    },
+    {
+      "job_id": "demo-generative-ai-5557",
+      "title": "Generative AI Engineer \u2014 Fresher",
+      "raw_score": 6.4578,
+      "method_scores": {
+        "tfidf": 2.8926617035178452,
+        "bm25": 12.818063062132188,
+        "skill_overlap": 20.0,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 14.491125090640084,
+        "lexical": 2.8926617035178452
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 4,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 2.8926617035178452,
+          "state": "likely_match",
+          "contribution": 0.8148342826810832
+        },
+        "required_skills": {
+          "score": 20.0,
+          "state": "likely_match",
+          "contribution": 8.450704225352112
+        },
+        "preferred_skills": {
+          "score": null,
+          "state": "not_applicable",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 2.1463818866921125,
+          "state": "likely_match",
+          "contribution": 0.3023073079848046
+        },
+        "education": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 8.450704225352112
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 6.2367115820595265,
+          "state": "likely_match",
+          "contribution": 0.43920504099010754
+        }
+      },
+      "critical_penalty": 12.0
+    },
+    {
+      "job_id": "demo-data-science-2922",
+      "title": "Applied Data Scientist Junior",
+      "raw_score": 6.2456,
+      "method_scores": {
+        "tfidf": 1.1357763787591801,
+        "bm25": 5.708599408840161,
+        "skill_overlap": 25.0,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 6.453707375667748,
+        "lexical": 1.1357763787591801
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 3,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 1.1357763787591801,
+          "state": "likely_match",
+          "contribution": 0.28753832373650134
+        },
+        "required_skills": {
+          "score": 25.0,
+          "state": "likely_match",
+          "contribution": 9.493670886075948
+        },
+        "preferred_skills": {
+          "score": 0.0,
+          "state": "explicit_mismatch",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 0.9440172923396797,
+          "state": "likely_match",
+          "contribution": 0.11949585978983288
+        },
+        "education": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 7.594936708860758
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 0.0,
+          "state": "likely_match",
+          "contribution": 0.0
+        }
+      },
+      "critical_penalty": 11.25
+    },
+    {
+      "job_id": "demo-machine-learning-6308",
+      "title": "Machine Learning Engineer (Entry Level)",
+      "raw_score": 6.1626,
+      "method_scores": {
+        "tfidf": 2.6498791036904423,
+        "bm25": 11.12573880728089,
+        "skill_overlap": 20.0,
+        "word2vec": null,
+        "embedding": null,
+        "bm25_raw": 12.577912278992775,
+        "lexical": 2.6498791036904423
+      },
+      "required_skill_overlap": 1,
+      "missing_required_skill_count": 4,
+      "components": {
+        "semantic": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "lexical_similarity": {
+          "score": 2.6498791036904423,
+          "state": "likely_match",
+          "contribution": 0.7464448179409697
+        },
+        "required_skills": {
+          "score": 20.0,
+          "state": "likely_match",
+          "contribution": 8.450704225352112
+        },
+        "preferred_skills": {
+          "score": null,
+          "state": "not_applicable",
+          "contribution": 0.0
+        },
+        "title_category": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "project_experience": {
+          "score": 2.762543987829367,
+          "state": "likely_match",
+          "contribution": 0.3890907025111785
+        },
+        "education": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "experience": {
+          "score": 100.0,
+          "state": "likely_match",
+          "contribution": 8.450704225352112
+        },
+        "location": {
+          "score": null,
+          "state": "missing_information",
+          "contribution": 0.0
+        },
+        "interests": {
+          "score": 1.7846277913702808,
+          "state": "likely_match",
+          "contribution": 0.12567801347678034
+        }
+      },
+      "critical_penalty": 12.0
+    }
+  ]
+}

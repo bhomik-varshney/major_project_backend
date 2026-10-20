@@ -5,11 +5,12 @@ import hashlib
 import json
 from pathlib import Path
 
-from app.providers.job_catalog import ROLES
+from app.providers.job_catalog import ROLES, CATEGORY_WEIGHTS
 from app.schemas.jobs import Job
 from app.services.job_normalization import normalized_skills
 
-DATASET_VERSION = '2026-10-demo-v2'
+DATASET_VERSION = '2026-10-demo-v3-10000'
+DATASET_SIZE = 10000
 DEFAULT_SEED = 20261019
 REFERENCE_DATE = date(2026, 10, 19)
 DATA_PATH = Path(__file__).parent / 'data' / 'jobs.json'
@@ -64,26 +65,32 @@ def anchors(seed):
     return result
 
 
-def generated_job(seed, index):
-    role = ROLES[(index-10) % len(ROLES)]
+def generated_job(seed, index, role=None):
+    role = role or ROLES[(index-10) % len(ROLES)]
     level = choose(LEVELS, seed, index, 'level')
     place = choose(PLACES, seed, index, 'place')
     city, country, currency = place
     mode = choose(('remote', 'hybrid', 'onsite', 'onsite'), seed, index, 'mode')
     employment = 'internship' if level == 'student' else choose(('full_time',)*8+('contract', 'apprenticeship'), seed, index, 'employment')
-    label = {'student':'Intern', 'fresher':'— Fresher', 'graduate':'— Graduate', 'entry_level':'— Entry Level', 'junior':'— Junior', 'limited_experience':'— Early Career'}[level]
+    label = {'student':'Intern', 'fresher':'— Fresher', 'graduate':'— Graduate', 'entry_level':'— Entry Level', 'junior':'Junior', 'limited_experience':'Associate'}[level]
+    if level=='fresher' and index%2==0:label='Trainee'
     title = f'{role.title} {label}'
     if index % 4 == 0:
         title = f'{label} {role.title}' if level == 'junior' else f'{role.title} ({label.removeprefix("— ")})'
     if index % 7 == 0:
         title = title.replace('Backend', 'Back-end').replace('Frontend', 'Front-end')
-    extra = index % (len(role.skills)-2)
-    required = list(role.skills[:3+extra])
-    preferred = list(role.skills[3+extra:])
+    count = 2 + number(seed,index,'requirement_count') % (len(role.skills)-1)
+    # Core foundations are retained; alternate coherent recipes supply distinct stacks.
+    required = list(role.skills[:count])
+    preferred = list(role.skills[count:])
+    if index % 41 == 0:
+        required = list(dict.fromkeys([*role.skills,*role.tools]))[:9]
+        preferred = []
     # Preserve wording variants, while canonical tokens make JS/JavaScript searchable.
-    if index % 9 == 0:
-        required = ['JS' if s == 'JavaScript' else s for s in required]
-        preferred = ['JS' if s == 'JavaScript' else s for s in preferred]
+    variants={'JavaScript':'JS','TypeScript':'TS','React':'React.js','Node.js':'Node','PostgreSQL':'Postgres','Machine learning':'ML','Natural language processing':'NLP','REST APIs':'RESTful API','AWS':'Amazon Web Services','Azure':'Microsoft Azure','Software testing':'QA'}
+    if index % 3 == 0:
+        required = [variants.get(v,v) for v in required]
+        preferred = [variants.get(v,v) for v in preferred]
     details = metadata(role.category, country, seed, index)
     if index % 17 == 0:
         preferred = []
@@ -92,12 +99,21 @@ def generated_job(seed, index):
         preferred.append(required[0])
         details['edge_cases'].append('overlapping_skills')
     if index % 83 == 0:
-        preferred.append('SEO' if role.category != 'digital_marketing' else 'Microcontrollers')
+        description_overlap = 'Campaign dashboards use Python and SQL.' if role.category=='digital_marketing' else 'Interface examples mention React without requiring frontend development.'
         details['edge_cases'].append('unrelated_skill')
-    responsibilities = [f'Work with a mentor to {role.task}.', f'Use {required[0]} and {required[1]} to produce reviewable work.', 'Document decisions, review feedback and test results.']
+    domain = choose(('campus services','inventory operations','subscription products','transport planning','customer onboarding','resource scheduling','developer productivity','community services'),seed,index,'domain')
+    artifact = choose(('an evaluated prototype','a tested feature','a documented improvement','a reproducible experiment','a measured workflow'),seed,index,'artifact')
+    responsibility = choose(('Review acceptance criteria with a mentor','Investigate a small reproducible issue','Pair with the team on an incremental change','Measure the impact against agreed checks'),seed,index,'responsibility')
+    responsibilities = [f'{responsibility} for {domain}.', f'Use {required[0]} and {required[1]} to {role.task}.', f'Deliver {artifact}; record review feedback and validation results.']
     description = f'{title} at a fictional demonstration company. Join the {role.department.lower()} team to {role.task}. Required foundations include {", ".join(required)}.'
     if index % 3:
         description += f' Collaborate with a mentor using {role.tools[0]}. Practical projects and clear communication are valued; all listed work uses development or synthetic data.'
+    if index % 83 == 0:
+        description += ' '+description_overlap
+    description += f' The current assignment supports {domain} and produces {artifact}.'
+    if index % 67 == 0:
+        description = f'Help the team to {role.task}; discuss the assignment with a mentor.'
+        details['edge_cases'].append('semantic_wording')
     if index % 43 == 0:
         description = ''
         details['edge_cases'].append('empty_description')
@@ -138,16 +154,29 @@ def generated_job(seed, index):
         description=description, responsibilities=responsibilities, required_skills=required,
         preferred_skills=preferred, tools_and_technologies=list(role.tools), education_requirements=education,
         language_requirements=['English', 'German'] if country=='Germany' and mode=='onsite' else ['English'],
-        normalized_skill_tokens=normalized_skills(required+preferred), category=role.category,
+        normalized_skill_tokens=normalized_skills(required+preferred), category=role.category, subcategory=role.title,
         salary=salary, currency=currency, source='seeded_mock', generated_data=True,
         application_url=url, source_url=url, posted_date=posted.isoformat(),
         closing_date=closing.isoformat() if closing else None, metadata=details)
 
 
 def generate_jobs(seed=DEFAULT_SEED):
-    rows = anchors(seed) + [generated_job(seed, index) for index in range(10, 1000)]
+    rows = anchors(seed)
+    # Largest-remainder weighted allocation is exact, stable and independent of PRNG state.
+    budget = DATASET_SIZE-len(rows)
+    total = sum(CATEGORY_WEIGHTS.values())
+    counts = {c:budget*w//total for c,w in CATEGORY_WEIGHTS.items()}
+    residual = budget-sum(counts.values())
+    order = sorted(counts,key=lambda c:(-(budget*CATEGORY_WEIGHTS[c]%total),c))
+    for c in order[:residual]:counts[c]+=1
+    for category in sorted(counts):
+        recipes = [r for r in ROLES if r.category==category]
+        for offset in range(counts[category]):
+            index=len(rows)
+            role=recipes[offset % len(recipes)]
+            rows.append(generated_job(seed,index,role))
     # Deliberate near-duplicate pairs retain different IDs/URLs and requisition wording.
-    for base_index, copy_index in ((10, 980), (11, 981), (12, 982)):
+    for base_index, copy_index in ((10, 9980), (11, 9981), (12, 9982)):
         original = rows[base_index]
         group = f'demo-similar-{base_index}'
         original['metadata']['duplicate_group'] = group
@@ -158,6 +187,13 @@ def generate_jobs(seed=DEFAULT_SEED):
         duplicate['description'] += ' This is a separate demonstration requisition for an adjacent team.'
         rows[copy_index] = duplicate
     # Round-trip validation also guarantees JSON-ready values and complete field presence.
+    from app.services.job_normalization import search_text
+    for row in rows:
+        row.setdefault('subcategory',row['title'])
+        row['title_tokens']=search_text(row['title']).split()
+        row['category_tokens']=search_text(row['category'].replace('_',' ')).split()
+        row['searchable_text']=search_text(' '.join([row['title'],row['category'].replace('_',' '),row['industry'],row['description'],*row['required_skills'],*row['preferred_skills'],*row['responsibilities']]))
+        row['embedding_metadata']={'status':'not_precomputed','provider':None,'model':None,'text_sha256':hashlib.sha256(row['searchable_text'].encode()).hexdigest()}
     return [Job.model_validate(row).model_dump(mode='json') for row in rows]
 
 

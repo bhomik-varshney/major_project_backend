@@ -22,6 +22,8 @@ def options(request: Request, user: User = Depends(current_user)):
 @router.get('/jobs', response_model=JobPage)
 def jobs(request: Request, keyword: str = Query(default='', max_length=120),
          skill: list[str] = Query(default=[], max_length=20),
+         role: str = Query(default='',max_length=120),
+         category_scope: Literal['exact','family'] = 'family', location_scope: Literal['city','compatible','state','country'] = 'city',
          category: str = Query(default='', max_length=80),
          location: str = Query(default='', max_length=120),
          country: str = Query(default='', max_length=80), remote: bool | None = None,
@@ -31,9 +33,9 @@ def jobs(request: Request, keyword: str = Query(default='', max_length=120),
          posted_from: date | None = None, posted_to: date | None = None,
          availability: Literal['all','active','expired','future'] = 'all', as_of: date = REFERENCE_DATE,
          page: int = Query(default=1, ge=1, le=10000), page_size: int = Query(default=6, ge=1, le=50),
-         max_results: int = Query(default=1000, ge=1, le=1000), user: User = Depends(current_user)):
+         max_results: int = Query(default=10000, ge=1, le=10000), user: User = Depends(current_user)):
     try:
-        filters = JobFilters(keyword=keyword, skills=skill, category=category, location=location,
+        filters = JobFilters(role=role,category_scope=category_scope,location_scope=location_scope,keyword=keyword, skills=skill, category=category, location=location,
             country=country, remote=remote, work_mode=work_mode, employment_type=employment_type,
             experience=experience, company=company, industry=industry, posted_from=posted_from,
             posted_to=posted_to, availability=availability, as_of=as_of,

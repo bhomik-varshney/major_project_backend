@@ -1,6 +1,6 @@
 # Agentic AI Career Companion — backend
 
-FastAPI backend for the CareerOS student workspace. Implements persistent profiles, private document storage, PDF/DOCX/TXT text extraction, source-linked review drafts, explicit confirmation, and database-backed dashboard summaries. A genuine two-task CrewAI Resume Intelligence Crew uses Groq only when configured and explicitly selected for that document. 1,000 reproducible, clearly labeled seeded jobs across 46 categories support browsing and filtering; live job retrieval and matching remain planned. See the [CrewAI report](docs/crewai-jobs-milestone.md) and current [1,000-job dataset report](docs/seeded-jobs-dataset.md).
+FastAPI backend for the CareerOS student workspace. Implements persistent profiles, private document storage, PDF/DOCX/TXT text extraction, source-linked review drafts, explicit confirmation, and database-backed dashboard summaries. A genuine two-task CrewAI Resume Intelligence Crew uses Groq only when configured and explicitly selected for that document. 10,000 reproducible, clearly labeled seeded jobs across 56 categories support browsing and filtering; live job retrieval remains planned; confirmed-profile matching is implemented. See the [CrewAI report](docs/crewai-jobs-milestone.md) and current [10,000-job matching report](docs/job-matching-10000.md).
 
 ## Local setup
 
@@ -88,7 +88,7 @@ All paths below begin with `/api/v1`. Schemas and examples are available at `/do
 | PUT | `/documents/{id}/extracted-data` | Save edited draft with processing ID/expected revision; edited leaves are labeled user corrections. |
 | POST | `/documents/{id}/verify` | Confirm selected saved sections using draft/profile revisions and `confirmed: true`; explicit `replace_fields` required for replacement. |
 | POST | `/documents/{id}/request-correction` | `action: correction`, `reject`, or `cancel`, with draft ID/revision. Does not change the profile. |
-| GET | `/jobs` | Search/filter 1,000 seeded demonstration jobs; bounded pagination, date and availability filters. No external requests, matching or applications. |
+| GET | `/jobs` | Search/filter 10,000 seeded demonstration jobs; bounded pagination, date and availability filters. No external requests or application submission. Matching has a separate `/matching` API. |
 | GET | `/jobs/options` | Dataset-derived categories, industries, countries, work modes, employment/experience options, version and reference date. |
 | GET | `/dashboard/summary` | Actual profile completion, total/reviewed document-derived skill counts, document count, verification, and recent activity. |
 
@@ -102,7 +102,7 @@ Processing runs through queued, text preparation, local identification, optional
 
 Local parsing recognizes expanded heading synonyms and complete Summary/Objective/Profile statements. It groups project headings/bullets and explicit technologies, work entries, and labeled/table education. PDF block positions and DOCX paragraph styles, lists, tabs, and table order are retained where available; possible columns trigger uncertainty warnings. Complex layouts can still be missed. CrewAI uses real agents/tasks, sequential dependencies and a custom Groq LLM with compact native structured output; accepted leaves must match real quotes and the correct section/entry group. Unsupported/inferred leaves are withheld. Confidence labels are heuristic and source matching is not a semantic correctness guarantee: the student must review every selected section. Missing-key/provider/JSON errors retain the local draft and show a limited-mode warning.
 
-Dashboard `data_mode=live_local` identifies actual database data. Unimplemented recommendation/matching/application/approval counts are `null`. Jobs are `feature_states.jobs=seeded_demo`; orchestration is `resume_only`, and matching/applications remain `planned`. Seeded vacancies never count as recommendations. `profile_skill_count` counts current profile skills; `extracted_skill_count` counts distinct current resume-derived skills in confirmation receipts, excluding user-entered review additions/corrections. Unreviewed suggestions never count as confirmed skills.
+Dashboard `data_mode=live_local` identifies actual database data. Recommendation counts come from the latest current matching run; unimplemented application/approval counts are `null`. Jobs are `feature_states.jobs=seeded_demo`; orchestration is `resume_only`, and matching is available; applications remain `planned`. Seeded vacancies never count as recommendations. `profile_skill_count` counts current profile skills; `extracted_skill_count` counts distinct current resume-derived skills in confirmation receipts, excluding user-entered review additions/corrections. Unreviewed suggestions never count as confirmed skills.
 
 ## Errors, persistence, and deletion
 
@@ -128,7 +128,7 @@ Frontend browser tests live in the frontend repository. Start both local service
 
 **Fallback/mock:** limited deterministic extraction is real local parsing, not fabricated data. Missing or failing Groq shows warnings and retains it. Automated provider failures are mocked only in tests. Only `/jobs` uses the explicitly labeled seeded dataset; profile/document/dashboard data remains real local data.
 
-**Planned:** extraction-quality evaluation on broader consented layouts, production authentication/queue/deletion/migrations, normalized evidence where needed, Adzuna/Arbeitnow adapters, keyword/semantic/hybrid matching, gaps/explanations, truthful versioned application drafts, explicit submission approval/tracking, the broader career multi-agent orchestrator, and MCP protocol tools.
+**Planned:** extraction-quality evaluation on broader consented layouts, production authentication/queue/deletion/migrations, normalized evidence where needed, Adzuna/Arbeitnow adapters, broader semantic evaluation, skill gaps, truthful versioned application drafts, explicit submission approval/tracking, the broader career multi-agent orchestrator, and MCP protocol tools.
 
 The implemented typed job-provider interface is `app/providers/jobs.py`. Future service sketches are in `app/services/contracts.py`; they are not implemented agents. See [project analysis](docs/project-analysis.md), [foundation decisions](docs/implementation-milestone.md), the earlier [resume processing report](docs/resume-processing-milestone.md), and the current [CrewAI report](docs/crewai-jobs-milestone.md).
 
@@ -144,9 +144,9 @@ Run the synthetic regression evaluation with `python -m scripts.evaluate_extract
 
 Select the optional **Groq enhancement with CrewAI** checkbox for each document run. An unchecked run stays local. A checked, configured text run invokes two actual CrewAI agents/tasks; an additional explicit image-consent option runs a real visual layout task before them; schema, provider, timeout or source failures retain a labeled local review draft. `agent_run` on status/extracted-data responses identifies the actual engine and outcome. The legacy `method=groq_enhanced` remains for compatibility. Confirmation endpoints remain the only route from extracted drafts into verified profile data.
 
-`GET /api/v1/jobs?category=backend&skill=Python&skill=SQL&work_mode=hybrid&employment_type=full_time&page=1&page_size=6` returns `{items,total,matched_total,page,page_size,source,dataset_version,reference_date,warnings,filters}`. All filters combine with AND; all repeated skill filters must match. Skills use explicit aliases (JS/JavaScript, ML/machine learning, NLP/natural language processing). Category/country/work-mode/experience/employment match exact values; company/industry/location use case-insensitive substrings. Keyword tokens search role/company/industry/description/responsibilities/skills with common spelling variants. The legacy `remote` boolean remains supported (`false` includes onsite and hybrid). `GET /api/v1/jobs/options` supplies the frontend filter choices.
+`GET /api/v1/jobs?category=backend&skill=Python&skill=SQL&work_mode=hybrid&employment_type=full_time&page=1&page_size=6` returns `{items,total,matched_total,page,page_size,source,dataset_version,reference_date,warnings,filters,audit,match_context}`. Independent filters combine with AND; repeated skill filters must all match. Skills use explicit aliases (JS/JavaScript, ML/machine learning, NLP/natural language processing). Location uses structured city/state/country normalization, including Bangalore/Bengaluru aliases. `location_scope=city` is the API default; `compatible` also permits remote jobs in the requested country; `state` and `country` explicitly widen reach. Work mode still applies independently. AI-related categories expand to a controlled family by default; choose `category_scope=exact` for one category. `role=AI` recognizes related AI/ML/NLP/vision roles across listing fields. Generic keyword tokens use word boundaries, so `AI` does not match `maintain`. Country/work-mode/experience/employment remain exact filters; company/industry retain substring matching. The legacy `remote` boolean remains supported (`false` includes onsite and hybrid). `GET /api/v1/jobs/options` supplies the frontend filter choices.
 
-Other filters: `posted_from`, `posted_to` (inclusive ISO dates), `availability=all|active|expired|future`, and `as_of` (default fixed dataset reference date `2026-10-19`). Page size is 1–50; `max_results` bounds the complete result window to 1–1000. `matched_total` counts all filter matches before this cap; `total` is the capped count used for pagination. Every record is synthetic with `source=seeded_mock`, `generated_data=true`, `metadata.is_demo=true` and an inactive `example.invalid` URL. There is no job SQL table or search-history write.
+Other filters: `posted_from`, `posted_to` (inclusive ISO dates), `availability=all|active|expired|future`, and `as_of` (default fixed dataset reference date `2026-10-19`). Page size is 1–50; `max_results` bounds the complete result window to 1–10000. `matched_total` counts all filter matches before this cap; `total` is the capped count used for pagination. Every record is synthetic with `source=seeded_mock`, `generated_data=true`, `metadata.is_demo=true` and an inactive `example.invalid` URL. There is no job SQL table or search-history write.
 
 
 For an explicit live check using only a built-in synthetic resume:
@@ -157,7 +157,7 @@ python -m scripts.smoke_resume_crew --live
 
 Keys stay in backend configuration and are never printed. This command makes real Groq requests. Provider quotas remain applicable across keys, especially keys belonging to the same account. Larger resumes or tier limits can still trigger a transparent local fallback.
 
-## Generate, reset and validate the 1,000-job fixture
+## Generate, reset and validate the 10,000-job fixture
 
 From the backend repository with the virtual environment active:
 
@@ -167,11 +167,11 @@ python -m scripts.validate_jobs
 python -m scripts.job_evaluation_cases > /tmp/job-evaluation-cases.json
 ```
 
-The generator combines 46 coherent role recipes and ten compatibility anchors with SHA-256 choices from the fixed seed `20261019`. It writes exactly 1,000 records, deterministically across Python hash seeds and test processes. It uses a fixed reference date, never the current clock or an external API. `app/providers/data/jobs.json` is generated output; edit the recipes in `app/providers/job_catalog.py` instead of hand-authoring listings.
+The generator combines coherent multi-stack role recipes across 56 categories and ten compatibility anchors with SHA-256 choices from the fixed seed `20261019`. It writes exactly 10,000 records, deterministically across Python hash seeds and test processes. It uses a fixed reference date, never the current clock or an external API. `app/providers/data/jobs.json` is generated output; edit the recipes in `app/providers/job_catalog.py` instead of hand-authoring listings.
 
 Running `seed_jobs` again safely resets/reseeds only the JSON job fixture via an atomic replacement. It never opens the workspace database or deletes profiles, documents, processing runs or applications. The provider notices fixture replacement on the next request; `SeededJobProvider.reset()` only clears its in-memory cache. For disposable tests, use `python -m scripts.seed_jobs --output /tmp/jobs.json --seed 123` then `python -m scripts.validate_jobs --path /tmp/jobs.json --seed 123`. Non-job JSON and database paths are rejected.
 
-Validation checks exactly 1,000 complete schema-valid records, unique IDs, canonical skill tokens, ordered dates/ranges, version/reference metadata, common credential patterns, no unintended identical listings, repeatable loads, domain/edge-case coverage and byte-for-byte reproducibility. Deliberately empty descriptions, unknown metadata, near duplicates and unusual requirements are labeled evaluation cases, not malformed records. Future-dated/expired labels use the displayed reference date, not a claim about live availability.
+Validation checks exactly 10,000 complete schema-valid records, unique IDs, canonical skill tokens, ordered dates/ranges, version/reference metadata, common credential patterns, no unintended identical listings, repeatable loads, domain/edge-case coverage and byte-for-byte reproducibility. Deliberately empty descriptions, unknown metadata, near duplicates and unusual requirements are labeled evaluation cases, not malformed records. Future-dated/expired labels use the displayed reference date, not a claim about live availability.
 
 The fixture is behind `JobProvider.snapshot()`. Future Adzuna/Arbeitnow adapters can normalize into the same job/filter/page shape and replace or combine snapshots. Live adapters and their real-source validation/labels remain future work; no generated job should ever be labeled as a real provider result. See [dataset design, coverage and checks](docs/seeded-jobs-dataset.md).
 
@@ -193,7 +193,7 @@ The [structured-output recovery follow-up](docs/structured-output-recovery.md) d
 
 ## Confirmed-profile job matching
 
-Open **My matches** (`/matches`) and choose **Find Matching Jobs** after confirming profile facts. Matching uses only current confirmed fields, never an unconfirmed document draft. A genuine six-stage CrewAI Flow computes a separately visible TF-IDF baseline, evidence-weighted hybrid ranking, grounded explanations and validation. Optional per-run Groq consent enables a real two-agent CrewAI explanation/review Crew. The shared three-key manager is reused with document processing.
+Open **My matches** (`/matches`) and choose **Find Matching Jobs** after confirming profile facts. Matching uses only current confirmed fields, never an unconfirmed document draft. A genuine eight-stage CrewAI Flow computes a separately visible TF-IDF baseline, evidence-weighted hybrid ranking, grounded explanations and validation. Optional per-run Groq consent enables a real two-agent CrewAI explanation/review Crew. The shared three-key manager is reused with document processing.
 
 Semantic embeddings are **off by default**. TF-IDF supplies the explicitly labelled text fallback. To use an already installed local Ollama embedding model, set `MATCHING_EMBEDDING_PROVIDER=ollama`, `MATCHING_EMBEDDING_MODEL` and the loopback `MATCHING_EMBEDDING_URL`, then restart. The application neither downloads models nor claims semantic processing when the service fails. All scoring weights, thresholds, penalties and provider metadata are stored per run.
 
@@ -206,3 +206,25 @@ The current resume pipeline produces separate raw evidence, a strict connected c
 See [architecture, API, validation and results](docs/connected-resume-intelligence.md) and [anonymized evaluation](docs/canonical-evaluation.json). `RESUME_MAX_REPAIR_CYCLES=3` (0–3) and `RESUME_REPAIR_TIMEOUT_SECONDS=45` bound targeted repair. Model processing still requires the existing per-run text/image consent. Configured working models are retained; unavailable Llama vision names do not silently disable the available Qwen path. Three-key rotation remains backend-only.
 
 Run `python -m scripts.evaluate_canonical --output docs/canonical-evaluation.json` for the anonymized API evaluation. Do not add private resumes to fixtures. Optional private/live evaluation requires explicit `--source-db`, `--document-id`, `--private-output` and, for Groq export, `--live`; outputs must stay outside the repository. The new records reuse the existing audit table, so `python -m app.db.migrate` is additive and does not rewrite profiles.
+
+## Full-corpus retrieval and calibrated display
+
+The fixture contains exactly 10,000 jobs across 56 weighted categories. [Current architecture, diagnostics, comparison, performance and limits](docs/job-matching-10000.md) supersede the historical 1,000-job report. Run `python -m scripts.evaluate_retrieval` for full-corpus lexical/skill/hybrid comparisons. `MATCHING_RETRIEVAL_POOL_SIZE=1200` controls reranking after full-corpus retrieval; it can be changed per run. The raw threshold remains 30. Experimental synthetic-label calibration is a separate displayed percentage and does not change ranks or thresholds. Optional local word vectors and semantic embeddings are labeled unavailable unless configured and validated.
+
+## Location, role and threshold audit
+
+The [Bengaluru/AI audit](docs/ai-location-audit.md) documents the observed zero-result failure, frozen before evidence, corrected filter counts, anonymized R2 evaluation, 34 inspected ranked jobs and verification. The existing 10,000-job fixture was sufficient and was not reseeded. Numeric weights and penalties were retained.
+
+Matching and browsing share filter logic and return per-stage counts. Owned matching audit responses include first-filter exclusion reasons; run summaries omit the full exclusion list. Small filtered pools are completely reranked within the configured pool limit, including zero-signal records with a warning. Large pools remain bounded after multi-method retrieval.
+
+Raw scores and thresholds use **0–100 points**: `0.5` is half a point and `50` is fifty points. An explicit result request `minimum_score=0` overrides the saved run threshold; omitting it uses the saved threshold. Lowering this value reveals already scored rows, not jobs excluded by hard filters or outside the retrieval pool. Old saved runs retain their original request, snapshots and ranks; start a new run to apply new retrieval/filter logic.
+
+Reproduce coverage and relevance checks without private resume exports:
+
+```sh
+python -m scripts.audit_job_search --output docs/ai-location-dataset-after.json
+python -m scripts.validate_jobs
+python -m scripts.evaluate_retrieval --output docs/ai-location-ranking-evaluation.json
+python -m scripts.smoke_matching --pool-size 10000 --output docs/ai-location-performance.json
+python -m pytest
+```

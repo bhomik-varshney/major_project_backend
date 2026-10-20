@@ -1,0 +1,176 @@
+{
+  "local_application_updated": true,
+  "profile_source": "existing confirmed revision-8 facts",
+  "new_matching_run_created": true,
+  "old_runs_preserved": true,
+  "external_processing": false,
+  "status": "completed",
+  "jobs_compared": 34,
+  "recommendations": 34,
+  "minimum_raw_score": 0.0,
+  "filter_counts": [
+    {
+      "filter": "location",
+      "input_count": 10000,
+      "kept_count": 2183,
+      "excluded_count": 7817
+    },
+    {
+      "filter": "role",
+      "input_count": 2183,
+      "kept_count": 2183,
+      "excluded_count": 0
+    },
+    {
+      "filter": "category",
+      "input_count": 2183,
+      "kept_count": 260,
+      "excluded_count": 1923
+    },
+    {
+      "filter": "keyword",
+      "input_count": 260,
+      "kept_count": 260,
+      "excluded_count": 0
+    },
+    {
+      "filter": "skills",
+      "input_count": 260,
+      "kept_count": 260,
+      "excluded_count": 0
+    },
+    {
+      "filter": "country",
+      "input_count": 260,
+      "kept_count": 260,
+      "excluded_count": 0
+    },
+    {
+      "filter": "remote",
+      "input_count": 260,
+      "kept_count": 260,
+      "excluded_count": 0
+    },
+    {
+      "filter": "work_mode",
+      "input_count": 260,
+      "kept_count": 44,
+      "excluded_count": 216
+    },
+    {
+      "filter": "employment_type",
+      "input_count": 44,
+      "kept_count": 44,
+      "excluded_count": 0
+    },
+    {
+      "filter": "experience",
+      "input_count": 44,
+      "kept_count": 44,
+      "excluded_count": 0
+    },
+    {
+      "filter": "company",
+      "input_count": 44,
+      "kept_count": 44,
+      "excluded_count": 0
+    },
+    {
+      "filter": "industry",
+      "input_count": 44,
+      "kept_count": 44,
+      "excluded_count": 0
+    },
+    {
+      "filter": "posted_dates",
+      "input_count": 44,
+      "kept_count": 44,
+      "excluded_count": 0
+    },
+    {
+      "filter": "availability",
+      "input_count": 44,
+      "kept_count": 34,
+      "excluded_count": 10
+    }
+  ],
+  "stage_statuses": [
+    {
+      "stage": "preparing",
+      "status": "completed"
+    },
+    {
+      "stage": "normalizing",
+      "status": "completed"
+    },
+    {
+      "stage": "calculating_baseline",
+      "status": "completed"
+    },
+    {
+      "stage": "retrieving",
+      "status": "completed"
+    },
+    {
+      "stage": "calculating_hybrid",
+      "status": "completed"
+    },
+    {
+      "stage": "calibrating",
+      "status": "completed"
+    },
+    {
+      "stage": "generating_explanations",
+      "status": "completed"
+    },
+    {
+      "stage": "validating",
+      "status": "completed"
+    }
+  ],
+  "provider_metadata": {
+    "embeddings": {
+      "provider": "none",
+      "model": null,
+      "status": "not_configured",
+      "cache_hits": 0,
+      "cache_misses": 0
+    },
+    "retrieval": {
+      "status": "active",
+      "provider": "local",
+      "model": null,
+      "methods": {
+        "tfidf": {
+          "status": "active",
+          "version": "tfidf-word-bigram-logtf-smoothidf-v1"
+        },
+        "bm25": {
+          "status": "active",
+          "version": "bm25-positive-idf-k1-1.2-b-.75-v1",
+          "k1": 1.2,
+          "b": 0.75,
+          "query_saturation_bound": 116.16599806137131
+        },
+        "skill_overlap": {
+          "status": "active",
+          "policy": "inverted skill postings; distinct exact/synonym required-skill recall; no related-skill credit",
+          "indexed_skills": 16
+        },
+        "word2vec": {
+          "status": "not_configured",
+          "reason": "No suitable pretrained local word-vector artifact is configured."
+        },
+        "embedding": {
+          "status": "unavailable"
+        }
+      }
+    },
+    "ai_review": {
+      "status": "not_selected",
+      "model": null,
+      "reviewed_jobs": 0
+    }
+  },
+  "completed_at": "2026-10-20T09:17:21.382994"
+}

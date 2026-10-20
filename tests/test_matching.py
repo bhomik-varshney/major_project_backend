@@ -179,7 +179,7 @@ def test_duplicate_selection_stable_and_expired_filters():
     assert expired and all(j.closing_date<snapshot.reference_date for j in expired)
     unique,duplicates=deduplicate(list(snapshot.jobs));other,repeat=deduplicate(list(reversed(snapshot.jobs)))
     assert [j.id for j in unique]==[j.id for j in other] and duplicates==repeat and duplicates
-    assert len(unique)+len(duplicates)==1000
+    assert len(unique)+len(duplicates)==10000
 
 
 class FakeEmbeddings:
@@ -228,23 +228,30 @@ def test_real_flow_stage_results_empty_and_ai_failure(application):
     payload={'candidate':{'skills':['Python']},'jobs':[],'user_scope':'synthetic','minimum_score':0,'use_ai':True,'as_of':'2026-10-19'}
     empty=direct_flow(payload,application.state.settings,GroqKeyManager((),5))
     assert empty['status']=='completed' and empty['provider_metadata']['ai_review']['status']=='skipped'
-    payload['jobs']=[job_at().model_dump(mode='json')]
+    payload['jobs']=[job_at(required_skills=['Python']).model_dump(mode='json')]
     result=direct_flow(payload,Settings(_env_file=None,database_url=application.state.settings.database_url),GroqKeyManager((),5))
     assert result['status']=='partial' and len(result['results'])==1
-    assert len(result['tasks'])==6 and result['tasks'][4]['status']=='partial'
+    assert len(result['tasks'])==8 and result['tasks'][6]['status']=='partial'
     assert result['provider_metadata']['ai_review']['error_code']=='groq_not_configured'
 
 
 def test_full_seeded_run_real_spawn_api_pagination_details_and_profile_preservation(client,profile):
     before=confirmed(client,profile)
     run=start_finished(client,{'filters':{'availability':'all'},'minimum_score':0},real_spawn=True)
-    assert run['total_jobs']==1000 and 950<run['eligible_jobs']<1000 and run['validation']['score_errors']==0
-    assert len(run['tasks'])==6 and all(t['status']=='completed' for t in run['tasks'])
+    assert run['total_jobs']==10000 and 950<run['eligible_jobs']<=1200 and run['validation']['score_errors']==0
+    assert len(run['tasks'])==8 and all(t['status']=='completed' for t in run['tasks'])
     assert run['provider_metadata']['embeddings']['status']=='not_configured'
     first=client.get(f"{BASE}/runs/{run['id']}/results",params={'page_size':2}).json()
     second=client.get(f"{BASE}/runs/{run['id']}/results",params={'page_size':2,'page':2}).json()
     assert first['total']==run['result_count'] and not ({r['job']['id'] for r in first['items']}&{r['job']['id'] for r in second['items']})
     row=first['items'][0];jobid=row['job']['id']
+    assert row['match_percentage'] is not None and row['method_scores']['bm25'] is not None
+    assert row['method_scores']['embedding'] is None and row['method_scores']['word2vec'] is None
+    assert row['retrieval']['method_ranks']
+    assert 'excluded_jobs' not in run['validation']['retrieval']
+    retrieval=client.get(f"{BASE}/runs/{run['id']}/audit").json()['retrieval']
+    assert retrieval['corpus_size']>9900 and len(retrieval['candidates'])==run['eligible_jobs']
+    assert len(retrieval['excluded_jobs'])==retrieval['excluded_count']
     assert client.get(f"{BASE}/runs/{run['id']}/results/{jobid}").json()['normalized_job']['required']
     assert client.get(f"{BASE}/runs/{run['id']}/results/{jobid}/explanation").json()['text']==row['explanation']
     assert client.put(f'{BASE}/bookmarks/{jobid}').status_code==200

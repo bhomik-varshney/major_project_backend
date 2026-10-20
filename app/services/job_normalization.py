@@ -3,27 +3,21 @@ from functools import lru_cache
 import re
 import unicodedata
 
-SKILL_ALIASES = {
-    'js': 'javascript', 'javascript': 'javascript', 'ts': 'typescript',
-    'py': 'python', 'ml': 'machine learning', 'nlp': 'natural language processing',
-    'postgres': 'postgresql', 'k8s': 'kubernetes', 'react.js': 'react',
-    'reactjs': 'react', 'nodejs': 'node.js', 'testing': 'software testing',
-    'c/c++': 'c++', 'ci / cd': 'ci/cd', 'powerbi': 'power bi',
-}
+from app.services.skill_taxonomy import ALIASES as SKILL_ALIASES, canonical_skill, normalize_phrases
+
 
 
 def normalize_skill(value: str) -> str:
-    value = re.sub(r'\s+', ' ', unicodedata.normalize('NFKC', value).strip()).casefold()
-    return SKILL_ALIASES.get(value, value)
+    return canonical_skill(value)
 
 
 def normalized_skills(values: list[str]) -> list[str]:
     return sorted({normalize_skill(value) for value in values if value.strip()})
 
 
-@lru_cache(maxsize=4096)
+@lru_cache(maxsize=32768)
 def search_text(value: str) -> str:
-    value = unicodedata.normalize('NFKC', value).casefold()
+    value = normalize_phrases(value)
     for before, after in [('back-end', 'backend'), ('front-end', 'frontend'), ('full-stack', 'full stack'), ('fullstack', 'full stack')]:
         value = value.replace(before, after)
     words = re.findall(r'[\w+#.]+(?:/[\w+#.]+)?', value)

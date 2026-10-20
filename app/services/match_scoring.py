@@ -6,10 +6,8 @@ from datetime import date
 from app.schemas.matching import MatchComponent,MatchReason,RankedMatch
 from app.services.match_normalization import tokens,ROLE_STOP,fingerprint
 
-TRANSFER={('python','django'):'Python is a foundation for learning Django.',('javascript','typescript'):'JavaScript experience can help when learning TypeScript.',
-    ('sql','postgresql'):'SQL knowledge can transfer to PostgreSQL, but it does not establish PostgreSQL proficiency.',
-    ('react','react native'):'React concepts may transfer to React Native; mobile development still needs validation.',
-    ('software testing','test automation'):'Testing concepts may help with automation, but automation experience is not confirmed.'}
+from app.services.skill_taxonomy import TRANSFER, normalize_label, relationship
+from app.services.job_locations import location_match
 
 
 def component(score,reason,evidence=(),state=None):
@@ -26,8 +24,8 @@ def overlap(candidate,requirements):
         if requirement['normalized'] in seen:continue
         seen.add(requirement['normalized'])
         if requirement['normalized'] in by_token:
-            matched.append({**requirement,'candidate_evidence':by_token[requirement['normalized']]})
-        else:missing.append({**requirement,'reason':'No equivalent skill is documented in the confirmed profile.'})
+            matched.append({**requirement,'match_type':'exact' if any(relationship(m['original'],requirement['original'])=='exact' for m in by_token[requirement['normalized']]) else 'synonym','candidate_evidence':by_token[requirement['normalized']]})
+        else:missing.append({**requirement,'reason':'No equivalent explicit skill/technology field is present in the confirmed profile; narrative mentions and related tools require review.'})
     return matched,missing
 
 
@@ -93,10 +91,9 @@ def experience_component(candidate,job,as_of):
 def location_component(candidate,job):
     preferences=candidate['preferred_locations']
     if not preferences:return component(None,'No confirmed work-location preference is available. A home address is not a relocation preference.')
-    remote=any(re.search(r'\bremote\b',p,re.I) for p in preferences)
-    local=any(p.casefold() in job['location'].casefold() or job['location'].casefold() in p.casefold() for p in preferences if not re.search(r'\bremote\b',p,re.I))
-    score=100 if local or remote and job['work_mode']=='remote' else 0
-    return component(score,'The listed work arrangement/location matches a confirmed preference. Country, time-zone and work eligibility need employer verification.' if score else 'The listed work arrangement/location differs from the confirmed preferences.',[{'candidate_path':'preferred_locations','job_path':'location'},{'candidate_path':'preferred_locations','job_path':'work_mode'}])
+    details=[location_match(p,job,'city') for p in preferences]
+    matched=next((d for d in details if d['accepted']),None)
+    return component(100 if matched else 0,(matched['reason'] if matched else 'The listing differs from the explicitly confirmed work-location preferences.')+' Country, time-zone and work eligibility need employer verification.',[{'candidate_path':'preferred_locations','job_path':'location/country/work_mode','relation':matched['relation'] if matched else 'mismatch'}])
 
 
 def role_component(candidate,normalized_job):
@@ -110,13 +107,14 @@ def role_component(candidate,normalized_job):
     return component(max(scores) if scores else None,'Overlap between explicit preferred-role terms and the job title/category.',[{'candidate_path':'preferred_roles','job_path':'title'},{'candidate_path':'preferred_roles','job_path':'category'}],state='likely_match' if scores and max(scores)>0 else None)
 
 
-def score_job(candidate,normalized_job,baseline,project_score,interest_score,semantic,settings,as_of):
+def score_job(candidate,normalized_job,baseline,project_score,interest_score,semantic,settings,as_of,lexical_score=None,lexical_name='tfidf'):
+    lexical_score=baseline if lexical_score is None else lexical_score
     job=normalized_job['original'];required,missing=overlap(candidate,normalized_job['required']);preferred,preferred_missing=overlap(candidate,normalized_job['preferred'])
     known_skills=bool(candidate['skill_tokens'])
     required_total=len(required)+len(missing);preferred_total=len(preferred)+len(preferred_missing)
     parts={
         'semantic':component(semantic,'Cosine similarity from the configured semantic embedding model.' if semantic is not None else 'Semantic embeddings are unavailable; this component is not scored.'),
-        'lexical_similarity':component(baseline,'Visible TF-IDF baseline used as fallback text similarity.' if semantic is None else 'Semantic embeddings are active; baseline remains separately visible.',state='likely_match') if semantic is None else component(None,'Semantic model supplies the text-similarity component.',state='not_applicable'),
+        'lexical_similarity':component(lexical_score,('Visible TF-IDF baseline used as fallback text similarity.' if lexical_name=='tfidf' else 'BM25 query saturation fraction used as fallback text similarity.') if semantic is None else 'Semantic embeddings are active; baseline remains separately visible.',state='likely_match') if semantic is None else component(None,'Semantic model supplies the text-similarity component.',state='not_applicable'),
         'required_skills':component(100*len(required)/required_total if required_total and known_skills else None,'Fraction of distinct listed required skills supported by explicit confirmed skill/technology fields.' if required_total else 'No usable required-skill requirements are listed.',[{'candidate_path':m['candidate_evidence'][0]['source_path'],'job_path':m['source_path']} for m in required],state='not_applicable' if not required_total else None),
         'preferred_skills':component(100*len(preferred)/preferred_total if preferred_total and known_skills else None,'Fraction of distinct preferred skills supported; repeated required skills are not counted twice.',[{'candidate_path':m['candidate_evidence'][0]['source_path'],'job_path':m['source_path']} for m in preferred],state='not_applicable' if not preferred_total else None),
         'title_category':role_component(candidate,normalized_job),
@@ -142,20 +140,20 @@ def score_job(candidate,normalized_job,baseline,project_score,interest_score,sem
     def reason(id,kind,text,evidence=()):reasons.append(MatchReason(id=id,kind=kind,text=text,evidence=list(evidence)))
     if required:reason('required','positive',f'{len(required)} of {required_total} listed required skills are documented: '+', '.join(m['original'] for m in required)+'.',parts['required_skills'].evidence)
     if preferred:reason('preferred','positive','Documented preferred skills: '+', '.join(m['original'] for m in preferred)+'.',parts['preferred_skills'].evidence)
-    if missing:reason('missing','gap','Required skills without confirmed evidence: '+', '.join(m['original'] for m in missing)+'. This does not establish that you lack them.',[{'job_path':m['source_path']} for m in missing])
+    if missing:reason('missing','gap','Required skills without confirmed explicit skill-field evidence: '+', '.join(m['original'] for m in missing)+'. This does not establish that you lack them.',[{'job_path':m['source_path']} for m in missing])
     if not known_skills:reason('skills_unknown','limitation','No explicit confirmed skill evidence is available. Skill components and the critical-skill penalty are unknown, not zero.')
     for key in ('title_category','experience','education','location'):
         part=parts[key]
         reason(key,'consideration' if part.score is None or part.score>=50 else 'gap',part.reason,part.evidence)
     if transferable:reason('transfer','consideration',' '.join(t['reason'] for t in transferable[:2]),[{'candidate_skill':t['candidate_skill'],'job_skill':t['job_skill']} for t in transferable[:2]])
-    reason('method','limitation','Scores are comparison heuristics, not hiring probabilities. All listings are seeded/mock data. '+('Semantic embeddings are active.' if semantic is not None else 'Semantic embeddings are unavailable; TF-IDF supplies text similarity.'))
+    reason('method','limitation','Scores are comparison heuristics, not hiring probabilities. All listings are seeded/mock data. '+('Semantic embeddings are active.' if semantic is not None else 'Semantic embeddings are unavailable; '+lexical_name.upper()+' supplies text similarity.'))
     highlights=[r.id for r in reasons if r.kind=='positive'][:2]+[r.id for r in reasons if r.kind=='gap'][:1]
     if not highlights:highlights=[r.id for r in reasons[:2]]
     explanation=' '.join(r.text for id in highlights for r in reasons if r.id==id)
     calculation={'weighted_sum':weighted,'available_weight':available,'critical_skill_penalty':penalty,'critical_policy':'All listed required skills are treated as critical evidence requirements.',
         'critical_penalty_max':settings.matching_critical_penalty,'unknown_ceiling_base':settings.matching_unknown_ceiling_base,
         'uncertainty_ceiling':ceiling,'formula':'max(0, min(100, uncertainty_ceiling, sum(component.score * effective_weight) - critical_skill_penalty))',
-        'semantic_fallback':semantic is None,'weights_version':'hybrid-v1','unrounded_final':final}
+        'semantic_fallback':semantic is None,'weights_version':'hybrid-v2-retrieval','unrounded_final':final}
     calculation['reason_catalog_hash']=fingerprint([r.model_dump() for r in reasons])
     return RankedMatch(job=job,rank=1,baseline_score=round(baseline,4),hybrid_score=round(final,4),components=parts,calculation=calculation,
         matched_required=required,matched_preferred=preferred,missing_required=missing,missing_preferred=preferred_missing,transferable_skills=transferable,
@@ -170,6 +168,11 @@ def validate_ranking(results,candidate,minimum,normalized_jobs):
         for part in row.components.values():
             if part.score is not None and (not math.isfinite(part.score) or not 0<=part.score<=100):raise ValueError('impossible_component')
             if abs(part.contribution-(part.score or 0)*part.effective_weight)>.000001:raise ValueError('component_contribution_mismatch')
+        if row.match_percentage is not None:
+            from app.services.match_calibration import calibrate_match
+            expected_percentage,metadata=calibrate_match(row)
+            if row.match_percentage!=expected_percentage or row.calibration!=metadata:raise ValueError('calibration_mismatch')
+        if any(value is not None and (not math.isfinite(value) or value<0 or (name!='bm25_raw' and value>100.000001)) for name,value in row.method_scores.items()):raise ValueError('invalid_retrieval_score')
         job=row.job
         if job.id in seen:raise ValueError('duplicate_recommendation')
         seen.add(job.id)

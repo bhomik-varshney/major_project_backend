@@ -13,7 +13,7 @@ from app.schemas.matching import ACTIVE_MATCHING,MatchingRunResponse,RankedMatch
 from app.services.match_normalization import matching_facts,fingerprint
 from app.services.match_scoring import validate_ranking
 from app.services.profiles import confirmed_fields
-from app.services.jobs import browse_jobs
+from app.services.jobs import filter_jobs
 from app.orchestration.matching import execute_matching
 
 
@@ -32,22 +32,19 @@ def run_response(db,run):
     profile=find_profile(db,run.user_id)
     facts=matching_facts(confirmed_fields(db,profile)) if profile else {}
     stale=profile is None or profile.revision!=run.profile_revision or fingerprint(facts)!=run.candidate_hash
+    validation=dict(run.validation)
+    for key in ('retrieval','filter_audit'):
+        if key in validation:
+            validation[key]={k:v for k,v in validation[key].items() if k not in {'candidates','excluded_jobs'}}
     return MatchingRunResponse(id=run.id,status=run.status,stage=run.stage,profile_revision=run.profile_revision,stale=stale,
         dataset_version=run.dataset_version,dataset_reference_date=run.dataset_reference_date,total_jobs=run.total_jobs,
         eligible_jobs=run.eligible_jobs,result_count=run.result_count,minimum_score=run.request['minimum_score'],filters=run.request['filters'],
-        config=run.config,provider_metadata=run.provider_metadata,tasks=run.tasks,warnings=run.warnings,validation=run.validation,
+        config=run.config,provider_metadata=run.provider_metadata,tasks=run.tasks,warnings=run.warnings,validation=validation,
         error_code=run.error_code,created_at=run.created_at,completed_at=run.completed_at,elapsed_ms=run.elapsed_ms)
 
 
 def filtered_snapshot(snapshot,filters):
-    class FrozenProvider:
-        def snapshot(self):return snapshot
-    rows=[]
-    for page in range(1,21):
-        result=browse_jobs(FrozenProvider(),filters.model_copy(update={'page':page,'page_size':50}))
-        rows.extend(result.items)
-        if len(rows)>=result.total:break
-    return rows
+    return filter_jobs(snapshot,filters)[:filters.max_results]
 
 
 class MatchingStopped(Exception):pass
@@ -82,8 +79,8 @@ class MatchingProcessor:
             with self.factory() as db:
                 run=db.get(MatchingRun,run_id)
                 if not run or run.status not in ACTIVE_MATCHING:return
-                payload={'candidate':run.candidate_snapshot['confirmed_facts'],'jobs':[j.model_dump(mode='json') for j in jobs],
-                    'minimum_score':run.request['minimum_score'],'use_ai':run.request['use_ai'],'as_of':run.request['filters']['as_of'],'user_scope':run.user_id}
+                payload={'filters':run.request['filters'],'candidate':run.candidate_snapshot['confirmed_facts'],'jobs':[j.model_dump(mode='json') for j in jobs],
+                    'retrieval_pool_size':run.config.get('retrieval_pool_size',self.settings.matching_retrieval_pool_size),'minimum_score':run.request['minimum_score'],'use_ai':run.request['use_ai'],'as_of':run.request['filters']['as_of'],'user_scope':run.user_id}
             def progress(data):
                 with self.factory() as db:
                     if data is None:
@@ -106,7 +103,7 @@ class MatchingProcessor:
                 changed=db.execute(update(MatchingRun).where(MatchingRun.id==run_id,MatchingRun.status.in_(ACTIVE_MATCHING)).values(
                     status=result['status'],stage=result['status'],active_user=None,candidate_snapshot={'confirmed_facts':payload['candidate'],'normalized':result['candidate']},
                     tasks=result['tasks'],provider_metadata=result['provider_metadata'],warnings=warnings,
-                    validation={**validation,'duplicate_ids':result['duplicate_ids'],'scored_jobs':len(rows),'below_threshold':sum(r.hybrid_score<payload['minimum_score'] for r in rows),'filtered_out':run.total_jobs-len(jobs)},
+                    validation={**run.validation,**validation,'retrieval':result['validation'].get('retrieval',{}),'calibration':result['validation'].get('calibration',{}),'eligible_before_retrieval':len(jobs)-len(result['duplicate_ids']),'outside_retrieval_pool':len(jobs)-len(result['duplicate_ids'])-len(rows),'duplicate_ids':result['duplicate_ids'],'scored_jobs':len(rows),'below_threshold':sum(r.hybrid_score<payload['minimum_score'] for r in rows),'filtered_out':run.total_jobs-len(jobs)},
                     eligible_jobs=len(rows),result_count=sum(r.hybrid_score>=payload['minimum_score'] for r in rows),completed_at=now(),elapsed_ms=round((time.monotonic()-started)*1000)))
                 if changed.rowcount!=1:raise MatchingStopped()
                 for row in rows:

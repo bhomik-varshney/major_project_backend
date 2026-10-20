@@ -44,10 +44,10 @@ class SeededJobProvider:
                 fingerprint = (stat.st_mtime_ns, stat.st_size, stat.st_ino)
                 if self._snapshot is not None and fingerprint == self._fingerprint:
                     return self._snapshot
-                if stat.st_size > 12 * 1024 * 1024:
+                if stat.st_size > 96 * 1024 * 1024:
                     raise ValueError()
                 raw = json.loads(self.path.read_text())
-                if not isinstance(raw, list) or len(raw) > 1000:
+                if not isinstance(raw, list) or len(raw) > 10000:
                     raise ValueError()
             except (OSError, ValueError):
                 raise AppError(503, 'jobs_unavailable', 'The demonstration job dataset is unavailable. Try again shortly.') from None

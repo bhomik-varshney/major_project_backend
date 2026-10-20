@@ -59,6 +59,11 @@ class Job(Schema):
     language_requirements: list[str] = Field(max_length=10)
     normalized_skill_tokens: list[str] = Field(default_factory=list, max_length=60)
     category: str = Field(min_length=1, max_length=80)
+    subcategory: str = ''
+    title_tokens: list[str] = Field(default_factory=list)
+    category_tokens: list[str] = Field(default_factory=list)
+    searchable_text: str = ''
+    embedding_metadata: dict = Field(default_factory=dict)
     salary: Salary | None = None
     currency: Currency
     source: Literal['seeded_mock']
@@ -82,7 +87,14 @@ class Job(Schema):
             raise ValueError('Conflicting salary currency')
         if self.category != self.metadata.category or self.country != self.metadata.country:
             raise ValueError('Conflicting normalized metadata')
-        if self.normalized_skill_tokens != normalized_skills(self.required_skills + self.preferred_skills):
+        expected_tokens=normalized_skills(self.required_skills + self.preferred_skills)
+        if self.metadata.dataset_version=='2026-10-demo-v2':
+            # Historical snapshots retain their original v2 token vocabulary.
+            # New-provider records are v3-only and use conservative C/C++ tokens.
+            legacy_tokens=sorted({'c++' if token=='c/c++' else token for token in expected_tokens})
+            valid_tokens=self.normalized_skill_tokens in (expected_tokens,legacy_tokens)
+        else:valid_tokens=self.normalized_skill_tokens==expected_tokens
+        if not valid_tokens:
             raise ValueError('Skill tokens are not canonical')
         if self.source_url != f'https://example.invalid/jobs/{self.id}' or self.source_url != self.application_url:
             raise ValueError('Conflicting demo URL')
@@ -90,6 +102,9 @@ class Job(Schema):
 
 
 class JobFilters(Schema):
+    role: str = Field(default='', max_length=120)
+    category_scope: Literal['exact','family'] = 'family'
+    location_scope: Literal['city','compatible','state','country'] = 'city'
     keyword: str = Field(default='', max_length=120)
     category: str = Field(default='', max_length=80)
     skills: list[str] = Field(default_factory=list, max_length=20)
@@ -107,7 +122,20 @@ class JobFilters(Schema):
     as_of: date = date(2026, 10, 19)
     page: int = Field(default=1, ge=1, le=10000)
     page_size: int = Field(default=6, ge=1, le=50)
-    max_results: int = Field(default=1000, ge=1, le=1000)
+    max_results: int = Field(default=10000, ge=1, le=10000)
+
+    @model_validator(mode='before')
+    @classmethod
+    def empty_values(cls,data):
+        if isinstance(data,dict):
+            data=dict(data)
+            for field in ('keyword','role','category','location','country','company','industry'):
+                if data.get(field) is None:data[field]=''
+                if field in data and isinstance(data[field],str):data[field]=data[field].strip()
+            if data.get('skills') is None:data['skills']=[]
+            for field in ('work_mode','employment_type','experience','remote'):
+                if data.get(field)=='':data[field]=None
+        return data
 
     @model_validator(mode='after')
     def date_range(self):
@@ -117,6 +145,8 @@ class JobFilters(Schema):
 
 
 class JobPage(Schema):
+    audit: dict = Field(default_factory=dict)
+    match_context: dict[str,dict] = Field(default_factory=dict)
     items: list[Job]
     total: int
     matched_total: int

@@ -6,13 +6,14 @@ from pydantic import Field, model_validator
 from app.schemas.profile import Schema
 from app.schemas.jobs import Job, JobFilters
 
-MatchStatus = Literal['queued','preparing','normalizing','calculating_baseline','calculating_hybrid','generating_explanations','validating','completed','partial','failed','cancelled']
-ACTIVE_MATCHING = ('queued','preparing','normalizing','calculating_baseline','calculating_hybrid','generating_explanations','validating')
+MatchStatus = Literal['queued','preparing','normalizing','calculating_baseline','calculating_hybrid','retrieving','calibrating','generating_explanations','validating','completed','partial','failed','cancelled']
+ACTIVE_MATCHING = ('queued','preparing','normalizing','calculating_baseline','calculating_hybrid','retrieving','calibrating','generating_explanations','validating')
 
 
 class MatchingStart(Schema):
     filters: JobFilters = Field(default_factory=lambda: JobFilters(availability='active',page_size=50))
     minimum_score: float | None = Field(default=None,ge=0,le=100)
+    retrieval_pool_size: int | None = Field(default=None,ge=50,le=10000)
     use_ai: bool = False
     allow_external_processing: bool = False
 
@@ -45,6 +46,11 @@ class RankedMatch(Schema):
     rank: int = Field(ge=1)
     baseline_score: float = Field(ge=0,le=100)
     hybrid_score: float = Field(ge=0,le=100)
+    match_percentage: float | None = Field(default=None,ge=0,le=100)
+    calibration: dict = Field(default_factory=dict)
+    retrieval: dict = Field(default_factory=dict)
+    method_scores: dict[str,float | None] = Field(default_factory=dict)
+    filter_evidence: dict = Field(default_factory=dict)
     components: dict[str,MatchComponent]
     calculation: dict
     matched_required: list[dict] = Field(default_factory=list)
@@ -84,6 +90,7 @@ class MatchingRunResponse(Schema):
 
 
 class MatchingPage(Schema):
+    diagnostics: dict = Field(default_factory=dict)
     run: MatchingRunResponse
     items: list[RankedMatch]
     total: int
@@ -120,6 +127,8 @@ class CandidateSnapshot(Schema):
 
 
 class MatchingAudit(Schema):
+    filter_audit: dict = Field(default_factory=dict)
+    retrieval: dict = Field(default_factory=dict)
     run: MatchingRunResponse
     candidate_snapshot: CandidateSnapshot
     profile_source: Literal['confirmed_fields_only'] = 'confirmed_fields_only'
