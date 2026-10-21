@@ -52,6 +52,15 @@ class Settings(BaseSettings):
     matching_lexical_strategy: Literal['tfidf','bm25'] = 'tfidf'
     matching_word_vector_path: Path | None = None
     matching_ai_top_k: int = Field(default=8,ge=1,le=12)
+    skill_gap_timeout_seconds: float = Field(default=120,ge=10,le=180)
+    application_timeout_seconds: float = Field(default=120,ge=10,le=180)
+    cover_letter_timeout_seconds: float = Field(default=180,ge=20,le=300)
+    cover_letter_latex_path: str = ''
+    cover_letter_compile_seconds: float = Field(default=30,ge=1,le=60)
+    application_mcp_timeout_seconds: float = Field(default=12,ge=1,le=30)
+    # Operator-owned adapter command; never accepted from a browser or an agent.
+    application_mcp_command: list[str] = Field(default_factory=list)
+    skill_gap_priority_weights: dict[str,float] = Field(default_factory=lambda:dict(mandatory=.24,selected_frequency=.20,corpus_frequency=.08,role_centrality=.12,proximity=.08,simulated_impact=.12,foundation=.10,effort=.06))
     matching_weights: dict[str,float] = Field(default_factory=lambda:dict(semantic=.20,required_skills=.30,preferred_skills=.08,title_category=.12,project_experience=.10,education=.04,experience=.06,location=.05,interests=.05))
     matching_embedding_provider: Literal['none','ollama'] = 'none'
     matching_embedding_model: str = 'nomic-embed-text'
@@ -79,6 +88,9 @@ class Settings(BaseSettings):
     def validate_origins(self):
         from urllib.parse import urlparse
         expected={'semantic','required_skills','preferred_skills','title_category','project_experience','education','experience','location','interests'}
+        gap_expected={'mandatory','selected_frequency','corpus_frequency','role_centrality','proximity','simulated_impact','foundation','effort'}
+        if set(self.skill_gap_priority_weights)!=gap_expected or any(not 0<=v<=1 for v in self.skill_gap_priority_weights.values()) or abs(sum(self.skill_gap_priority_weights.values())-1)>1e-6:
+            raise ValueError('Skill-gap priority weights must contain the documented components and sum to one')
         if set(self.matching_weights)!=expected or any(not 0<=weight<=1 for weight in self.matching_weights.values()) or abs(sum(self.matching_weights.values())-1)>1e-6:
             raise ValueError('Matching weights must contain the documented components and sum to one')
         embedding_url=urlparse(self.matching_embedding_url)

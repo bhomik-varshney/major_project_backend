@@ -116,7 +116,8 @@ class DocumentProcessor:
             prepared=prepare_isolated(content,filename,doc_id,self.settings,local_progress)
             blocks,page_count,warnings=prepared['blocks'],prepared['page_count'],prepared['warnings']
             audit_data={'id':extraction_id,'document_id':doc_id,'pipeline_version':'connected-evidence-4','status':'extracting','stage':'local_preparation',
-                'quality':prepared['quality'],'pages':[{k:v for k,v in page.items() if k!='content'} for page in prepared['pages']],
+                'quality':prepared['quality'],'conversion':prepared.get('conversion'),
+                'pages':[{k:v for k,v in page.items() if k!='content'} for page in prepared['pages']],
                 'exact_text':prepared['exact_text'],'ocr':prepared['ocr'],'layout':prepared['layout'],'agents':[],
                 'warnings':source_conflicts(blocks),'consent':consent,'other_sections':other_sections(blocks)}
             self.save_audit(extraction_id,audit_data,prepared['pages'])

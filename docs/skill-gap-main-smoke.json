@@ -1,0 +1,73 @@
+{
+  "existing_confirmed_profile_used": true,
+  "profile_revision": 8,
+  "profile_modified": false,
+  "private_external_processing": false,
+  "mode": "top_ranked",
+  "jobs_analysed": 10,
+  "gap_count": 14,
+  "status": "completed",
+  "elapsed_ms": 3878,
+  "stages": [
+    {
+      "stage": "preparing",
+      "status": "completed"
+    },
+    {
+      "stage": "analysing_profile",
+      "status": "completed"
+    },
+    {
+      "stage": "analysing_requirements",
+      "status": "completed"
+    },
+    {
+      "stage": "comparing_skills",
+      "status": "completed"
+    },
+    {
+      "stage": "prioritising_gaps",
+      "status": "completed"
+    },
+    {
+      "stage": "generating_guidance",
+      "status": "completed"
+    },
+    {
+      "stage": "validating",
+      "status": "completed"
+    }
+  ],
+  "validation": {
+    "schema_valid": true,
+    "comparison_checks": 57,
+    "unsupported_claims": 0,
+    "duplicate_gaps": 0,
+    "requirement_checks": 75,
+    "evidence_checks": 81,
+    "priority_checks": 14,
+    "profile_modified": false
+  },
+  "providers": {
+    "orchestrator": {
+      "name": "Career Orchestrator",
+      "implementation": "crewai.Flow",
+      "responsibility": "Coordinate schema-checked dependencies, immutable snapshots, cancellation, timeout and atomic publication."
+    },
+    "ai_review": {
+      "status": "not_selected",
+      "model": null
+    },
+    "scoring": {
+      "provider": "local",
+      "strategy": "existing hybrid scorer; fixed TF-IDF features",
+      "semantic": "not used in counterfactual estimates"
+    }
+  },
+  "priority_distribution": {
+    "Critical": 0,
+    "High": 2,
+    "Medium": 7,
+    "Low": 5
+  }
+}

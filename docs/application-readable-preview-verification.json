@@ -1,0 +1,94 @@
+{
+  "review_date_local": "2026-10-21",
+  "timezone": "Asia/Kolkata",
+  "scope": "Readable application preparation, local MCP preview, approval and tracking; unrelated completed modules were not re-audited.",
+  "application_regressions": {
+    "tests": 95,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 135.295
+  },
+  "final_presentation_checks": {
+    "tests": 27,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 21.635
+  },
+  "additional_address_guard": {
+    "passed": 1,
+    "failed": 0
+  },
+  "test_counts_are_non_additive": "The focused presentation run overlaps the application regression suite.",
+  "browser": {
+    "distinct_cases_verified": 10,
+    "initial_suite_passed": 9,
+    "final_native_sdk_graduate_rechecks_passed": 3,
+    "final_legacy_review_case_passed": 1,
+    "failed_remaining": 0,
+    "browser": "Chromium",
+    "mode": "isolated synthetic API/frontend",
+    "coverage": [
+      "readiness",
+      "grounded review and prefill",
+      "user-reported submission and tracking",
+      "interviews/follow-ups",
+      "duplicates and stale approvals",
+      "optional model failure and cancellation",
+      "partial retry",
+      "authentication reconnect",
+      "MCP Apps bridge and session opening",
+      "structured graduate preview and links",
+      "legacy-readable values and fresh-review flags",
+      "desktop/mobile overflow and layout"
+    ]
+  },
+  "frontend": {
+    "typecheck": "passed",
+    "production_build": "passed",
+    "mcp_ui_bundle": "rebuilt",
+    "lint": {
+      "errors": 0,
+      "pre_existing_warnings": 10
+    }
+  },
+  "runtime": {
+    "frontend": "http://localhost:5173/applications",
+    "api": "http://localhost:8000/api/v1",
+    "api_health": "ok",
+    "database": "connected",
+    "frontend_http": 200
+  },
+  "preservation": {
+    "private_backup_created": true,
+    "existing_tables": 27,
+    "all_existing_rows_unchanged": true,
+    "new_sql_tables": 0
+  },
+  "local_document_evaluation": {
+    "available": true,
+    "engine": "local_mcp",
+    "raw_json_values": false,
+    "internal_source_paths_in_preview": false,
+    "private_values_logged": false,
+    "database_mutated": false,
+    "external_export": false
+  },
+  "boundaries": {
+    "automatic_submission": false,
+    "groq_calls_for_this_increment": false,
+    "private_resume_external_export": false,
+    "libreoffice_launched": false,
+    "job_dataset_modified": false,
+    "confirmed_profile_modified": false
+  },
+  "limitations": [
+    "Built-in application adapter and current jobs remain mock/synthetic",
+    "Answer templates and confidence labels are heuristic and require user review",
+    "Structured name parts and missing personal/legal preferences remain manual",
+    "URL classification does not verify account ownership or every site-specific path pattern",
+    "Legacy changed values require a saved review before write approval",
+    "Existing single-process worker/local authentication/storage limits remain"
+  ]
+}

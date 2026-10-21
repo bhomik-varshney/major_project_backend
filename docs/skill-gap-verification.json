@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-20",
+  "backend_tests": {
+    "passed": 376,
+    "warnings": 392,
+    "seconds": 185.12,
+    "execution": "native macOS; needed by existing LibreOffice test"
+  },
+  "new_backend_cases": 43,
+  "chromium_tests": {
+    "full_suite_passed": 41,
+    "focused_skill_gap_recheck_passed": 5,
+    "partial_task_trace_asserted": true
+  },
+  "frontend_typecheck": "passed",
+  "frontend_lint": {
+    "errors": 0,
+    "existing_warnings": 10
+  },
+  "production_build": "passed",
+  "python_compile": "passed",
+  "git_diff_whitespace": "passed in both repositories",
+  "dataset_validation": "passed; fixture SHA preserved",
+  "api_smoke_cases": 6,
+  "real_spawned_live_crewai_flow": {
+    "status": "completed",
+    "stages": 7,
+    "gap_count": 4,
+    "seconds": 4.4268,
+    "real_groq_agents": 2,
+    "conflicts": 0,
+    "private_profile_loaded": false
+  },
+  "evaluation_fixture_checks": 32,
+  "main_workspace": {
+    "status": "completed",
+    "jobs": 10,
+    "gaps": 14,
+    "profile_changed": false
+  },
+  "all_existing_database_rows_preserved": true,
+  "public_artifact_privacy_scan": "passed",
+  "frontend_visual_check": "desktop/mobile screenshots inspected with synthetic data; no overflow or browser errors",
+  "limitations": [
+    "Small authored evaluation, not a real-world accuracy claim",
+    "Priority and learning-effort heuristics are configurable but not human-calibrated",
+    "Counterfactual scoring keeps text features fixed and is not an employment prediction",
+    "Browser execution used Chromium; no new Safari run"
+  ]
+}

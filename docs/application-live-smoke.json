@@ -1,0 +1,82 @@
+{
+  "mode": "synthetic_redacted_live_groq",
+  "engine": "crewai.Flow + crewai.Crew + MCP stdio",
+  "status": "needs_review",
+  "model": "openai/gpt-oss-120b",
+  "agents": [
+    {
+      "name": "Application Preparation Agent",
+      "status": "completed"
+    },
+    {
+      "name": "Application Form Mapping Agent",
+      "status": "completed"
+    },
+    {
+      "name": "Document Selection Agent",
+      "status": "completed"
+    },
+    {
+      "name": "MCP Application Interaction Agent",
+      "status": "completed"
+    },
+    {
+      "name": "Application Tracking Agent",
+      "status": "completed"
+    },
+    {
+      "name": "Application Validation Agent",
+      "status": "completed"
+    }
+  ],
+  "stages": [
+    {
+      "name": "MCP Application Interaction Agent",
+      "execution_id": "2c096ce3-730e-4542-be8b-be775684cd5c",
+      "status": "completed",
+      "method": "deterministic CrewAI Flow task",
+      "elapsed_ms": 642
+    },
+    {
+      "name": "Application Preparation Agent",
+      "execution_id": "977ee909-834d-425c-a99d-5069a67824a7",
+      "status": "completed",
+      "method": "deterministic CrewAI Flow task",
+      "elapsed_ms": 0
+    },
+    {
+      "name": "Application Form Mapping Agent",
+      "execution_id": "f4cf87a2-e72d-4824-9882-bc7b126afa69",
+      "status": "completed",
+      "method": "deterministic CrewAI Flow task",
+      "elapsed_ms": 0
+    },
+    {
+      "name": "Document Selection Agent",
+      "execution_id": "7854b90f-484b-43ac-9e95-f256da00dc2b",
+      "status": "completed",
+      "method": "deterministic CrewAI Flow task",
+      "elapsed_ms": 0
+    },
+    {
+      "name": "Application Tracking Agent",
+      "execution_id": "21604642-b8b8-4ca7-bc2a-262288301e8d",
+      "status": "completed",
+      "method": "deterministic CrewAI Flow task",
+      "elapsed_ms": 0
+    },
+    {
+      "name": "Application Validation Agent",
+      "execution_id": "527a8907-ca39-4f5d-8b0c-537e767b1005",
+      "status": "completed",
+      "method": "deterministic CrewAI Flow task",
+      "elapsed_ms": 1
+    }
+  ],
+  "field_count": 17,
+  "automatically_approved_fields": 0,
+  "automatic_attachments": 0,
+  "profile_database_loaded": false,
+  "export_scope": "field IDs, field types/classifications, confirmed document IDs, discovered tool names; no candidate values",
+  "elapsed_seconds": 10.1249
+}

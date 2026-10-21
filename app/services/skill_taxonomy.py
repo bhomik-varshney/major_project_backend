@@ -15,6 +15,9 @@ ALIASES = {
     'rag':'retrieval augmented generation','react-native':'react native',
 }
 RELATED = {frozenset(pair) for pair in [('python','java'),('aws','azure'),('aws','google cloud'),('react','vue'),('mysql','postgresql')]}
+# Skill equivalence can expand without rewriting existing lexical indexes or the
+# frozen fixture's searchable text. These aliases are applied to skill fields.
+CANONICAL_ONLY_ALIASES = {'ai':'artificial intelligence'}
 TRANSFER = {
     ('python','django'):'Python is a foundation for learning Django.',
     ('javascript','typescript'):'JavaScript experience can help when learning TypeScript.',
@@ -25,7 +28,7 @@ TRANSFER = {
 
 def canonical_skill(value):
     text=' '.join(unicodedata.normalize('NFKC',str(value)).casefold().split())
-    return ALIASES.get(text,text)
+    return CANONICAL_ONLY_ALIASES.get(text,ALIASES.get(text,text))
 
 def relationship(left,right):
     a,b=canonical_skill(left),canonical_skill(right)

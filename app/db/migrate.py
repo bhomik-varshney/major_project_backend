@@ -1,4 +1,5 @@
-"""Idempotent additive milestone migration: create any missing workspace, agent-run, audit, page-artifact, matching-run/result, embedding-cache and saved-opportunity tables.
+"""Idempotent additive migration: create missing workspace, resume, matching,
+embedding-cache, saved-opportunity, skill-gap and application/timeline tables.
 
 Existing tables, columns, IDs, files, and profile facts are not changed.
 Run with: python -m app.db.migrate

@@ -2,6 +2,14 @@
 
 FastAPI backend for the CareerOS student workspace. Implements persistent profiles, private document storage, PDF/DOCX/TXT text extraction, source-linked review drafts, explicit confirmation, and database-backed dashboard summaries. A genuine two-task CrewAI Resume Intelligence Crew uses Groq only when configured and explicitly selected for that document. 10,000 reproducible, clearly labeled seeded jobs across 56 categories support browsing and filtering; live job retrieval remains planned; confirmed-profile matching is implemented. See the [CrewAI report](docs/crewai-jobs-milestone.md) and current [10,000-job matching report](docs/job-matching-10000.md).
 
+The next milestone adds [Skill Gap Analysis and Career Guidance](docs/skill-gap-guidance.md): a genuine CrewAI Flow, optional grounded two-agent Groq review, multi-job aggregation, priority calculations and temporary score-impact estimates using the existing scorer. Confirmed profiles and matching history remain read-only inputs.
+
+[Application Preparation and Tracking](docs/application-preparation-tracking.md) adds confirmed-fact form mapping, document selection, revision-bound prefill approval, a real MCP App over stdio, replayable AG-UI events, A2UI interaction surfaces, and a persistent application timeline. A real six-agent CrewAI review is optional; safe local preparation uses a genuine CrewAI Flow. The default adapter is a clearly labelled local demo for the synthetic job provider. External submission is never performed by the backend or agents.
+
+[Application workspace continuation](docs/application-recovery-continuation.md) adds durable partial-prefill recovery, separate opened/prefilled/submitted milestones, explicit confirmation dialogs, richer field mappings, typed tracking/approvals, follow-up completion and eight real-stdio mock scenarios. The default remains mock mode; no employer submission is automated.
+
+[Readable application previews](docs/application-readable-preview.md) now transform confirmed profile structures into grouped cards and employer-ready text, classify professional/project links, prepare evidence-grounded answer drafts, and generate a strict preview through the local MCP server. Form, Preview, Audit and Tracking views keep user review separate from external prefilling and submission. Existing drafts remain readable without automatic data changes.
+
 ## Local setup
 
 Use Python 3.12 or 3.13 (verified with Homebrew Python 3.13.2). From this repository:
@@ -102,7 +110,7 @@ Processing runs through queued, text preparation, local identification, optional
 
 Local parsing recognizes expanded heading synonyms and complete Summary/Objective/Profile statements. It groups project headings/bullets and explicit technologies, work entries, and labeled/table education. PDF block positions and DOCX paragraph styles, lists, tabs, and table order are retained where available; possible columns trigger uncertainty warnings. Complex layouts can still be missed. CrewAI uses real agents/tasks, sequential dependencies and a custom Groq LLM with compact native structured output; accepted leaves must match real quotes and the correct section/entry group. Unsupported/inferred leaves are withheld. Confidence labels are heuristic and source matching is not a semantic correctness guarantee: the student must review every selected section. Missing-key/provider/JSON errors retain the local draft and show a limited-mode warning.
 
-Dashboard `data_mode=live_local` identifies actual database data. Recommendation counts come from the latest current matching run; unimplemented application/approval counts are `null`. Jobs are `feature_states.jobs=seeded_demo`; orchestration is `resume_only`, and matching is available; applications remain `planned`. Seeded vacancies never count as recommendations. `profile_skill_count` counts current profile skills; `extracted_skill_count` counts distinct current resume-derived skills in confirmation receipts, excluding user-entered review additions/corrections. Unreviewed suggestions never count as confirmed skills.
+Dashboard `data_mode=live_local` identifies actual database data. Recommendation counts come from the latest current matching run; application status and pending-review counts come from owned application records. Jobs remain `feature_states.jobs=seeded_demo`; applications are available. Seeded vacancies never count as recommendations. `profile_skill_count` counts current profile skills; `extracted_skill_count` counts distinct current resume-derived skills in confirmation receipts, excluding user-entered review additions/corrections. Unreviewed suggestions never count as confirmed skills.
 
 ## Errors, persistence, and deletion
 
@@ -114,6 +122,22 @@ For now, profiles, documents, and activity remain until explicitly removed or th
 
 ```sh
 python -m pytest
+```
+
+## Skill-gap analysis
+
+Open `/skill-gaps` after confirming profile facts. Analyse a selected fixture job, selected saved recommendations, top-ranked results, or a role/category target. The service stores immutable source snapshots, typed comparisons/gaps, frequency and priority components, simulations, task/provider traces and review annotations. Only `required_skills` creates mandatory skill requirements; preferred entries stay preferred and other listed tools remain optional. Missing evidence is not proof of inability.
+
+`POST /api/v1/skill-gaps/runs` accepts `mode=single|selected|top_ranked|target`, `job_ids` (up to 30), optional owned `matching_run_id`, `top_k` (1–30), existing `JobFilters`, and explicit `use_ai`/`allow_external_processing`. Status, paginated results, audit, per-gap evidence, review, retry and cancellation are under `/skill-gaps/runs/{id}`. See the [full contracts, priority formula, validation and limitations](docs/skill-gap-guidance.md).
+
+`python -m app.db.migrate` additively creates `skill_gap_runs` and `skill_gap_reviews`. Existing facts, receipts, jobs and matching rows are preserved. Startup uses the same additive initialization. Priority weights are configurable with `SKILL_GAP_PRIORITY_WEIGHTS`; the default analysis deadline is `SKILL_GAP_TIMEOUT_SECONDS=120`. Existing three-key Groq rotation is reused without new credentials or frontend secrets.
+
+```sh
+python -m pytest
+python -m scripts.evaluate_skill_gaps --output docs/skill-gap-evaluation.json
+python -m scripts.smoke_skill_gaps --output docs/skill-gap-api-smoke.json
+# Explicit live verification, using built-in synthetic data only:
+python -m scripts.smoke_skill_gaps --live --output docs/skill-gap-live-smoke.json
 ```
 
 The 204 automated backend tests use temporary SQLite databases and isolated sessions. They cover the original foundation plus PDF/DOCX/TXT extraction, evidence, edits/confirmation/merging/conflicts, correction/rejection/cancellation, source deletion, additive initialization, restart recovery, atomic confirmation rollback, missing-key/provider fallback, invalid AI JSON, combined profile limits, bounded retry, and hallucinated-source withholding. These tests are offline; provider responses are mocked. CrewAI tests execute the actual framework with scripted outputs; process tests exercise real child termination and shared key state. A separate live two-task CrewAI/Groq check used synthetic student text only; it is not part of pytest. See the report for results and commands.
@@ -128,7 +152,7 @@ Frontend browser tests live in the frontend repository. Start both local service
 
 **Fallback/mock:** limited deterministic extraction is real local parsing, not fabricated data. Missing or failing Groq shows warnings and retains it. Automated provider failures are mocked only in tests. Only `/jobs` uses the explicitly labeled seeded dataset; profile/document/dashboard data remains real local data.
 
-**Planned:** extraction-quality evaluation on broader consented layouts, production authentication/queue/deletion/migrations, normalized evidence where needed, Adzuna/Arbeitnow adapters, broader semantic evaluation, skill gaps, truthful versioned application drafts, explicit submission approval/tracking, the broader career multi-agent orchestrator, and MCP protocol tools.
+**Planned:** extraction-quality evaluation on broader consented layouts, production authentication/queue/deletion/migrations, normalized evidence where needed, live-job adapters, broader semantic evaluation, tailored document generation, and site-specific application/browser adapters beyond the current provider-agnostic stdio contract.
 
 The implemented typed job-provider interface is `app/providers/jobs.py`. Future service sketches are in `app/services/contracts.py`; they are not implemented agents. See [project analysis](docs/project-analysis.md), [foundation decisions](docs/implementation-milestone.md), the earlier [resume processing report](docs/resume-processing-milestone.md), and the current [CrewAI report](docs/crewai-jobs-milestone.md).
 
@@ -179,6 +203,8 @@ The fixture is behind `JobProvider.snapshot()`. Future Adzuna/Arbeitnow adapters
 
 See [implementation report](docs/multimodal-resume-intelligence.md) and [17-document evaluation](docs/multimodal-evaluation.md). Install Python requirements as usual. Local PDF rendering is included; optional system integrations are **Tesseract** (English OCR) and **LibreOffice** (DOCX → PDF rendering). Install them with your OS package manager if absent, or set `LIBREOFFICE_PATH` to its executable. Missing converters/OCR retain exact text with explicit warnings; no paid or remote document-conversion service is used.
 
+DOCX text is read directly from its ZIP/XML without LibreOffice. Only page previews/layout rendering use LibreOffice, always with `--headless --nologo --nofirststartwizard --norestore --nodefault --nolockcheck` and a fresh temporary `-env:UserInstallation=file:///...` profile for each attempt. No GUI launch or macOS UI automation is used. Conversion captures stdout, stderr (bounded to 8,000 characters each in the private audit), exit status, timeout, and output existence; validates the generated PDF; and retries once with a different isolated profile on failure. Stale-worker detection/cleanup only signals same-user soffice processes matching that attempt's exact private profile; other profiles and sessions are left alone. Failed rendering preserves the original document and direct text, and returns an explicit warning.
+
 Backend model configuration is `GROQ_TEXT_MODEL=openai/gpt-oss-120b`, `GROQ_VISION_MODEL_PRIMARY=qwen/qwen3.8-27b`, with an optional `GROQ_VISION_MODEL_FALLBACK`. Model-list checks are performed at execution. On the checked account GPT-OSS text and Qwen vision are available. The previously configured Llama 4 models are unavailable and have been removed from active configuration. Model names can be updated without frontend changes. Keep credentials in ignored backend `.env` only and restart after configuration changes.
 
 `GET /api/v1/documents/{id}/audit` returns typed quality, original parser text, separate OCR, private preview metadata, layout, agent/task results, warnings, current edited draft evidence and review decision. `GET /api/v1/documents/{id}/audit/pages/{artifact_id}` returns an owned PNG with the existing session/local-client header. There are no public image paths. Process payloads add optional `use_vision` / `allow_image_processing`; existing text-only clients retain their prior consent scope. PDF/DOCX page images require additional explicit per-run consent before Groq transmission. Publications are an optional confirmed profile section.
@@ -228,3 +254,12 @@ python -m scripts.evaluate_retrieval --output docs/ai-location-ranking-evaluatio
 python -m scripts.smoke_matching --pool-size 10000 --output docs/ai-location-performance.json
 python -m pytest
 ```
+
+
+## Cover Letter Agent
+
+Open the frontend `/cover-letters` workspace or **Applications → Prepare cover letter**. This adds a genuine three-agent CrewAI workflow, source-backed content validation, the supplied A4/Source Sans Pro LaTeX design, user-approved image signatures, isolated XeLaTeX/LuaLaTeX compilation, PDF/preview QA, immutable versions and exact-document approval/attachment. Upload your own signature in the workspace, or explicitly opt for a typed name only. Groq generation requires its own evidence-export consent; otherwise the local evidence composer is clearly labelled.
+
+See [implementation and operator guide](docs/cover-letter-agent.md), [verification](docs/cover-letter-verification.json), and [synthetic PDF example](docs/examples/cover-letter-synthetic/letter.pdf). Configure `COVER_LETTER_LATEX_PATH` or install a compiler on PATH; the current workspace also discovers its ignored portable `.tools/TinyTeX` installation. No LibreOffice or GUI automation is used. The two new tables are additive, and existing data is preserved.
+
+Focused checks: `python -m pytest tests/test_cover_letters.py`; frontend browser checks: `tests/e2e/cover-letters.spec.ts`. Test fixtures are synthetic; no private resume or signature is sent to a model by tests.

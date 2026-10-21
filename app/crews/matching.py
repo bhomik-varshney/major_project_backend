@@ -9,10 +9,11 @@ from app.services.groq_extraction import strict_schema,require_complete
 
 
 class MatchingLLM(BaseLLM):
-    _transport=PrivateAttr();_output=PrivateAttr();_deadline=PrivateAttr();_owner=PrivateAttr();_calls=PrivateAttr(default=0);_last_error=PrivateAttr(default=None)
-    def __init__(self,transport,output,owner,deadline):
+    _transport=PrivateAttr();_output=PrivateAttr();_deadline=PrivateAttr();_owner=PrivateAttr();_calls=PrivateAttr(default=0);_last_error=PrivateAttr(default=None);_schema_name=PrivateAttr(default=None)
+    def __init__(self,transport,output,owner,deadline,*,schema_name=None):
         super().__init__(model=transport.settings.text_model,provider='groq',temperature=0)
         self._transport,self._output,self._owner,self._deadline=transport,output,owner,deadline
+        self._schema_name=schema_name
     def call(self,messages,**kwargs):
         self._calls+=1
         if self._calls>1:raise ProviderUnavailable('matching_agent_call_limit','AI review exceeded its bounded call limit.')
@@ -20,7 +21,7 @@ class MatchingLLM(BaseLLM):
         safe=[{'role':m['role'],'content':m['content']} for m in messages if m.get('role') in {'system','user','assistant'} and isinstance(m.get('content'),str)]
         try:
             raw=self._transport.complete(safe,strict_schema(self._output),owner=self._owner,deadline=self._deadline,
-                schema_name='matching_explanation' if self._output is MatchSelections else 'matching_review',max_output_tokens=1600,allow_wait=True)
+                schema_name=self._schema_name or ('matching_explanation' if self._output is MatchSelections else 'matching_review'),max_output_tokens=1600,allow_wait=True)
         except ProviderUnavailable as exc:
             self._last_error=exc
             raise

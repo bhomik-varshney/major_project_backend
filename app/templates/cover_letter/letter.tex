@@ -1,0 +1,54 @@
+% Adapted from the supplied Jayesh Sanwal Entry-level Cover-letter Template.
+% Original preserved unchanged as original.tex. Compile only this trusted template.
+\documentclass[11pt,a4paper]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontspec}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage[margin=1cm,bottom=1.6cm]{geometry}
+\setmainfont[Path=fonts/,BoldFont=SourceSansPro-Semibold.otf,ItalicFont=SourceSansPro-RegularIt.otf]{SourceSansPro-Regular.otf}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\urlstyle{same}
+\hypersetup{colorlinks=true,urlcolor=black,pdfauthor={@@NAME@@},pdftitle={Cover Letter}}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\definecolor{UI_blue}{RGB}{32,64,151}
+\definecolor{HF_color}{RGB}{179,179,179}
+\rfoot{{\color{HF_color}\thepage\ of 1, Updated @@DATE@@}}
+\titleformat{\section}{\color{UI_blue}\scshape\raggedright\large}{}{0em}{}[\hrulefill]
+\begin{document}
+\begin{center}
+  \begin{minipage}[b]{0.24\textwidth}
+    \raggedright\small @@CONTACT@@
+  \end{minipage}%
+  \begin{minipage}[b]{0.50\textwidth}
+    \centering {\Huge @@NAME@@}\par\vspace{0.1cm}
+    {\color{UI_blue}\Large @@TITLE@@}
+  \end{minipage}%
+  \begin{minipage}[b]{0.24\textwidth}
+    \raggedleft\small @@LINKS@@
+  \end{minipage}
+  \par\vspace{0.15cm}{\color{UI_blue}\hrulefill}
+\end{center}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{@@PARSKIP@@pt}
+\begin{center}{\color{UI_blue}\Large COVER LETTER}\end{center}
+Date: @@DATE@@\par
+@@SALUTATION@@\par
+@@BODY@@
+\par\vspace{0.15cm}
+\begin{minipage}{\textwidth}
+Yours faithfully,\par\vspace{0.1cm}
+@@SIGNATURE@@
+@@NAME@@\par
+@@SIGNCONTACT@@
+\end{minipage}
+\end{document}

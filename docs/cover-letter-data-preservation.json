@@ -1,0 +1,144 @@
+{
+  "existing_tables": {
+    "activities": {
+      "before_count": 57,
+      "after_count": 57,
+      "unchanged": true
+    },
+    "application_documents": {
+      "before_count": 0,
+      "after_count": 0,
+      "unchanged": true
+    },
+    "application_events": {
+      "before_count": 47,
+      "after_count": 47,
+      "unchanged": true
+    },
+    "application_fields": {
+      "before_count": 34,
+      "after_count": 34,
+      "unchanged": true
+    },
+    "application_follow_ups": {
+      "before_count": 0,
+      "after_count": 0,
+      "unchanged": true
+    },
+    "application_interviews": {
+      "before_count": 0,
+      "after_count": 0,
+      "unchanged": true
+    },
+    "application_mcp_actions": {
+      "before_count": 3,
+      "after_count": 3,
+      "unchanged": true
+    },
+    "application_notes": {
+      "before_count": 0,
+      "after_count": 0,
+      "unchanged": true
+    },
+    "application_status_history": {
+      "before_count": 3,
+      "after_count": 3,
+      "unchanged": true
+    },
+    "application_user_approvals": {
+      "before_count": 0,
+      "after_count": 0,
+      "unchanged": true
+    },
+    "application_workspaces": {
+      "before_count": 1,
+      "after_count": 1,
+      "unchanged": true
+    },
+    "applications": {
+      "before_count": 2,
+      "after_count": 2,
+      "unchanged": true
+    },
+    "candidate_profiles": {
+      "before_count": 7,
+      "after_count": 7,
+      "unchanged": true
+    },
+    "document_extractions": {
+      "before_count": 10,
+      "after_count": 10,
+      "unchanged": true
+    },
+    "documents": {
+      "before_count": 8,
+      "after_count": 8,
+      "unchanged": true
+    },
+    "embedding_cache": {
+      "before_count": 0,
+      "after_count": 0,
+      "unchanged": true
+    },
+    "external_application_sessions": {
+      "before_count": 1,
+      "after_count": 1,
+      "unchanged": true
+    },
+    "matching_results": {
+      "before_count": 1730,
+      "after_count": 1730,
+      "unchanged": true
+    },
+    "matching_runs": {
+      "before_count": 20,
+      "after_count": 20,
+      "unchanged": true
+    },
+    "resume_agent_runs": {
+      "before_count": 2,
+      "after_count": 2,
+      "unchanged": true
+    },
+    "resume_page_artifacts": {
+      "before_count": 3,
+      "after_count": 3,
+      "unchanged": true
+    },
+    "resume_processing_audits": {
+      "before_count": 2,
+      "after_count": 2,
+      "unchanged": true
+    },
+    "saved_opportunities": {
+      "before_count": 2,
+      "after_count": 2,
+      "unchanged": true
+    },
+    "skill_gap_reviews": {
+      "before_count": 0,
+      "after_count": 0,
+      "unchanged": true
+    },
+    "skill_gap_runs": {
+      "before_count": 2,
+      "after_count": 2,
+      "unchanged": true
+    },
+    "users": {
+      "before_count": 29,
+      "after_count": 29,
+      "unchanged": true
+    },
+    "verification_records": {
+      "before_count": 8,
+      "after_count": 8,
+      "unchanged": true
+    }
+  },
+  "all_existing_rows_unchanged": true,
+  "new_tables": {
+    "cover_letter_versions": 0,
+    "signature_assets": 0
+  }
+}

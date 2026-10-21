@@ -53,5 +53,5 @@ class SummaryResponse(BaseModel):
     recent_activity: list[ActivityResponse]
     feature_states: dict[str, str] = {
         "extraction": "available", "jobs": "seeded_demo", "matching": "available",
-        "applications": "planned", "orchestration": "resume_and_matching",
+        "skill_gaps": "available", "applications": "available", "orchestration": "resume_matching_skill_gaps_and_applications",
     }

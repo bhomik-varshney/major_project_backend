@@ -1,0 +1,374 @@
+{
+  "synthetic_only": true,
+  "cases": [
+    {
+      "case": "backend",
+      "target_role": "backend",
+      "jobs": 1,
+      "status": "completed",
+      "gaps": 4,
+      "seconds": 0.068797,
+      "classifications": [
+        {
+          "normalized": "python",
+          "classification": "confirmed_match"
+        },
+        {
+          "normalized": "postgresql",
+          "classification": "transferable_match"
+        },
+        {
+          "normalized": "docker",
+          "classification": "missing"
+        },
+        {
+          "normalized": "redis",
+          "classification": "missing"
+        },
+        {
+          "normalized": "postman",
+          "classification": "missing"
+        }
+      ],
+      "priority_order": [
+        [
+          "postgresql",
+          "Critical",
+          77.2438
+        ],
+        [
+          "docker",
+          "High",
+          71.2438
+        ],
+        [
+          "redis",
+          "Medium",
+          34.3151
+        ],
+        [
+          "postman",
+          "Low",
+          26.5
+        ]
+      ]
+    },
+    {
+      "case": "frontend",
+      "target_role": "frontend",
+      "jobs": 1,
+      "status": "completed",
+      "gaps": 2,
+      "seconds": 0.010995,
+      "classifications": [
+        {
+          "normalized": "javascript",
+          "classification": "confirmed_match"
+        },
+        {
+          "normalized": "react",
+          "classification": "confirmed_match"
+        },
+        {
+          "normalized": "typescript",
+          "classification": "transferable_match"
+        },
+        {
+          "normalized": "css",
+          "classification": "missing"
+        }
+      ],
+      "priority_order": [
+        [
+          "typescript",
+          "Critical",
+          77.5048
+        ],
+        [
+          "css",
+          "Medium",
+          44.5238
+        ]
+      ]
+    },
+    {
+      "case": "ai",
+      "target_role": "AI",
+      "jobs": 1,
+      "status": "completed",
+      "gaps": 3,
+      "seconds": 0.014794,
+      "classifications": [
+        {
+          "normalized": "python",
+          "classification": "confirmed_match"
+        },
+        {
+          "normalized": "machine learning",
+          "classification": "confirmed_match"
+        },
+        {
+          "normalized": "pytorch",
+          "classification": "partial_match"
+        },
+        {
+          "normalized": "natural language processing",
+          "classification": "unknown"
+        },
+        {
+          "normalized": "docker",
+          "classification": "missing"
+        }
+      ],
+      "priority_order": [
+        [
+          "natural language processing",
+          "High",
+          74.6829
+        ],
+        [
+          "pytorch",
+          "High",
+          73.0
+        ],
+        [
+          "docker",
+          "Medium",
+          34.3151
+        ]
+      ]
+    },
+    {
+      "case": "cybersecurity",
+      "target_role": "cybersecurity",
+      "jobs": 1,
+      "status": "completed",
+      "gaps": 2,
+      "seconds": 0.011699,
+      "classifications": [
+        {
+          "normalized": "networking",
+          "classification": "confirmed_match"
+        },
+        {
+          "normalized": "linux",
+          "classification": "confirmed_match"
+        },
+        {
+          "normalized": "network security",
+          "classification": "partial_match"
+        },
+        {
+          "normalized": "owasp",
+          "classification": "missing"
+        }
+      ],
+      "priority_order": [
+        [
+          "network security",
+          "Critical",
+          75.2438
+        ],
+        [
+          "owasp",
+          "Medium",
+          34.3151
+        ]
+      ]
+    },
+    {
+      "case": "misleading_overlap",
+      "target_role": "AI",
+      "jobs": 1,
+      "status": "completed",
+      "gaps": 3,
+      "seconds": 0.010542,
+      "classifications": [
+        {
+          "normalized": "machine learning",
+          "classification": "missing"
+        },
+        {
+          "normalized": "java",
+          "classification": "partial_match"
+        },
+        {
+          "normalized": "docker",
+          "classification": "missing"
+        }
+      ],
+      "priority_order": [
+        [
+          "machine learning",
+          "Critical",
+          80.9571
+        ],
+        [
+          "java",
+          "Critical",
+          76.9571
+        ],
+        [
+          "docker",
+          "Medium",
+          33.0
+        ]
+      ]
+    },
+    {
+      "case": "incomplete_candidate",
+      "target_role": "data science",
+      "jobs": 1,
+      "status": "completed",
+      "gaps": 2,
+      "seconds": 0.008179,
+      "classifications": [
+        {
+          "normalized": "python",
+          "classification": "unknown"
+        },
+        {
+          "normalized": "statistics",
+          "classification": "unknown"
+        }
+      ],
+      "priority_order": [
+        [
+          "python",
+          "Critical",
+          80.3092
+        ],
+        [
+          "statistics",
+          "Critical",
+          80.3092
+        ]
+      ]
+    },
+    {
+      "case": "incomplete_job",
+      "target_role": "custom role",
+      "jobs": 1,
+      "status": "completed",
+      "gaps": 1,
+      "seconds": 0.00637,
+      "classifications": [
+        {
+          "normalized": "__requirements_unknown__",
+          "classification": "unknown"
+        }
+      ],
+      "priority_order": [
+        [
+          "__requirements_unknown__",
+          "Low",
+          25.0
+        ]
+      ]
+    },
+    {
+      "case": "denied_and_conflicting",
+      "target_role": "systems",
+      "jobs": 1,
+      "status": "needs_review",
+      "gaps": 2,
+      "seconds": 0.010298,
+      "classifications": [
+        {
+          "normalized": "rust",
+          "classification": "unknown"
+        },
+        {
+          "normalized": "docker",
+          "classification": "explicitly_mismatched"
+        }
+      ],
+      "priority_order": [
+        [
+          "docker",
+          "Critical",
+          77.1727
+        ],
+        [
+          "rust",
+          "High",
+          73.0
+        ]
+      ]
+    },
+    {
+      "case": "multiple_jobs",
+      "target_role": "cloud",
+      "jobs": 3,
+      "status": "completed",
+      "gaps": 3,
+      "seconds": 0.014621,
+      "classifications": [
+        {
+          "normalized": "docker",
+          "classification": "missing"
+        },
+        {
+          "normalized": "azure",
+          "classification": "strong_related_match"
+        },
+        {
+          "normalized": "kubernetes",
+          "classification": "missing"
+        },
+        {
+          "normalized": "docker",
+          "classification": "missing"
+        },
+        {
+          "normalized": "azure",
+          "classification": "strong_related_match"
+        },
+        {
+          "normalized": "docker",
+          "classification": "missing"
+        }
+      ],
+      "priority_order": [
+        [
+          "docker",
+          "High",
+          72.6251
+        ],
+        [
+          "azure",
+          "High",
+          67.8316
+        ],
+        [
+          "kubernetes",
+          "Low",
+          14.3333
+        ]
+      ]
+    }
+  ],
+  "metrics": {
+    "gap_classification_accuracy": 1.0,
+    "classification_checks": 32,
+    "required_preferred_optional_classification_accuracy": 1.0,
+    "requirement_checks": 32,
+    "unsupported_claim_rate": 0.0,
+    "evidence_support_rate": 1,
+    "matched_evidence_checks": 8,
+    "priority_consistency": 1.0,
+    "duplicate_gap_rate": 0.0,
+    "explanation_grounding_accuracy": 1.0,
+    "explanation_checks": 22,
+    "mean_flow_seconds": 0.01736611111111111,
+    "max_flow_seconds": 0.068797,
+    "controlled_provider_failure_fallback_frequency": 1
+  },
+  "limitations": [
+    "Authored synthetic fixtures, not general real-resume accuracy.",
+    "Explanation grounding checks validate references/counts, not human-rated learning quality.",
+    "Priority consistency is determinism plus one authored relative-frequency judgment.",
+    "Warm local Flow latency excludes HTTP, subprocess startup and external model latency.",
+    "Fallback frequency is a deliberate no-credentials failure test, not a production failure estimate."
+  ]
+}

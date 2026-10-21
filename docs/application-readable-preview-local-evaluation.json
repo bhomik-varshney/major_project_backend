@@ -1,0 +1,74 @@
+{
+  "available": true,
+  "external_export": false,
+  "database_mutated": false,
+  "engine": "local_mcp",
+  "sections": {
+    "personal": {
+      "reference_entries": 0,
+      "fields": 6,
+      "links": 0
+    },
+    "location": {
+      "reference_entries": 0,
+      "fields": 3,
+      "links": 0
+    },
+    "links": {
+      "reference_entries": 0,
+      "fields": 3,
+      "links": 9
+    },
+    "education": {
+      "reference_entries": 3,
+      "fields": 4,
+      "links": 0
+    },
+    "experience": {
+      "reference_entries": 2,
+      "fields": 1,
+      "links": 0
+    },
+    "internships": {
+      "reference_entries": 1,
+      "fields": 1,
+      "links": 0
+    },
+    "projects": {
+      "reference_entries": 4,
+      "fields": 1,
+      "links": 0
+    },
+    "skills": {
+      "reference_entries": 5,
+      "fields": 1,
+      "links": 0
+    },
+    "certifications": {
+      "reference_entries": 4,
+      "fields": 1,
+      "links": 0
+    },
+    "questions": {
+      "reference_entries": 0,
+      "fields": 13,
+      "links": 0
+    }
+  },
+  "education_fields": {
+    "institution": {
+      "populated": true,
+      "status": "user_confirmation_required"
+    },
+    "degree": {
+      "populated": true,
+      "status": "user_confirmation_required"
+    },
+    "graduation_year": {
+      "populated": true,
+      "status": "user_confirmation_required"
+    }
+  },
+  "internal_source_paths_in_preview": false,
+  "raw_json_values": false
+}

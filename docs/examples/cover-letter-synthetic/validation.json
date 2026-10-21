@@ -1,0 +1,54 @@
+{
+  "synthetic_only": true,
+  "not_for_application": true,
+  "signature": "Synthetic QA ink pattern, not a person\u2019s signature",
+  "quality": {
+    "attempts": [
+      {
+        "attempt": 1,
+        "paragraph_spacing_pt": 12,
+        "exit_code": 0,
+        "timeout": false,
+        "stdout_bytes": 6835,
+        "stderr_bytes": 0,
+        "generated_file_exists": true,
+        "command": [
+          "xelatex",
+          "-no-shell-escape",
+          "-interaction=nonstopmode",
+          "-halt-on-error",
+          "-file-line-error",
+          "letter.tex"
+        ],
+        "log_reference": "attempt-1.log",
+        "diagnostics": [],
+        "quality": {
+          "valid": true,
+          "issues": [],
+          "page_count": 1,
+          "selectable_text": true,
+          "fonts_embedded": true,
+          "signature_present": true,
+          "text_bounds_checked": true,
+          "signature_overlap_checked": true,
+          "preview_generated": true,
+          "visual_check": "Programmatic text bounds, image bounds, glyph and paragraph completeness; human preview review still required."
+        }
+      }
+    ],
+    "quality": {
+      "valid": true,
+      "issues": [],
+      "page_count": 1,
+      "selectable_text": true,
+      "fonts_embedded": true,
+      "signature_present": true,
+      "text_bounds_checked": true,
+      "signature_overlap_checked": true,
+      "preview_generated": true,
+      "visual_check": "Programmatic text bounds, image bounds, glyph and paragraph completeness; human preview review still required."
+    },
+    "source_retained": true,
+    "pdf_sha256": "db7e05eab1d5deae52993862081dd79eaaa091c3c26da584e4d0d18dc5d6be39"
+  }
+}

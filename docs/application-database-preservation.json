@@ -1,0 +1,84 @@
+{
+  "existing_tables": {
+    "activities": {
+      "before_count": 57,
+      "after_count": 57,
+      "unchanged": true
+    },
+    "candidate_profiles": {
+      "before_count": 7,
+      "after_count": 7,
+      "unchanged": true
+    },
+    "document_extractions": {
+      "before_count": 10,
+      "after_count": 10,
+      "unchanged": true
+    },
+    "documents": {
+      "before_count": 8,
+      "after_count": 8,
+      "unchanged": true
+    },
+    "embedding_cache": {
+      "before_count": 0,
+      "after_count": 0,
+      "unchanged": true
+    },
+    "matching_results": {
+      "before_count": 1730,
+      "after_count": 1730,
+      "unchanged": true
+    },
+    "matching_runs": {
+      "before_count": 20,
+      "after_count": 20,
+      "unchanged": true
+    },
+    "resume_agent_runs": {
+      "before_count": 2,
+      "after_count": 2,
+      "unchanged": true
+    },
+    "resume_page_artifacts": {
+      "before_count": 3,
+      "after_count": 3,
+      "unchanged": true
+    },
+    "resume_processing_audits": {
+      "before_count": 2,
+      "after_count": 2,
+      "unchanged": true
+    },
+    "saved_opportunities": {
+      "before_count": 1,
+      "after_count": 1,
+      "unchanged": true
+    },
+    "skill_gap_reviews": {
+      "before_count": 0,
+      "after_count": 0,
+      "unchanged": true
+    },
+    "skill_gap_runs": {
+      "before_count": 2,
+      "after_count": 2,
+      "unchanged": true
+    },
+    "users": {
+      "before_count": 29,
+      "after_count": 29,
+      "unchanged": true
+    },
+    "verification_records": {
+      "before_count": 8,
+      "after_count": 8,
+      "unchanged": true
+    }
+  },
+  "all_existing_rows_unchanged": true,
+  "new_tables": {
+    "application_events": 0,
+    "applications": 0
+  }
+}

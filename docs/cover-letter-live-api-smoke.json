@@ -1,0 +1,107 @@
+{
+  "synthetic_only": true,
+  "private_resume_exported": false,
+  "signature_exported": false,
+  "api_status": "passed",
+  "provider": {
+    "engine": "crewai.Crew",
+    "model": "openai/gpt-oss-120b",
+    "status": "repaired",
+    "agents": [
+      {
+        "name": "Cover Letter Research and Relevance Agent",
+        "status": "completed",
+        "result": {
+          "evidence_ids": [
+            "experience-0",
+            "projects-0",
+            "skills-0",
+            "skills-1",
+            "education-0",
+            "career_objective-0"
+          ],
+          "warnings": [
+            "Job requirement FastAPI is not demonstrated in the selected evidence.",
+            "Job requirement Docker is not demonstrated in the selected evidence."
+          ]
+        }
+      },
+      {
+        "name": "Cover Letter Writing Agent",
+        "status": "completed",
+        "result": {
+          "sentence_ids": [
+            "opening",
+            "education-0",
+            "experience-0",
+            "projects-0",
+            "projects-1",
+            "skills",
+            "objective",
+            "requirements",
+            "closing"
+          ],
+          "warnings": [
+            "Job requirement FastAPI is not demonstrated in the selected evidence.",
+            "Job requirement Docker is not demonstrated in the selected evidence."
+          ]
+        }
+      },
+      {
+        "name": "Cover Letter Validation Agent",
+        "status": "completed",
+        "result": {
+          "unsupported_sentence_ids": [],
+          "issues": [
+            "Sentence 'opening' references unsupported evidence ID 'job.title'.",
+            "Sentence 'opening' references unsupported evidence ID 'job.company'.",
+            "Sentence 'approach' references unsupported evidence ID 'job.title'.",
+            "Sentence 'requirements' references unsupported evidence ID 'job.required_skills'."
+          ]
+        }
+      }
+    ],
+    "export_scope": "Selected evidence, grounded sentences and job requirements; no signature or contact details.",
+    "correction": "The agent reviewer raised a reference concern. One independent host check verified every selected sentence and evidence ID against the immutable source catalogue; no unknown claims, duplicates or missing required sections remained.",
+    "validation_correction": {
+      "cycles": 1,
+      "agent_issues": [
+        "Sentence 'opening' references unsupported evidence ID 'job.title'.",
+        "Sentence 'opening' references unsupported evidence ID 'job.company'.",
+        "Sentence 'approach' references unsupported evidence ID 'job.title'.",
+        "Sentence 'requirements' references unsupported evidence ID 'job.required_skills'."
+      ],
+      "flagged_sentence_ids": [],
+      "host_issues": [],
+      "all_claims_catalogue_exact": true
+    }
+  },
+  "content_validation": {
+    "valid": true,
+    "issues": [],
+    "warnings": [
+      "Fewer than 300 words: source evidence is limited or a concise version was requested. No padding or invented experience added."
+    ],
+    "word_count": 240,
+    "grounding": "catalogue-checked agent claims; separately attributed user text",
+    "user_sections": [],
+    "retained_sections": []
+  },
+  "pdf_quality": {
+    "valid": true,
+    "issues": [],
+    "page_count": 1,
+    "selectable_text": true,
+    "fonts_embedded": true,
+    "signature_present": true,
+    "text_bounds_checked": true,
+    "signature_overlap_checked": true,
+    "preview_generated": true,
+    "visual_check": "Programmatic text bounds, image bounds, glyph and paragraph completeness; human preview review still required."
+  },
+  "signature_included": true,
+  "letter_state": "attached",
+  "application_state": "job_selected",
+  "pdf_download_bytes": 9928,
+  "approved_document_created": true
+}

@@ -1,0 +1,233 @@
+{
+  "verified_at": "2026-10-21T09:34:20.858603+05:30",
+  "scope": "Cover letters, supplied LaTeX/fonts, application document integration; no unrelated module audit",
+  "backend": {
+    "unique_relevant_cases": 90,
+    "all_passed": true,
+    "focused_runs": [
+      {
+        "name": "cover-letter-focused",
+        "tests": 65,
+        "failures": 0
+      },
+      {
+        "name": "cover-letter-application-regression",
+        "tests": 23,
+        "failures": 0
+      },
+      {
+        "name": "cover-letter-final-backend",
+        "tests": 27,
+        "failures": 0
+      },
+      {
+        "name": "cover-letter-final-render",
+        "tests": 4,
+        "failures": 0
+      },
+      {
+        "name": "cover-letter-provenance-final",
+        "tests": 4,
+        "failures": 0
+      }
+    ],
+    "warnings": "Existing CrewAI and Starlette deprecations"
+  },
+  "frontend": {
+    "distinct_browser_cases": 6,
+    "full_browser_suite": "6 passed, 28.6 seconds",
+    "final_signature_edit_mobile_rechecks": "2 passed, 17.3 seconds",
+    "typecheck": "passed",
+    "lint": {
+      "errors": 0,
+      "existing_warnings": 10
+    },
+    "production_build": "passed"
+  },
+  "live_api": {
+    "synthetic_only": true,
+    "actual_crewai_agents": 3,
+    "provider": "crewai.Crew",
+    "provider_status": "repaired",
+    "pdf_valid": true,
+    "page_count": 1,
+    "signature_included": true,
+    "approved_and_attached": true,
+    "application_submitted": false,
+    "private_resume_exported": false,
+    "signature_exported": false,
+    "report": "cover-letter-live-api-smoke.json"
+  },
+  "main_runtime": {
+    "frontend": "http://localhost:5173/cover-letters",
+    "frontend_http_status": 200,
+    "api": "http://localhost:8000",
+    "health": "ok",
+    "database": "connected"
+  },
+  "preservation": {
+    "existing_tables": {
+      "activities": {
+        "before_count": 57,
+        "after_count": 57,
+        "unchanged": true
+      },
+      "application_documents": {
+        "before_count": 0,
+        "after_count": 0,
+        "unchanged": true
+      },
+      "application_events": {
+        "before_count": 47,
+        "after_count": 47,
+        "unchanged": true
+      },
+      "application_fields": {
+        "before_count": 34,
+        "after_count": 34,
+        "unchanged": true
+      },
+      "application_follow_ups": {
+        "before_count": 0,
+        "after_count": 0,
+        "unchanged": true
+      },
+      "application_interviews": {
+        "before_count": 0,
+        "after_count": 0,
+        "unchanged": true
+      },
+      "application_mcp_actions": {
+        "before_count": 3,
+        "after_count": 3,
+        "unchanged": true
+      },
+      "application_notes": {
+        "before_count": 0,
+        "after_count": 0,
+        "unchanged": true
+      },
+      "application_status_history": {
+        "before_count": 3,
+        "after_count": 3,
+        "unchanged": true
+      },
+      "application_user_approvals": {
+        "before_count": 0,
+        "after_count": 0,
+        "unchanged": true
+      },
+      "application_workspaces": {
+        "before_count": 1,
+        "after_count": 1,
+        "unchanged": true
+      },
+      "applications": {
+        "before_count": 2,
+        "after_count": 2,
+        "unchanged": true
+      },
+      "candidate_profiles": {
+        "before_count": 7,
+        "after_count": 7,
+        "unchanged": true
+      },
+      "document_extractions": {
+        "before_count": 10,
+        "after_count": 10,
+        "unchanged": true
+      },
+      "documents": {
+        "before_count": 8,
+        "after_count": 8,
+        "unchanged": true
+      },
+      "embedding_cache": {
+        "before_count": 0,
+        "after_count": 0,
+        "unchanged": true
+      },
+      "external_application_sessions": {
+        "before_count": 1,
+        "after_count": 1,
+        "unchanged": true
+      },
+      "matching_results": {
+        "before_count": 1730,
+        "after_count": 1730,
+        "unchanged": true
+      },
+      "matching_runs": {
+        "before_count": 20,
+        "after_count": 20,
+        "unchanged": true
+      },
+      "resume_agent_runs": {
+        "before_count": 2,
+        "after_count": 2,
+        "unchanged": true
+      },
+      "resume_page_artifacts": {
+        "before_count": 3,
+        "after_count": 3,
+        "unchanged": true
+      },
+      "resume_processing_audits": {
+        "before_count": 2,
+        "after_count": 2,
+        "unchanged": true
+      },
+      "saved_opportunities": {
+        "before_count": 2,
+        "after_count": 2,
+        "unchanged": true
+      },
+      "skill_gap_reviews": {
+        "before_count": 0,
+        "after_count": 0,
+        "unchanged": true
+      },
+      "skill_gap_runs": {
+        "before_count": 2,
+        "after_count": 2,
+        "unchanged": true
+      },
+      "users": {
+        "before_count": 29,
+        "after_count": 29,
+        "unchanged": true
+      },
+      "verification_records": {
+        "before_count": 8,
+        "after_count": 8,
+        "unchanged": true
+      }
+    },
+    "all_existing_rows_unchanged": true,
+    "new_tables": {
+      "cover_letter_versions": 0,
+      "signature_assets": 0
+    }
+  },
+  "quality_cases": {
+    "normal_student": "passed",
+    "internships_projects_no_full_time": "passed",
+    "missing_portfolio": "passed",
+    "long_project": "passed",
+    "many_job_requirements": "passed",
+    "missing_company": "passed",
+    "approved_signature": "passed",
+    "missing_signature_waiting_state": "passed",
+    "special_latex_characters": "passed",
+    "overflow_spacing_revision_and_bounded_failure": "passed"
+  },
+  "limitations": [
+    "Image signature, not a cryptographic PDF certificate.",
+    "Source-constrained prose prioritises evidence over free-form paraphrasing; sparse profiles may produce fewer than 300 words with warnings.",
+    "User edits are explicitly attested, not independently established profile facts.",
+    "Automated visual/ATS checks are heuristic; user PDF review remains required.",
+    "SVG signatures must be exported to PNG.",
+    "Live reviewer disagreement was repaired once by exact catalogue/evidence checks, with the original critique retained.",
+    "No actual personal signed letter was generated; upload your own signature in the workspace."
+  ]
+}

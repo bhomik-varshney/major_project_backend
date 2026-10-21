@@ -122,6 +122,23 @@ class ReviewDecision(Schema):
     decided_at: str | None = None
 
 
+class ConversionAttempt(Schema):
+    attempt: int = Field(ge=1, le=2)
+    stdout: str = Field(default='', max_length=8000)
+    stderr: str = Field(default='', max_length=8000)
+    exit_code: int | None = None
+    timeout_seconds: float = Field(gt=0)
+    timed_out: bool = False
+    generated_file_exists: bool = False
+    error: str | None = None
+
+
+class ConversionAudit(Schema):
+    status: Literal['completed', 'failed']
+    attempts: list[ConversionAttempt] = Field(max_length=2)
+    error: str | None = None
+
+
 class ProcessingRun(Schema):
     schema_version: str = '1.0'
     pipeline_version: str = 'legacy'
@@ -130,6 +147,7 @@ class ProcessingRun(Schema):
     status: str
     stage: str
     quality: dict = Field(default_factory=dict)
+    conversion: ConversionAudit | None = None
     pages: list[PageArtifact] = Field(default_factory=list)
     exact_text: list[ExtractedTextBlock] = Field(default_factory=list)
     ocr: list[OCRBlock] = Field(default_factory=list)

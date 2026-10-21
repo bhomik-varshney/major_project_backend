@@ -1,0 +1,116 @@
+{
+  "completed_at": "2026-10-20T14:52:25.285325+00:00",
+  "scope": "Application continuation, existing application/profile/job regressions; no unrelated full repository audit",
+  "backend_profile_job_regressions": {
+    "tests": 146,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 175.259
+  },
+  "focused_application_regressions": {
+    "tests": 65,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 98.31
+  },
+  "final_protocol_and_recovery_checks": {
+    "tests": 15,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 74.656
+  },
+  "final_manual_recovery_and_receipt_privacy_checks": {
+    "tests": 3,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 2.022
+  },
+  "counts_are_non_additive": "These overlapping focused passes cover incremental changes; do not sum their test counts.",
+  "browser": {
+    "command": "playwright test tests/e2e/applications.spec.ts",
+    "browser": "Chromium",
+    "passed": 8,
+    "failed": 0,
+    "mode": "isolated synthetic API and frontend",
+    "checks": [
+      "readiness recovery",
+      "review/approval/prefill/user report/tracking",
+      "interviews and follow-up completion",
+      "real MCP SDK iframe review",
+      "duplicate/stale approval/resource failure",
+      "optional agent failure and cancellation",
+      "known partial retry",
+      "explicit authentication reconnect",
+      "mock session opened separately from prefill/submission",
+      "mobile overflow"
+    ]
+  },
+  "frontend": {
+    "typecheck": "passed",
+    "lint": {
+      "errors": 0,
+      "pre_existing_warnings": 10
+    },
+    "production_build": "passed",
+    "mcp_resource_bundle": "built"
+  },
+  "api_smoke": {
+    "mode": "synthetic_api_real_spawned_flow_and_stdio",
+    "status": "passed",
+    "states": [
+      "job_selected",
+      "preparing",
+      "needs_user_review",
+      "needs_user_review",
+      "approved_for_prefill",
+      "prefilling",
+      "prefill_complete",
+      "needs_submission_approval",
+      "submitted_by_user",
+      "tracking_active"
+    ],
+    "field_count": 17,
+    "submitted_by_provider": false,
+    "tracking_source": "user_reported",
+    "is_demo": true,
+    "profile_unchanged": true,
+    "timeline_event_count": 31,
+    "sequential_events": true,
+    "ag_ui_replay_status": 200,
+    "elapsed_seconds": 5.8294
+  },
+  "migration": {
+    "additive_tables": 10,
+    "existing_tables_before": 17,
+    "all_existing_rows_unchanged": true,
+    "final_refresh_all_27_tables_unchanged": true,
+    "private_backup_created": true
+  },
+  "main_runtime": {
+    "frontend": "http://localhost:5173/applications",
+    "frontend_http": 200,
+    "api_health": "ok",
+    "database": "connected"
+  },
+  "boundaries": {
+    "automatic_external_submission": false,
+    "employer_contact_in_mock_mode": false,
+    "real_job_board_tested": false,
+    "new_groq_export": false,
+    "private_resume_export": false,
+    "libreoffice_launched": false,
+    "existing_profile_and_job_data_preserved": true
+  },
+  "limitations": [
+    "Local mock adapter only; no real employer adapter supplied",
+    "Read-only reconciliation requires trustworthy adapter receipts; uncertain outcomes remain manual",
+    "No production authentication or encrypted SQL storage",
+    "No tailored resume or cover-letter generation in this milestone",
+    "Single-process local worker architecture",
+    "A2UI/AG-UI interaction subsets, not full standard conformance"
+  ]
+}

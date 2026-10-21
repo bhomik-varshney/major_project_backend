@@ -1,0 +1,93 @@
+{
+  "synthetic_only": true,
+  "live_groq": true,
+  "real_spawned_worker": true,
+  "analysis_engine": "crewai.Flow",
+  "status": "completed",
+  "seconds": 4.4268,
+  "provider_metadata": {
+    "status": "completed",
+    "model": "openai/gpt-oss-120b",
+    "engine": "crewai.Crew",
+    "reviewed_gaps": 4,
+    "tasks": [
+      "Skill Gap Recommendation Explanation Agent",
+      "Skill Gap Validation Agent"
+    ],
+    "selections": {
+      "selections": [
+        {
+          "gap_id": "gap-5f079352cb473c849b19",
+          "action_ids": [
+            "verify"
+          ]
+        },
+        {
+          "gap_id": "gap-f320b810ea61ce6405c4",
+          "action_ids": [
+            "verify"
+          ]
+        },
+        {
+          "gap_id": "gap-840b960bc1e7b59051aa",
+          "action_ids": [
+            "verify"
+          ]
+        },
+        {
+          "gap_id": "gap-c31a84c6b3821c60794d",
+          "action_ids": [
+            "verify"
+          ]
+        }
+      ]
+    },
+    "review": {
+      "issues": []
+    },
+    "export_scope": "skill names, requirement counts, grounded gap/action catalog; no resume excerpts or identity"
+  },
+  "conflicts": [],
+  "stages": [
+    {
+      "stage": "preparing",
+      "status": "completed"
+    },
+    {
+      "stage": "analysing_profile",
+      "status": "completed"
+    },
+    {
+      "stage": "analysing_requirements",
+      "status": "completed"
+    },
+    {
+      "stage": "comparing_skills",
+      "status": "completed"
+    },
+    {
+      "stage": "prioritising_gaps",
+      "status": "completed"
+    },
+    {
+      "stage": "generating_guidance",
+      "status": "completed"
+    },
+    {
+      "stage": "validating",
+      "status": "completed"
+    }
+  ],
+  "validation": {
+    "schema_valid": true,
+    "comparison_checks": 4,
+    "unsupported_claims": 0,
+    "duplicate_gaps": 0,
+    "requirement_checks": 5,
+    "evidence_checks": 3,
+    "priority_checks": 4,
+    "profile_modified": false
+  },
+  "gap_count": 4,
+  "confirmed_profile_loaded": false
+}

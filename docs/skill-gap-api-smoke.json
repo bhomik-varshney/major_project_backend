@@ -1,0 +1,357 @@
+{
+  "synthetic_only": true,
+  "api_cases": [
+    {
+      "mode": "single",
+      "request": {
+        "mode": "single",
+        "job_ids": [
+          "demo-ar-vr-0010"
+        ]
+      },
+      "status": "completed",
+      "job_count": 1,
+      "gap_count": 7,
+      "seconds": 3.1401,
+      "stages": [
+        {
+          "stage": "preparing",
+          "status": "completed"
+        },
+        {
+          "stage": "analysing_profile",
+          "status": "completed"
+        },
+        {
+          "stage": "analysing_requirements",
+          "status": "completed"
+        },
+        {
+          "stage": "comparing_skills",
+          "status": "completed"
+        },
+        {
+          "stage": "prioritising_gaps",
+          "status": "completed"
+        },
+        {
+          "stage": "generating_guidance",
+          "status": "completed"
+        },
+        {
+          "stage": "validating",
+          "status": "completed"
+        }
+      ],
+      "validation": {
+        "schema_valid": true,
+        "comparison_checks": 7,
+        "unsupported_claims": 0,
+        "duplicate_gaps": 0,
+        "requirement_checks": 7,
+        "evidence_checks": 3,
+        "priority_checks": 7,
+        "profile_modified": false
+      },
+      "ai_review": {
+        "status": "not_selected",
+        "model": null
+      }
+    },
+    {
+      "mode": "selected",
+      "request": {
+        "mode": "selected",
+        "job_ids": [
+          "demo-ar-vr-0010",
+          "demo-ar-vr-0011"
+        ]
+      },
+      "status": "completed",
+      "job_count": 2,
+      "gap_count": 7,
+      "seconds": 2.6056,
+      "stages": [
+        {
+          "stage": "preparing",
+          "status": "completed"
+        },
+        {
+          "stage": "analysing_profile",
+          "status": "completed"
+        },
+        {
+          "stage": "analysing_requirements",
+          "status": "completed"
+        },
+        {
+          "stage": "comparing_skills",
+          "status": "completed"
+        },
+        {
+          "stage": "prioritising_gaps",
+          "status": "completed"
+        },
+        {
+          "stage": "generating_guidance",
+          "status": "completed"
+        },
+        {
+          "stage": "validating",
+          "status": "completed"
+        }
+      ],
+      "validation": {
+        "schema_valid": true,
+        "comparison_checks": 14,
+        "unsupported_claims": 0,
+        "duplicate_gaps": 0,
+        "requirement_checks": 14,
+        "evidence_checks": 3,
+        "priority_checks": 7,
+        "profile_modified": false
+      },
+      "ai_review": {
+        "status": "not_selected",
+        "model": null
+      }
+    },
+    {
+      "mode": "top_ranked",
+      "request": {
+        "mode": "top_ranked",
+        "matching_run_id": "a4806abc-5aa7-46af-9411-88867208e44b",
+        "top_k": 2
+      },
+      "status": "completed",
+      "job_count": 2,
+      "gap_count": 8,
+      "seconds": 2.8612,
+      "stages": [
+        {
+          "stage": "preparing",
+          "status": "completed"
+        },
+        {
+          "stage": "analysing_profile",
+          "status": "completed"
+        },
+        {
+          "stage": "analysing_requirements",
+          "status": "completed"
+        },
+        {
+          "stage": "comparing_skills",
+          "status": "completed"
+        },
+        {
+          "stage": "prioritising_gaps",
+          "status": "completed"
+        },
+        {
+          "stage": "generating_guidance",
+          "status": "completed"
+        },
+        {
+          "stage": "validating",
+          "status": "completed"
+        }
+      ],
+      "validation": {
+        "schema_valid": true,
+        "comparison_checks": 12,
+        "unsupported_claims": 0,
+        "duplicate_gaps": 0,
+        "requirement_checks": 15,
+        "evidence_checks": 3,
+        "priority_checks": 8,
+        "profile_modified": false
+      },
+      "ai_review": {
+        "status": "not_selected",
+        "model": null
+      }
+    },
+    {
+      "mode": "target",
+      "request": {
+        "mode": "target",
+        "filters": {
+          "role": "AI",
+          "location": "Bengaluru, India",
+          "work_mode": "onsite",
+          "availability": "active"
+        },
+        "top_k": 3
+      },
+      "status": "completed",
+      "job_count": 3,
+      "gap_count": 5,
+      "seconds": 2.5173,
+      "stages": [
+        {
+          "stage": "preparing",
+          "status": "completed"
+        },
+        {
+          "stage": "analysing_profile",
+          "status": "completed"
+        },
+        {
+          "stage": "analysing_requirements",
+          "status": "completed"
+        },
+        {
+          "stage": "comparing_skills",
+          "status": "completed"
+        },
+        {
+          "stage": "prioritising_gaps",
+          "status": "completed"
+        },
+        {
+          "stage": "generating_guidance",
+          "status": "completed"
+        },
+        {
+          "stage": "validating",
+          "status": "completed"
+        }
+      ],
+      "validation": {
+        "schema_valid": true,
+        "comparison_checks": 15,
+        "unsupported_claims": 0,
+        "duplicate_gaps": 0,
+        "requirement_checks": 21,
+        "evidence_checks": 3,
+        "priority_checks": 5,
+        "profile_modified": false
+      },
+      "ai_review": {
+        "status": "not_selected",
+        "model": null
+      }
+    },
+    {
+      "mode": "target",
+      "request": {
+        "mode": "target",
+        "filters": {
+          "role": "AI",
+          "location": "Atlantis"
+        }
+      },
+      "status": "completed",
+      "job_count": 0,
+      "gap_count": 0,
+      "seconds": 2.124,
+      "stages": [
+        {
+          "stage": "preparing",
+          "status": "completed"
+        },
+        {
+          "stage": "analysing_profile",
+          "status": "completed"
+        },
+        {
+          "stage": "analysing_requirements",
+          "status": "completed"
+        },
+        {
+          "stage": "comparing_skills",
+          "status": "completed"
+        },
+        {
+          "stage": "prioritising_gaps",
+          "status": "completed"
+        },
+        {
+          "stage": "generating_guidance",
+          "status": "completed"
+        },
+        {
+          "stage": "validating",
+          "status": "completed"
+        }
+      ],
+      "validation": {
+        "schema_valid": true,
+        "comparison_checks": 0,
+        "unsupported_claims": 0,
+        "duplicate_gaps": 0,
+        "requirement_checks": 0,
+        "evidence_checks": 3,
+        "priority_checks": 0,
+        "profile_modified": false
+      },
+      "ai_review": {
+        "status": "not_selected",
+        "model": null
+      }
+    },
+    {
+      "mode": "single",
+      "request": {
+        "mode": "single",
+        "job_ids": [
+          "demo-ar-vr-0010"
+        ],
+        "use_ai": true,
+        "allow_external_processing": true
+      },
+      "status": "partial",
+      "job_count": 1,
+      "gap_count": 7,
+      "seconds": 2.328,
+      "stages": [
+        {
+          "stage": "preparing",
+          "status": "completed"
+        },
+        {
+          "stage": "analysing_profile",
+          "status": "completed"
+        },
+        {
+          "stage": "analysing_requirements",
+          "status": "completed"
+        },
+        {
+          "stage": "comparing_skills",
+          "status": "completed"
+        },
+        {
+          "stage": "prioritising_gaps",
+          "status": "completed"
+        },
+        {
+          "stage": "generating_guidance",
+          "status": "partial"
+        },
+        {
+          "stage": "validating",
+          "status": "completed"
+        }
+      ],
+      "validation": {
+        "schema_valid": true,
+        "comparison_checks": 7,
+        "unsupported_claims": 0,
+        "duplicate_gaps": 0,
+        "requirement_checks": 7,
+        "evidence_checks": 3,
+        "priority_checks": 7,
+        "profile_modified": false
+      },
+      "ai_review": {
+        "status": "unavailable",
+        "model": "openai/gpt-oss-120b",
+        "error_code": "groq_not_configured"
+      }
+    }
+  ],
+  "confirmed_profile_unchanged": true,
+  "real_spawned_workers": true
+}

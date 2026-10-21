@@ -1,0 +1,176 @@
+{
+  "verified_at": "2026-10-20T13:48:21.245068+00:00",
+  "scope": "Application Preparation and Tracking; existing resume/dataset/matching/skill-gap modules preserved",
+  "backend_full_regression": {
+    "passed": 438,
+    "warnings": 528,
+    "seconds": 288.57
+  },
+  "backend_final_application_suite": {
+    "passed": 51,
+    "warnings": 138,
+    "seconds": 30.82,
+    "note": "Includes the final additional ambiguous-schema guard case after the full regression run."
+  },
+  "chromium_full_regression": {
+    "passed": 46,
+    "duration_display": "4.1m",
+    "application_cases": 5,
+    "mcp_sdk": "1.32.1"
+  },
+  "typescript": "passed",
+  "eslint": {
+    "errors": 0,
+    "existing_fast_refresh_warnings": 10
+  },
+  "production_build": "passed",
+  "python_compilation": "passed",
+  "git_diff_check": "passed",
+  "api_smoke": {
+    "mode": "synthetic_api_real_spawned_flow_and_stdio",
+    "status": "passed",
+    "states": [
+      "job_selected",
+      "preparing",
+      "needs_user_review",
+      "needs_user_review",
+      "approved_for_prefill",
+      "prefilling",
+      "prefill_complete",
+      "needs_submission_approval",
+      "submitted_by_user",
+      "tracking_active"
+    ],
+    "field_count": 17,
+    "submitted_by_provider": false,
+    "tracking_source": "user_reported",
+    "is_demo": true,
+    "profile_unchanged": true,
+    "timeline_event_count": 21,
+    "sequential_events": true,
+    "ag_ui_replay_status": 200,
+    "elapsed_seconds": 5.3663
+  },
+  "live_groq_smoke": {
+    "mode": "synthetic_redacted_live_groq",
+    "engine": "crewai.Flow + crewai.Crew + MCP stdio",
+    "status": "needs_review",
+    "model": "openai/gpt-oss-120b",
+    "agents": [
+      {
+        "name": "Application Preparation Agent",
+        "status": "completed"
+      },
+      {
+        "name": "Application Form Mapping Agent",
+        "status": "completed"
+      },
+      {
+        "name": "Document Selection Agent",
+        "status": "completed"
+      },
+      {
+        "name": "MCP Application Interaction Agent",
+        "status": "completed"
+      },
+      {
+        "name": "Application Tracking Agent",
+        "status": "completed"
+      },
+      {
+        "name": "Application Validation Agent",
+        "status": "completed"
+      }
+    ],
+    "stages": [
+      {
+        "name": "MCP Application Interaction Agent",
+        "execution_id": "2c096ce3-730e-4542-be8b-be775684cd5c",
+        "status": "completed",
+        "method": "deterministic CrewAI Flow task",
+        "elapsed_ms": 642
+      },
+      {
+        "name": "Application Preparation Agent",
+        "execution_id": "977ee909-834d-425c-a99d-5069a67824a7",
+        "status": "completed",
+        "method": "deterministic CrewAI Flow task",
+        "elapsed_ms": 0
+      },
+      {
+        "name": "Application Form Mapping Agent",
+        "execution_id": "f4cf87a2-e72d-4824-9882-bc7b126afa69",
+        "status": "completed",
+        "method": "deterministic CrewAI Flow task",
+        "elapsed_ms": 0
+      },
+      {
+        "name": "Document Selection Agent",
+        "execution_id": "7854b90f-484b-43ac-9e95-f256da00dc2b",
+        "status": "completed",
+        "method": "deterministic CrewAI Flow task",
+        "elapsed_ms": 0
+      },
+      {
+        "name": "Application Tracking Agent",
+        "execution_id": "21604642-b8b8-4ca7-bc2a-262288301e8d",
+        "status": "completed",
+        "method": "deterministic CrewAI Flow task",
+        "elapsed_ms": 0
+      },
+      {
+        "name": "Application Validation Agent",
+        "execution_id": "527a8907-ca39-4f5d-8b0c-537e767b1005",
+        "status": "completed",
+        "method": "deterministic CrewAI Flow task",
+        "elapsed_ms": 1
+      }
+    ],
+    "field_count": 17,
+    "automatically_approved_fields": 0,
+    "automatic_attachments": 0,
+    "profile_database_loaded": false,
+    "export_scope": "field IDs, field types/classifications, confirmed document IDs, discovered tool names; no candidate values",
+    "elapsed_seconds": 10.1249
+  },
+  "existing_database_tables_preserved": 15,
+  "all_existing_database_rows_unchanged": true,
+  "private_backup_created": true,
+  "new_tables": [
+    "applications",
+    "application_events"
+  ],
+  "dataset": {
+    "count": 10000,
+    "unchanged": true,
+    "sha256": "53ba456b0baf88d22070c04d9c34453ed5d6f8adfb8562edb93435eb4d1fdf4f"
+  },
+  "main_runtime": {
+    "frontend": "http://localhost:5173/applications",
+    "backend_health_status": 200,
+    "frontend_status": 200,
+    "application_route_count": 11
+  },
+  "dependency_review": {
+    "mcp_sdk": "1.32.1",
+    "mcp_package_advisories": 0,
+    "remaining_existing_production_advisories": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 4,
+      "critical": 5,
+      "total": 9
+    },
+    "scope_note": "Remaining advisories are in pre-existing framework dependencies; unrelated framework migration was not included."
+  },
+  "limits": [
+    "All current jobs are synthetic; default prefill is a local demo.",
+    "No real external job-site/browser adapter was supplied or tested; an operator-owned stdio contract is available.",
+    "Submission/outcomes are user-reported, never automatically performed or independently verified.",
+    "No resume or cover-letter generation; approved existing files only.",
+    "A2UI/AG-UI interaction subsets, not complete SDK/catalog conformance claims.",
+    "Local browser identity and single-process workers remain prototype infrastructure.",
+    "Chromium tested; no new Safari/WebKit or broad real-employer coverage evaluation."
+  ]
+}

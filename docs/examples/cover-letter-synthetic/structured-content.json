@@ -1,0 +1,102 @@
+{
+  "date": "2026-10-21",
+  "recipient_name": "",
+  "company_name": "Research & Development Ltd",
+  "job_title": "Python Engineer Intern",
+  "salutation": "Dear Hiring Manager,",
+  "opening": "Please consider my application for the Python Engineer Intern position at Research & Development Ltd. I would welcome the opportunity to discuss how my background could contribute to the responsibilities described in the position. The projects and experience outlined below provide specific examples of the work I would bring to that discussion. My education includes B.Tech Computer Engineering at Example University.",
+  "motivation": "The position’s emphasis on Python, SQL is of particular interest to me. I would value the opportunity to apply my relevant background to these responsibilities and develop further through practical work, feedback and collaboration. My career aim is to develop reliable backend and AI applications.",
+  "experience": "My experience includes work as Developer Intern at Example Software. I built a Python API for an internal search service. This work used Python, SQL. One relevant project is Search Service. I developed a Python retrieval service that combined SQL queries with text search. This work used Python, SQL. One relevant project is Text Classification. I built an NLP classifier and evaluated its predictions on a held-out data split. This work used Python, NLP.",
+  "skills_alignment": "My skills include Python, SQL, NLP. I would use these foundations to approach the work described in the vacancy, clarify expectations early and evaluate my contribution against the requirements of each task. I would be glad to explain the scope of my experience with these skills in an interview.",
+  "closing": "Thank you for considering my application. I would appreciate the opportunity to discuss the role and walk through the examples above in more detail. Please contact me using the details provided; I would be happy to answer questions about my projects, background and suitability for the position.",
+  "signature_name": "Student Example",
+  "signature_phone": "+91 9000000000",
+  "signature_email": "student@example.com",
+  "claims": [
+    {
+      "id": "opening",
+      "section": "opening",
+      "text": "Please consider my application for the Python Engineer Intern position at Research & Development Ltd.",
+      "evidence_ids": [
+        "job.title",
+        "job.company"
+      ]
+    },
+    {
+      "id": "approach",
+      "section": "opening",
+      "text": "I would welcome the opportunity to discuss how my background could contribute to the responsibilities described in the position. The projects and experience outlined below provide specific examples of the work I would bring to that discussion.",
+      "evidence_ids": [
+        "job.title"
+      ]
+    },
+    {
+      "id": "requirements",
+      "section": "motivation",
+      "text": "The position’s emphasis on Python, SQL is of particular interest to me. I would value the opportunity to apply my relevant background to these responsibilities and develop further through practical work, feedback and collaboration.",
+      "evidence_ids": [
+        "job.required_skills"
+      ]
+    },
+    {
+      "id": "education-0",
+      "section": "opening",
+      "text": "My education includes B.Tech Computer Engineering at Example University.",
+      "evidence_ids": [
+        "education-0"
+      ]
+    },
+    {
+      "id": "experience-0",
+      "section": "experience",
+      "text": "My experience includes work as Developer Intern at Example Software. I built a Python API for an internal search service. This work used Python, SQL.",
+      "evidence_ids": [
+        "experience-0"
+      ]
+    },
+    {
+      "id": "projects-0",
+      "section": "experience",
+      "text": "One relevant project is Search Service. I developed a Python retrieval service that combined SQL queries with text search. This work used Python, SQL.",
+      "evidence_ids": [
+        "projects-0"
+      ]
+    },
+    {
+      "id": "projects-1",
+      "section": "experience",
+      "text": "One relevant project is Text Classification. I built an NLP classifier and evaluated its predictions on a held-out data split. This work used Python, NLP.",
+      "evidence_ids": [
+        "projects-1"
+      ]
+    },
+    {
+      "id": "skills",
+      "section": "skills_alignment",
+      "text": "My skills include Python, SQL, NLP. I would use these foundations to approach the work described in the vacancy, clarify expectations early and evaluate my contribution against the requirements of each task. I would be glad to explain the scope of my experience with these skills in an interview.",
+      "evidence_ids": [
+        "skills-0",
+        "skills-1",
+        "skills-2"
+      ]
+    },
+    {
+      "id": "objective",
+      "section": "motivation",
+      "text": "My career aim is to develop reliable backend and AI applications.",
+      "evidence_ids": [
+        "career_objective-0"
+      ]
+    },
+    {
+      "id": "closing",
+      "section": "closing",
+      "text": "Thank you for considering my application. I would appreciate the opportunity to discuss the role and walk through the examples above in more detail. Please contact me using the details provided; I would be happy to answer questions about my projects, background and suitability for the position.",
+      "evidence_ids": [
+        "job.title"
+      ]
+    }
+  ],
+  "warnings": [],
+  "confidence": "medium"
+}

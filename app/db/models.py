@@ -195,3 +195,228 @@ class SavedOpportunity(Base):
     job_id: Mapped[str] = mapped_column(String(100))
     job_snapshot: Mapped[dict] = mapped_column(JSON)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True),default=now)
+
+
+class SkillGapRun(Base):
+    __tablename__ = 'skill_gap_runs'
+    id: Mapped[str] = mapped_column(String(36),primary_key=True,default=new_id)
+    user_id: Mapped[str] = mapped_column(ForeignKey('users.id'),index=True)
+    active_user: Mapped[str | None] = mapped_column(String(36),unique=True,nullable=True)
+    profile_revision: Mapped[int] = mapped_column(Integer)
+    candidate_hash: Mapped[str] = mapped_column(String(64))
+    status: Mapped[str] = mapped_column(String(40),default='queued')
+    stage: Mapped[str] = mapped_column(String(40),default='queued')
+    request: Mapped[dict] = mapped_column(JSON)
+    config: Mapped[dict] = mapped_column(JSON)
+    candidate_snapshot: Mapped[dict] = mapped_column(JSON,deferred=True)
+    job_snapshot: Mapped[list] = mapped_column(JSON,deferred=True)
+    selection: Mapped[dict] = mapped_column(JSON,default=dict)
+    data: Mapped[dict] = mapped_column(JSON,default=dict,deferred=True)
+    job_count: Mapped[int] = mapped_column(Integer,default=0)
+    gap_count: Mapped[int] = mapped_column(Integer,default=0)
+    tasks: Mapped[list] = mapped_column(JSON,default=list)
+    warnings: Mapped[list] = mapped_column(JSON,default=list)
+    provider_metadata: Mapped[dict] = mapped_column(JSON,default=dict)
+    error_code: Mapped[str | None] = mapped_column(String(80),nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True),default=now)
+    completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True),nullable=True)
+    elapsed_ms: Mapped[int | None] = mapped_column(Integer,nullable=True)
+
+
+class SkillGapReview(Base):
+    __tablename__ = 'skill_gap_reviews'
+    __table_args__ = (UniqueConstraint('run_id','gap_id',name='uq_gap_review'),)
+    id: Mapped[str] = mapped_column(String(36),primary_key=True,default=new_id)
+    run_id: Mapped[str] = mapped_column(ForeignKey('skill_gap_runs.id',ondelete='CASCADE'),index=True)
+    gap_id: Mapped[str] = mapped_column(String(80))
+    decision: Mapped[str] = mapped_column(String(30))
+    note: Mapped[str] = mapped_column(String(500),default='')
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True),default=now)
+
+
+class ApplicationRecord(Base):
+    __tablename__ = 'applications'
+    __table_args__ = (UniqueConstraint('user_id','job_identity',name='uq_application_job_owner'),)
+    id: Mapped[str] = mapped_column(String(36),primary_key=True,default=new_id)
+    user_id: Mapped[str] = mapped_column(ForeignKey('users.id'),index=True)
+    job_id: Mapped[str] = mapped_column(String(100),index=True)
+    job_identity: Mapped[str] = mapped_column(String(64))
+    job_snapshot: Mapped[dict] = mapped_column(JSON)
+    profile_revision: Mapped[int] = mapped_column(Integer)
+    candidate_hash: Mapped[str] = mapped_column(String(64))
+    candidate_snapshot: Mapped[dict] = mapped_column(JSON,deferred=True)
+    revision: Mapped[int] = mapped_column(Integer,default=1)
+    status: Mapped[str] = mapped_column(String(40),default='job_selected')
+    stage: Mapped[str] = mapped_column(String(80),default='job_selected')
+    provider: Mapped[str] = mapped_column(String(30),default='demo')
+    request: Mapped[dict] = mapped_column(JSON,default=dict)
+    active_operation: Mapped[str | None] = mapped_column(String(36),nullable=True)
+    draft: Mapped[dict] = mapped_column(JSON,default=dict,deferred=True)
+    approval: Mapped[dict] = mapped_column(JSON,default=dict)
+    receipt: Mapped[dict] = mapped_column(JSON,default=dict)
+    tasks: Mapped[list] = mapped_column(JSON,default=list)
+    warnings: Mapped[list] = mapped_column(JSON,default=list)
+    error_code: Mapped[str | None] = mapped_column(String(80),nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True),default=now)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True),default=now)
+
+
+class ApplicationEvent(Base):
+    __tablename__ = 'application_events'
+    __table_args__ = (UniqueConstraint('application_id','seq',name='uq_application_event_seq'),)
+    id: Mapped[str] = mapped_column(String(36),primary_key=True,default=new_id)
+    application_id: Mapped[str] = mapped_column(ForeignKey('applications.id',ondelete='CASCADE'),index=True)
+    seq: Mapped[int] = mapped_column(Integer)
+    type: Mapped[str] = mapped_column(String(40))
+    payload: Mapped[dict] = mapped_column(JSON,default=dict)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True),default=now)
+
+
+class ApplicationWorkspace(Base):
+    """Additive detail row; existing application columns never require alteration."""
+    __tablename__='application_workspaces'
+    application_id: Mapped[str] = mapped_column(ForeignKey('applications.id',ondelete='CASCADE'),primary_key=True)
+    milestones: Mapped[dict] = mapped_column(JSON,default=dict)
+    context: Mapped[dict] = mapped_column(JSON,default=dict)
+    recovery: Mapped[dict] = mapped_column(JSON,default=dict)
+
+
+class ApplicationFieldRecord(Base):
+    __tablename__='application_fields'
+    __table_args__=(UniqueConstraint('application_id','field_id',name='uq_application_field'),)
+    id: Mapped[str] = mapped_column(String(36),primary_key=True,default=new_id)
+    application_id: Mapped[str] = mapped_column(ForeignKey('applications.id',ondelete='CASCADE'),index=True)
+    field_id: Mapped[str] = mapped_column(String(80))
+    data: Mapped[dict] = mapped_column(JSON)
+
+
+class ApplicationDocumentRecord(Base):
+    __tablename__='application_documents'
+    __table_args__=(UniqueConstraint('application_id','document_ref',name='uq_application_document'),)
+    id: Mapped[str] = mapped_column(String(36),primary_key=True,default=new_id)
+    application_id: Mapped[str] = mapped_column(ForeignKey('applications.id',ondelete='CASCADE'),index=True)
+    document_id: Mapped[str | None] = mapped_column(ForeignKey('documents.id',ondelete='SET NULL'),nullable=True)
+    document_ref: Mapped[str] = mapped_column(String(36))
+    data: Mapped[dict] = mapped_column(JSON)
+
+
+class ApplicationStatusHistory(Base):
+    __tablename__='application_status_history'
+    id: Mapped[str] = mapped_column(String(36),primary_key=True,default=new_id)
+    application_id: Mapped[str] = mapped_column(ForeignKey('applications.id',ondelete='CASCADE'),index=True)
+    previous: Mapped[str] = mapped_column(String(40))
+    status: Mapped[str] = mapped_column(String(40))
+    revision: Mapped[int] = mapped_column(Integer)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True),default=now)
+
+
+class ApplicationNote(Base):
+    __tablename__='application_notes'
+    id: Mapped[str] = mapped_column(String(36),primary_key=True,default=new_id)
+    application_id: Mapped[str] = mapped_column(ForeignKey('applications.id',ondelete='CASCADE'),index=True)
+    text: Mapped[str] = mapped_column(String(2000))
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True),default=now)
+
+
+class InterviewEvent(Base):
+    __tablename__='application_interviews'
+    id: Mapped[str] = mapped_column(String(36),primary_key=True,default=new_id)
+    application_id: Mapped[str] = mapped_column(ForeignKey('applications.id',ondelete='CASCADE'),index=True)
+    stage: Mapped[str] = mapped_column(String(2000))
+    scheduled_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True),default=now)
+
+
+class FollowUpTask(Base):
+    __tablename__='application_follow_ups'
+    id: Mapped[str] = mapped_column(String(36),primary_key=True,default=new_id)
+    application_id: Mapped[str] = mapped_column(ForeignKey('applications.id',ondelete='CASCADE'),index=True)
+    kind: Mapped[str] = mapped_column(String(30))
+    text: Mapped[str] = mapped_column(String(2000))
+    due_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+    completed: Mapped[bool] = mapped_column(default=False)
+
+
+class ExternalApplicationSession(Base):
+    __tablename__='external_application_sessions'
+    application_id: Mapped[str] = mapped_column(ForeignKey('applications.id',ondelete='CASCADE'),primary_key=True)
+    provider: Mapped[str] = mapped_column(String(30))
+    status: Mapped[str] = mapped_column(String(40),default='not_connected')
+    external_url: Mapped[str] = mapped_column(String(1000),default='')
+    form_id: Mapped[str] = mapped_column(String(100),default='')
+    form_version: Mapped[str] = mapped_column(String(80),default='')
+    opened_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True),nullable=True)
+    # Deliberately no cookie, token, password or external credential fields.
+
+
+class MCPAction(Base):
+    __tablename__='application_mcp_actions'
+    id: Mapped[str] = mapped_column(String(36),primary_key=True,default=new_id)
+    application_id: Mapped[str] = mapped_column(ForeignKey('applications.id',ondelete='CASCADE'),index=True)
+    operation_id: Mapped[str] = mapped_column(String(36),unique=True)
+    tool: Mapped[str] = mapped_column(String(80))
+    status: Mapped[str] = mapped_column(String(40),default='started')
+    packet_digest: Mapped[str] = mapped_column(String(64),default='')
+    receipt: Mapped[dict] = mapped_column(JSON,default=dict)
+    request_evidence: Mapped[dict] = mapped_column(JSON,default=dict)
+    error_code: Mapped[str | None] = mapped_column(String(80),nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True),default=now)
+    completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True),nullable=True)
+
+
+class UserApproval(Base):
+    __tablename__='application_user_approvals'
+    id: Mapped[str] = mapped_column(String(36),primary_key=True,default=new_id)
+    application_id: Mapped[str] = mapped_column(ForeignKey('applications.id',ondelete='CASCADE'),index=True)
+    kind: Mapped[str] = mapped_column(String(40))
+    revision: Mapped[int] = mapped_column(Integer)
+    digest: Mapped[str] = mapped_column(String(64),default='')
+    scope: Mapped[dict] = mapped_column(JSON,default=dict)
+    revoked: Mapped[bool] = mapped_column(default=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True),default=now)
+
+
+# Public domain names without duplicate copies of the canonical rows/events.
+class SignatureAsset(Base):
+    __tablename__ = 'signature_assets'
+    id: Mapped[str] = mapped_column(String(36),primary_key=True,default=new_id)
+    user_id: Mapped[str] = mapped_column(ForeignKey('users.id'),index=True)
+    signer_name: Mapped[str] = mapped_column(String(120))
+    sha256: Mapped[str] = mapped_column(String(64))
+    content: Mapped[bytes] = mapped_column(LargeBinary,deferred=True)
+    metadata_json: Mapped[dict] = mapped_column(JSON,default=dict)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True),default=now)
+
+
+class CoverLetterVersion(Base):
+    __tablename__ = 'cover_letter_versions'
+    __table_args__ = (UniqueConstraint('application_id','version',name='uq_cover_letter_version'),)
+    id: Mapped[str] = mapped_column(String(36),primary_key=True,default=new_id)
+    user_id: Mapped[str] = mapped_column(ForeignKey('users.id'),index=True)
+    application_id: Mapped[str] = mapped_column(ForeignKey('applications.id',ondelete='CASCADE'),index=True)
+    version: Mapped[int] = mapped_column(Integer)
+    revision: Mapped[int] = mapped_column(Integer,default=1)
+    status: Mapped[str] = mapped_column(String(40),default='preparing')
+    stage: Mapped[str] = mapped_column(String(100),default='Preparing evidence')
+    active_operation: Mapped[str | None] = mapped_column(String(36),nullable=True)
+    profile_revision: Mapped[int] = mapped_column(Integer)
+    candidate_hash: Mapped[str] = mapped_column(String(64))
+    candidate_snapshot: Mapped[dict] = mapped_column(JSON,deferred=True)
+    job_snapshot: Mapped[dict] = mapped_column(JSON)
+    job_hash: Mapped[str] = mapped_column(String(64))
+    request: Mapped[dict] = mapped_column(JSON,default=dict)
+    data: Mapped[dict] = mapped_column(JSON,default=dict,deferred=True)
+    signature_id: Mapped[str | None] = mapped_column(ForeignKey('signature_assets.id'),nullable=True)
+    document_id: Mapped[str | None] = mapped_column(ForeignKey('documents.id',ondelete='SET NULL'),nullable=True)
+    artifact_dir: Mapped[str] = mapped_column(String(500),default='')
+    approval: Mapped[dict] = mapped_column(JSON,default=dict)
+    tasks: Mapped[list] = mapped_column(JSON,default=list)
+    error_code: Mapped[str | None] = mapped_column(String(80),nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True),default=now)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True),default=now)
+
+
+Application=ApplicationRecord
+ApplicationField=ApplicationFieldRecord
+ApplicationDocument=ApplicationDocumentRecord
+ApplicationAuditEvent=ApplicationEvent

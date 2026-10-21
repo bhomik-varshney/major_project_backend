@@ -92,6 +92,11 @@ def test_docx_page_conversion_or_explicit_optional_dependency_warning(applicatio
     if converter(settings):
         assert result['pages'] and result['pages'][0]['renderer']=='libreoffice+pdfium'
         assert result['page_count']>=1
+        from app.schemas.intelligence import ConversionAudit
+        conversion=ConversionAudit.model_validate(result['conversion'])
+        assert conversion.status=='completed'
+        assert conversion.attempts[-1].exit_code==0
+        assert conversion.attempts[-1].generated_file_exists
     else:
         assert any('LibreOffice' in w for w in result['warnings'])
     assert any(b.get('paragraph') for b in result['exact_text'])

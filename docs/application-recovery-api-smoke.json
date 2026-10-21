@@ -1,0 +1,25 @@
+{
+  "mode": "synthetic_api_real_spawned_flow_and_stdio",
+  "status": "passed",
+  "states": [
+    "job_selected",
+    "preparing",
+    "needs_user_review",
+    "needs_user_review",
+    "approved_for_prefill",
+    "prefilling",
+    "prefill_complete",
+    "needs_submission_approval",
+    "submitted_by_user",
+    "tracking_active"
+  ],
+  "field_count": 17,
+  "submitted_by_provider": false,
+  "tracking_source": "user_reported",
+  "is_demo": true,
+  "profile_unchanged": true,
+  "timeline_event_count": 31,
+  "sequential_events": true,
+  "ag_ui_replay_status": 200,
+  "elapsed_seconds": 5.8294
+}

@@ -22,6 +22,7 @@ from app.core.errors import AppError
 from app.schemas.intelligence import LayoutBlock, Region
 from app.services.resume_structure import detect_heading, normalize
 from app.services.resume_text import extract_text
+from app.services.document_conversion import convert_docx
 
 
 def converter(settings):
@@ -112,10 +113,11 @@ def prepare_document(content,filename,document_id,settings,scratch,progress=lamb
     exact=[dict(block_id=b['block_id'],text=b['text'],page=b.get('page'),paragraph=b.get('paragraph'),order=i,
         method='text',region=region_for(b),metadata={k:v for k,v in b.items() if k not in {'block_id','text','page','paragraph'}}) for i,b in enumerate(blocks)]
     pages,ocr,image_pages=[],[],[]
+    conversion=None
     page_quality=[]; has_tables=any(b.get('cells') for b in blocks)
     def partial():
         return dict(blocks=blocks,exact_text=exact,page_count=page_count,warnings=list(warnings),pages=pages,ocr=ocr,
-            layout=local_layout(blocks),quality={'classification':'incomplete','page_count':page_count,
+            layout=local_layout(blocks),conversion=conversion,quality={'classification':'incomplete','page_count':page_count,
                 'selectable_text':any(b['text'].strip() for b in exact),'tables_detected':has_tables,
                 'pages':copy.deepcopy(page_quality),
                 'limitations':['Analysis is incomplete; some page previews or OCR could not finish.']})
@@ -125,17 +127,13 @@ def prepare_document(content,filename,document_id,settings,scratch,progress=lamb
     if suffix=='.docx':
         executable=converter(settings)
         if executable:
-            source=Path(scratch)/'document.docx';source.write_bytes(content);source.chmod(0o600)
-            try:
-                command([executable,f'-env:UserInstallation={(Path(scratch)/"office-profile").as_uri()}',
-                    '--headless','--norestore','--nodefault','--nolockcheck','--convert-to','pdf:writer_pdf_Export',
-                    '--outdir',str(scratch),str(source)],timeout=20)
-                converted=Path(scratch)/'document.pdf'
-                if converted.stat().st_size>20*1024*1024:
-                    raise ValueError()
-                pdf=converted.read_bytes()
-            except (OSError,subprocess.SubprocessError,ValueError):
-                warnings.append('DOCX page conversion failed. Exact paragraphs/tables remain available; export PDF for visual review.')
+            result=convert_docx(content,executable,scratch)
+            conversion={'status':'completed' if result.pdf is not None else 'failed',
+                'attempts':result.attempts,'error':result.error}
+            pdf=result.pdf
+            if result.error:
+                warnings.append(result.error)
+            snapshot(partial())
         else:
             warnings.append('DOCX previews unavailable: local LibreOffice is not installed. Exact paragraphs/tables remain available.')
     if suffix=='.docx':
@@ -244,7 +242,7 @@ def prepare_document(content,filename,document_id,settings,scratch,progress=lamb
         vision_recommended=bool(multi or has_tables or image_pages),pages=page_quality,
         limitations=['Layout detection is heuristic. PDF table structure and image coverage may be incomplete.'])
     return dict(blocks=blocks,exact_text=exact,page_count=page_count,warnings=list(dict.fromkeys(warnings)),pages=pages,ocr=ocr,
-        layout=local_layout(blocks),quality=quality)
+        layout=local_layout(blocks),quality=quality,conversion=conversion)
 
 
 def _prepare_child(content,filename,document_id,settings,scratch,output):
