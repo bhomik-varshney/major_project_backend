@@ -263,3 +263,12 @@ Open the frontend `/cover-letters` workspace or **Applications → Prepare cover
 See [implementation and operator guide](docs/cover-letter-agent.md), [verification](docs/cover-letter-verification.json), and [synthetic PDF example](docs/examples/cover-letter-synthetic/letter.pdf). Configure `COVER_LETTER_LATEX_PATH` or install a compiler on PATH; the current workspace also discovers its ignored portable `.tools/TinyTeX` installation. No LibreOffice or GUI automation is used. The two new tables are additive, and existing data is preserved.
 
 Focused checks: `python -m pytest tests/test_cover_letters.py`; frontend browser checks: `tests/e2e/cover-letters.spec.ts`. Test fixtures are synthetic; no private resume or signature is sent to a model by tests.
+
+
+## Resume Tailoring Agent
+
+Open `/resume-tailoring` in the frontend or **Applications → Tailor resume**. The supplied `resume.cls` and navy template produce a separate one-page resume version from confirmed profile facts, job requirements and available matching/gap context. Three actual CrewAI agents can be enabled with explicit selected-evidence processing consent; local source selection and provider fallbacks are labelled. Dates, employers, roles, grades, technologies and links remain source-bound. Uploaded TeX is retained as a passive reference, never executed.
+
+Review changes, preview/download the actual PDF, then explicitly approve and attach it to the same application. Original profiles/documents remain intact. Source, class, private compiler logs and version history are available. One additive table stores tailored versions. See [implementation guide](docs/resume-tailoring-agent.md), [verification](docs/resume-tailoring-verification.json), and [live synthetic PDF](docs/examples/tailored-resume-live-synthetic/resume.pdf). Focused checks: `python -m pytest tests/test_resume_tailoring.py`; browser checks: `tests/e2e/resume-tailoring.spec.ts`.
+
+Resume tailoring now protects complete confirmed career history, projects and skills, computes local relevance when optional context is missing, and exposes preservation/omission evidence. See [the improvement report](docs/resume-tailoring-improvements.md). Focused regression: `python -m pytest tests/test_resume_tailoring.py tests/test_resume_tailoring_preservation.py`.

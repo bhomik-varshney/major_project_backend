@@ -10,7 +10,7 @@ from sqlalchemy.exc import SQLAlchemyError
 from starlette.exceptions import HTTPException
 from starlette.middleware.sessions import SessionMiddleware
 
-from app.api import dashboard, documents, extraction, health, profiles, jobs, matching, skill_gaps, applications, cover_letters
+from app.api import dashboard, documents, extraction, health, profiles, jobs, matching, skill_gaps, applications, cover_letters, resume_tailoring
 from app.core.config import Settings, get_settings
 from app.core.errors import AppError, error_response
 from app.core.logging import configure_logging
@@ -22,6 +22,7 @@ from app.services.matching import MatchingProcessor
 from app.services.skill_gaps import SkillGapProcessor
 from app.services.applications import ApplicationProcessor
 from app.services.cover_letters import CoverLetterProcessor
+from app.services.resume_tailoring import ResumeTailoringProcessor
 
 logger = logging.getLogger("careeros")
 
@@ -41,6 +42,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             application.state.skill_gap_processor.recover_interrupted()
             application.state.application_processor.recover_interrupted()
             application.state.cover_letter_processor.recover_interrupted()
+            application.state.resume_tailoring_processor.recover_interrupted()
         except SQLAlchemyError:
             logger.error("database_initialization_failed")
         yield
@@ -48,6 +50,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         application.state.skill_gap_processor.shutdown()
         application.state.application_processor.shutdown()
         application.state.cover_letter_processor.shutdown()
+        application.state.resume_tailoring_processor.shutdown()
         application.state.processor.shutdown()
         engine.dispose()
 
@@ -61,6 +64,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     application.state.skill_gap_processor = SkillGapProcessor(application.state.session_factory, settings, application.state.processor.key_manager)
     application.state.application_processor = ApplicationProcessor(application.state.session_factory, settings, application.state.processor.key_manager)
     application.state.cover_letter_processor = CoverLetterProcessor(application.state.session_factory, settings, application.state.processor.key_manager)
+    application.state.resume_tailoring_processor = ResumeTailoringProcessor(application.state.session_factory, settings, application.state.processor.key_manager)
     application.add_middleware(SessionMiddleware, secret_key=session_secret(settings),
         session_cookie="careeros_session", max_age=30 * 24 * 3600, same_site="lax", https_only=False)
 
@@ -113,7 +117,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
 
     application.include_router(health.router, prefix="/api/v1")
     private = APIRouter(prefix="/api/v1", dependencies=[Depends(require_local_client)])
-    for router in (profiles.router, documents.router, extraction.router, dashboard.router, jobs.router, matching.router, skill_gaps.router, applications.router, cover_letters.router):
+    for router in (profiles.router, documents.router, extraction.router, dashboard.router, jobs.router, matching.router, skill_gaps.router, applications.router, cover_letters.router, resume_tailoring.router):
         private.include_router(router)
     application.include_router(private)
     return application

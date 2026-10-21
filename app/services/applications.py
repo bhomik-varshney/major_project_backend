@@ -7,7 +7,7 @@ from threading import BoundedSemaphore
 from sqlalchemy import func,select,update
 from app.core.errors import AppError
 from app.db.models import (ApplicationRecord,ApplicationEvent,Document,VerificationRecord,new_id,now,
-    ApplicationWorkspace,ApplicationStatusHistory,ExternalApplicationSession,MCPAction,CoverLetterVersion)
+    ApplicationWorkspace,ApplicationStatusHistory,ExternalApplicationSession,MCPAction,CoverLetterVersion,TailoredResumeVersion)
 from app.services import application_records as records
 from app.repositories.profiles import find_profile
 from app.schemas.applications import ApplicationDraft,ApplicationResponse
@@ -35,8 +35,10 @@ def source(db,user_id):
 def document_options(db,user_id):
     confirmed=set(db.scalars(select(VerificationRecord.document_id).where(VerificationRecord.user_id==user_id,VerificationRecord.document_id.is_not(None))))
     generated={c.document_id:c for c in db.scalars(select(CoverLetterVersion).where(CoverLetterVersion.user_id==user_id,CoverLetterVersion.document_id.is_not(None)))}
+    tailored={r.document_id:r for r in db.scalars(select(TailoredResumeVersion).where(TailoredResumeVersion.user_id==user_id,TailoredResumeVersion.document_id.is_not(None)))}
     return [{'id':d.id,'filename':d.filename,'sha256':d.sha256,'content_type':d.content_type,'size_bytes':d.size_bytes,
-        'confirmed_resume':d.id in confirmed,'automatic_attachment':False,
+        'confirmed_resume':d.id in confirmed or d.id in tailored and tailored[d.id].status in {'approved','attached'},'automatic_attachment':False,
+        **({'tailored_resume_id':tailored[d.id].id,'tailored_application_id':tailored[d.id].application_id,'tailored_status':tailored[d.id].status} if d.id in tailored else {}),
         **({'cover_letter_id':generated[d.id].id,'cover_application_id':generated[d.id].application_id,'cover_job_id':generated[d.id].job_snapshot['id'],
             'cover_status':generated[d.id].status} if d.id in generated else {})}
         for d in db.scalars(select(Document).where(Document.user_id==user_id).order_by(Document.created_at.desc()).limit(100))]
@@ -140,6 +142,10 @@ def reviewed_draft(db,record,payload):
     for choice in payload.documents:
         document=options.get(choice.document_id)
         if not document or choice.document_id in seen:raise AppError(422,'application_document_invalid','Select an available document once.')
+        if document.get('tailored_resume_id'):
+            tailored=db.get(TailoredResumeVersion,document['tailored_resume_id'])
+            if tailored.application_id!=record.id or tailored.status not in {'approved','attached'} or choice.role!='resume' or tailored.candidate_hash!=record.candidate_hash or tailored.job_hash!=fingerprint(record.job_snapshot):
+                raise AppError(409,'application_tailored_resume_mismatch','Choose the current approved tailored resume for this exact application and profile, with the resume role.')
         if document.get('cover_letter_id') and (document['cover_application_id']!=record.id or document['cover_status'] not in {'approved','attached'} or choice.role!='cover_letter'):
             raise AppError(409,'application_cover_mismatch','Select the current approved cover letter for this exact application, with the cover-letter role.')
         if choice.role=='resume' and not document['confirmed_resume']:raise AppError(409,'application_resume_unconfirmed','Confirm the selected resume extraction before using it as your resume.')
@@ -160,6 +166,10 @@ def attachment_packet(db,record):
     options={d['id']:d for d in document_options(db,record.user_id)}
     for selected in record.draft['documents']:
         current=options.get(selected['document_id'])
+        if current and current.get('tailored_resume_id'):
+            tailored=db.get(TailoredResumeVersion,current['tailored_resume_id'])
+            if tailored.application_id!=record.id or tailored.status not in {'approved','attached'} or selected['role']!='resume' or tailored.candidate_hash!=record.candidate_hash or tailored.job_hash!=fingerprint(record.job_snapshot):
+                raise AppError(409,'application_tailored_resume_mismatch','The tailored resume is stale, replaced, or belongs to another application.')
         if current and current.get('cover_letter_id'):
             cover=db.get(CoverLetterVersion,current['cover_letter_id'])
             if cover.application_id!=record.id or cover.status not in {'approved','attached'} or selected['role']!='cover_letter' or cover.candidate_hash!=record.candidate_hash:

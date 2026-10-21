@@ -1,0 +1,40 @@
+% Derived from the supplied Christian Maria Giannetti resume.tex; class unchanged.
+\documentclass{resume}
+\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry}
+\usepackage{xcolor}
+\usepackage[unicode,hidelinks]{hyperref}
+\usepackage{changepage}
+\usepackage{tabularx}
+\usepackage{fontspec}
+\setmainfont[BoldFont=lmroman10-bold.otf,ItalicFont=lmroman10-italic.otf,BoldItalicFont=lmroman10-bolditalic.otf]{lmroman10-regular.otf}
+\hypersetup{pdfauthor={Student Example},pdftitle={Resume}}
+\definecolor{navyblue}{RGB}{0,54,123}
+\newcommand{\italicitem}[1]{\item{\textit{#1}}}
+\newcommand{\bolditem}[1]{\item{\textbf{#1}}}
+\newcommand{\plainitem}[1]{\item{#1}}
+\newcommand{\link}[2]{\href{#1}{#2}}
+\newcommand{\entry}[2]{#1 & #2\tabularnewline}
+% Same two-column table design, with wrapping labels for real project names.
+\newcommand{\tableEnv}[2]{\begin{rSection}{#1}
+\begin{adjustwidth}{0in}{0.1in}
+\begin{tabularx}{\linewidth}{@{}>{\bfseries\raggedright\arraybackslash}p{0.26\linewidth}@{\hspace{2ex}}>{\raggedright\arraybackslash}X@{}}#2\end{tabularx}
+\end{adjustwidth}\end{rSection}}
+\renewcommand{\infoSeparator}{\hspace{0.5em}{\color{navyblue}|}\hspace{0.5em}}
+\renewcommand{\printPersonalInfo}[1]{\begin{center}#1\end{center}\vspace{-0.35cm}}
+\def\sectionskip{\vspace{6pt}}
+\def\sectionlineskip{\smallskip}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\emergencystretch=1em
+\name{\color{navyblue}Student Example}
+\begin{document}
+\printPersonalInfo{\personalInfo{\parbox{\linewidth}{\centering Bengaluru, India\infoSeparator \href{mailto:student@example.com}{student@example.com}\infoSeparator +91 9000000000}}\personalInfo{\href{https://linkedin.com/in/student-example}{LinkedIn}\infoSeparator \href{https://student-portfolio.example.com}{Portfolio / personal website}}}
+\raggedright
+\begin{rSection}{Professional Summary}Targeting Backend Developer Trainee. Education: B.Tech Computer Engineering, Example University. Skills include Python, SQL, Docker, PostgreSQL.\end{rSection}
+\begin{rSection}{Experience}\begin{rSubsection}{\parbox[t]{0.69\linewidth}{\raggedright Example Software}}{\parbox[t]{0.29\linewidth}{\raggedleft May 2026 – July 2026}}{\parbox[t]{0.69\linewidth}{\raggedright Developer Intern}}{\parbox[t]{0.29\linewidth}{\raggedleft Bengaluru, India}}\vspace{0.5em}\setlength{\itemsep}{1pt}\setlength{\parsep}{0pt}\item Built a Python API for an internal search service.\item Technologies: Python, SQL\end{rSubsection}\end{rSection}
+\tableEnv{Projects}{\entry{Search Service}{Developer January 2026 – April 2026 Developed a Python retrieval service that combined SQL queries with text search. Technologies: Python, SQL \href{https://github.com/student/search?view=code\&x=one\_two\#readme}{Repository}}}
+\tableEnv{Technical Skills}{\entry{Programming Languages}{Python, SQL}
+\entry{Cloud/DevOps}{Docker}
+\entry{Databases}{PostgreSQL}}
+\begin{rSection}{Education}\begin{rSubsectionNoBullet}{\parbox[t]{0.69\linewidth}{\raggedright Example University}}{\parbox[t]{0.29\linewidth}{\raggedleft 2023 – 2027}}{\parbox[t]{0.69\linewidth}{\raggedright B.Tech Computer Engineering}}{\parbox[t]{0.29\linewidth}{\raggedleft Aligarh, India}}\vspace{0.5em}\setlength{\itemsep}{1pt}\setlength{\parsep}{0pt}\item Grade / CGPA: 8.2/10\end{rSubsectionNoBullet}\end{rSection}
+\end{document}

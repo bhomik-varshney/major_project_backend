@@ -1,0 +1,72 @@
+% Derived from the supplied Christian Maria Giannetti resume.tex; class unchanged.
+\documentclass{resume}
+\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry}
+\usepackage{xcolor}
+\usepackage[unicode,hidelinks]{hyperref}
+\usepackage{changepage}
+\usepackage{tabularx}
+\usepackage{fontspec}
+\setmainfont[BoldFont=lmroman10-bold.otf,ItalicFont=lmroman10-italic.otf,BoldItalicFont=lmroman10-bolditalic.otf]{lmroman10-regular.otf}
+\hypersetup{pdfauthor={Student Example},pdftitle={Resume}}
+\definecolor{navyblue}{RGB}{0,54,123}
+\newcommand{\italicitem}[1]{\item{\textit{#1}}}
+\newcommand{\bolditem}[1]{\item{\textbf{#1}}}
+\newcommand{\plainitem}[1]{\item{#1}}
+\newcommand{\link}[2]{\href{#1}{#2}}
+\newcommand{\entry}[2]{#1 & #2\tabularnewline}
+% Same two-column table design, with wrapping labels for real project names.
+\newcommand{\tableEnv}[2]{\begin{rSection}{#1}
+\begin{adjustwidth}{0in}{0.1in}
+\begin{tabularx}{\linewidth}{@{}>{\bfseries\raggedright\arraybackslash}p{0.26\linewidth}@{\hspace{2ex}}>{\raggedright\arraybackslash}X@{}}#2\end{tabularx}
+\end{adjustwidth}\end{rSection}}
+\renewcommand{\infoSeparator}{\hspace{0.5em}{\color{navyblue}|}\hspace{0.5em}}
+\renewcommand{\printPersonalInfo}[1]{\begin{center}#1\end{center}\vspace{-0.35cm}}
+\def\sectionskip{\vspace{6pt}}
+% Retain the supplied class/navy rules, with predictable compact list spacing.
+\renewenvironment{rSection}[1]{
+\par\sectionskip{\color{navyblue}\bfseries\itshape #1}\par\nobreak
+{\color{navyblue}\hrule}\vspace{2pt}\nobreak
+}{\par}
+\newenvironment{resumeBullets}{\begin{list}{\textbullet}{
+\setlength{\leftmargin}{1em}\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}
+\setlength{\topsep}{1pt}\setlength{\partopsep}{0pt}}}{\end{list}}
+\def\sectionlineskip{\smallskip}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\emergencystretch=1em
+\name{\color{navyblue}Student Example}
+\begin{document}
+\printPersonalInfo{\personalInfo{\parbox{\linewidth}{\centering Bengaluru, India\infoSeparator \href{mailto:student@example.com}{student@example.com}\infoSeparator +91 9000000000}}\personalInfo{\href{https://linkedin.com/in/student-example}{LinkedIn}\infoSeparator \href{https://student-portfolio.example.com}{Portfolio / personal website}}}
+\raggedright
+\begin{rSection}{Professional Summary}B.Tech Computer Engineering candidate bringing Python, FastAPI, Docker Compose, SQL to backend development work. Practical experience includes Machine Learning Trainee at Example Training Initiative.\end{rSection}
+\begin{rSection}{Experience}\textbf{Example Training Initiative} \hfill December 2024 – January 2025\par\nopagebreak
+\textit{Machine Learning Trainee | Remote}\par\nopagebreak
+\begin{resumeBullets}\item Compared TF-IDF and Word2Vec with a Random Forest classifier, reaching 96.6\% test accuracy.\item Built an SMS classifier with an NLP preprocessing pipeline.\end{resumeBullets}
+\vspace{2pt}
+\textbf{Adobe Systems India} \hfill May 2025 – July 2025\par\nopagebreak
+\textit{React Native Developer Intern | Remote}\par\nopagebreak
+\begin{resumeBullets}\item Built React Native front-end components for an internal learning system.\end{resumeBullets}
+\vspace{2pt}\end{rSection}
+\begin{rSection}{Projects}\textbf{Health Assistant} \hfill \href{https://github.com/student/project-2}{Repository} | \href{https://project-2.example.com}{Deployment}\par\nopagebreak
+\begin{resumeBullets}\item Built a FastAPI application with spaCy NLP and OpenCV.\item Implemented structured text extraction.\end{resumeBullets}
+\vspace{2pt}
+\textbf{Agent Marketplace} \hfill \href{https://github.com/student/project-0}{Repository} | \href{https://project-0.example.com}{Deployment}\par\nopagebreak
+\begin{resumeBullets}\item Built an agentic marketplace using Python and MCP.\end{resumeBullets}
+\vspace{2pt}
+\textbf{Voice Model Fine-Tuning} \hfill \href{https://github.com/student/project-1}{Repository} | \href{https://project-1.example.com}{Deployment}\par\nopagebreak
+\begin{resumeBullets}\item Fine-tuned a language model with QLoRA and PyTorch.\end{resumeBullets}
+\vspace{2pt}
+\textbf{Traffic Simulation} \hfill \href{https://github.com/student/project-3}{Repository} | \href{https://project-3.example.com}{Deployment}\par\nopagebreak
+\begin{resumeBullets}\item Designed a traffic-control simulation using React Three Fiber.\end{resumeBullets}
+\vspace{2pt}\end{rSection}
+\begin{rSection}{Technical Skills}\textbf{Programming Languages:} Python, SQL, TypeScript, JavaScript, C/C++\par
+\textbf{Backend and APIs:} FastAPI, Flask\par
+\textbf{Cloud and DevOps:} Docker Compose, Docker, Render\par
+\textbf{Mobile and Frontend:} React, React Three Fiber, Three.js, HTML, React 19, React Native, TanStack Start\par
+\textbf{AI/ML and NLP:} LangGraph, Groq LLM API, bitsandbytes, BERTScore, spaCy, Tesseract OCR, OpenCV, MediaPipe, Model Context Protocol (MCP), MCP Apps, CrewAI, OpenAI Agents SDK, Langfuse, MCP, PyTorch, Hugging Face Transformers, PEFT, QLoRA\par
+\textbf{Tools:} Git\par\end{rSection}
+\begin{rSection}{Education}\textbf{Example University} \hfill 2023 – 2027\par\nopagebreak
+\textit{B.Tech Computer Engineering | Aligarh, India}\par\nopagebreak
+Grade / CGPA: 8.2/10\par
+\vspace{2pt}\end{rSection}
+\end{document}

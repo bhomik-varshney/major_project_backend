@@ -1,0 +1,237 @@
+{
+  "verified_at": "2026-10-21T10:43:17.118935+05:30",
+  "scope": "Supplied LaTeX resume template/class, tailoring, PDF validation and application document integration; no unrelated repository audit",
+  "backend": {
+    "unique_relevant_cases": 54,
+    "all_passed": true,
+    "runs": [
+      {
+        "name": "resume-tailoring-focused",
+        "cases": 28,
+        "failures": 0
+      },
+      {
+        "name": "resume-tailoring-final-backend",
+        "cases": 27,
+        "failures": 0
+      },
+      {
+        "name": "resume-tailoring-integration",
+        "cases": 27,
+        "failures": 0
+      },
+      {
+        "name": "resume-tailoring-provenance",
+        "cases": 1,
+        "failures": 0
+      },
+      {
+        "name": "resume-tailoring-primary-degree",
+        "cases": 2,
+        "failures": 0
+      }
+    ],
+    "warnings": "Existing CrewAI/Starlette deprecations"
+  },
+  "frontend": {
+    "distinct_browser_cases": 7,
+    "full_run": "7 passed in 43.4 seconds",
+    "final_review_regeneration_fallback_mobile_rechecks": "4 passed in 39.8 seconds",
+    "typecheck": "passed",
+    "lint": {
+      "errors": 0,
+      "existing_warnings": 10
+    },
+    "production_build": "passed"
+  },
+  "live_api": {
+    "synthetic_only": true,
+    "engine": "crewai.Crew",
+    "provider_status": "repaired",
+    "genuine_crewai_agents": 3,
+    "one_page": true,
+    "selectable_text": true,
+    "fonts_embedded": true,
+    "approved_and_attached": true,
+    "application_submitted": false,
+    "original_profile_unchanged": true,
+    "original_document_unchanged": true,
+    "private_resume_exported": false,
+    "report": "resume-tailoring-live-api-smoke.json"
+  },
+  "template": {
+    "supplied_tex_archived_unchanged": true,
+    "supplied_cls_byte_identical": true,
+    "class_sha256": "68cbd081a0b9faec913e71190757e98c882b79ecc1e9d60b2c74d8045e8f811b",
+    "paper": "Letter, as specified by the supplied class",
+    "body_font_pt": 11,
+    "highest_qualification_selection_and_repair": "passed: B.Tech prioritised over secondary school"
+  },
+  "runtime": {
+    "frontend": "http://localhost:5173/resume-tailoring",
+    "frontend_http_status": 200,
+    "api": "http://localhost:8000",
+    "health": "ok",
+    "database": "connected"
+  },
+  "data_preservation": {
+    "existing_tables": {
+      "activities": {
+        "before_count": 57,
+        "after_count": 57,
+        "unchanged": true
+      },
+      "application_documents": {
+        "before_count": 1,
+        "after_count": 1,
+        "unchanged": true
+      },
+      "application_events": {
+        "before_count": 87,
+        "after_count": 87,
+        "unchanged": true
+      },
+      "application_fields": {
+        "before_count": 51,
+        "after_count": 51,
+        "unchanged": true
+      },
+      "application_follow_ups": {
+        "before_count": 0,
+        "after_count": 0,
+        "unchanged": true
+      },
+      "application_interviews": {
+        "before_count": 0,
+        "after_count": 0,
+        "unchanged": true
+      },
+      "application_mcp_actions": {
+        "before_count": 5,
+        "after_count": 5,
+        "unchanged": true
+      },
+      "application_notes": {
+        "before_count": 0,
+        "after_count": 0,
+        "unchanged": true
+      },
+      "application_status_history": {
+        "before_count": 6,
+        "after_count": 6,
+        "unchanged": true
+      },
+      "application_user_approvals": {
+        "before_count": 1,
+        "after_count": 1,
+        "unchanged": true
+      },
+      "application_workspaces": {
+        "before_count": 2,
+        "after_count": 2,
+        "unchanged": true
+      },
+      "applications": {
+        "before_count": 3,
+        "after_count": 3,
+        "unchanged": true
+      },
+      "candidate_profiles": {
+        "before_count": 7,
+        "after_count": 7,
+        "unchanged": true
+      },
+      "cover_letter_versions": {
+        "before_count": 2,
+        "after_count": 2,
+        "unchanged": true
+      },
+      "document_extractions": {
+        "before_count": 10,
+        "after_count": 10,
+        "unchanged": true
+      },
+      "documents": {
+        "before_count": 9,
+        "after_count": 9,
+        "unchanged": true
+      },
+      "embedding_cache": {
+        "before_count": 0,
+        "after_count": 0,
+        "unchanged": true
+      },
+      "external_application_sessions": {
+        "before_count": 2,
+        "after_count": 2,
+        "unchanged": true
+      },
+      "matching_results": {
+        "before_count": 1730,
+        "after_count": 1730,
+        "unchanged": true
+      },
+      "matching_runs": {
+        "before_count": 20,
+        "after_count": 20,
+        "unchanged": true
+      },
+      "resume_agent_runs": {
+        "before_count": 2,
+        "after_count": 2,
+        "unchanged": true
+      },
+      "resume_page_artifacts": {
+        "before_count": 3,
+        "after_count": 3,
+        "unchanged": true
+      },
+      "resume_processing_audits": {
+        "before_count": 2,
+        "after_count": 2,
+        "unchanged": true
+      },
+      "saved_opportunities": {
+        "before_count": 3,
+        "after_count": 3,
+        "unchanged": true
+      },
+      "signature_assets": {
+        "before_count": 2,
+        "after_count": 2,
+        "unchanged": true
+      },
+      "skill_gap_reviews": {
+        "before_count": 0,
+        "after_count": 0,
+        "unchanged": true
+      },
+      "skill_gap_runs": {
+        "before_count": 2,
+        "after_count": 2,
+        "unchanged": true
+      },
+      "users": {
+        "before_count": 29,
+        "after_count": 29,
+        "unchanged": true
+      },
+      "verification_records": {
+        "before_count": 8,
+        "after_count": 8,
+        "unchanged": true
+      }
+    },
+    "all_existing_rows_unchanged": true,
+    "new_tables": {
+      "tailored_resume_versions": 0
+    }
+  },
+  "known_limitations": [
+    "Controlled source-backed wording rather than unrestricted factual paraphrasing.",
+    "LaTeX reference mode requires confirmed profile facts and never executes uploaded source; source-only facts need confirmation first.",
+    "Programmatic visual checks and table reading-order checks do not guarantee every ATS vendor behaviour.",
+    "Sparse profiles can leave whitespace; mandatory content that cannot fit at readable size fails instead of producing a validated two-page resume.",
+    "One live model proposal omitted Education; only the missing confirmed section was restored in a recorded bounded correction."
+  ]
+}

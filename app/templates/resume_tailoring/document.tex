@@ -1,0 +1,46 @@
+% Derived from the supplied Christian Maria Giannetti resume.tex; class unchanged.
+\documentclass{resume}
+\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry}
+\usepackage{xcolor}
+\usepackage[unicode,hidelinks]{hyperref}
+\usepackage{changepage}
+\usepackage{tabularx}
+\usepackage{fontspec}
+\setmainfont[BoldFont=lmroman10-bold.otf,ItalicFont=lmroman10-italic.otf,BoldItalicFont=lmroman10-bolditalic.otf]{lmroman10-regular.otf}
+\hypersetup{pdfauthor={@@NAME@@},pdftitle={Resume}}
+\definecolor{navyblue}{RGB}{0,54,123}
+\newcommand{\italicitem}[1]{\item{\textit{#1}}}
+\newcommand{\bolditem}[1]{\item{\textbf{#1}}}
+\newcommand{\plainitem}[1]{\item{#1}}
+\newcommand{\link}[2]{\href{#1}{#2}}
+\newcommand{\entry}[2]{#1 & #2\tabularnewline}
+% Same two-column table design, with wrapping labels for real project names.
+\newcommand{\tableEnv}[2]{\begin{rSection}{#1}
+\begin{adjustwidth}{0in}{0.1in}
+\begin{tabularx}{\linewidth}{@{}>{\bfseries\raggedright\arraybackslash}p{0.26\linewidth}@{\hspace{2ex}}>{\raggedright\arraybackslash}X@{}}#2\end{tabularx}
+\end{adjustwidth}\end{rSection}}
+\renewcommand{\infoSeparator}{\hspace{0.5em}{\color{navyblue}|}\hspace{0.5em}}
+% Retain the supplied name style while reclaiming its oversized header spacer.
+\makeatletter
+\renewcommand{\printname}{\begingroup\hfil{\namesize\bfseries\textit{\@name}}\hfil\endgroup}
+\makeatother
+\renewcommand{\printPersonalInfo}[1]{\begin{center}#1\end{center}\vspace{-0.35cm}}
+\def\sectionskip{\vspace{@@SPACING@@pt}}
+% Retain the supplied class/navy rules, with predictable compact list spacing.
+\renewenvironment{rSection}[1]{
+\par\sectionskip{\color{navyblue}\bfseries\itshape #1}\par\nobreak
+{\color{navyblue}\hrule}\vspace{2pt}\nobreak
+}{\par}
+\newenvironment{resumeBullets}{\begin{list}{\textbullet}{
+\setlength{\leftmargin}{1em}\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}
+\setlength{\topsep}{1pt}\setlength{\partopsep}{0pt}}}{\end{list}}
+\def\sectionlineskip{\smallskip}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\emergencystretch=1em
+\name{\color{navyblue}@@NAME@@}
+\begin{document}
+\printPersonalInfo{@@CONTACT@@}
+\raggedright
+@@SECTIONS@@
+\end{document}

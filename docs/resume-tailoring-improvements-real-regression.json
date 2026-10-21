@@ -1,0 +1,46 @@
+{
+  "private_processing": "Local only; no Groq request for the real resume.",
+  "version": 2,
+  "status": "needs_review",
+  "approved": false,
+  "attached": false,
+  "workspace_url": "http://localhost:5173/resume-tailoring?application=23eb47a9-e8fe-47e2-9246-109cf96a2ac8",
+  "before_counts": {
+    "experience": 1,
+    "projects": 1,
+    "skills": 1,
+    "education": 1
+  },
+  "after_counts": {
+    "experience": 2,
+    "projects": 4,
+    "skills": 36,
+    "education": 1
+  },
+  "quality": {
+    "valid": true,
+    "issues": [],
+    "page_count": 1,
+    "selectable_text": true,
+    "fonts_embedded": true,
+    "images": 0,
+    "text_bounds_checked": true,
+    "overlap_check": "Glyph-intersection heuristic and compiler warnings",
+    "section_reading_order_checked": true,
+    "body_font_pt": 11,
+    "content_height_ratio": 0.997,
+    "all_selected_entries_checked": true,
+    "skill_coverage_checked": true,
+    "hyperlinks_checked": true,
+    "balance_observation": "Content uses the page within readable margins.",
+    "preview_generated": true,
+    "ats_observations": "Normal selectable text, standard headings, visible links and no graphics. Single-column content; user preview review is required. ATS vendor behaviour is not guaranteed."
+  },
+  "compile_attempts": 2,
+  "secondary_education_records_omitted": 2,
+  "relevance_status": "computed_during_tailoring",
+  "original_evidence_records_loaded": 4,
+  "profile_unchanged": true,
+  "source_document_bytes_verified": true,
+  "protected_entries_retained": true
+}

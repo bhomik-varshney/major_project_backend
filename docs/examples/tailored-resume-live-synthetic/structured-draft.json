@@ -1,0 +1,175 @@
+{
+  "name": "Student Example",
+  "phone": "+91 9000000000",
+  "email": "student@example.com",
+  "location": "Bengaluru, India",
+  "links": [
+    {
+      "url": "https://linkedin.com/in/student-example",
+      "label": "LinkedIn",
+      "source": "confirmed_profile.links.0"
+    },
+    {
+      "url": "https://student-portfolio.example.com",
+      "label": "Portfolio / personal website",
+      "source": "confirmed_profile.links.1"
+    }
+  ],
+  "target_job": "Backend Developer Trainee",
+  "summary": "Targeting Backend Developer Trainee. Education: B.Tech Computer Engineering, Example University. Skills include Python, SQL, Docker, PostgreSQL.",
+  "summary_id": "focused",
+  "summary_evidence": [
+    "job.title",
+    "education-0",
+    "skills-0",
+    "skills-1",
+    "skills-4",
+    "skills-6"
+  ],
+  "entries": [
+    {
+      "id": "experience-0",
+      "section": "experience",
+      "source": "confirmed_profile.experience.0",
+      "title": "Example Software",
+      "subtitle": "Developer Intern",
+      "period": "May 2026 \u2013 July 2026",
+      "location": "Bengaluru, India",
+      "grade": "",
+      "technologies": [
+        "Python",
+        "SQL"
+      ],
+      "links": [],
+      "bullets": [
+        {
+          "id": "experience-0:description:0",
+          "text": "Built a Python API for an internal search service.",
+          "variants": [
+            "Built a Python API for an internal search service."
+          ],
+          "source": "confirmed_profile.experience.0.description",
+          "original": "Built a Python API for an internal search service."
+        }
+      ],
+      "relevance": 0.3063,
+      "skill_group": ""
+    },
+    {
+      "id": "projects-0",
+      "section": "projects",
+      "source": "confirmed_profile.projects.0",
+      "title": "Search Service",
+      "subtitle": "Developer",
+      "period": "January 2026 \u2013 April 2026",
+      "location": "",
+      "grade": "",
+      "technologies": [
+        "Python",
+        "SQL"
+      ],
+      "links": [
+        {
+          "url": "https://github.com/student/search?view=code&x=one_two#readme",
+          "label": "Repository",
+          "source": "confirmed_profile.projects.0.repository"
+        }
+      ],
+      "bullets": [
+        {
+          "id": "projects-0:description:0",
+          "text": "Developed a Python retrieval service that combined SQL queries with text search.",
+          "variants": [
+            "Developed a Python retrieval service that combined SQL queries with text search."
+          ],
+          "source": "confirmed_profile.projects.0.description",
+          "original": "Developed a Python retrieval service that combined SQL queries with text search."
+        }
+      ],
+      "relevance": 0.3063,
+      "skill_group": ""
+    },
+    {
+      "id": "skills-0",
+      "section": "skills",
+      "source": "confirmed_profile.skills.0",
+      "title": "Python",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.1437,
+      "skill_group": "Programming Languages"
+    },
+    {
+      "id": "skills-1",
+      "section": "skills",
+      "source": "confirmed_profile.skills.1",
+      "title": "SQL",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.1437,
+      "skill_group": "Programming Languages"
+    },
+    {
+      "id": "skills-4",
+      "section": "skills",
+      "source": "confirmed_profile.skills.4",
+      "title": "Docker",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.1437,
+      "skill_group": "Cloud/DevOps"
+    },
+    {
+      "id": "skills-6",
+      "section": "skills",
+      "source": "confirmed_profile.skills.6",
+      "title": "PostgreSQL",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0813,
+      "skill_group": "Databases"
+    },
+    {
+      "id": "education-0",
+      "section": "education",
+      "source": "confirmed_profile.education.0",
+      "title": "Example University",
+      "subtitle": "B.Tech Computer Engineering",
+      "period": "2023 \u2013 2027",
+      "location": "Aligarh, India",
+      "grade": "8.2/10",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": ""
+    }
+  ],
+  "section_order": [
+    "summary",
+    "experience",
+    "projects",
+    "skills",
+    "education"
+  ]
+}

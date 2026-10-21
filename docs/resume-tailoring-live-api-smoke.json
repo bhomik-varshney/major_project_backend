@@ -1,0 +1,296 @@
+{
+  "synthetic_only": true,
+  "private_resume_exported": false,
+  "contact_details_exported": false,
+  "api_status": "passed",
+  "provider": {
+    "engine": "crewai.Crew",
+    "status": "repaired",
+    "model": "openai/gpt-oss-120b",
+    "agents": [
+      {
+        "name": "Resume Relevance Analysis Agent",
+        "status": "completed",
+        "result": {
+          "entry_ids": [
+            "experience-0",
+            "projects-0",
+            "skills-0",
+            "skills-1",
+            "skills-4",
+            "skills-6"
+          ],
+          "reasons": [
+            "Experience-0 shows Python API development, matching Python requirement.",
+            "Projects-0 demonstrates Python and SQL retrieval service, reinforcing backend skills.",
+            "Skills-0 confirms Python proficiency.",
+            "Skills-1 confirms SQL proficiency.",
+            "Skills-4 confirms Docker experience, a required tool.",
+            "Skills-6 confirms PostgreSQL knowledge, aligning with preferred requirement."
+          ]
+        }
+      },
+      {
+        "name": "Resume Content Tailoring Agent",
+        "status": "completed",
+        "result": {
+          "summary_id": "focused",
+          "entry_ids": [
+            "experience-0",
+            "projects-0",
+            "skills-0",
+            "skills-1",
+            "skills-4",
+            "skills-6"
+          ],
+          "bullet_ids": [
+            "experience-0:description:0",
+            "projects-0:description:0"
+          ],
+          "section_order": [
+            "summary",
+            "experience",
+            "projects",
+            "skills"
+          ]
+        }
+      },
+      {
+        "name": "Resume Validation Agent",
+        "status": "completed",
+        "result": {
+          "unsupported_ids": [],
+          "issues": []
+        }
+      }
+    ],
+    "export_scope": "Selected education/work/projects/skills and job context; no contact information, uploaded source code or document bytes.",
+    "correction": "One source-backed correction restored only missing core resume sections; valid model choices retained.",
+    "corrections": [
+      {
+        "field": "education",
+        "correction": "Restored the highest-priority confirmed entry omitted by the agent."
+      }
+    ]
+  },
+  "content_validation": {
+    "valid": true,
+    "issues": [],
+    "immutable_fields_checked": true,
+    "claims_source_checked": true,
+    "one_page": "passed",
+    "ats": "Selectable text, standard headings and visible links; final PDF checks and human review required."
+  },
+  "pdf_quality": {
+    "valid": true,
+    "issues": [],
+    "page_count": 1,
+    "selectable_text": true,
+    "fonts_embedded": true,
+    "images": 0,
+    "text_bounds_checked": true,
+    "overlap_check": "Glyph-intersection heuristic and compiler warnings",
+    "section_reading_order_checked": true,
+    "preview_generated": true,
+    "ats_observations": "Normal selectable text, standard headings, visible links and no graphics. Table extraction can vary by ATS; user preview review is required."
+  },
+  "fit_corrections": [],
+  "letter_or_resume_state": "attached",
+  "application_state": "job_selected",
+  "profile_unchanged": true,
+  "original_unchanged": true,
+  "approved_document_created": true,
+  "tailoring_report": {
+    "selected_job": "Backend Developer Trainee",
+    "keywords_addressed": [
+      "Python",
+      "SQL",
+      "Docker",
+      "PostgreSQL"
+    ],
+    "selected": [
+      {
+        "id": "experience-0",
+        "section": "experience",
+        "title": "Example Software",
+        "source": "confirmed_profile.experience.0",
+        "relevance": 0.3063,
+        "reason": "Confirmed evidence ranked for this job; education/contact information retained as core context."
+      },
+      {
+        "id": "projects-0",
+        "section": "projects",
+        "title": "Search Service",
+        "source": "confirmed_profile.projects.0",
+        "relevance": 0.3063,
+        "reason": "Confirmed evidence ranked for this job; education/contact information retained as core context."
+      },
+      {
+        "id": "skills-0",
+        "section": "skills",
+        "title": "Python",
+        "source": "confirmed_profile.skills.0",
+        "relevance": 0.1437,
+        "reason": "Confirmed evidence ranked for this job; education/contact information retained as core context."
+      },
+      {
+        "id": "skills-1",
+        "section": "skills",
+        "title": "SQL",
+        "source": "confirmed_profile.skills.1",
+        "relevance": 0.1437,
+        "reason": "Confirmed evidence ranked for this job; education/contact information retained as core context."
+      },
+      {
+        "id": "skills-4",
+        "section": "skills",
+        "title": "Docker",
+        "source": "confirmed_profile.skills.4",
+        "relevance": 0.1437,
+        "reason": "Confirmed evidence ranked for this job; education/contact information retained as core context."
+      },
+      {
+        "id": "skills-6",
+        "section": "skills",
+        "title": "PostgreSQL",
+        "source": "confirmed_profile.skills.6",
+        "relevance": 0.0813,
+        "reason": "Confirmed evidence ranked for this job; education/contact information retained as core context."
+      },
+      {
+        "id": "education-0",
+        "section": "education",
+        "title": "Example University",
+        "source": "confirmed_profile.education.0",
+        "relevance": 0.0,
+        "reason": "Confirmed evidence ranked for this job; education/contact information retained as core context."
+      }
+    ],
+    "omitted": [
+      {
+        "id": "projects-1",
+        "title": "Text Classification",
+        "section": "projects",
+        "reason": "Lower relevance, user selection or one-page space budget; original profile retained."
+      },
+      {
+        "id": "skills-2",
+        "title": "NLP",
+        "section": "skills",
+        "reason": "Lower relevance, user selection or one-page space budget; original profile retained."
+      },
+      {
+        "id": "skills-3",
+        "title": "React",
+        "section": "skills",
+        "reason": "Lower relevance, user selection or one-page space budget; original profile retained."
+      },
+      {
+        "id": "skills-5",
+        "title": "Git",
+        "section": "skills",
+        "reason": "Lower relevance, user selection or one-page space budget; original profile retained."
+      }
+    ],
+    "changes": [
+      {
+        "section": "summary",
+        "before": "Develop reliable backend and AI applications.",
+        "after": "Targeting Backend Developer Trainee. Education: B.Tech Computer Engineering, Example University. Skills include Python, SQL, Docker, PostgreSQL.",
+        "evidence": [
+          "job.title",
+          "education-0",
+          "skills-0",
+          "skills-1",
+          "skills-4",
+          "skills-6"
+        ]
+      },
+      {
+        "section": "experience",
+        "before": [
+          "Example Software"
+        ],
+        "after": [
+          "Example Software"
+        ],
+        "evidence": [
+          "confirmed_profile.experience.0"
+        ]
+      },
+      {
+        "section": "projects",
+        "before": [
+          "Search Service",
+          "Text Classification"
+        ],
+        "after": [
+          "Search Service"
+        ],
+        "evidence": [
+          "confirmed_profile.projects.0"
+        ]
+      },
+      {
+        "section": "skills",
+        "before": [
+          "Python",
+          "SQL",
+          "NLP",
+          "React",
+          "Docker",
+          "Git",
+          "PostgreSQL"
+        ],
+        "after": [
+          "Python",
+          "SQL",
+          "Docker",
+          "PostgreSQL"
+        ],
+        "evidence": [
+          "confirmed_profile.skills.0",
+          "confirmed_profile.skills.1",
+          "confirmed_profile.skills.4",
+          "confirmed_profile.skills.6"
+        ]
+      },
+      {
+        "section": "education",
+        "before": [
+          "Example University"
+        ],
+        "after": [
+          "Example University"
+        ],
+        "evidence": [
+          "confirmed_profile.education.0"
+        ]
+      },
+      {
+        "section": "certifications",
+        "before": [],
+        "after": [],
+        "evidence": []
+      },
+      {
+        "section": "achievements",
+        "before": [],
+        "after": [],
+        "evidence": []
+      },
+      {
+        "section": "publications",
+        "before": [],
+        "after": [],
+        "evidence": []
+      }
+    ],
+    "warnings": [
+      "No current matching explanation was supplied; job requirements still guide relevance.",
+      "No current skill-gap result for this job/profile. Unproven requirements are never added as skills."
+    ],
+    "confidence": "medium",
+    "ats_observations": "No hidden keywords or proficiency claims; standard text headings, visible links and normal text. ATS vendor behaviour is not guaranteed."
+  }
+}

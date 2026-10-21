@@ -40,7 +40,7 @@ def approve(db,record,kind):
                'document_ids':[d['document_id'] for d in record.draft.get('documents',[])]}))
 
 def revoke(db,record):
-    for approval in db.scalars(select(UserApproval).where(UserApproval.application_id==record.id,UserApproval.revoked.is_(False),UserApproval.kind!='cover_letter')):approval.revoked=True
+    for approval in db.scalars(select(UserApproval).where(UserApproval.application_id==record.id,UserApproval.revoked.is_(False),UserApproval.kind.not_in(['cover_letter','tailored_resume']))):approval.revoked=True
 
 def tracking_snapshot(db,record):
     tasks=db.scalars(select(FollowUpTask).where(FollowUpTask.application_id==record.id).order_by(FollowUpTask.due_at)).all()

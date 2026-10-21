@@ -1,0 +1,182 @@
+% This template is designed to offer an aesthetically pleasing resume that adheres to a formal and institutional tone, making it suitable for applications to companies and research centers requiring a high degree of professionalism. Navy blue has been chosen as the primary color to align with these objectives.
+% The code is well-documented and annotated, allowing users to easily customize and modify it according to their needs. Please note that the template's content is meant to be humorous and should not be taken literally. We are grateful for your interest in using this template for your professional endeavors.
+% Author: Christian Maria Giannetti
+
+%----------------------------------------------------------------------------------------
+%  Packages And Other Document Configurations
+%----------------------------------------------------------------------------------------
+
+\documentclass{resume} % Use the custom resume.cls style
+
+% Document margins
+\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry}
+
+% Color and hyperlink packages
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% Footnote and margin adjustment packages
+\usepackage{footnote}
+\usepackage{changepage}
+
+% Fontawesome package for icons
+\usepackage{fontawesome}
+
+% Tabularx package for custom tables
+\usepackage{tabularx}
+
+% Define navyblue color
+\definecolor{navyblue}{RGB}{0,54,123}
+
+%----------------------------------------------------------------------------------------
+%   Customizations
+%----------------------------------------------------------------------------------------
+
+% Define italicitem, bolditem, and plainitem commands
+\newcommand{\italicitem}[1]{\item{\textit{#1}}}
+\newcommand{\bolditem}[1]{\item{\textbf{#1}}}
+\newcommand{\plainitem}[1]{\item{#1}}
+
+% Define user-friendly link command for hyperlinks
+\newcommand{\link}[2]{{\href{#1}{#2}}}
+
+\newcommand{\entry}[2]{#1 & #2 \tabularnewline} % Defines an entry with two arguments: #1 for the first column and #2 for the second column
+
+%----------------------------------------------------------------------------------------
+%   Define envsection command for defining a new environment section
+%----------------------------------------------------------------------------------------
+
+\newcommand{\tableEnv}[2]{%
+  \begin{rSection}{#1} % Begin rSection with the given name
+    \begin{adjustwidth}{0.0in}{0.1in} % Set the left and right margins
+      \begin{tabularx}{\linewidth}{@{} >{\bfseries}l @{\hspace{6ex}} X @{}}
+        #2 % Print the content inside the tabularx environment
+      \end{tabularx}
+    \end{adjustwidth}
+  \end{rSection}
+}
+
+%----------------------------------------------------------------------------------------
+%   Begin document
+%----------------------------------------------------------------------------------------
+
+% Set name with navyblue color
+\name{\color{navyblue} Carl Johnson (CJ)}
+
+\begin{document}
+
+\printPersonalInfo{
+  \personalInfo{\tag{Residence/domicile}\info{113, Groove Street}}
+  \personalInfo{\tag{E-mail}\info{pleasedonotcontactme@gmail.com} \infoSeparator\tag{Telephone number}\info{+1-202-555-0100}}
+  \personalInfo{\tag{Place of birth}\info{Ariccia, Italy} \infoSeparator\tag{Date of birth}\info{08-11-1968}}
+}
+
+%----------------------------------------------------------------------------------------
+%   Education section
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Education}
+
+    % Master's degree entry
+    \begin{rSubsectionNoBullet}{\bf Master's degree in Memeology and Unicorn Analytics}{Faber College}{Master's degree program}{February 2019 - April 2020}
+        \italicitem{Graduated with honors}
+        \italicitem{Thesis title: A deep learning approach to predicting the next Brexit: Unicorns vs. White Walkers}
+    \end{rSubsectionNoBullet}
+    
+    % Bachelor's degree entry
+    \begin{rSubsectionNoBullet}{\bf Bachelor's degree in Absurd Robotics Engineering}{Westeros University}{Bachelor's degree program}{May 2016 - August 2018}
+        \italicitem{Final grade: 9,001/10,000}
+        \italicitem{Capstone project: Design and implementation of a robot that makes toast using a flamethrower}
+    \end{rSubsectionNoBullet}
+    
+    % High School diploma entry
+    \begin{rSubsectionNoBullet}{\bf High School Diploma}{Rydell High School}{High school's diploma program}{June 2011 - May 2015}
+        \italicitem{Final grade: 7/7}
+        \italicitem{Senior project: Applying machine learning techniques to predict students' failure rates based on their meme consumption habits}
+    \end{rSubsectionNoBullet}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%   Work experience section
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Work experience}
+
+    % First work experience entry
+    \begin{rSubsection}{Dank Memes Inc.}{September 2019 - September 2021}{Head of "Machine Learning for Absurd Stuff" Department}{Ariccia, Italy}
+        \item Developed state-of-the-art predictive models for next-generation memes.
+        \item Applied machine learning techniques to optimize unicorn-mounted laser systems.
+        \item Streamlined internal meme generation pipelines.
+    \end{rSubsection}
+    
+    % Second work experience entry
+    \begin{rSubsection}{Viral News Robotics Laboratory (VNRL)}{March 2019 - July 2019}{Robotics Comedian Intern}{Fries, Virginia}
+        \item Engineered a robotic Tyrion Lannister that repeatedly asks, "Where's the wine?"
+    \end{rSubsection}
+    
+    % Third work experience entry
+    \begin{rSubsection}{Library of Alexandria 2.0}{January 2017 - April 2018}{Novelist}{Cut and Shoot, Texas}
+        \item Curated the "Dumb \& Dumber Guide to Classic Literature", featuring "Fifty Smudges 
+        of Gray", "Pride and Prejudice: smart girls can always find a way to rationalize marrying for money"
+        \item Hosted a weekly meme reading club on "Breadxit": the debate over whether bread should be banned from Europe
+    \end{rSubsection}
+    
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%   Extracurricular activities section
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Extracurricular activities}
+
+% First extracurricular entry
+\begin{rSubsectionNoBullet}{Procrastinators Anonymous: Machine Learning for Laziness}{November 2015}{Successfully delayed attending the course}{Rome, Italy}
+    \plainitem{Developed an AI that predicts the perfect moment to start binge-watching Dr. House episodes instead of working on important tasks.}
+\end{rSubsectionNoBullet}
+
+% Third extracurricular entry
+\begin{rSubsectionNoBullet}{Dumb Literature Club: Famous Books with Ridiculous Twists}{June 2014 - Present}{Proud Member}{Popejoy, Iowa}
+    \plainitem{Regularly participate in discussions concerning famous literature works, such as "The Great Catsby", which is basically the Great Gatsby, but with cats.}
+\end{rSubsectionNoBullet}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+% Technical skills section
+%----------------------------------------------------------------------------------------
+
+\tableEnv{Technical skills}{
+    \entry{Programming Languages/Tools}{C, C++, Java, Javascript, Python, Prolog, \LaTeX, PigeonScript (for bird-based memes)}
+}
+
+%----------------------------------------------------------------------------------------
+% Language proficiencies section
+%----------------------------------------------------------------------------------------
+
+\tableEnv{Language proficiencies}{
+    \entry{English}{Fluent in Shakespearean insults}
+    \entry{French}{Proficient in baguette related jokes}
+}
+
+%----------------------------------------------------------------------------------------
+% Most relevant projects section
+%----------------------------------------------------------------------------------------
+
+\tableEnv{Portfolio of most relevant projects}{
+    \entry{Survey}{Analyzing the effects of replacing office chairs with unicycles on employee morale}
+    \entry{Survey}{Investigation of the therapeutic effects of watching cat videos for 8 hours a day}
+    \entry{Paper}{The correlation between sock loss in laundry and the existence of parallel universes}
+    \entry{Article}{The definitive study on the impact of pineapple as a pizza topping on global diplomacy}
+}
+
+%----------------------------------------------------------------------------------------
+% Memberships section
+%----------------------------------------------------------------------------------------
+
+\tableEnv{Memberships}{
+    \entry{Couch Potatoes Anonymous}{A support group for those addicted to binge-watching TV shows}
+    \entry{Procrastinators' Club}{A group that will eventually get around to doing something, someday}
+}
+
+\end{document}

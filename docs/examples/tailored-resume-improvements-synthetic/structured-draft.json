@@ -1,0 +1,825 @@
+{
+  "name": "Student Example",
+  "phone": "+91 9000000000",
+  "email": "student@example.com",
+  "location": "Bengaluru, India",
+  "links": [
+    {
+      "url": "https://linkedin.com/in/student-example",
+      "label": "LinkedIn",
+      "source": "confirmed_profile.links.0"
+    },
+    {
+      "url": "https://student-portfolio.example.com",
+      "label": "Portfolio / personal website",
+      "source": "confirmed_profile.links.1"
+    }
+  ],
+  "target_job": "Backend Developer Trainee",
+  "summary": "B.Tech Computer Engineering candidate bringing Python, FastAPI, Docker Compose, SQL to backend development work. Practical experience includes Machine Learning Trainee at Example Training Initiative.",
+  "summary_id": "focused",
+  "summary_evidence": [
+    "education-0",
+    "skills-0",
+    "skills-1",
+    "skills-31",
+    "skills-35",
+    "experience-1",
+    "job.title"
+  ],
+  "entries": [
+    {
+      "id": "experience-1",
+      "section": "experience",
+      "source": "confirmed_profile.experience.1",
+      "title": "Example Training Initiative",
+      "subtitle": "Machine Learning Trainee",
+      "period": "December 2024 \u2013 January 2025",
+      "location": "Remote",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [
+        {
+          "id": "experience-1:description:1",
+          "text": "Compared TF-IDF and Word2Vec with a Random Forest classifier, reaching 96.6% test accuracy.",
+          "variants": [
+            "Compared TF-IDF and Word2Vec with a Random Forest classifier, reaching 96.6% test accuracy."
+          ],
+          "source": "confirmed_profile.experience.1.description",
+          "original": "Compared TF-IDF and Word2Vec with a Random Forest classifier, reaching 96.6% test accuracy."
+        },
+        {
+          "id": "experience-1:description:0",
+          "text": "Built an SMS classifier with an NLP preprocessing pipeline.",
+          "variants": [
+            "Built an SMS classifier with an NLP preprocessing pipeline (HTML/URL stripping and stemming).",
+            "Built an SMS classifier with an NLP preprocessing pipeline."
+          ],
+          "source": "confirmed_profile.experience.1.description",
+          "original": "Built an SMS classifier with an NLP preprocessing pipeline (HTML/URL stripping and stemming)."
+        }
+      ],
+      "relevance": 0.0191,
+      "skill_group": ""
+    },
+    {
+      "id": "projects-2",
+      "section": "projects",
+      "source": "confirmed_profile.projects.2",
+      "title": "Health Assistant \u2014 Team Project",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [
+        "FastAPI",
+        "spaCy",
+        "OpenCV"
+      ],
+      "links": [
+        {
+          "url": "https://github.com/student/project-2",
+          "label": "Repository",
+          "source": "confirmed_profile.projects.2.repository"
+        },
+        {
+          "url": "https://project-2.example.com",
+          "label": "Deployment",
+          "source": "confirmed_profile.projects.2.deployment_url"
+        }
+      ],
+      "bullets": [
+        {
+          "id": "projects-2:description:0",
+          "text": "Built a FastAPI application with spaCy NLP and OpenCV.",
+          "variants": [
+            "Built a FastAPI application with spaCy NLP and OpenCV."
+          ],
+          "source": "confirmed_profile.projects.2.description",
+          "original": "Built a FastAPI application with spaCy NLP and OpenCV."
+        },
+        {
+          "id": "projects-2:description:1",
+          "text": "Implemented structured text extraction.",
+          "variants": [
+            "Implemented structured text extraction."
+          ],
+          "source": "confirmed_profile.projects.2.description",
+          "original": "Implemented structured text extraction."
+        }
+      ],
+      "relevance": 0.1465,
+      "skill_group": ""
+    },
+    {
+      "id": "skills-0",
+      "section": "skills",
+      "source": "confirmed_profile.skills.0",
+      "title": "Python",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.1465,
+      "skill_group": "Programming Languages"
+    },
+    {
+      "id": "skills-1",
+      "section": "skills",
+      "source": "confirmed_profile.skills.1",
+      "title": "FastAPI",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.1465,
+      "skill_group": "Backend and APIs"
+    },
+    {
+      "id": "skills-31",
+      "section": "skills",
+      "source": "confirmed_profile.skills.31",
+      "title": "Docker Compose",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.1465,
+      "skill_group": "Cloud and DevOps"
+    },
+    {
+      "id": "skills-35",
+      "section": "skills",
+      "source": "confirmed_profile.skills.35",
+      "title": "SQL",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.1465,
+      "skill_group": "Programming Languages"
+    },
+    {
+      "id": "education-0",
+      "section": "education",
+      "source": "confirmed_profile.education.0",
+      "title": "Example University",
+      "subtitle": "B.Tech Computer Engineering",
+      "period": "2023 \u2013 2027",
+      "location": "Aligarh, India",
+      "grade": "8.2/10",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": ""
+    },
+    {
+      "id": "projects-0",
+      "section": "projects",
+      "source": "confirmed_profile.projects.0",
+      "title": "Agent Marketplace \u2014 Team Project",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [
+        "Python",
+        "MCP"
+      ],
+      "links": [
+        {
+          "url": "https://github.com/student/project-0",
+          "label": "Repository",
+          "source": "confirmed_profile.projects.0.repository"
+        },
+        {
+          "url": "https://project-0.example.com",
+          "label": "Deployment",
+          "source": "confirmed_profile.projects.0.deployment_url"
+        }
+      ],
+      "bullets": [
+        {
+          "id": "projects-0:description:0",
+          "text": "Built an agentic marketplace using Python and MCP.",
+          "variants": [
+            "Built an agentic marketplace using Python and MCP."
+          ],
+          "source": "confirmed_profile.projects.0.description",
+          "original": "Built an agentic marketplace using Python and MCP."
+        }
+      ],
+      "relevance": 0.1465,
+      "skill_group": ""
+    },
+    {
+      "id": "skills-5",
+      "section": "skills",
+      "source": "confirmed_profile.skills.5",
+      "title": "Docker",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.1465,
+      "skill_group": "Cloud and DevOps"
+    },
+    {
+      "id": "experience-0",
+      "section": "experience",
+      "source": "confirmed_profile.experience.0",
+      "title": "Adobe Systems India",
+      "subtitle": "React Native Developer Intern",
+      "period": "May 2025 \u2013 July 2025",
+      "location": "Remote",
+      "grade": "",
+      "technologies": [
+        "React Native"
+      ],
+      "links": [],
+      "bullets": [
+        {
+          "id": "experience-0:description:0",
+          "text": "Built React Native front-end components for an internal learning system.",
+          "variants": [
+            "Built React Native front-end components for an internal learning system."
+          ],
+          "source": "confirmed_profile.experience.0.description",
+          "original": "Built React Native front-end components for an internal learning system."
+        }
+      ],
+      "relevance": 0.0,
+      "skill_group": ""
+    },
+    {
+      "id": "projects-1",
+      "section": "projects",
+      "source": "confirmed_profile.projects.1",
+      "title": "Voice Model Fine-Tuning \u2014 Technical Assessment",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [
+        "PyTorch",
+        "QLoRA",
+        "BERTScore"
+      ],
+      "links": [
+        {
+          "url": "https://github.com/student/project-1",
+          "label": "Repository",
+          "source": "confirmed_profile.projects.1.repository"
+        },
+        {
+          "url": "https://project-1.example.com",
+          "label": "Deployment",
+          "source": "confirmed_profile.projects.1.deployment_url"
+        }
+      ],
+      "bullets": [
+        {
+          "id": "projects-1:description:0",
+          "text": "Fine-tuned a language model with QLoRA and PyTorch.",
+          "variants": [
+            "Fine-tuned a language model with QLoRA and PyTorch."
+          ],
+          "source": "confirmed_profile.projects.1.description",
+          "original": "Fine-tuned a language model with QLoRA and PyTorch."
+        }
+      ],
+      "relevance": 0.0,
+      "skill_group": ""
+    },
+    {
+      "id": "projects-3",
+      "section": "projects",
+      "source": "confirmed_profile.projects.3",
+      "title": "Traffic Simulation \u2014 Demonstration",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [
+        "React Three Fiber"
+      ],
+      "links": [
+        {
+          "url": "https://github.com/student/project-3",
+          "label": "Repository",
+          "source": "confirmed_profile.projects.3.repository"
+        },
+        {
+          "url": "https://project-3.example.com",
+          "label": "Deployment",
+          "source": "confirmed_profile.projects.3.deployment_url"
+        }
+      ],
+      "bullets": [
+        {
+          "id": "projects-3:description:0",
+          "text": "Designed a traffic-control simulation using React Three Fiber.",
+          "variants": [
+            "Designed a traffic-control simulation using React Three Fiber."
+          ],
+          "source": "confirmed_profile.projects.3.description",
+          "original": "Designed a traffic-control simulation using React Three Fiber."
+        }
+      ],
+      "relevance": 0.0,
+      "skill_group": ""
+    },
+    {
+      "id": "skills-10",
+      "section": "skills",
+      "source": "confirmed_profile.skills.10",
+      "title": "React",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "Mobile and Frontend"
+    },
+    {
+      "id": "skills-11",
+      "section": "skills",
+      "source": "confirmed_profile.skills.11",
+      "title": "TypeScript",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "Programming Languages"
+    },
+    {
+      "id": "skills-12",
+      "section": "skills",
+      "source": "confirmed_profile.skills.12",
+      "title": "LangGraph",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "AI/ML and NLP"
+    },
+    {
+      "id": "skills-13",
+      "section": "skills",
+      "source": "confirmed_profile.skills.13",
+      "title": "Groq LLM API",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "AI/ML and NLP"
+    },
+    {
+      "id": "skills-14",
+      "section": "skills",
+      "source": "confirmed_profile.skills.14",
+      "title": "React Three Fiber",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "Mobile and Frontend"
+    },
+    {
+      "id": "skills-15",
+      "section": "skills",
+      "source": "confirmed_profile.skills.15",
+      "title": "Three.js",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "Mobile and Frontend"
+    },
+    {
+      "id": "skills-16",
+      "section": "skills",
+      "source": "confirmed_profile.skills.16",
+      "title": "HTML",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "Mobile and Frontend"
+    },
+    {
+      "id": "skills-17",
+      "section": "skills",
+      "source": "confirmed_profile.skills.17",
+      "title": "JavaScript",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "Programming Languages"
+    },
+    {
+      "id": "skills-18",
+      "section": "skills",
+      "source": "confirmed_profile.skills.18",
+      "title": "C/C++",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "Programming Languages"
+    },
+    {
+      "id": "skills-19",
+      "section": "skills",
+      "source": "confirmed_profile.skills.19",
+      "title": "bitsandbytes",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "AI/ML and NLP"
+    },
+    {
+      "id": "skills-2",
+      "section": "skills",
+      "source": "confirmed_profile.skills.2",
+      "title": "React 19",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "Mobile and Frontend"
+    },
+    {
+      "id": "skills-20",
+      "section": "skills",
+      "source": "confirmed_profile.skills.20",
+      "title": "BERTScore",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "AI/ML and NLP"
+    },
+    {
+      "id": "skills-21",
+      "section": "skills",
+      "source": "confirmed_profile.skills.21",
+      "title": "spaCy",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "AI/ML and NLP"
+    },
+    {
+      "id": "skills-22",
+      "section": "skills",
+      "source": "confirmed_profile.skills.22",
+      "title": "Tesseract OCR",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "AI/ML and NLP"
+    },
+    {
+      "id": "skills-23",
+      "section": "skills",
+      "source": "confirmed_profile.skills.23",
+      "title": "OpenCV",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "AI/ML and NLP"
+    },
+    {
+      "id": "skills-24",
+      "section": "skills",
+      "source": "confirmed_profile.skills.24",
+      "title": "MediaPipe",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "AI/ML and NLP"
+    },
+    {
+      "id": "skills-25",
+      "section": "skills",
+      "source": "confirmed_profile.skills.25",
+      "title": "Model Context Protocol (MCP)",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "AI/ML and NLP"
+    },
+    {
+      "id": "skills-26",
+      "section": "skills",
+      "source": "confirmed_profile.skills.26",
+      "title": "MCP Apps",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "AI/ML and NLP"
+    },
+    {
+      "id": "skills-27",
+      "section": "skills",
+      "source": "confirmed_profile.skills.27",
+      "title": "CrewAI",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "AI/ML and NLP"
+    },
+    {
+      "id": "skills-28",
+      "section": "skills",
+      "source": "confirmed_profile.skills.28",
+      "title": "Flask",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "Backend and APIs"
+    },
+    {
+      "id": "skills-29",
+      "section": "skills",
+      "source": "confirmed_profile.skills.29",
+      "title": "React Native",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "Mobile and Frontend"
+    },
+    {
+      "id": "skills-3",
+      "section": "skills",
+      "source": "confirmed_profile.skills.3",
+      "title": "OpenAI Agents SDK",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "AI/ML and NLP"
+    },
+    {
+      "id": "skills-30",
+      "section": "skills",
+      "source": "confirmed_profile.skills.30",
+      "title": "TanStack Start",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "Mobile and Frontend"
+    },
+    {
+      "id": "skills-32",
+      "section": "skills",
+      "source": "confirmed_profile.skills.32",
+      "title": "Git",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "Tools"
+    },
+    {
+      "id": "skills-33",
+      "section": "skills",
+      "source": "confirmed_profile.skills.33",
+      "title": "Render",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "Cloud and DevOps"
+    },
+    {
+      "id": "skills-34",
+      "section": "skills",
+      "source": "confirmed_profile.skills.34",
+      "title": "Langfuse",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "AI/ML and NLP"
+    },
+    {
+      "id": "skills-4",
+      "section": "skills",
+      "source": "confirmed_profile.skills.4",
+      "title": "MCP",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "AI/ML and NLP"
+    },
+    {
+      "id": "skills-6",
+      "section": "skills",
+      "source": "confirmed_profile.skills.6",
+      "title": "PyTorch",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "AI/ML and NLP"
+    },
+    {
+      "id": "skills-7",
+      "section": "skills",
+      "source": "confirmed_profile.skills.7",
+      "title": "Hugging Face Transformers",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "AI/ML and NLP"
+    },
+    {
+      "id": "skills-8",
+      "section": "skills",
+      "source": "confirmed_profile.skills.8",
+      "title": "PEFT",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "AI/ML and NLP"
+    },
+    {
+      "id": "skills-9",
+      "section": "skills",
+      "source": "confirmed_profile.skills.9",
+      "title": "QLoRA",
+      "subtitle": "",
+      "period": "",
+      "location": "",
+      "grade": "",
+      "technologies": [],
+      "links": [],
+      "bullets": [],
+      "relevance": 0.0,
+      "skill_group": "AI/ML and NLP"
+    }
+  ],
+  "section_order": [
+    "summary",
+    "experience",
+    "projects",
+    "skills",
+    "education",
+    "certifications",
+    "achievements",
+    "publications"
+  ]
+}

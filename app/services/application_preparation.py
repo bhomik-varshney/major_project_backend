@@ -153,10 +153,10 @@ def prepare_draft(form,facts,job,documents):
             'missing_skill_evidence':[s for s in required if canonical_skill(s) not in known],
             'education':job.get('education_requirements',[]),'responsibilities':job.get('responsibilities',[]),
             'recommended_resume_ids':recommendations,
-            'document_recommendation':'Review the confirmed resume version and its fit for this job; no tailoring is generated.',
+            'document_recommendation':'Review the confirmed resume or generate a separate job-specific version in Resume tailoring. Every attachment requires your review.',
             'cover_letter':'required' if any(f.required and token(f.semantic or f.label)=='coverletter' for f in form.fields) else 'optional_or_unspecified'},
         warnings=['All listings in the current provider are synthetic. Demo preparation does not contact employers.',
-                  'No resume or cover letter is generated. Attach only documents you have reviewed.'])
+                  'Document generation is available in the dedicated resume and cover-letter workspaces. Attach only approved documents you have reviewed.'])
     draft.validation=validate_draft(draft)
     draft.missing_inputs=draft.validation['missing_required']
     return draft

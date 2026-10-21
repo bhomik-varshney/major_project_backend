@@ -1,0 +1,1247 @@
+{
+  "synthetic_only": true,
+  "private_resume_exported": false,
+  "contact_details_exported": false,
+  "api_status": "passed",
+  "provider": {
+    "engine": "crewai.Crew",
+    "status": "repaired",
+    "model": "openai/gpt-oss-120b",
+    "agents": [
+      {
+        "name": "Resume Relevance Analysis Agent",
+        "status": "completed",
+        "result": {
+          "entry_ids": [
+            "skills-0",
+            "skills-1",
+            "skills-31",
+            "skills-35",
+            "experience-1",
+            "projects-2"
+          ],
+          "reasons": [
+            "Python skill directly matches required language.",
+            "FastAPI skill aligns with required backend framework.",
+            "Docker Compose indicates Docker experience for containerization.",
+            "SQL skill satisfies database requirement.",
+            "Machine Learning Trainee role demonstrates practical Python and data handling experience.",
+            "Health Assistant project uses FastAPI and shows API development experience."
+          ]
+        }
+      },
+      {
+        "name": "Resume Content Tailoring Agent",
+        "status": "completed",
+        "result": {
+          "summary_id": "focused",
+          "entry_ids": [
+            "experience-1",
+            "projects-2",
+            "skills-0",
+            "skills-1",
+            "skills-31",
+            "skills-35",
+            "education-0"
+          ],
+          "bullet_ids": [
+            "experience-1:description:0",
+            "experience-1:description:1",
+            "projects-2:description:0",
+            "projects-2:description:1"
+          ],
+          "section_order": [
+            "summary",
+            "experience",
+            "projects",
+            "skills",
+            "education",
+            "certifications",
+            "achievements",
+            "publications"
+          ]
+        }
+      },
+      {
+        "name": "Resume Validation Agent",
+        "status": "completed",
+        "result": {
+          "unsupported_ids": [],
+          "issues": [
+            "Missing sections: certifications, achievements, publications"
+          ]
+        }
+      }
+    ],
+    "export_scope": "Selected education/work/projects/skills and job context; no contact information, uploaded source code or document bytes.",
+    "review_issues": {
+      "unsupported_ids": [],
+      "issues": [
+        "Missing sections: certifications, achievements, publications"
+      ]
+    },
+    "correction": "Host preservation checks restored confirmed content; agent ordering and valid wording retained.",
+    "corrections": [
+      {
+        "field": "projects-0",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-5",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "experience-0",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "projects-1",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "projects-3",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-10",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-11",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-12",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-13",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-14",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-15",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-16",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-17",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-18",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-19",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-2",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-20",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-21",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-22",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-23",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-24",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-25",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-26",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-27",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-28",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-29",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-3",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-30",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-32",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-33",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-34",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-4",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-6",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-7",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-8",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "skills-9",
+        "correction": "Restored protected confirmed content omitted by the agent."
+      },
+      {
+        "field": "projects-0",
+        "correction": "Restored a supported responsibility for the preserved entry."
+      },
+      {
+        "field": "experience-0",
+        "correction": "Restored a supported responsibility for the preserved entry."
+      },
+      {
+        "field": "projects-1",
+        "correction": "Restored a supported responsibility for the preserved entry."
+      },
+      {
+        "field": "projects-3",
+        "correction": "Restored a supported responsibility for the preserved entry."
+      }
+    ]
+  },
+  "content_validation": {
+    "valid": true,
+    "issues": [],
+    "immutable_fields_checked": true,
+    "claims_source_checked": true,
+    "preservation_checked": true,
+    "relevance_plan_checked": true,
+    "one_page": "passed",
+    "ats": "Selectable text, standard headings and visible links; final PDF checks and human review required."
+  },
+  "pdf_quality": {
+    "valid": true,
+    "issues": [],
+    "page_count": 1,
+    "selectable_text": true,
+    "fonts_embedded": true,
+    "images": 0,
+    "text_bounds_checked": true,
+    "overlap_check": "Glyph-intersection heuristic and compiler warnings",
+    "section_reading_order_checked": true,
+    "body_font_pt": 11,
+    "content_height_ratio": 0.893,
+    "all_selected_entries_checked": true,
+    "skill_coverage_checked": true,
+    "hyperlinks_checked": true,
+    "balance_observation": "Content uses the page within readable margins.",
+    "preview_generated": true,
+    "ats_observations": "Normal selectable text, standard headings, visible links and no graphics. Single-column content; user preview review is required. ATS vendor behaviour is not guaranteed."
+  },
+  "fit_corrections": [],
+  "letter_or_resume_state": "attached",
+  "application_state": "job_selected",
+  "profile_unchanged": true,
+  "original_unchanged": true,
+  "approved_document_created": true,
+  "tailoring_report": {
+    "selected_job": "Backend Developer Trainee",
+    "keywords_addressed": [
+      "Python",
+      "FastAPI",
+      "SQL",
+      "Docker"
+    ],
+    "selected": [
+      {
+        "id": "experience-1",
+        "section": "experience",
+        "title": "Example Training Initiative",
+        "source": "confirmed_profile.experience.1",
+        "relevance": 0.0191,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "projects-2",
+        "section": "projects",
+        "title": "Health Assistant \u2014 Team Project",
+        "source": "confirmed_profile.projects.2",
+        "relevance": 0.1465,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-0",
+        "section": "skills",
+        "title": "Python",
+        "source": "confirmed_profile.skills.0",
+        "relevance": 0.1465,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-1",
+        "section": "skills",
+        "title": "FastAPI",
+        "source": "confirmed_profile.skills.1",
+        "relevance": 0.1465,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-31",
+        "section": "skills",
+        "title": "Docker Compose",
+        "source": "confirmed_profile.skills.31",
+        "relevance": 0.1465,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-35",
+        "section": "skills",
+        "title": "SQL",
+        "source": "confirmed_profile.skills.35",
+        "relevance": 0.1465,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "education-0",
+        "section": "education",
+        "title": "Example University",
+        "source": "confirmed_profile.education.0",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "projects-0",
+        "section": "projects",
+        "title": "Agent Marketplace \u2014 Team Project",
+        "source": "confirmed_profile.projects.0",
+        "relevance": 0.1465,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-5",
+        "section": "skills",
+        "title": "Docker",
+        "source": "confirmed_profile.skills.5",
+        "relevance": 0.1465,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "experience-0",
+        "section": "experience",
+        "title": "Adobe Systems India",
+        "source": "confirmed_profile.experience.0",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "projects-1",
+        "section": "projects",
+        "title": "Voice Model Fine-Tuning \u2014 Technical Assessment",
+        "source": "confirmed_profile.projects.1",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "projects-3",
+        "section": "projects",
+        "title": "Traffic Simulation \u2014 Demonstration",
+        "source": "confirmed_profile.projects.3",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-10",
+        "section": "skills",
+        "title": "React",
+        "source": "confirmed_profile.skills.10",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-11",
+        "section": "skills",
+        "title": "TypeScript",
+        "source": "confirmed_profile.skills.11",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-12",
+        "section": "skills",
+        "title": "LangGraph",
+        "source": "confirmed_profile.skills.12",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-13",
+        "section": "skills",
+        "title": "Groq LLM API",
+        "source": "confirmed_profile.skills.13",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-14",
+        "section": "skills",
+        "title": "React Three Fiber",
+        "source": "confirmed_profile.skills.14",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-15",
+        "section": "skills",
+        "title": "Three.js",
+        "source": "confirmed_profile.skills.15",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-16",
+        "section": "skills",
+        "title": "HTML",
+        "source": "confirmed_profile.skills.16",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-17",
+        "section": "skills",
+        "title": "JavaScript",
+        "source": "confirmed_profile.skills.17",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-18",
+        "section": "skills",
+        "title": "C/C++",
+        "source": "confirmed_profile.skills.18",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-19",
+        "section": "skills",
+        "title": "bitsandbytes",
+        "source": "confirmed_profile.skills.19",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-2",
+        "section": "skills",
+        "title": "React 19",
+        "source": "confirmed_profile.skills.2",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-20",
+        "section": "skills",
+        "title": "BERTScore",
+        "source": "confirmed_profile.skills.20",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-21",
+        "section": "skills",
+        "title": "spaCy",
+        "source": "confirmed_profile.skills.21",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-22",
+        "section": "skills",
+        "title": "Tesseract OCR",
+        "source": "confirmed_profile.skills.22",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-23",
+        "section": "skills",
+        "title": "OpenCV",
+        "source": "confirmed_profile.skills.23",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-24",
+        "section": "skills",
+        "title": "MediaPipe",
+        "source": "confirmed_profile.skills.24",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-25",
+        "section": "skills",
+        "title": "Model Context Protocol (MCP)",
+        "source": "confirmed_profile.skills.25",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-26",
+        "section": "skills",
+        "title": "MCP Apps",
+        "source": "confirmed_profile.skills.26",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-27",
+        "section": "skills",
+        "title": "CrewAI",
+        "source": "confirmed_profile.skills.27",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-28",
+        "section": "skills",
+        "title": "Flask",
+        "source": "confirmed_profile.skills.28",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-29",
+        "section": "skills",
+        "title": "React Native",
+        "source": "confirmed_profile.skills.29",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-3",
+        "section": "skills",
+        "title": "OpenAI Agents SDK",
+        "source": "confirmed_profile.skills.3",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-30",
+        "section": "skills",
+        "title": "TanStack Start",
+        "source": "confirmed_profile.skills.30",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-32",
+        "section": "skills",
+        "title": "Git",
+        "source": "confirmed_profile.skills.32",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-33",
+        "section": "skills",
+        "title": "Render",
+        "source": "confirmed_profile.skills.33",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-34",
+        "section": "skills",
+        "title": "Langfuse",
+        "source": "confirmed_profile.skills.34",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-4",
+        "section": "skills",
+        "title": "MCP",
+        "source": "confirmed_profile.skills.4",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-6",
+        "section": "skills",
+        "title": "PyTorch",
+        "source": "confirmed_profile.skills.6",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-7",
+        "section": "skills",
+        "title": "Hugging Face Transformers",
+        "source": "confirmed_profile.skills.7",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-8",
+        "section": "skills",
+        "title": "PEFT",
+        "source": "confirmed_profile.skills.8",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      },
+      {
+        "id": "skills-9",
+        "section": "skills",
+        "title": "QLoRA",
+        "source": "confirmed_profile.skills.9",
+        "relevance": 0.0,
+        "reason": "Preserved confirmed history; job relevance determines order and bullet emphasis."
+      }
+    ],
+    "omitted": [
+      {
+        "id": "education-1",
+        "title": "Example Secondary School",
+        "section": "education",
+        "reason": "Secondary education condensed to the primary qualification."
+      }
+    ],
+    "preserved": [
+      {
+        "id": "experience-1",
+        "title": "Example Training Initiative",
+        "section": "experience"
+      },
+      {
+        "id": "projects-2",
+        "title": "Health Assistant \u2014 Team Project",
+        "section": "projects"
+      },
+      {
+        "id": "skills-0",
+        "title": "Python",
+        "section": "skills"
+      },
+      {
+        "id": "skills-1",
+        "title": "FastAPI",
+        "section": "skills"
+      },
+      {
+        "id": "skills-31",
+        "title": "Docker Compose",
+        "section": "skills"
+      },
+      {
+        "id": "skills-35",
+        "title": "SQL",
+        "section": "skills"
+      },
+      {
+        "id": "education-0",
+        "title": "Example University",
+        "section": "education"
+      },
+      {
+        "id": "projects-0",
+        "title": "Agent Marketplace \u2014 Team Project",
+        "section": "projects"
+      },
+      {
+        "id": "skills-5",
+        "title": "Docker",
+        "section": "skills"
+      },
+      {
+        "id": "experience-0",
+        "title": "Adobe Systems India",
+        "section": "experience"
+      },
+      {
+        "id": "projects-1",
+        "title": "Voice Model Fine-Tuning \u2014 Technical Assessment",
+        "section": "projects"
+      },
+      {
+        "id": "projects-3",
+        "title": "Traffic Simulation \u2014 Demonstration",
+        "section": "projects"
+      },
+      {
+        "id": "skills-10",
+        "title": "React",
+        "section": "skills"
+      },
+      {
+        "id": "skills-11",
+        "title": "TypeScript",
+        "section": "skills"
+      },
+      {
+        "id": "skills-12",
+        "title": "LangGraph",
+        "section": "skills"
+      },
+      {
+        "id": "skills-13",
+        "title": "Groq LLM API",
+        "section": "skills"
+      },
+      {
+        "id": "skills-14",
+        "title": "React Three Fiber",
+        "section": "skills"
+      },
+      {
+        "id": "skills-15",
+        "title": "Three.js",
+        "section": "skills"
+      },
+      {
+        "id": "skills-16",
+        "title": "HTML",
+        "section": "skills"
+      },
+      {
+        "id": "skills-17",
+        "title": "JavaScript",
+        "section": "skills"
+      },
+      {
+        "id": "skills-18",
+        "title": "C/C++",
+        "section": "skills"
+      },
+      {
+        "id": "skills-19",
+        "title": "bitsandbytes",
+        "section": "skills"
+      },
+      {
+        "id": "skills-2",
+        "title": "React 19",
+        "section": "skills"
+      },
+      {
+        "id": "skills-20",
+        "title": "BERTScore",
+        "section": "skills"
+      },
+      {
+        "id": "skills-21",
+        "title": "spaCy",
+        "section": "skills"
+      },
+      {
+        "id": "skills-22",
+        "title": "Tesseract OCR",
+        "section": "skills"
+      },
+      {
+        "id": "skills-23",
+        "title": "OpenCV",
+        "section": "skills"
+      },
+      {
+        "id": "skills-24",
+        "title": "MediaPipe",
+        "section": "skills"
+      },
+      {
+        "id": "skills-25",
+        "title": "Model Context Protocol (MCP)",
+        "section": "skills"
+      },
+      {
+        "id": "skills-26",
+        "title": "MCP Apps",
+        "section": "skills"
+      },
+      {
+        "id": "skills-27",
+        "title": "CrewAI",
+        "section": "skills"
+      },
+      {
+        "id": "skills-28",
+        "title": "Flask",
+        "section": "skills"
+      },
+      {
+        "id": "skills-29",
+        "title": "React Native",
+        "section": "skills"
+      },
+      {
+        "id": "skills-3",
+        "title": "OpenAI Agents SDK",
+        "section": "skills"
+      },
+      {
+        "id": "skills-30",
+        "title": "TanStack Start",
+        "section": "skills"
+      },
+      {
+        "id": "skills-32",
+        "title": "Git",
+        "section": "skills"
+      },
+      {
+        "id": "skills-33",
+        "title": "Render",
+        "section": "skills"
+      },
+      {
+        "id": "skills-34",
+        "title": "Langfuse",
+        "section": "skills"
+      },
+      {
+        "id": "skills-4",
+        "title": "MCP",
+        "section": "skills"
+      },
+      {
+        "id": "skills-6",
+        "title": "PyTorch",
+        "section": "skills"
+      },
+      {
+        "id": "skills-7",
+        "title": "Hugging Face Transformers",
+        "section": "skills"
+      },
+      {
+        "id": "skills-8",
+        "title": "PEFT",
+        "section": "skills"
+      },
+      {
+        "id": "skills-9",
+        "title": "QLoRA",
+        "section": "skills"
+      }
+    ],
+    "coverage": {
+      "experience": {
+        "available": 2,
+        "preserved": 2
+      },
+      "projects": {
+        "available": 4,
+        "preserved": 4
+      },
+      "skills": {
+        "available": 36,
+        "preserved": 36
+      },
+      "education": {
+        "available": 2,
+        "preserved": 1
+      },
+      "certifications": {
+        "available": 0,
+        "preserved": 0
+      },
+      "achievements": {
+        "available": 0,
+        "preserved": 0
+      },
+      "publications": {
+        "available": 0,
+        "preserved": 0
+      }
+    },
+    "relevance_plan": {
+      "valid": true,
+      "status": "computed_during_tailoring",
+      "message": "Relevance analysis calculated for this tailoring run",
+      "matching_context": "unavailable",
+      "skill_gap_context": "unavailable",
+      "limitation": "Skill-gap context unavailable; tailoring used confirmed job requirements and profile evidence.",
+      "review_recommended": true,
+      "required": [
+        {
+          "skill": "Python",
+          "evidence": [
+            {
+              "id": "projects-0",
+              "source": "confirmed_profile.projects.0",
+              "kind": "project_supported"
+            },
+            {
+              "id": "skills-0",
+              "source": "confirmed_profile.skills.0",
+              "kind": "confirmed_skill"
+            }
+          ],
+          "status": "supported"
+        },
+        {
+          "skill": "FastAPI",
+          "evidence": [
+            {
+              "id": "projects-2",
+              "source": "confirmed_profile.projects.2",
+              "kind": "project_supported"
+            },
+            {
+              "id": "skills-1",
+              "source": "confirmed_profile.skills.1",
+              "kind": "confirmed_skill"
+            }
+          ],
+          "status": "supported"
+        },
+        {
+          "skill": "REST APIs",
+          "evidence": [],
+          "status": "missing_evidence"
+        },
+        {
+          "skill": "SQL",
+          "evidence": [
+            {
+              "id": "skills-35",
+              "source": "confirmed_profile.skills.35",
+              "kind": "confirmed_skill"
+            }
+          ],
+          "status": "supported"
+        },
+        {
+          "skill": "Docker",
+          "evidence": [
+            {
+              "id": "skills-5",
+              "source": "confirmed_profile.skills.5",
+              "kind": "confirmed_skill"
+            },
+            {
+              "id": "skills-31",
+              "source": "confirmed_profile.skills.31",
+              "kind": "confirmed_skill"
+            }
+          ],
+          "status": "supported"
+        }
+      ],
+      "preferred": [
+        {
+          "skill": "PostgreSQL",
+          "evidence": [],
+          "status": "missing_evidence"
+        }
+      ],
+      "role_terms": [
+        "backend",
+        "trainee"
+      ],
+      "related_role_terms": [],
+      "transferable_skills": [],
+      "method": "Canonical required/preferred/title token overlap and advisory domain vocabulary; not a hybrid score or inferred preference."
+    },
+    "bullet_omissions": [
+      {
+        "entry_id": "projects-0",
+        "source": "confirmed_profile.projects.0.description",
+        "original": "Validated ranking with 216 synthetic tests.",
+        "reason": "Additional source sentence omitted for concise emphasis; entry retained."
+      },
+      {
+        "entry_id": "experience-0",
+        "source": "confirmed_profile.experience.0.description",
+        "original": "Delivered production-facing learning functionality during an internship.",
+        "reason": "Additional source sentence omitted for concise emphasis; entry retained."
+      },
+      {
+        "entry_id": "projects-1",
+        "source": "confirmed_profile.projects.1.description",
+        "original": "Evaluated the model with BERTScore.",
+        "reason": "Additional source sentence omitted for concise emphasis; entry retained."
+      },
+      {
+        "entry_id": "projects-3",
+        "source": "confirmed_profile.projects.3.description",
+        "original": "Visualised adaptive signal timing.",
+        "reason": "Additional source sentence omitted for concise emphasis; entry retained."
+      }
+    ],
+    "condensed": [
+      {
+        "entry_id": "experience-1",
+        "source": "confirmed_profile.experience.1.description",
+        "before": "Built an SMS classifier with an NLP preprocessing pipeline (HTML/URL stripping and stemming).",
+        "after": "Built an SMS classifier with an NLP preprocessing pipeline.",
+        "reason": "Complete extractive clause; original evidence retained."
+      }
+    ],
+    "title_condensation": [
+      {
+        "entry_id": "projects-2",
+        "before": "Health Assistant \u2014 Team Project",
+        "after": "Health Assistant",
+        "reason": "Assessment/team qualifier retained in the ledger; main project title shown in the PDF."
+      },
+      {
+        "entry_id": "projects-0",
+        "before": "Agent Marketplace \u2014 Team Project",
+        "after": "Agent Marketplace",
+        "reason": "Assessment/team qualifier retained in the ledger; main project title shown in the PDF."
+      },
+      {
+        "entry_id": "projects-1",
+        "before": "Voice Model Fine-Tuning \u2014 Technical Assessment",
+        "after": "Voice Model Fine-Tuning",
+        "reason": "Assessment/team qualifier retained in the ledger; main project title shown in the PDF."
+      },
+      {
+        "entry_id": "projects-3",
+        "before": "Traffic Simulation \u2014 Demonstration",
+        "after": "Traffic Simulation",
+        "reason": "Assessment/team qualifier retained in the ledger; main project title shown in the PDF."
+      }
+    ],
+    "changes": [
+      {
+        "section": "summary",
+        "before": "Develop reliable backend and AI applications.",
+        "after": "B.Tech Computer Engineering candidate bringing Python, FastAPI, Docker Compose, SQL to backend development work. Practical experience includes Machine Learning Trainee at Example Training Initiative.",
+        "evidence": [
+          "education-0",
+          "skills-0",
+          "skills-1",
+          "skills-31",
+          "skills-35",
+          "experience-1",
+          "job.title"
+        ]
+      },
+      {
+        "section": "experience",
+        "before": [
+          "Adobe Systems India",
+          "Example Training Initiative"
+        ],
+        "after": [
+          "Example Training Initiative",
+          "Adobe Systems India"
+        ],
+        "evidence": [
+          "confirmed_profile.experience.1",
+          "confirmed_profile.experience.0"
+        ]
+      },
+      {
+        "section": "projects",
+        "before": [
+          "Agent Marketplace \u2014 Team Project",
+          "Voice Model Fine-Tuning \u2014 Technical Assessment",
+          "Health Assistant \u2014 Team Project",
+          "Traffic Simulation \u2014 Demonstration"
+        ],
+        "after": [
+          "Health Assistant \u2014 Team Project",
+          "Agent Marketplace \u2014 Team Project",
+          "Voice Model Fine-Tuning \u2014 Technical Assessment",
+          "Traffic Simulation \u2014 Demonstration"
+        ],
+        "evidence": [
+          "confirmed_profile.projects.2",
+          "confirmed_profile.projects.0",
+          "confirmed_profile.projects.1",
+          "confirmed_profile.projects.3"
+        ]
+      },
+      {
+        "section": "skills",
+        "before": [
+          "Python",
+          "FastAPI",
+          "React 19",
+          "OpenAI Agents SDK",
+          "MCP",
+          "Docker",
+          "PyTorch",
+          "Hugging Face Transformers",
+          "PEFT",
+          "QLoRA",
+          "React",
+          "TypeScript",
+          "LangGraph",
+          "Groq LLM API",
+          "React Three Fiber",
+          "Three.js",
+          "HTML",
+          "JavaScript",
+          "C/C++",
+          "bitsandbytes",
+          "BERTScore",
+          "spaCy",
+          "Tesseract OCR",
+          "OpenCV",
+          "MediaPipe",
+          "Model Context Protocol (MCP)",
+          "MCP Apps",
+          "CrewAI",
+          "Flask",
+          "React Native",
+          "TanStack Start",
+          "Docker Compose",
+          "Git",
+          "Render",
+          "Langfuse",
+          "SQL"
+        ],
+        "after": [
+          "Python",
+          "FastAPI",
+          "Docker Compose",
+          "SQL",
+          "Docker",
+          "React",
+          "TypeScript",
+          "LangGraph",
+          "Groq LLM API",
+          "React Three Fiber",
+          "Three.js",
+          "HTML",
+          "JavaScript",
+          "C/C++",
+          "bitsandbytes",
+          "React 19",
+          "BERTScore",
+          "spaCy",
+          "Tesseract OCR",
+          "OpenCV",
+          "MediaPipe",
+          "Model Context Protocol (MCP)",
+          "MCP Apps",
+          "CrewAI",
+          "Flask",
+          "React Native",
+          "OpenAI Agents SDK",
+          "TanStack Start",
+          "Git",
+          "Render",
+          "Langfuse",
+          "MCP",
+          "PyTorch",
+          "Hugging Face Transformers",
+          "PEFT",
+          "QLoRA"
+        ],
+        "evidence": [
+          "confirmed_profile.skills.0",
+          "confirmed_profile.skills.1",
+          "confirmed_profile.skills.31",
+          "confirmed_profile.skills.35",
+          "confirmed_profile.skills.5",
+          "confirmed_profile.skills.10",
+          "confirmed_profile.skills.11",
+          "confirmed_profile.skills.12",
+          "confirmed_profile.skills.13",
+          "confirmed_profile.skills.14",
+          "confirmed_profile.skills.15",
+          "confirmed_profile.skills.16",
+          "confirmed_profile.skills.17",
+          "confirmed_profile.skills.18",
+          "confirmed_profile.skills.19",
+          "confirmed_profile.skills.2",
+          "confirmed_profile.skills.20",
+          "confirmed_profile.skills.21",
+          "confirmed_profile.skills.22",
+          "confirmed_profile.skills.23",
+          "confirmed_profile.skills.24",
+          "confirmed_profile.skills.25",
+          "confirmed_profile.skills.26",
+          "confirmed_profile.skills.27",
+          "confirmed_profile.skills.28",
+          "confirmed_profile.skills.29",
+          "confirmed_profile.skills.3",
+          "confirmed_profile.skills.30",
+          "confirmed_profile.skills.32",
+          "confirmed_profile.skills.33",
+          "confirmed_profile.skills.34",
+          "confirmed_profile.skills.4",
+          "confirmed_profile.skills.6",
+          "confirmed_profile.skills.7",
+          "confirmed_profile.skills.8",
+          "confirmed_profile.skills.9"
+        ]
+      },
+      {
+        "section": "education",
+        "before": [
+          "Example University",
+          "Example Secondary School"
+        ],
+        "after": [
+          "Example University"
+        ],
+        "evidence": [
+          "confirmed_profile.education.0"
+        ]
+      },
+      {
+        "section": "certifications",
+        "before": [],
+        "after": [],
+        "evidence": []
+      },
+      {
+        "section": "achievements",
+        "before": [],
+        "after": [],
+        "evidence": []
+      },
+      {
+        "section": "publications",
+        "before": [],
+        "after": [],
+        "evidence": []
+      }
+    ],
+    "warnings": [
+      "Some entry technology associations need review; uncertain associations were excluded from entry technology lists."
+    ],
+    "confidence": "medium",
+    "ats_observations": "No hidden keywords or proficiency claims; standard text headings, visible links and normal text. ATS vendor behaviour is not guaranteed."
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "existing_table_count": 30,
+  "existing_records_deleted": 0,
+  "expected_existing_changes": [
+    {
+      "table": "applications",
+      "fields": [
+        "revision",
+        "updated_at"
+      ],
+      "reason": "Revision increment for the requested new tailored version."
+    }
+  ],
+  "new_rows": {
+    "application_events": 8,
+    "tailored_resume_versions": 1
+  },
+  "all_original_documents_profiles_and_previous_versions_unchanged": true,
+  "private_backup_created": true
+}

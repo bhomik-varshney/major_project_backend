@@ -417,6 +417,33 @@ class CoverLetterVersion(Base):
 
 
 Application=ApplicationRecord
+class TailoredResumeVersion(Base):
+    __tablename__ = 'tailored_resume_versions'
+    __table_args__ = (UniqueConstraint('application_id','version',name='uq_tailored_resume_version'),)
+    id: Mapped[str] = mapped_column(String(36),primary_key=True,default=new_id)
+    user_id: Mapped[str] = mapped_column(ForeignKey('users.id'),index=True)
+    application_id: Mapped[str] = mapped_column(ForeignKey('applications.id',ondelete='CASCADE'),index=True)
+    version: Mapped[int] = mapped_column(Integer)
+    revision: Mapped[int] = mapped_column(Integer,default=1)
+    status: Mapped[str] = mapped_column(String(40),default='preparing')
+    stage: Mapped[str] = mapped_column(String(100),default='Preparing resume evidence')
+    active_operation: Mapped[str | None] = mapped_column(String(36),nullable=True)
+    profile_revision: Mapped[int] = mapped_column(Integer)
+    candidate_hash: Mapped[str] = mapped_column(String(64))
+    candidate_snapshot: Mapped[dict] = mapped_column(JSON,deferred=True)
+    job_snapshot: Mapped[dict] = mapped_column(JSON)
+    job_hash: Mapped[str] = mapped_column(String(64))
+    request: Mapped[dict] = mapped_column(JSON,default=dict)
+    data: Mapped[dict] = mapped_column(JSON,default=dict,deferred=True)
+    document_id: Mapped[str | None] = mapped_column(ForeignKey('documents.id',ondelete='SET NULL'),nullable=True)
+    artifact_dir: Mapped[str] = mapped_column(String(500),default='')
+    approval: Mapped[dict] = mapped_column(JSON,default=dict)
+    tasks: Mapped[list] = mapped_column(JSON,default=list)
+    error_code: Mapped[str | None] = mapped_column(String(80),nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True),default=now)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True),default=now)
+
+
 ApplicationField=ApplicationFieldRecord
 ApplicationDocument=ApplicationDocumentRecord
 ApplicationAuditEvent=ApplicationEvent
