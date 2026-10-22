@@ -11,7 +11,7 @@ from app.services.application_transform import classify_links,safe_url,primary_e
 from app.services.cover_letter_content import tokens,fragment
 
 FICTION=re.compile(r'Carl Johnson|Groove Street|Memeology|Unicorn Analytics|Faber College|Westeros University|Rydell High|Dank Memes|Viral News Robotics|Library of Alexandria 2\.0|PigeonScript|Shakespearean insults|baguette related|Couch Potatoes|pleasedonotcontactme|202-555-0100|Lorem ipsum|John Snow|\[insert|\bnull\b',re.I)
-from app.services.resume_tailoring_evidence import skill_group, bullets as bullet_variants, technology_mapping, project_links, ledger, summaries, relevance_plan, evidence_tokens, domain_terms, display_title
+from app.services.resume_tailoring_evidence import skill_group, bullets as bullet_variants, technology_mapping, project_links, ledger, summaries, relevance_plan, evidence_tokens, domain_terms, display_title, readable_link, reported_metrics, bullet_wording, skill_rows, project_technologies, display_project_links
 
 def period(value):
     # Preserve explicit source strings; never infer a graduation date or tenure.
@@ -61,7 +61,8 @@ def catalog(facts,job,context=None):
     if any(not safe_url(v) for v in facts.get('links',[])):warnings.append('Unsafe or malformed profile links are omitted.')
     return {'entries':[e.model_dump() for e in entries],'summaries':summary_options,'selected_ids':selected,'warnings':warnings,
         'requirements':job.get('required_skills',[]),'preferred_requirements':job.get('preferred_skills',[]),'context':context,
-        'content_policy_version':2,'ledger':ledger(facts,entries,protected),'protected_ids':protected,'relevance_plan':plan,'technology_reviews':association_reviews,'technology_mappings':technology_mappings,
+        'required_results':{e.id:[{'value':value,'source':b['source']} for b in e.bullets for value in reported_metrics(b['original'])] for e in entries if e.section in {'experience','projects'}},
+        'content_policy_version':3,'ledger':ledger(facts,entries,protected),'protected_ids':protected,'relevance_plan':plan,'technology_reviews':association_reviews,'technology_mappings':technology_mappings,
         'inventory_counts':{section:sum(e.section==section for e in entries) for section in SECTIONS[1:]},
         'template':'supplied-navy-v1','confidence':'medium','selection_method':'Required/preferred/title token evidence; matching and gap context are advisory, never facts.'}
 
@@ -76,12 +77,18 @@ def assemble(facts,job,source,selection=None):
     if requested is not None and (len(requested)!=len(set(requested)) or set(requested)-available):raise ValueError('resume_unknown_bullet')
     emphasis=evidence_tokens(' '.join(job.get('required_skills',[])+[job['title']]))
     for e in entries:
-        choices=[b for b in e.bullets if requested is None or b['id'] in requested]
+        choices=[b for b in e.bullets if requested is None or b['id'] in requested or reported_metrics(b['original'])]
         # Complete sentence/clause variants, relevance first. Full originals remain in the ledger.
-        choices.sort(key=lambda b:(-len(evidence_tokens(b['text']) & emphasis), len(b['text'])))
+        def bullet_priority(b):
+            numeric=bool(re.search(r'\d+(?:\.\d+)?\s*%|\b(?:F1|accuracy|tests|listings)\b',b['original'],re.I))
+            boilerplate=bool(re.search(r'certificate|completion certificate',b['original'],re.I))
+            return (-int(numeric),int(boilerplate),-len(evidence_tokens(b['text']) & emphasis),len(b['text']))
+        choices.sort(key=bullet_priority)
+        covered={id for b in choices for id in b.get('covers_ids',[])}
+        choices=[b for b in choices if b['id'] not in covered]
         e.bullets=choices[:2]
-        for b in e.bullets:b['text']=min(b['variants'],key=len)
-    links=[{'url':v.original_url,'label':v.label,'source':v.source} for v in classify_links(facts) if v.primary and v.platform in {'linkedin','github','portfolio'} and v.kind not in {'repository','deployment'}][:3]
+        for b in e.bullets:b['text']=bullet_wording(b)
+    links=[{'url':v.original_url,'label':readable_link(v.url,v.kind,v.platform),'source':v.source} for v in classify_links(facts) if v.primary and v.platform in {'linkedin','github','portfolio'} and v.kind not in {'repository','deployment'}][:3]
     order=selection.get('section_order',list(SECTIONS))
     return ResumeDraft(name=facts['name'],phone=facts.get('phone',''),email=facts.get('email',''),location=facts.get('location',''),
         links=links,target_job=job['title'],summary=summary['text'],summary_id=summary['id'],summary_evidence=summary['evidence'],entries=entries,section_order=order)
@@ -111,6 +118,9 @@ def validate(draft,source,facts,job):
             if not expected or b.get('text') not in expected['variants'] or {k:v for k,v in b.items() if k!='text'}!={k:v for k,v in expected.items() if k!='text'}:
                 issues.append({'field':e.id+'.bullets','reason':'Unsupported bullet wording or altered source evidence.'})
         if e.section not in draft.section_order:issues.append({'field':e.id,'reason':'Selected evidence would be hidden by the section order.'})
+    for e in draft.entries:
+        for result in source.get('required_results',{}).get(e.id,[]):
+            if result['value'] not in ' '.join(b['text'] for b in e.bullets):issues.append({'field':e.id+'.result','reason':'A confirmed measurable result must remain visible in this entry.'})
     if not draft.entries:issues.append({'field':'entries','reason':'At least one confirmed education, skill, project or experience entry is needed.'})
     for id in source.get('protected_ids',[]):
         if id not in ids:issues.append({'field':id,'reason':'Protected confirmed content must be preserved; shorten its bullets instead of omitting the entry.'})
@@ -160,10 +170,18 @@ def report(draft,source,facts):
         'coverage':{section:{'available':sum(e['section']==section for e in source['entries']),'preserved':sum(e.section==section for e in draft.entries)} for section in SECTIONS[1:]},
         'relevance_plan':source.get('relevance_plan',{}),
         'section_order_reason':'Standard summary, experience, projects, skills and education flow.' if draft.section_order==list(SECTIONS) else 'Explicit agent/user ordering retained; all selected sections and protected evidence remain visible.',
-        'bullet_omissions':[{'entry_id':e.id,'source':b['source'],'original':b['original'],'reason':'Additional source sentence omitted for concise emphasis; entry retained.'} for e in draft.entries for b in next(v for v in source['entries'] if v['id']==e.id)['bullets'] if b['id'] not in {v['id'] for v in e.bullets}],
+        'bullet_omissions':[{'entry_id':e.id,'source':b['source'],'original':b['original'],'reason':'Detail condensed into an implementation/outcome bullet; main action retained.' if b['id'] in {id for selected in e.bullets for id in selected.get('covers_ids',[])} else 'Additional source sentence omitted for concise emphasis; entry retained.'} for e in draft.entries for b in next(v for v in source['entries'] if v['id']==e.id)['bullets'] if b['id'] not in {v['id'] for v in e.bullets}],
         'condensed':[{'entry_id':e.id,'source':b['source'],'before':b['original'],'after':b['text'],'reason':'Complete extractive clause; original evidence retained.'} for e in draft.entries for b in e.bullets if b['text']!=b['original']],
         'title_condensation':[{'entry_id':e.id,'before':e.title,'after':display_title(e),'reason':'Assessment/team qualifier retained in the ledger; main project title shown in the PDF.'} for e in draft.entries if display_title(e)!=e.title],
-        'changes':[{'section':'summary','before':facts.get('career_objective',''),'after':draft.summary,'evidence':draft.summary_evidence},
+        'bullet_changes':[{'entry_id':e.id,'before':b['original'],'after':b['text'],'source':b['source']} for e in draft.entries for b in e.bullets if b['text']!=b['original']],
+        'link_changes':[{'entry_id':e.id,'label':link['label'],'url':link['url'],'source':link['source'],'reason':'Visible destination text; exact project-specific hyperlink retained.'} for e in draft.entries for link in display_project_links(e)]+[{'entry_id':'header','label':link['label'],'url':link['url'],'source':link['source'],'reason':'Professional profile URL stays in the header.'} for link in draft.links],
+        'omitted_links':[{'entry_id':e.id,'label':link['label'],'url':link['url'],'reason':'Additional project link retained in review and evidence ledger; repository and demo prioritised in the one-page PDF.'} for e in draft.entries if e.section=='projects' for link in e.links if link['url'] not in {v['url'] for v in display_project_links(e)}],
+        'skill_groups':skill_rows(draft.entries),
+        'skill_presentation':{'confirmed_labels':sum(e.section=='skills' for e in draft.entries),'visible_labels':sum(len(v) for v in skill_rows(draft.entries).values()),'reason':'Explicit MCP alias and React version labels consolidated; full confirmed inventory preserved.'},
+        'project_technology_emphasis':[{'entry_id':e.id,'shown':project_technologies(e,draft.entries),'full':e.technologies,'reason':'Entry-specific emphasis; remaining confirmed technologies stay in Technical Skills and evidence audit.'} for e in draft.entries if e.section=='projects'],
+        'required_results':source.get('required_results',{}),
+        'changes':[
+{'section':'summary','before':facts.get('career_objective',''),'after':draft.summary,'evidence':draft.summary_evidence},
             *[{'section':s,'before':[e['title'] for e in source['entries'] if e['section']==s],'after':[e.title for e in draft.entries if e.section==s],
                 'evidence':[e.source for e in draft.entries if e.section==s]} for s in SECTIONS[1:]]],
         'warnings':source['warnings'],'confidence':'medium','ats_observations':'No hidden keywords or proficiency claims; standard text headings, visible links and normal text. ATS vendor behaviour is not guaranteed.'}

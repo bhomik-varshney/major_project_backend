@@ -1,0 +1,20 @@
+{
+  "existing_tables": 30,
+  "existing_records_deleted": 0,
+  "all_original_profiles_documents_and_versions_unchanged": true,
+  "expected_existing_changes": [
+    {
+      "table": "applications",
+      "fields": [
+        "revision",
+        "updated_at"
+      ],
+      "reason": "Revision for the requested new review version."
+    }
+  ],
+  "new_rows": {
+    "application_events": 6,
+    "tailored_resume_versions": 1
+  },
+  "private_backup_created": true
+}

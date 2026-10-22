@@ -6,7 +6,7 @@
 \usepackage{changepage}
 \usepackage{tabularx}
 \usepackage{fontspec}
-\setmainfont[BoldFont=lmroman10-bold.otf,ItalicFont=lmroman10-italic.otf,BoldItalicFont=lmroman10-bolditalic.otf]{lmroman10-regular.otf}
+\setmainfont[Ligatures=NoCommon,Kerning=Off,BoldFont=lmroman10-bold.otf,ItalicFont=lmroman10-italic.otf,BoldItalicFont=lmroman10-bolditalic.otf]{lmroman10-regular.otf}
 \hypersetup{pdfauthor={@@NAME@@},pdftitle={Resume}}
 \definecolor{navyblue}{RGB}{0,54,123}
 \newcommand{\italicitem}[1]{\item{\textit{#1}}}
@@ -22,7 +22,9 @@
 \renewcommand{\infoSeparator}{\hspace{0.5em}{\color{navyblue}|}\hspace{0.5em}}
 % Retain the supplied name style while reclaiming its oversized header spacer.
 \makeatletter
-\renewcommand{\printname}{\begingroup\hfil{\namesize\bfseries\textit{\@name}}\hfil\endgroup}
+% The class already centres this paragraph. Extra \hfil competes with its
+% paragraph fill and shifts the name right; centre in one full-width box.
+\renewcommand{\printname}{\noindent\makebox[\linewidth][c]{{\namesize\bfseries\textit{\@name}}}\par}
 \makeatother
 \renewcommand{\printPersonalInfo}[1]{\begin{center}#1\end{center}\vspace{-0.35cm}}
 \def\sectionskip{\vspace{@@SPACING@@pt}}
@@ -37,6 +39,9 @@
 \def\sectionlineskip{\smallskip}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1pt}
+% The supplied class loads parskip[parfill], whose 30pt minimum final
+% skip otherwise forces full-width date rows to wrap or overrun the margin.
+\setlength{\parfillskip}{0pt plus 1fil}
 \emergencystretch=1em
 \name{\color{navyblue}@@NAME@@}
 \begin{document}

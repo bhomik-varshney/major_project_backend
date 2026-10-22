@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "status": "needs_review",
+  "approval_required": true,
+  "attached": false,
+  "private_resume_exported": false,
+  "source_pdf_preserved": true,
+  "confirmed_profile_preserved": true,
+  "content_coverage": {
+    "experience": {
+      "available": 2,
+      "preserved": 2
+    },
+    "projects": {
+      "available": 4,
+      "preserved": 4
+    },
+    "skills": {
+      "available": 36,
+      "preserved": 36
+    },
+    "education": {
+      "available": 3,
+      "preserved": 1
+    },
+    "certifications": {
+      "available": 0,
+      "preserved": 0
+    },
+    "achievements": {
+      "available": 4,
+      "preserved": 1
+    },
+    "publications": {
+      "available": 0,
+      "preserved": 0
+    }
+  },
+  "skill_presentation": {
+    "confirmed_labels": 36,
+    "visible_labels": 34,
+    "reason": "Explicit MCP alias and React version labels consolidated; full confirmed inventory preserved."
+  },
+  "optional_pdf_links_omitted": 1,
+  "source_evidence_records": 4,
+  "compile_attempts": 2,
+  "quality": {
+    "valid": true,
+    "issues": [],
+    "page_count": 1,
+    "selectable_text": true,
+    "fonts_embedded": true,
+    "images": 0,
+    "text_bounds_checked": true,
+    "overlap_check": "Glyph-intersection heuristic and compiler warnings",
+    "section_reading_order_checked": true,
+    "body_font_pt": 11,
+    "content_height_ratio": 0.999,
+    "all_selected_entries_checked": true,
+    "skill_coverage_checked": true,
+    "hyperlinks_checked": true,
+    "ligature_extraction_checked": true,
+    "readable_link_labels_checked": true,
+    "right_aligned_dates_checked": 3,
+    "balance_observation": "Content uses the page within readable margins.",
+    "preview_generated": true,
+    "ats_observations": "Normal selectable text, standard headings, visible links and no graphics. Single-column content; user preview review is required. ATS vendor behaviour is not guaranteed."
+  },
+  "microsoft_metric_retained": true
+}

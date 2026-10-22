@@ -1,0 +1,43 @@
+{
+  "backend_suites": [
+    {
+      "name": "original-final",
+      "tests": 28,
+      "failures": 0,
+      "errors": 0,
+      "seconds": 41.718
+    },
+    {
+      "name": "refinement-final",
+      "tests": 24,
+      "failures": 0,
+      "errors": 0,
+      "seconds": 15.137
+    },
+    {
+      "name": "integration",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "seconds": 35.125
+    }
+  ],
+  "distinct_tailoring_cases": 53,
+  "application_integration_cases": 4,
+  "chromium_cases": 8,
+  "browser_log_result": "8 passed (48.3s)",
+  "typecheck": "passed",
+  "production_build": "passed",
+  "lint": {
+    "errors": 0,
+    "existing_warnings": 10
+  },
+  "private_resume_exported": false,
+  "real_document_quality": "resume-tailoring-refinement-regression.json",
+  "data_preservation": "resume-tailoring-refinement-preservation.json",
+  "additional_provenance_case": {
+    "tests": 1,
+    "failures": 0,
+    "errors": 0
+  }
+}

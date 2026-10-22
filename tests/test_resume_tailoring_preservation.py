@@ -54,7 +54,7 @@ def test_relevance_recovers_missing_context_and_normalizes_nlp_without_inventing
     assert p['valid'] and p['status']=='computed_during_tailoring' and p['review_recommended']
     assert next(v for v in p['required'] if v['skill']=='Natural language processing')['status']=='supported'
     assert next(e for e in d.entries if e.id=='experience-1').relevance>next(e for e in d.entries if e.id=='experience-0').relevance
-    assert 'Machine Learning Trainee' in d.summary and 'natural language processing' in d.summary
+    assert 'natural language processing' in d.summary and any(v.startswith('projects-') for v in d.summary_evidence)
     assert not any('No current matching' in w or 'No current skill-gap' in w for w in s['warnings'])
     j['required_skills']+=['Kubernetes'];s=catalog(f,j,{})
     assert s['relevance_plan']['required'][-1]['status']=='missing_evidence'
@@ -68,7 +68,7 @@ def test_technology_association_ocr_fragments_and_project_link_deduplication():
     assert all(b['original'] not in ('learning system.','Built React Native front-end components for an internal') for b in adobe.bullets)
     for e in d.entries:
         assert len({v['url'] for v in e.links})==len(e.links)
-        if e.section=='projects':assert [v['label'] for v in e.links]==['Repository','Deployment']
+        if e.section=='projects':assert e.links[0]['label'].startswith('GitHub: github.com/') and e.links[1]['label'].startswith('Demo: ')
     tex=populate(d)
     assert 'Project link' not in tex and '"organization":' not in tex and 'Technologies: HTML' not in tex
 

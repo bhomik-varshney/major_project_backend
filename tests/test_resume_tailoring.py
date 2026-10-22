@@ -75,7 +75,8 @@ def test_primary_degree_and_core_repair_do_not_promote_secondary_school(tmp_path
     monkeypatch.setenv('CREWAI_STORAGE_DIR',str(tmp_path))
     facts=deepcopy(FACTS);facts['education']=[{'institution':'Example School','qualification':'Senior Secondary XII','period':'2021 – 2023'},*facts['education']]
     s=catalog(facts,JOB,{})
-    assert 'B.Tech Computer Engineering' in s['summaries'][0]['text'] and 'Senior Secondary' not in s['summaries'][0]['text']
+    assert 'Computer Engineering' in s['summaries'][0]['text'] and 'Senior Secondary' not in s['summaries'][0]['text']
+    assert 'education-1' in s['summaries'][0]['evidence']
     selection={'summary_id':'focused','entry_ids':[id for id in s['selected_ids'] if not id.startswith('education-')],
         'bullet_ids':[b['id'] for e in s['entries'] if e['id'] in s['selected_ids'] and e['section']!='education' for b in e['bullets']],
         'section_order':[section for section in SECTIONS if section!='education']}

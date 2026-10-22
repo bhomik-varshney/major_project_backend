@@ -97,4 +97,4 @@ Limits: tailoring uses controlled wording rather than unrestricted LLM prose; so
 
 ## Complete-profile improvements
 
-See [the scoped regression report](resume-tailoring-improvements.md) for the missing-internship diagnosis, preservation ledger, computed relevance plan, one-column layout, verified before/after counts and focused test results. Historical verification files above describe the earlier milestone.
+See [the scoped regression report](resume-tailoring-refinement.md) for the missing-internship diagnosis, preservation ledger, computed relevance plan, one-column layout, verified before/after counts and focused test results. Historical verification files above describe the earlier milestone.

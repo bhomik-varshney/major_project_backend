@@ -102,7 +102,7 @@ def digest(row):return fingerprint({'draft':row.data['draft'],'profile_hash':row
 
 def approve(db,row,expected):
     check_current(db,row)
-    if row.data.get('catalog',{}).get('content_policy_version')!=2:
+    if row.data.get('catalog',{}).get('content_policy_version')!=3:
         raise AppError(409,'resume_policy_update_required','Create a new tailored version so the complete profile and PDF pass the current preservation checks before approval.')
     if row.status!='needs_review' or not row.data.get('render',{}).get('quality',{}).get('valid'):raise AppError(409,'resume_not_ready','Compile and review the one-page PDF before approval.')
     path=Path(row.artifact_dir)/'document.pdf'
